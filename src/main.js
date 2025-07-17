@@ -31,6 +31,7 @@ import {
 } from './serviceRecordManager.js';
 import { CookieHandler } from './cookieHandler.js';
 import { AuthService } from './authService.js';
+import { SidebarButtonVariants } from './sidebarButtonVariants.js';
 
 // Main content element
 const mainContent = document.getElementById('main-content');
@@ -151,6 +152,9 @@ async function initializeApp() {
     
     // Setup authentication-related event listeners
     setupAuthEventListeners();
+    
+    // Initialize sidebar button variants with Variant 3 as default
+    SidebarButtonVariants.applyVariant(SidebarButtonVariants.VARIANTS.GRADIENT_CARDS);
     
     console.log('App initialized successfully');
   } catch (error) {

@@ -12,6 +12,12 @@
 /* Navigation Styles - Car selection menu, sidebar links, mobile nav */
 @import url('./styles/navigation.css');
 
+/* Sidebar Button Variants - Three beautiful design options */
+@import url('./styles/sidebar-button-variants.css');
+
+/* Global Button Variants - Variant 3 style applied to all buttons */
+@import url('./styles/global-button-variants.css');
+
 /* Form Styles - Input styling, buttons, form layouts */
 @import url('./styles/forms.css');
 

@@ -378,23 +378,7 @@
   transition: background var(--transition-fast);
 }
 
-.sub-record-actions .btn-edit {
-  background: var(--secondary-color);
-  color: white;
-}
-
-.sub-record-actions .btn-edit:hover {
-  background: #2980b9;
-}
-
-.sub-record-actions .btn-remove {
-  background: var(--accent-color);
-  color: white;
-}
-
-.sub-record-actions .btn-remove:hover {
-  background: #c0392b;
-}
+/* Button styles are now handled by global-button-variants.css */
 
 .service-record-summary {
   background: var(--surface);

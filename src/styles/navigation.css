@@ -121,6 +121,146 @@
   display: none;
 }
 
+/* Sidebar Buttons */
+.sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sidebar-button {
+  display: block;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: var(--border-radius-lg);
+  background: var(--surface);
+  border: 2px solid var(--border-color);
+  transition: all var(--transition-normal) ease;
+  box-shadow: 0 2px 8px var(--shadow);
+  cursor: pointer;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+/* Old hover styles removed - now using global button variants */
+
+.sidebar-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.button-content {
+  width: 100%;
+  text-align: center;
+}
+
+.button-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.button-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+/* Button Color Variants */
+.sidebar-button-green {
+  border-color: var(--success-color);
+  background: linear-gradient(135deg, #f8fff9 0%, #e8f5e8 100%);
+}
+
+.sidebar-button-green .button-title {
+  color: var(--success-color);
+}
+
+/* Old hover styles removed - now using global button variants */
+
+.sidebar-button-alert {
+  border-color: var(--warning-color);
+  background: linear-gradient(135deg, #fffbf0 0%, #fff3cd 100%);
+}
+
+.sidebar-button-alert .button-title {
+  color: var(--warning-color);
+}
+
+/* Old hover styles removed - now using global button variants */
+
+.sidebar-button-blue {
+  border-color: var(--secondary-color);
+  background: linear-gradient(135deg, #f0f8ff 0%, #e3f2fd 100%);
+}
+
+.sidebar-button-blue .button-title {
+  color: var(--secondary-color);
+}
+
+/* Old hover styles removed - now using global button variants */
+
+.sidebar-button-purple {
+  border-color: #6f42c1;
+  background: linear-gradient(135deg, #f8f5ff 0%, #e9ecef 100%);
+}
+
+.sidebar-button-purple .button-title {
+  color: #6f42c1;
+}
+
+/* Old hover styles removed - now using global button variants */
+
+/* Alert Button Priority Colors */
+.sidebar-button-alert.priority-critical {
+  border-color: var(--accent-color);
+  background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+}
+
+.sidebar-button-alert.priority-critical .button-title {
+  color: var(--accent-color);
+}
+
+/* Old hover styles removed - now using global button variants */
+
+.sidebar-button-alert.priority-warning {
+  border-color: var(--warning-color);
+  background: linear-gradient(135deg, #fffbf0 0%, #fff3cd 100%);
+}
+
+.sidebar-button-alert.priority-warning .button-title {
+  color: var(--warning-color);
+}
+
+/* Old hover styles removed - now using global button variants */
+
+.sidebar-button-alert.priority-info {
+  border-color: #17a2b8;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.sidebar-button-alert.priority-info .button-title {
+  color: #17a2b8;
+}
+
+/* Old hover styles removed - now using global button variants */
+
+.sidebar-button-alert.priority-none {
+  border-color: #6c757d;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  opacity: 0.6;
+}
+
+.sidebar-button-alert.priority-none .button-title {
+  color: #6c757d;
+}
+
+/* Old hover styles removed - now using global button variants */
+
 /* Car Selection List */
 .car-selection-list {
   display: flex;

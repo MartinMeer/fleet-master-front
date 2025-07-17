@@ -924,9 +924,12 @@ export async function updateProblemsButtonColor() {
     const alerts = await getUserAlerts();
     const activeAlerts = alerts.filter(alert => !alert.completed);
     
+    // Remove all priority classes first
+    problemsButton.classList.remove('priority-critical', 'priority-warning', 'priority-info', 'priority-none');
+    
     if (activeAlerts.length === 0) {
       // No active alerts - grey button
-      problemsButton.style.color = '#6c757d';
+      problemsButton.classList.add('priority-none');
       problemsButton.style.pointerEvents = 'none';
       problemsButton.title = 'Нет активных проблем';
     } else {
@@ -934,7 +937,7 @@ export async function updateProblemsButtonColor() {
       const criticalAlerts = activeAlerts.filter(alert => alert.priority === 'critical');
       if (criticalAlerts.length > 0) {
         // Red for critical alerts
-        problemsButton.style.color = '#dc3545';
+        problemsButton.classList.add('priority-critical');
         problemsButton.style.pointerEvents = 'auto';
         problemsButton.title = `${criticalAlerts.length} критичных проблем!`;
       } else {
@@ -944,12 +947,12 @@ export async function updateProblemsButtonColor() {
         
         if (warningAlerts.length > infoAlerts.length) {
           // Yellow for more warnings
-          problemsButton.style.color = '#ffc107';
+          problemsButton.classList.add('priority-warning');
           problemsButton.style.pointerEvents = 'auto';
           problemsButton.title = `${warningAlerts.length} проблем требуют внимания`;
         } else {
           // Blue-green for more info alerts
-          problemsButton.style.color = '#17a2b8';
+          problemsButton.classList.add('priority-info');
           problemsButton.style.pointerEvents = 'auto';
           problemsButton.title = `${infoAlerts.length} незначительных проблем`;
         }

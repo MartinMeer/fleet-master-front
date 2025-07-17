@@ -25,31 +25,29 @@
         <div id="car-select-menu" class="car-select-menu" style="display:none;"></div>
         <a href="#my-cars" class="my-cars-link" id="my-cars-link">Мои автомобили</a>
       </div>
-      <div class="sidebar-section">
-        <div class="sidebar-section-title">Был на сервисе?</div>
-        <a href="#service-card">Заполни карточку!</a>    
-      </div>
-      <div class="sidebar-section">
-        <div class="sidebar-section-title">У нас проблемы!</div>
-        <a href="#alert-list" id="problems-button">У нас проблемы!</a>
-      </div>
-      <div class="sidebar-section">
-        <div class="sidebar-section-title">Тех. обслуживание</div>
-        <a href="#next-mainten-alert">Когда следующее ТО?</a>
-        <a href="#next-mainten-list">Список для ТО</a>
-        
-      </div>
-      <div class="sidebar-section">
-        <div class="sidebar-section-title">Ремонт</div>
-        <a href="#next-repair-alert">Когда следующий ремонт?</a>
-        <a href="#next-repair-list">Список для ремонта</a>
-      </div>
-      <div class="sidebar-section">
-        <div class="sidebar-section-title">История</div>
-        <a href="#service-history">История обслуживания</a>
-        <a href="#mainten-history">История ТО</a>
-        <a href="#repair-history">История ремонтов</a>
-        <a href="#mileage-history">История пробега</a>
+      <div class="sidebar-buttons">
+        <a href="#service-card" class="sidebar-button sidebar-button-green">
+          <div class="button-content">
+            <div class="button-title">Был на сервисе?</div>
+            <div class="button-subtitle">Заполни отчет!</div>
+          </div>
+        </a>
+        <a href="#alert-list" id="problems-button" class="sidebar-button sidebar-button-alert">
+          <div class="button-content">
+            <div class="button-title">У нас проблемы!</div>
+          </div>
+        </a>
+        <a href="#next-mainten-list" class="sidebar-button sidebar-button-blue">
+          <div class="button-content">
+            <div class="button-title">Когда на сервис?</div>
+          </div>
+        </a>
+        <a href="#service-history" class="sidebar-button sidebar-button-purple">
+          <div class="button-content">
+            <div class="button-title">История тех.обслуживания</div>
+            <div class="button-subtitle">и ремонтов</div>
+          </div>
+        </a>
       </div>
     </nav>
     <main id="main-content">
@@ -95,40 +93,62 @@
     </a>
   </nav>
   <footer>
-    <div class="footer-menu-desktop">
-      <a href="#service-card">Был на сервисе? Заполни карточку!</a>
-      <a href="#next-mainten-alert">Когда следующее ТО?</a>
-      <a href="#next-mainten-list">Список для ТО</a>
-      <a href="#next-repair-alert">Когда следующий ремонт?</a>      
-      <a href="#next-repair-list">Список для ремонта</a>
-      <a href="#service-history">История обслуживания</a>
-      <a href="#mainten-history">История ТО</a>
-      <a href="#repair-history">История ремонтов</a>
-      <a href="#mileage-history">История пробега</a>
+    <div class="footer-sitemap">
+      <details class="sitemap-details">
+        <summary class="sitemap-summary">🗺️ Карта сайта</summary>
+        <div class="sitemap-content">
+          <div class="sitemap-section">
+            <h4>Был на сервисе?</h4>
+            <a href="#service-card">Заполни отчет!</a>
+          </div>
+          
+          <div class="sitemap-section">
+            <h4>У нас проблемы!</h4>
+            <a href="#alert-list">У нас проблемы!</a>
+          </div>
+          
+          <div class="sitemap-section">
+            <h4>Когда на сервис?</h4>
+            <a href="#next-mainten-list">Когда на сервис?</a>
+            <a href="#next-mainten-alert">Когда следующее ТО?</a>
+            <a href="#next-repair-alert">Когда следующий ремонт?</a>
+            <a href="#next-repair-list">Список для ремонта</a>
+          </div>
+          
+          <div class="sitemap-section">
+            <h4>История тех.обслуживания и ремонтов</h4>
+            <a href="#service-history">История обслуживания</a>
+            <a href="#mainten-history">История ТО</a>
+            <a href="#repair-history">История ремонтов</a>
+            <a href="#mileage-history">История пробега</a>
+          </div>
+          
+          <div class="sitemap-section">
+            <h4>Автомобили</h4>
+            <a href="#my-cars">Мои автомобили</a>
+            <a href="#add-car">Добавить автомобиль</a>
+            <a href="#my-car-overview">Обзор автомобиля</a>
+          </div>
+          
+          <div class="sitemap-section">
+            <h4>Информация</h4>
+            <a href="#oils">Масла и жидкости</a>
+            <a href="#spares">Запчасти</a>
+            <a href="#shops">Мастера</a>
+            <a href="#contacts">Контакты</a>
+            <a href="#privacy">Безопасность данных</a>
+          </div>
+          
+          <div class="sitemap-section">
+            <h4>Правая панель</h4>
+            <a href="#oils">Масла и жидкости</a>
+            <a href="#spares">Запчасти</a>
+            <a href="#shops">Мастера</a>
+          </div>
+        </div>
+      </details>
     </div>
-    <div class="footer-menu-mobile">
-      <details>
-        <summary>Был на сервисе?</summary>
-        <a href="#service-card">Заполни карточку!</a>
-      </details>
-      <details>
-        <summary>Тех. обслуживание</summary>
-        <a href="#next-mainten-alert">Когда следующее ТО?</a>
-        <a href="#next-mainten-list">Список для ТО</a>        
-      </details>
-      <details>
-        <summary>Ремонт</summary>
-        <a href="#next-repair-alert">Когда следующий ремонт?</a>
-        <a href="#next-repair-list">Список для ремонта</a>
-      </details>
-      <details>
-        <summary>История</summary>
-        <a href="#service-history">История обслуживания</a>
-        <a href="#mainten-history">История ТО</a>
-        <a href="#repair-history">История ремонтов</a>
-        <a href="#mileage-history">История пробега</a>
-      </details>
-    </div>
+    
     <div class="footer-info">
       <span>&copy;  ©2025 com.martinmeer' </span>
       <span>your@email.com</span>

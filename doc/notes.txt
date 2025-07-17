@@ -1,11 +1,16 @@
 cd /home/oleg/my-car-tech-tracker-front/my-car-tech-tracker-front && python3 -m http.server 8000
 
+###Front###
+add four buttons
+add backend-ready UI
+
 Feature:"Регламент тех. обслуживания"
     Load from outer json (for easy connection to AI API)
     Or table filled by user
     Editable by user
     View - from backend
     Anchored:my-car, side-bar
+    State a tables fields and links
 
 Module:"Всё, что нужно для тех. обслуживания"
     Load from outer json (for easy connection to AI API)

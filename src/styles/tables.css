@@ -105,32 +105,7 @@
   margin: 0 0.2rem;
 }
 
-.service-history-table .btn-view {
-  background: var(--secondary-color);
-  color: white;
-}
-
-.service-history-table .btn-view:hover {
-  background: #2980b9;
-}
-
-.service-history-table .btn-edit {
-  background: var(--warning-color);
-  color: white;
-}
-
-.service-history-table .btn-edit:hover {
-  background: #e67e22;
-}
-
-.service-history-table .btn-delete {
-  background: var(--accent-color);
-  color: white;
-}
-
-.service-history-table .btn-delete:hover {
-  background: #c0392b;
-}
+/* Button styles are now handled by global-button-variants.css */
 
 /* Car History Block */
 .car-history-block {

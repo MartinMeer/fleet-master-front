@@ -236,30 +236,7 @@
   opacity: 1;
 }
 
-.cookie-btn {
-  background: #fff;
-  color: var(--primary-color);
-  border: none;
-  border-radius: 20px;
-  padding: 0.4rem 1.2rem;
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.cookie-btn:hover {
-  background: #e0e7ef;
-}
-
-.cookie-btn-reject {
-  background: var(--accent-color);
-  color: #fff;
-}
-
-.cookie-btn-reject:hover {
-  background: #c0392b;
-}
+/* Button styles are now handled by global-button-variants.css */
 
 /* Authentication Forms */
 .auth-form {
@@ -307,11 +284,7 @@
   box-shadow: 0 0 0 3px rgba(45, 62, 80, 0.1);
 }
 
-.auth-form .btn {
-  width: 100%;
-  padding: 0.8rem;
-  margin-top: 1rem;
-}
+/* Button styles are now handled by global-button-variants.css */
 
 .auth-form .form-links {
   text-align: center;

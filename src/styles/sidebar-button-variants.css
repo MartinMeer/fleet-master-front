@@ -1,0 +1,396 @@
+/* ==========================================================================
+   SIDEBAR BUTTON DESIGN VARIANTS
+   Three beautiful design options for the four sidebar buttons
+   ========================================================================== */
+
+/* ==========================================================================
+   VARIANT 1: MODERN GLASSMORPHISM
+   Clean, modern design with glass-like effects and subtle shadows
+   ========================================================================== */
+
+.sidebar-buttons.variant-1 {
+  gap: 1.2rem;
+}
+
+.sidebar-buttons.variant-1 .sidebar-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.2rem;
+  min-height: 70px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.07),
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-buttons.variant-1 .sidebar-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.sidebar-buttons.variant-1 .sidebar-button:hover::before {
+  left: 100%;
+}
+
+.sidebar-buttons.variant-1 .sidebar-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    0 4px 10px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-buttons.variant-1 .sidebar-button:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Variant 1 Color Schemes */
+.sidebar-buttons.variant-1 .sidebar-button-green {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(22, 163, 74, 0.05) 100%);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.sidebar-buttons.variant-1 .sidebar-button-green .button-title {
+  color: #16a34a;
+  text-shadow: 0 1px 2px rgba(22, 163, 74, 0.1);
+}
+
+.sidebar-buttons.variant-1 .sidebar-button-alert {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.05) 100%);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.sidebar-buttons.variant-1 .sidebar-button-alert .button-title {
+  color: #d97706;
+  text-shadow: 0 1px 2px rgba(217, 119, 6, 0.1);
+}
+
+.sidebar-buttons.variant-1 .sidebar-button-blue {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.sidebar-buttons.variant-1 .sidebar-button-blue .button-title {
+  color: #2563eb;
+  text-shadow: 0 1px 2px rgba(37, 99, 235, 0.1);
+}
+
+.sidebar-buttons.variant-1 .sidebar-button-purple {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(126, 34, 206, 0.05) 100%);
+  border-color: rgba(147, 51, 234, 0.3);
+}
+
+.sidebar-buttons.variant-1 .sidebar-button-purple .button-title {
+  color: #7c3aed;
+  text-shadow: 0 1px 2px rgba(124, 58, 237, 0.1);
+}
+
+/* ==========================================================================
+   VARIANT 2: NEUMORPHIC DESIGN
+   Soft, tactile design with subtle depth and shadows
+   ========================================================================== */
+
+.sidebar-buttons.variant-2 {
+  gap: 1.5rem;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button {
+  background: #f0f0f3;
+  border: none;
+  border-radius: 20px;
+  padding: 1.3rem;
+  min-height: 75px;
+  box-shadow: 
+    8px 8px 16px #d1d9e6,
+    -8px -8px 16px #ffffff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    12px 12px 20px #c1c9d6,
+    -12px -12px 20px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    inset 4px 4px 8px #d1d9e6,
+    inset -4px -4px 8px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button:active .button-content {
+  transform: scale(0.98);
+}
+
+/* Variant 2 Color Schemes */
+.sidebar-buttons.variant-2 .sidebar-button-green {
+  background: linear-gradient(145deg, #e8f5e8, #d4edda);
+  box-shadow: 
+    8px 8px 16px #c4d4c4,
+    -8px -8px 16px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-green:hover {
+  box-shadow: 
+    12px 12px 20px #b4c4b4,
+    -12px -12px 20px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-green .button-title {
+  color: #1e7e34;
+  font-weight: 700;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-alert {
+  background: linear-gradient(145deg, #fff3cd, #ffeaa7);
+  box-shadow: 
+    8px 8px 16px #e6d9b8,
+    -8px -8px 16px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-alert:hover {
+  box-shadow: 
+    12px 12px 20px #d6c9a8,
+    -12px -12px 20px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-alert .button-title {
+  color: #e0a800;
+  font-weight: 700;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-blue {
+  background: linear-gradient(145deg, #e3f2fd, #bbdefb);
+  box-shadow: 
+    8px 8px 16px #c9d6e3,
+    -8px -8px 16px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-blue:hover {
+  box-shadow: 
+    12px 12px 20px #b9c6d3,
+    -12px -12px 20px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-blue .button-title {
+  color: #2980b9;
+  font-weight: 700;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-purple {
+  background: linear-gradient(145deg, #f3e5f5, #e1bee7);
+  box-shadow: 
+    8px 8px 16px #d9c6df,
+    -8px -8px 16px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-purple:hover {
+  box-shadow: 
+    12px 12px 20px #c9b6cf,
+    -12px -12px 20px #ffffff;
+}
+
+.sidebar-buttons.variant-2 .sidebar-button-purple .button-title {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   VARIANT 3: GRADIENT CARDS WITH ICONS
+   Colorful gradient backgrounds with subtle icons and modern typography
+   ========================================================================== */
+
+.sidebar-buttons.variant-3 {
+  gap: 1rem;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 1.2rem;
+  min-height: 80px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-bg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button .button-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button::after {
+  content: var(--button-icon);
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  font-size: 1.5rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-buttons.variant-3 .sidebar-button:hover::before {
+  opacity: 1;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.sidebar-buttons.variant-3 .sidebar-button:active {
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Variant 3 Color Schemes */
+.sidebar-buttons.variant-3 .sidebar-button-green {
+  --gradient-bg: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --button-icon: "🔧";
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-green .button-title {
+  color: #059669;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-green:hover .button-title {
+  color: #ffffff;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-green:hover .button-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-alert {
+  --gradient-bg: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --button-icon: "⚠️";
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-alert .button-title {
+  color: #d97706;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-alert:hover .button-title {
+  color: #ffffff;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-blue {
+  --gradient-bg: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --button-icon: "📅";
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-blue .button-title {
+  color: #2563eb;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-blue:hover .button-title {
+  color: #ffffff;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-blue:hover .button-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-purple {
+  --gradient-bg: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  --button-icon: "📋";
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-purple .button-title {
+  color: #7c3aed;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-purple:hover .button-title {
+  color: #ffffff;
+}
+
+.sidebar-buttons.variant-3 .sidebar-button-purple:hover .button-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS FOR ALL VARIANTS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .sidebar-buttons.variant-1 .sidebar-button,
+  .sidebar-buttons.variant-2 .sidebar-button,
+  .sidebar-buttons.variant-3 .sidebar-button {
+    padding: 1rem;
+    min-height: 60px;
+  }
+  
+  .sidebar-buttons.variant-1,
+  .sidebar-buttons.variant-2,
+  .sidebar-buttons.variant-3 {
+    gap: 0.8rem;
+  }
+  
+  .sidebar-buttons.variant-3 .sidebar-button::after {
+    font-size: 1.2rem;
+    top: 0.6rem;
+    right: 0.6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar-buttons.variant-1 .sidebar-button,
+  .sidebar-buttons.variant-2 .sidebar-button,
+  .sidebar-buttons.variant-3 .sidebar-button {
+    padding: 1.4rem;
+    min-height: 85px;
+  }
+  
+  .sidebar-buttons.variant-1,
+  .sidebar-buttons.variant-2,
+  .sidebar-buttons.variant-3 {
+    gap: 1.5rem;
+  }
+} 

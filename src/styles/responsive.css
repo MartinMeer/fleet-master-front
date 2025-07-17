@@ -32,6 +32,22 @@
   main#main-content { 
     padding: 2rem 1rem; 
   }
+  
+  /* Sidebar buttons responsive adjustments */
+  .sidebar-button {
+    padding: 0.8rem;
+    min-height: 55px;
+  }
+  
+  .button-title {
+    font-size: 0.95rem;
+  }
+  
+  .button-subtitle {
+    font-size: 0.8rem;
+  }
+  
+
 }
 
 /* Large Desktop Adjustments */
@@ -122,6 +138,22 @@
     margin: 0 auto 2rem auto;
     text-align: center;
   }
+  
+  /* Larger sidebar buttons for big screens */
+  .sidebar-button {
+    padding: 1.2rem;
+    min-height: 70px;
+  }
+  
+  .button-title {
+    font-size: 1.1rem;
+  }
+  
+  .button-subtitle {
+    font-size: 0.9rem;
+  }
+  
+
 }
 
 /* Mobile Styles (700px and below) */
@@ -137,13 +169,7 @@
     margin-top: 44px;
   }
   
-  .logout-btn {
-    right: 1rem;
-    font-size: 0.97rem;
-    padding: 0.4rem 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+  /* Button styles are now handled by global-button-variants.css */
 
   /* Layout adjustments */
   .container { 
@@ -154,35 +180,30 @@
     display: none; 
   }
   
-  .footer-menu-desktop { 
-    display: none; 
-  }
-  
-  .footer-menu-mobile { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 0.5rem; 
+  .footer-sitemap { 
     margin-bottom: 0.5rem; 
+    padding: 0 0.5rem;
   }
   
-  .footer-menu-mobile details { 
-    background: #223040; 
-    border-radius: var(--border-radius); 
-    padding: 0.3rem 0.7rem; 
+  .sitemap-summary {
+    font-size: 0.85rem;
   }
   
-  .footer-menu-mobile summary { 
-    color: #fff; 
-    font-weight: bold; 
-    cursor: pointer; 
+  .sitemap-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 0.3rem;
   }
   
-  .footer-menu-mobile a { 
-    color: #fff; 
-    text-decoration: none; 
-    display: block; 
-    margin: 0.2rem 0 0.2rem 1rem; 
+  .sitemap-section h4 {
+    font-size: 0.85rem;
   }
+  
+  .sitemap-section a {
+    font-size: 0.8rem;
+  }
+  
+
   
   .footer-info { 
     position: static; 
@@ -210,6 +231,11 @@
     width: auto;
     margin-bottom: 0;
     justify-content: flex-start;
+  }
+  
+  /* Mobile sidebar buttons */
+  .sidebar-buttons {
+    display: none;
   }
   
   .mobile-right-menu .img-placeholder {
@@ -309,10 +335,7 @@
     flex-direction: column;
   }
   
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-  }
+  /* Button styles are now handled by global-button-variants.css */
 
   /* Service card adjustments */
   .service-card {
@@ -358,9 +381,7 @@
     flex-direction: column;
   }
   
-  .popup-footer .btn {
-    width: 100%;
-  }
+  /* Button styles are now handled by global-button-variants.css */
   
   .total-amount {
     font-size: 1.3rem;
@@ -389,10 +410,7 @@
     padding: 1rem 0.7rem;
   }
   
-  .cookie-btn {
-    width: 100%;
-    margin-left: 0;
-  }
+  /* Button styles are now handled by global-button-variants.css */
 
   /* Cover page adjustments */
   .cover-info {
@@ -457,9 +475,7 @@
     justify-content: center;
   }
   
-  .service-record-actions .btn {
-    width: 100%;
-  }
+  /* Button styles are now handled by global-button-variants.css */
   
   .service-record-left-panel,
   .service-record-right-panel {
@@ -640,9 +656,7 @@
   }
   
   .service-record-edit-popup .btn-primary,
-  .service-record-edit-popup .btn-secondary {
-    width: 100%;
-  }
+  /* Button styles are now handled by global-button-variants.css */
 
   /* User alert */
   .user-alert-popup {
@@ -684,17 +698,13 @@
     flex-direction: column;
   }
   
-  .user-alert-form .form-actions .btn {
-    width: 100%;
-  }
+  /* Button styles are now handled by global-button-variants.css */
   
   .user-alert-popup .popup-footer {
     flex-direction: column;
   }
   
-  .user-alert-popup .popup-footer .btn {
-    width: 100%;
-  }
+  /* Button styles are now handled by global-button-variants.css */
 
   /* Utilities for mobile */
   .mobile\:hidden {
