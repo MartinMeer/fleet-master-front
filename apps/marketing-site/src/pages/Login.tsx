@@ -17,8 +17,7 @@ import {
   Eye, 
   EyeOff, 
   Languages,
-  LogIn,
-  Zap
+  LogIn
 } from 'lucide-react';
 
 export default function LoginPage() {
@@ -55,11 +54,6 @@ export default function LoginPage() {
       // Buttons
       loginButton: 'Войти в систему',
       
-      // Demo section
-      quickAccessTitle: '🚀 Быстрый доступ',
-      demoButton: 'Использовать демо аккаунт',
-      demoCredentials: 'demo@example.com / demo123',
-      
       // Social login
       socialLoginTitle: 'Или войдите через',
       googleLogin: 'Google',
@@ -87,11 +81,6 @@ export default function LoginPage() {
       // Buttons
       loginButton: 'Sign In',
       
-      // Demo section
-      quickAccessTitle: '🚀 Quick Access',
-      demoButton: 'Use Demo Account',
-      demoCredentials: 'demo@example.com / demo123',
-      
       // Social login
       socialLoginTitle: 'Or sign in with',
       googleLogin: 'Google',
@@ -104,14 +93,6 @@ export default function LoginPage() {
   };
 
   const t = translations[language];
-
-  /**
-   * Handle demo account login
-   */
-  const handleDemoLogin = () => {
-    setEmail('demo@cartracker.com');
-    setPassword('demo123');
-  };
 
   /**
    * Handle form submission
@@ -245,28 +226,6 @@ export default function LoginPage() {
                   {isLoading ? 'Signing in...' : t.loginButton}
                 </Button>
               </form>
-            </CardContent>
-          </Card>
-
-          {/* Demo Account Section */}
-          <Card className="mt-6 border-orange-200 bg-orange-50">
-            <CardContent className="p-4">
-              <div className="text-center">
-                <h3 className="font-medium text-orange-800 mb-2">
-                  {t.quickAccessTitle}
-                </h3>
-                <Button
-                  onClick={handleDemoLogin}
-                  variant="outline"
-                  className="w-full border-orange-300 text-orange-700 hover:bg-orange-100 mb-2"
-                >
-                  <Zap className="w-4 h-4 mr-2" />
-                  {t.demoButton}
-                </Button>
-                <p className="text-xs text-orange-600">
-                  demo@cartracker.com / demo123
-                </p>
-              </div>
             </CardContent>
           </Card>
 

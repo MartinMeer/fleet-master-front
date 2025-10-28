@@ -473,9 +473,9 @@ export class DataService {
       }
     });
 
-    // Also clear session storage
+    // Clear session storage
     try {
-      sessionStorage.removeItem('demo_session_id');
+      sessionStorage.removeItem('session_id');
     } catch (error) {
       console.error('Error clearing session storage:', error);
     }

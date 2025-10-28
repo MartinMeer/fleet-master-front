@@ -4,7 +4,6 @@
 import { HashRouter, Route, Routes } from 'react-router'
 import { AuthHandler } from './components/AuthHandler'
 import { DevTools } from './components/DevTools'
-import { DemoModeNotice } from './components/DemoModeNotice'
 import HomePage from './pages/Home'
 import CarOverview from './pages/CarOverview'
 import AddCar from './pages/AddCar'
@@ -18,7 +17,6 @@ import InMaintenance from './pages/InMaintenance'
 export default function App() {
   return (
     <AuthHandler>
-      <DemoModeNotice />
       <HashRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />

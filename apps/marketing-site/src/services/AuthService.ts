@@ -1,4 +1,6 @@
 // apps/marketing-site/src/services/AuthService.ts
+import { APP_CONFIG } from '../config/app.config';
+
 export interface User {
   id: string;
   name: string;
@@ -19,38 +21,40 @@ export class AuthService {
   private static readonly TOKEN_KEY = 'auth_token';
   private static readonly USER_KEY = 'user_data';
   private static readonly REFRESH_TOKEN_KEY = 'refresh_token';
+  private static config = APP_CONFIG.getCurrentConfig();
 
   /**
    * Login with email and password
    */
   static async login(email: string, password: string): Promise<AuthState> {
     try {
-      // For demo purposes, simulate API call with mock data
-      // In production, replace with actual API call
-      if (email === 'demo@cartracker.com' && password === 'demo123') {
-        const mockUser: User = {
-          id: '1',
-          name: 'Demo User',
-          email: 'demo@cartracker.com',
-          plan: 'starter',
-          createdAt: new Date().toISOString()
-        };
-        
-        const mockToken = 'demo_token_' + Date.now();
-        
-        this.setAuthData(mockToken, mockUser);
-        
-        return {
-          user: mockUser,
-          token: mockToken,
-          isAuthenticated: true,
-          isLoading: false
-        };
-      } else {
-        throw new Error('Invalid credentials');
+      const response = await fetch(`${this.config.API_URL}/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Login failed');
       }
+
+      const data = await response.json();
+      const user: User = data.user;
+      const token = data.token;
+
+      this.setAuthData(token, user, data.refreshToken);
+
+      return {
+        user,
+        token,
+        isAuthenticated: true,
+        isLoading: false
+      };
     } catch (error) {
-      throw new Error(error.message || 'Login failed');
+      throw new Error(error instanceof Error ? error.message : 'Login failed');
     }
   }
 
@@ -64,28 +68,33 @@ export class AuthService {
     plan?: string;
   }): Promise<AuthState> {
     try {
-      // For demo purposes, simulate API call with mock data
-      // In production, replace with actual API call
-      const mockUser: User = {
-        id: Date.now().toString(),
-        name: userData.name,
-        email: userData.email,
-        plan: (userData.plan as any) || 'starter',
-        createdAt: new Date().toISOString()
-      };
-      
-      const mockToken = 'demo_token_' + Date.now();
-      
-      this.setAuthData(mockToken, mockUser);
-      
+      const response = await fetch(`${this.config.API_URL}/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Registration failed');
+      }
+
+      const data = await response.json();
+      const user: User = data.user;
+      const token = data.token;
+
+      this.setAuthData(token, user, data.refreshToken);
+
       return {
-        user: mockUser,
-        token: mockToken,
+        user,
+        token,
         isAuthenticated: true,
         isLoading: false
       };
     } catch (error) {
-      throw new Error(error.message || 'Registration failed');
+      throw new Error(error instanceof Error ? error.message : 'Registration failed');
     }
   }
 
@@ -94,11 +103,20 @@ export class AuthService {
    */
   static async logout(): Promise<void> {
     try {
-      // In production, call logout API endpoint
-      this.clearAuthData();
+      const token = this.getToken();
+      if (token) {
+        await fetch(`${this.config.API_URL}/auth/logout`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+      }
     } catch (error) {
       console.error('Logout failed:', error);
-      this.clearAuthData(); // Clear data anyway
+    } finally {
+      this.clearAuthData();
     }
   }
 
@@ -118,14 +136,24 @@ export class AuthService {
   }
 
   /**
-   * Validate token (placeholder for real API validation)
+   * Validate token with backend API
    */
   static async validateToken(token: string): Promise<User | null> {
     try {
-      // In production, make API call to validate token
-      // For demo, just check if user data exists
-      const user = this.getUser();
-      return user;
+      const response = await fetch(`${this.config.API_URL}/auth/validate`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        return null;
+      }
+
+      const data = await response.json();
+      return data.user;
     } catch (error) {
       console.error('Token validation failed:', error);
       return null;

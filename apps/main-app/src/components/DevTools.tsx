@@ -27,7 +27,7 @@ export function DevTools() {
     const idGeneratorInfo = {
       currentCounter: IdGenerator.getCurrentCounter(),
       lastGenerated: localStorage.getItem('id_counter'),
-      sessionId: sessionStorage.getItem('demo_session_id')
+      sessionId: sessionStorage.getItem('session_id')
     };
     setDebugInfo({
       ...configDebugInfo,
