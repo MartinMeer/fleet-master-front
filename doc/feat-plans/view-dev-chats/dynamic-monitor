@@ -1,0 +1,23 @@
+ Let's implement add-to-plan funcionality on my-car-overview. It means carete interactions between corresponded pages   
+1. in alering section, for each entry, add В план button with restoring ability (as implemented for archiving btn)
+2. On click, send entry to plan into a repairs-table and fill a row there.
+    In alert section let this entry remain crosslined
+    Mapping: date to date; {system, description} to operation; priority to notes section in form a comment string: Добавлено из уведомления от $date со статусом "$priority"; resource field in plan remain empty;
+3. When restore in alert section OR delete in plan page:
+- delete the entry from plan
+- clear cross-line
+Note: use where possible existing styles
+
+et's create a dynamic monitor entries in my-car-overview
+All data is related to given car.
+1. Split technical-state-section on two vertical parts
+2. Left part is for working with user alerts,
+    right part is for working with periodical maintenance
+3. In user-alerts must be collect all exising user-alerts
+    Alerts must be represented in compact table:
+    columns (from user-alert.html, except 'actions'):
+    alert-date-info | alert-date-info | priority-option | subsystem-select or custom-subsystem-group | problem-description | actions
+    Actions: editing, archiving with restoring from archive, as in implemented alredy
+4. Add a sorting functionality: by date, by priority. Let sorting do in frontend level, for given dackend data
+
+

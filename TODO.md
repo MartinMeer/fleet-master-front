@@ -1,159 +1,297 @@
-# My Car Tech Tracker - Comprehensive TODO List
+## MAIN NOTE ##
+PAY YOUR ATTENTION: there must be a clear separation between dev mode with further Java backend and demo abilities, working with localStorage
 
-## 🚨 CRITICAL PRIORITY (Fix Immediately)
+## FIX IT! ##
 
-### Security & Authentication
-- [ ] **AUTH-001**: Remove hardcoded demo credentials from `authService.js`
-- [ ] **AUTH-002**: Standardize authentication state management - remove direct localStorage auth checks
-- [ ] **AUTH-003**: Implement proper session timeout and token refresh
-- [ ] **AUTH-004**: Add CSRF protection for all form submissions
-- [ ] **AUTH-005**: Implement proper logout that clears all auth data consistently
 
-### Data Integrity & Validation
-- [ ] **DATA-001**: Add input validation for all forms (email, mileage, dates, etc.)
-- [ ] **DATA-002**: Implement data sanitization for all user inputs
-- [ ] **DATA-003**: Add data integrity checks for localStorage operations
-- [ ] **DATA-004**: Implement proper error handling for JSON.parse() operations
-- [ ] **DATA-005**: Add data backup/export functionality
+## REFACTOR IT! ##
 
-### Critical Bugs
-- [ ] **BUG-001**: Fix inconsistent car ID handling (string vs number comparison)
-- [ ] **BUG-002**: Implement missing edit functionality in serviceRecordManager.js
-- [ ] **BUG-003**: Fix potential race conditions in async operations
-- [ ] **BUG-004**: Add validation for negative mileage values
-- [ ] **BUG-005**: Fix file size validation for car images
 
-## 🔥 HIGH PRIORITY (Fix Within 1-2 Weeks)
 
-### Error Handling & UX
-- [ ] **UX-001**: Replace all `alert()` calls with proper error dialogs
-- [ ] **UX-002**: Implement consistent error handling strategy across all modules
-- [ ] **UX-003**: Add user-friendly error messages (no technical details to users)
-- [ ] **UX-004**: Add loading states for all async operations
-- [ ] **UX-005**: Implement proper form validation feedback
+## FEAT IT! ##
 
-### Code Quality & Architecture
-- [ ] **CODE-001**: Split `serviceRecordManager.js` (1436 lines) into smaller modules
-- [ ] **CODE-002**: Remove excessive global variables from window object
-- [ ] **CODE-003**: Implement proper state management pattern
-- [ ] **CODE-004**: Add proper JSDoc documentation for all functions
-- [ ] **CODE-005**: Implement consistent naming conventions
+OK READY Add a service-shops feature:
+    4.1 Create a service-shops list. Columns: Name, Contacts, Rating, Actions (Edit, Delete for whole entry). Attach to table the Add-new functionality
+    4.2 Create a button to service-shops list in maintenance-planning header
+    4.3 Pull entries from the service-shops list to Планируемый исполнитель
+    4.4 All change state operations - with standard project-style confirmation
+OK READY maintenance-planning: add export-to-pdf funcionality.
+    5.1 Add html2pdf.js to project
+    5.2 Add export button in maintenance-planning between Сохранить план и Отправить на обслуживание
+    5.3 When export, save the pdf localy via standart system window
+    NOTE Separate exporting from saving: export must be available after saving
+OK READY  Add car-edit feature:
+    6.1 User select concrete car from main dashboard (root page) and go to this concrete car page
+    6.2 In car page add Edit-car button
+    6.2 On click, open the add-car page for editing
+    6.4 All change state operations - with standard project-style confirmation
 
-### Performance
-- [ ] **PERF-001**: Implement code splitting for JavaScript modules
-- [ ] **PERF-002**: Add service worker for caching static assets
-- [ ] **PERF-003**: Optimize CSS bundle size (utilities.css is 13KB)
-- [ ] **PERF-004**: Implement lazy loading for images
-- [ ] **PERF-005**: Add pagination for large data sets
+OK READY  Let's start implementation of Periodical maintenance guide (PMG)
+Overview: the PMG is a list of maintenance orerations, based on reglament by car manufacturer. It is related to concrete car in fleet. Each entry from PMG must be shows: a. on maintanence plan page as a source for list of periodical operations according to selected car. b. in add-service-record page, a name of operation only.
+Current implementation: I see that on maintanence plan page alredy present hardcoded list of operations, and on add-service-record page exist an another hardcoded list.
 
-## 🔶 MEDIUM PRIORITY (Fix Within 1 Month)
+-------------------------------------------
 
-### Accessibility
-- [ ] **A11Y-001**: Add ARIA labels and roles to all interactive elements
-- [ ] **A11Y-002**: Implement proper keyboard navigation
-- [ ] **A11Y-003**: Add screen reader support
-- [ ] **A11Y-004**: Ensure proper color contrast ratios
-- [ ] **A11Y-005**: Add focus management for modals and popups
+1. Create a ready-to-work cars list
 
-### Mobile & Responsive
-- [ ] **MOBILE-001**: Optimize mobile navigation (too many menus)
-- [ ] **MOBILE-002**: Ensure touch targets are at least 44px
-- [ ] **MOBILE-003**: Improve mobile form layouts
-- [ ] **MOBILE-004**: Add swipe gestures for mobile navigation
-- [ ] **MOBILE-005**: Optimize images for mobile devices
+3. maintenance-planning: Collapse Периодическое обслуживание to 4 first due-out and due-soon entries, and add View all capability to expand all entries
 
-### Configuration & Environment
-- [ ] **CONFIG-001**: Implement environment-based configuration
-- [ ] **CONFIG-002**: Add configuration validation
-- [ ] **CONFIG-003**: Create separate configs for dev/staging/prod
-- [ ] **CONFIG-004**: Add feature flags system
-- [ ] **CONFIG-005**: Implement proper API URL management
+8. Alerts: When alert was send to archve, add to each entry in archved alerts a field with date was sent (using current date in moment to archivation)
 
-### Testing
-- [ ] **TEST-001**: Add unit tests for critical business logic
-- [ ] **TEST-002**: Implement integration tests for data flow
-- [ ] **TEST-003**: Add automated testing pipeline
-- [ ] **TEST-004**: Create test data fixtures
-- [ ] **TEST-005**: Add performance testing
+7. Add a Refrences (Справочник) funtionality for car (Periodical maintenance guide, Volumes of consumables)
 
-## 📋 LOW PRIORITY (Fix Within 2-3 Months)
 
-### Documentation
-- [ ] **DOC-001**: Complete API documentation
-- [ ] **DOC-002**: Add deployment guide
-- [ ] **DOC-003**: Create user manual
-- [ ] **DOC-004**: Add developer onboarding guide
-- [ ] **DOC-005**: Document architecture decisions
 
-### Advanced Features
-- [ ] **FEAT-001**: Implement data export/import functionality
-- [ ] **FEAT-002**: Add offline support with service worker
-- [ ] **FEAT-003**: Implement push notifications for reminders
-- [ ] **FEAT-004**: Add data analytics and reporting
-- [ ] **FEAT-005**: Implement multi-language support
+FINALLY! Add car-delete feature. 
+    Flow: User select concrete car from main dashboard (root page) and go to this concrete car page.
+    Let's implement:
+    1 Let create a delete-car button
+    2 When car leave the fleet, all car related information for all time must be archieved on db via backend. Now, untill the backend is not created, let create a json with all gathered information from all parts of app, and let can be saved as file to client's OS filesystem
 
-### Code Optimization
-- [ ] **OPT-001**: Implement proper memory management
-- [ ] **OPT-002**: Add event listener cleanup
-- [ ] **OPT-003**: Optimize DOM manipulation
-- [ ] **OPT-004**: Implement proper garbage collection
-- [ ] **OPT-005**: Add performance monitoring
+    I'll help you create a comprehensive plan for the car-delete feature. Let me first examine the current codebase structure to understand the existing car management functionality.
 
-## 🏗️ BACKEND INTEGRATION (When Backend is Ready)
+Search files...
+Now let me examine the current car management structure and data services to understand how cars are stored and managed:
 
-### API Integration
-- [ ] **API-001**: Replace localStorage with API calls in DataService
-- [ ] **API-002**: Implement proper API error handling
-- [ ] **API-003**: Add API request/response logging
-- [ ] **API-004**: Implement API rate limiting
-- [ ] **API-005**: Add API versioning support
+Read file: apps/main-app/src/services/DataService.ts
+Now let me check if there's already a delete car method in the DataService:
 
-### Authentication Integration
-- [ ] **AUTH-API-001**: Connect AuthService to backend
-- [ ] **AUTH-API-002**: Implement JWT token management
-- [ ] **AUTH-API-003**: Add token refresh mechanism
-- [ ] **AUTH-API-004**: Implement proper session management
-- [ ] **AUTH-API-005**: Add multi-factor authentication support
+Ran tool
+Let me check the current car overview page to see the existing structure:
 
-## 📊 Progress Tracking
+Read file: apps/main-app/src/pages/CarOverview.tsx
+Now let me check what data is associated with cars to understand what needs to be archived:
 
-### Critical Priority: 0/15 completed
-### High Priority: 0/15 completed  
-### Medium Priority: 0/20 completed
-### Low Priority: 0/15 completed
-### Backend Integration: 0/10 completed
+Search files...
+Based on my analysis of the codebase, I can now create a comprehensive plan for the car-delete feature. Here's the detailed implementation plan:
 
-**Total Tasks: 75**
-**Completed: 0**
-**Remaining: 75**
+# Car Delete Feature Implementation Plan
 
-## 🎯 Sprint Planning Suggestions
+## Overview
+The car delete feature will allow users to remove cars from their fleet while preserving all related data for archival purposes. The implementation will follow the existing patterns in the codebase and ensure data integrity.
 
-### Sprint 1 (Week 1-2): Critical Security & Data
-- AUTH-001 through AUTH-005
-- DATA-001 through DATA-005
-- BUG-001 through BUG-005
+## Data Analysis
+Based on the codebase analysis, the following data is associated with cars and needs to be archived:
 
-### Sprint 2 (Week 3-4): Error Handling & UX
-- UX-001 through UX-005
-- CODE-001 through CODE-003
+1. **Car Information** - Basic car details (brand, model, year, VIN, etc.)
+2. **Alerts** - All alerts (active and archived) for the car
+3. **Service Records** - Complete service history with operations and costs
+4. **Maintenance Entries** - Current maintenance status
+5. **Maintenance Plans** - Planned maintenance schedules
+6. **Mileage History** - Historical mileage records
+7. **User Alerts** - User-reported problems and recommendations
 
-### Sprint 3 (Week 5-6): Performance & Architecture
-- PERF-001 through PERF-005
-- CODE-004 through CODE-005
+## Implementation Plan
 
-### Sprint 4 (Week 7-8): Accessibility & Mobile
-- A11Y-001 through A11Y-005
-- MOBILE-001 through MOBILE-005
+### Phase 1: Data Service Enhancement
 
-## 📝 Notes
+#### 1.1 Add Delete Car Method to DataService
+```typescript
+// Add to DataService.ts
+static async deleteCar(carId: string): Promise<void> {
+  if (this.useBackend) {
+    await this.apiCall(`/cars/${carId}`, {
+      method: 'DELETE'
+    });
+  } else {
+    // Remove from cars list
+    const cars = await this.getCars();
+    const updatedCars = cars.filter(car => car.id !== carId);
+    this.setToStorage('cars', updatedCars);
+  }
+}
+```
 
-- Each task should be created as a separate issue in your project management system
-- Include acceptance criteria for each task
-- Add time estimates based on your team's velocity
-- Consider dependencies between tasks when planning sprints
-- Regular code reviews should be mandatory for critical priority items
+#### 1.2 Add Archive Data Collection Method
+```typescript
+// Add to DataService.ts
+static async collectCarArchiveData(carId: string): Promise<CarArchiveData> {
+  const [car, alerts, serviceRecords, maintenanceEntries, maintenancePlans] = await Promise.all([
+    this.getCarById(carId),
+    this.getAlertsByCarId(carId),
+    this.getServiceRecordsByCarId(carId),
+    this.getMaintenanceEntries().then(entries => entries.filter(e => e.carId === carId)),
+    this.getMaintenancePlans().then(plans => plans.filter(p => p.carId === carId))
+  ]);
 
----
-*Last Updated: [Current Date]*
-*Generated from comprehensive project analysis* 
+  // Get mileage history from localStorage
+  const mileageHistory = JSON.parse(localStorage.getItem('mileage-history') || '[]')
+    .filter((entry: any) => entry.carId === carId);
+
+  return {
+    car,
+    alerts,
+    serviceRecords,
+    maintenanceEntries,
+    maintenancePlans,
+    mileageHistory,
+    archivedAt: new Date().toISOString(),
+    archiveReason: 'car_deleted'
+  };
+}
+```
+
+#### 1.3 Create Archive Data Interface
+```typescript
+// Add to DataService.ts
+export interface CarArchiveData {
+  car: Car | null;
+  alerts: Alert[];
+  serviceRecords: ServiceRecord[];
+  maintenanceEntries: MaintenanceEntry[];
+  maintenancePlans: MaintenancePlan[];
+  mileageHistory: any[];
+  archivedAt: string;
+  archiveReason: string;
+}
+```
+
+### Phase 2: UI Components
+
+#### 2.1 Add Delete Button to CarOverview Page
+- Add a delete button in the header next to the edit button
+- Style it with a red/danger variant
+- Add confirmation dialog
+
+#### 2.2 Create Archive Download Component
+- Create a component to generate and download the archive JSON file
+- Include all car-related data in a structured format
+- Add timestamp and metadata to the archive
+
+### Phase 3: Confirmation and Safety Features
+
+#### 3.1 Enhanced Confirmation Dialog
+- Show comprehensive warning about data loss
+- List all data that will be archived
+- Require explicit confirmation
+
+#### 3.2 Data Validation
+- Check if car is currently in maintenance
+- Warn about active alerts
+- Prevent deletion if critical data exists
+
+### Phase 4: Archive File Generation
+
+#### 4.1 JSON Archive Structure
+```json
+{
+  "metadata": {
+    "archivedAt": "2024-01-15T10:30:00Z",
+    "archiveReason": "car_deleted",
+    "version": "1.0"
+  },
+  "car": { /* car data */ },
+  "alerts": [ /* all alerts */ ],
+  "serviceRecords": [ /* all service records */ ],
+  "maintenanceEntries": [ /* maintenance entries */ ],
+  "maintenancePlans": [ /* maintenance plans */ ],
+  "mileageHistory": [ /* mileage history */ ]
+}
+```
+
+#### 4.2 File Download Implementation
+- Use browser's download API
+- Generate filename with car name and timestamp
+- Include proper MIME type for JSON
+
+### Phase 5: Data Cleanup
+
+#### 5.1 Remove Related Data
+- Remove car from cars list
+- Remove all alerts for the car
+- Remove all service records for the car
+- Remove maintenance entries for the car
+- Remove maintenance plans for the car
+- Clean up mileage history
+
+#### 5.2 Update Related Services
+- Update CarStatusService to handle deleted cars
+- Update fleet statistics calculations
+- Trigger UI updates across the application
+
+## Implementation Steps
+
+### Step 1: DataService Enhancement
+1. Add `deleteCar` method to DataService
+2. Add `collectCarArchiveData` method
+3. Add archive data interface
+4. Test with existing data
+
+### Step 2: UI Implementation
+1. Add delete button to CarOverview page
+2. Create confirmation dialog component
+3. Implement archive download functionality
+4. Add proper error handling
+
+### Step 3: Integration
+1. Connect delete functionality to DataService
+2. Test archive generation
+3. Test data cleanup
+4. Update related components
+
+### Step 4: Testing and Validation
+1. Test with cars that have various data
+2. Test archive file generation
+3. Test data cleanup completeness
+4. Test UI updates across the app
+
+## File Structure Changes
+
+### New Files
+- `components/ui/confirm-delete-dialog.tsx` - Reusable delete confirmation dialog
+- `utils/archive-generator.ts` - Archive file generation utilities
+
+### Modified Files
+- `services/DataService.ts` - Add delete and archive methods
+- `pages/CarOverview.tsx` - Add delete button and functionality
+- `services/CarStatusService.ts` - Handle deleted cars in status calculations
+
+## Safety Considerations
+
+1. **Data Backup**: Always generate archive before deletion
+2. **Confirmation**: Require explicit user confirmation
+3. **Validation**: Check for critical data before allowing deletion
+4. **Rollback**: Provide option to restore from archive if needed
+5. **Audit Trail**: Log all deletion operations
+
+## User Experience Flow
+
+1. User navigates to car overview page
+2. User clicks delete button
+3. System shows confirmation dialog with data summary
+4. User confirms deletion
+5. System generates archive file and triggers download
+6. System removes car and all related data
+7. User is redirected to home page
+8. System shows success message
+
+This plan ensures comprehensive data preservation while providing a clean deletion process that follows the existing codebase patterns and maintains data integrity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. my-car-overview: add color change logic for fleet-maintenance-preview, red-yellow-green, depends on existing overdues and due-soon entries in my-car-overview.
+6. my-car-overview: add previews for each car-problem-icons
+7. service-card: delete from maitn-entry-popup data autoloading, remain  custom input field with add consumable-item functionality
+8. service-record: Add text: Запиши все замечания и рекомендации автосервиса в разделе У нас проблемы! Add button to add new user alert. user-alert must be open for current car, with current date and current mileage (skipping car selection popup and date-mileage selection popup). When save, return back to current service-record page.
+9. renderCarsList in reglament page - Has its own implementation of renderCarsList with different styling and layout. 
+
+
+
+## IMPLEMENT IT! ##
+1. Create a logo and use it everywhere
+3. Restore a service-record history, link it to maintenace-history in my-car-overview 
+
+## BACKEND ##
+1. service-card: to operation-dropdown, list must become from car-related maintenanca-schedule
