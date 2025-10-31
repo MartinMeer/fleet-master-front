@@ -26834,6 +26834,33 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   // src/hooks/useAuth.ts
   var import_react = __toESM(require_react(), 1);
 
+  // src/config/app.config.js
+  var APP_CONFIG = {
+    ENVIRONMENTS: {
+      development: {
+        MARKETING_URL: "http://localhost:3000",
+        MAIN_APP_URL: "http://localhost:3001",
+        API_URL: "http://localhost:8080/api"
+      },
+      staging: {
+        MARKETING_URL: "",
+        MAIN_APP_URL: "",
+        API_URL: ""
+      },
+      production: {
+        MARKETING_URL: "https://martinmeer.github.io/my-car-tech-tracker-front",
+        MAIN_APP_URL: "https://martinmeer.github.io/my-car-tech-tracker-front/app",
+        // IMPORTANT: Configure your actual backend API URL here
+        // Replace with your backend URL (e.g., 'https://api.yourserver.com/api')
+        API_URL: "https://your-api-domain.com/api"
+      }
+    },
+    getCurrentConfig() {
+      const env = "development";
+      return this.ENVIRONMENTS[env];
+    }
+  };
+
   // src/services/AuthService.ts
   var AuthService = class {
     static {
@@ -26845,32 +26872,37 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     static {
       this.REFRESH_TOKEN_KEY = "refresh_token";
     }
+    static {
+      this.config = APP_CONFIG.getCurrentConfig();
+    }
     /**
      * Login with email and password
      */
     static async login(email, password) {
       try {
-        if (email === "demo@cartracker.com" && password === "demo123") {
-          const mockUser = {
-            id: "1",
-            name: "Demo User",
-            email: "demo@cartracker.com",
-            plan: "starter",
-            createdAt: (/* @__PURE__ */ new Date()).toISOString()
-          };
-          const mockToken = "demo_token_" + Date.now();
-          this.setAuthData(mockToken, mockUser);
-          return {
-            user: mockUser,
-            token: mockToken,
-            isAuthenticated: true,
-            isLoading: false
-          };
-        } else {
-          throw new Error("Invalid credentials");
+        const response = await fetch(`${this.config.API_URL}/auth/login`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email, password })
+        });
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.message || "Login failed");
         }
+        const data2 = await response.json();
+        const user = data2.user;
+        const token = data2.token;
+        this.setAuthData(token, user, data2.refreshToken);
+        return {
+          user,
+          token,
+          isAuthenticated: true,
+          isLoading: false
+        };
       } catch (error) {
-        throw new Error(error.message || "Login failed");
+        throw new Error(error instanceof Error ? error.message : "Login failed");
       }
     }
     /**
@@ -26878,23 +26910,29 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
      */
     static async register(userData) {
       try {
-        const mockUser = {
-          id: Date.now().toString(),
-          name: userData.name,
-          email: userData.email,
-          plan: userData.plan || "starter",
-          createdAt: (/* @__PURE__ */ new Date()).toISOString()
-        };
-        const mockToken = "demo_token_" + Date.now();
-        this.setAuthData(mockToken, mockUser);
+        const response = await fetch(`${this.config.API_URL}/auth/register`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(userData)
+        });
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.message || "Registration failed");
+        }
+        const data2 = await response.json();
+        const user = data2.user;
+        const token = data2.token;
+        this.setAuthData(token, user, data2.refreshToken);
         return {
-          user: mockUser,
-          token: mockToken,
+          user,
+          token,
           isAuthenticated: true,
           isLoading: false
         };
       } catch (error) {
-        throw new Error(error.message || "Registration failed");
+        throw new Error(error instanceof Error ? error.message : "Registration failed");
       }
     }
     /**
@@ -26902,9 +26940,19 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
      */
     static async logout() {
       try {
-        this.clearAuthData();
+        const token = this.getToken();
+        if (token) {
+          await fetch(`${this.config.API_URL}/auth/logout`, {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${token}`,
+              "Content-Type": "application/json"
+            }
+          });
+        }
       } catch (error) {
         console.error("Logout failed:", error);
+      } finally {
         this.clearAuthData();
       }
     }
@@ -26922,12 +26970,22 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       };
     }
     /**
-     * Validate token (placeholder for real API validation)
+     * Validate token with backend API
      */
     static async validateToken(token) {
       try {
-        const user = this.getUser();
-        return user;
+        const response = await fetch(`${this.config.API_URL}/auth/validate`, {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+          }
+        });
+        if (!response.ok) {
+          return null;
+        }
+        const data2 = await response.json();
+        return data2.user;
       } catch (error) {
         console.error("Token validation failed:", error);
         return null;
@@ -30238,31 +30296,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   );
   Button.displayName = "Button";
 
-  // src/config/app.config.js
-  var APP_CONFIG = {
-    ENVIRONMENTS: {
-      development: {
-        MARKETING_URL: "http://localhost:3000",
-        MAIN_APP_URL: "http://localhost:3001",
-        API_URL: "http://localhost:8080/api"
-      },
-      staging: {
-        MARKETING_URL: "",
-        MAIN_APP_URL: "",
-        API_URL: ""
-      },
-      production: {
-        MARKETING_URL: "",
-        MAIN_APP_URL: "",
-        API_URL: ""
-      }
-    },
-    getCurrentConfig() {
-      const env = "development";
-      return this.ENVIRONMENTS[env];
-    }
-  };
-
   // src/services/NavigationService.ts
   var NavigationService = class {
     static {
@@ -30286,30 +30319,32 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
      * Navigate back to marketing site
      */
     static navigateToMarketing(page = "/") {
-      const hashPage = page === "/" ? "/" : page.startsWith("#") ? page : `/#${page}`;
-      const url = new URL(hashPage, this.config.MARKETING_URL);
-      window.location.href = url.toString();
+      const hashPage = page === "/" ? "" : page.startsWith("#") ? page : `#${page}`;
+      window.location.href = `${this.config.MARKETING_URL}/${hashPage}`;
     }
     /**
      * Navigate to specific marketing pages
      */
     static navigateToLogin(returnUrl) {
-      const url = new URL("/#/login", this.config.MARKETING_URL);
+      let url = `${this.config.MARKETING_URL}/#/login`;
       if (returnUrl) {
-        url.searchParams.set("return_url", returnUrl);
+        const urlObj = new URL(url);
+        urlObj.searchParams.set("return_url", returnUrl);
+        url = urlObj.toString();
       }
-      window.location.href = url.toString();
+      window.location.href = url;
     }
     static navigateToRegister(plan) {
-      const url = new URL("/#/register", this.config.MARKETING_URL);
+      let url = `${this.config.MARKETING_URL}/#/register`;
       if (plan) {
-        url.searchParams.set("plan", plan);
+        const urlObj = new URL(url);
+        urlObj.searchParams.set("plan", plan);
+        url = urlObj.toString();
       }
-      window.location.href = url.toString();
+      window.location.href = url;
     }
     static navigateToAccount() {
-      const url = new URL("/#/account", this.config.MARKETING_URL);
-      window.location.href = url.toString();
+      window.location.href = `${this.config.MARKETING_URL}/#/account`;
     }
   };
 
@@ -31387,10 +31422,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         forgotPassword: "\u0417\u0430\u0431\u044B\u043B\u0438 \u043F\u0430\u0440\u043E\u043B\u044C?",
         // Buttons
         loginButton: "\u0412\u043E\u0439\u0442\u0438 \u0432 \u0441\u0438\u0441\u0442\u0435\u043C\u0443",
-        // Demo section
-        quickAccessTitle: "\u{1F680} \u0411\u044B\u0441\u0442\u0440\u044B\u0439 \u0434\u043E\u0441\u0442\u0443\u043F",
-        demoButton: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0434\u0435\u043C\u043E \u0430\u043A\u043A\u0430\u0443\u043D\u0442",
-        demoCredentials: "demo@example.com / demo123",
         // Social login
         socialLoginTitle: "\u0418\u043B\u0438 \u0432\u043E\u0439\u0434\u0438\u0442\u0435 \u0447\u0435\u0440\u0435\u0437",
         googleLogin: "Google",
@@ -31413,10 +31444,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         forgotPassword: "Forgot password?",
         // Buttons
         loginButton: "Sign In",
-        // Demo section
-        quickAccessTitle: "\u{1F680} Quick Access",
-        demoButton: "Use Demo Account",
-        demoCredentials: "demo@example.com / demo123",
         // Social login
         socialLoginTitle: "Or sign in with",
         googleLogin: "Google",
@@ -31427,10 +31454,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       }
     };
     const t = translations[language];
-    const handleDemoLogin = () => {
-      setEmail("demo@cartracker.com");
-      setPassword("demo123");
-    };
     const handleSubmit = async (e) => {
       e.preventDefault();
       setError("");
@@ -31535,22 +31558,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
               ]
             }
           )
-        ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(Card, { className: "mt-6 border-orange-200 bg-orange-50", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "text-center", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h3", { className: "font-medium text-orange-800 mb-2", children: t.quickAccessTitle }),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)(
-            Button,
-            {
-              onClick: handleDemoLogin,
-              variant: "outline",
-              className: "w-full border-orange-300 text-orange-700 hover:bg-orange-100 mb-2",
-              children: [
-                /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(Zap, { className: "w-4 h-4 mr-2" }),
-                t.demoButton
-              ]
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("p", { className: "text-xs text-orange-600", children: "demo@cartracker.com / demo123" })
         ] }) }) }),
         /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: "mt-6", children: [
           /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: "text-center text-sm text-gray-500 mb-4", children: t.socialLoginTitle }),
