@@ -3,6 +3,11 @@
    Consolidated from forms.css and components/forms.css
    ========================================================================== */
 
+<<<<<<< HEAD:src/styles/forms.css
+/* Button styles are now handled by global-button-variants.css */
+
+=======
+>>>>>>> 1ee87e41d5a111c9e5e4757deb0b390cec6fc7cd:OLD-project-for-reference-only/src/styles/components/forms.css
 /* Add Car Form */
 .add-car-form {
   max-width: 600px;

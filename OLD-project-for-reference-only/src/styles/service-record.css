@@ -378,6 +378,9 @@
   transition: background var(--transition-fast);
 }
 
+<<<<<<< HEAD:src/styles/service-record.css
+/* Button styles are now handled by global-button-variants.css */
+=======
 .sub-record-actions .btn-edit {
   background: var(--secondary-color);
   color: white;
@@ -395,6 +398,7 @@
 .sub-record-actions .btn-remove:hover {
   background: var(--accent-hover);
 }
+>>>>>>> 1ee87e41d5a111c9e5e4757deb0b390cec6fc7cd:OLD-project-for-reference-only/src/styles/service-record.css
 
 .service-record-summary {
   background: var(--surface);
