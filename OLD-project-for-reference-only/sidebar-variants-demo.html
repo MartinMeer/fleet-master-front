@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Button Variants Demo</title>
+  <link rel="stylesheet" href="../src/styles.css">
+  <style>
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .demo-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .demo-header h1 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .demo-header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    
+    .variant-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .variant-card {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+    
+    .variant-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .variant-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    .variant-preview {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem;
+      background: var(--background);
+      margin-bottom: 1rem;
+    }
+    
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .control-btn {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--primary-color);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+    
+    .control-btn:hover {
+      background: #2d3e50;
+      transform: translateY(-2px);
+    }
+    
+    .control-btn.active {
+      background: var(--accent-color);
+    }
+    
+    .features-list {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .features-list h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .features-list ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .features-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .features-list li::before {
+      content: "✨";
+      font-size: 1.2rem;
+    }
+    
+    .back-btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+    }
+    
+    .back-btn:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <a href="index.html" class="back-btn">← Вернуться к приложению</a>
+    
+    <div class="demo-header">
+      <h1>🎨 Варианты дизайна боковых кнопок</h1>
+      <p>Выберите один из трех красивых вариантов дизайна для четырех кнопок в боковой панели</p>
+    </div>
+    
+    <div class="controls">
+      <button class="control-btn active" onclick="switchVariant('default')">По умолчанию</button>
+      <button class="control-btn" onclick="switchVariant('variant-1')">Стеклянный эффект</button>
+      <button class="control-btn" onclick="switchVariant('variant-2')">Неоморфизм</button>
+      <button class="control-btn" onclick="switchVariant('variant-3')">Градиентные карточки</button>
+    </div>
+    
+    <div class="variant-showcase">
+      <div class="variant-card">
+        <h3>🔮 Стеклянный эффект (Variant 1)</h3>
+        <p>Современный дизайн с эффектом стекла, размытием и тонкими тенями</p>
+        <div class="variant-preview">
+          <div class="sidebar-buttons variant-1">
+            <a href="#" class="sidebar-button sidebar-button-green">
+              <div class="button-content">
+                <div class="button-title">Был на сервисе?</div>
+                <div class="button-subtitle">Заполни отчет!</div>
+              </div>
+            </a>
+            <a href="#" class="sidebar-button sidebar-button-alert">
+              <div class="button-content">
+                <div class="button-title">У нас проблемы!</div>
+              </div>
+            </a>
+            <a href="#" class="sidebar-button sidebar-button-blue">
+              <div class="button-content">
+                <div class="button-title">Когда на сервис?</div>
+              </div>
+            </a>
+            <a href="#" class="sidebar-button sidebar-button-purple">
+              <div class="button-content">
+                <div class="button-title">История тех.обслуживания</div>
+                <div class="button-subtitle">и ремонтов</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="variant-card">
+        <h3>🎯 Неоморфизм (Variant 2)</h3>
+        <p>Мягкий, тактильный дизайн с тонкой глубиной и тенями</p>
+        <div class="variant-preview">
+          <div class="sidebar-buttons variant-2">
+            <a href="#" class="sidebar-button sidebar-button-green">
+              <div class="button-content">
+                <div class="button-title">Был на сервисе?</div>
+                <div class="button-subtitle">Заполни отчет!</div>
+              </div>
+            </a>
+            <a href="#" class="sidebar-button sidebar-button-alert">
+              <div class="button-content">
+                <div class="button-title">У нас проблемы!</div>
+              </div>
+            </a>
+            <a href="#" class="sidebar-button sidebar-button-blue">
+              <div class="button-content">
+                <div class="button-title">Когда на сервис?</div>
+              </div>
+            </a>
+            <a href="#" class="sidebar-button sidebar-button-purple">
+              <div class="button-content">
+                <div class="button-title">История тех.обслуживания</div>
+                <div class="button-subtitle">и ремонтов</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="variant-card">
+        <h3>🌈 Градиентные карточки (Variant 3)</h3>
+        <p>Цветные градиентные фоны с тонкими иконками и современной типографикой</p>
+        <div class="variant-preview">
+          <div class="sidebar-buttons variant-3">
+            <a href="#" class="sidebar-button sidebar-button-green">
+              <div class="button-content">
+                <div class="button-title">Был на сервисе?</div>
+                <div class="button-subtitle">Заполни отчет!</div>
+              </div>
+            </a>
+            <a href="#" class="sidebar-button sidebar-button-alert">
+              <div class="button-content">
+                <div class="button-title">У нас проблемы!</div>
+              </div>
+            </a>
+            <a href="#" class="sidebar-button sidebar-button-blue">
+              <div class="button-content">
+                <div class="button-title">Когда на сервис?</div>
+              </div>
+            </a>
+            <a href="#" class="sidebar-button sidebar-button-purple">
+              <div class="button-content">
+                <div class="button-title">История тех.обслуживания</div>
+                <div class="button-subtitle">и ремонтов</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="features-list">
+      <h3>🚀 Особенности всех вариантов:</h3>
+      <ul>
+        <li><strong>Адаптивный дизайн:</strong> Отлично выглядит на всех устройствах</li>
+        <li><strong>Плавные анимации:</strong> Красивые переходы и эффекты при наведении</li>
+        <li><strong>Сохранение настроек:</strong> Ваш выбор запоминается в браузере</li>
+        <li><strong>Простое переключение:</strong> Легко сменить вариант в любой момент</li>
+        <li><strong>Современные эффекты:</strong> Использует последние CSS-технологии</li>
+        <li><strong>Оптимизированная производительность:</strong> Быстрая загрузка и отзывчивость</li>
+      </ul>
+    </div>
+  </div>
+
+  <script type="module">
+    import { SidebarButtonVariants } from '../src/sidebarButtonVariants.js';
+    
+    // Make function available globally
+    window.switchVariant = function(variant) {
+      // Update control buttons
+      document.querySelectorAll('.control-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      
+      // Apply variant to main app (if available)
+      if (window.SidebarButtonVariants) {
+        SidebarButtonVariants.applyVariant(variant);
+      }
+      
+      console.log(`Switched to variant: ${variant}`);
+    };
+    
+    // Initialize with default variant
+    if (window.SidebarButtonVariants) {
+      SidebarButtonVariants.initialize();
+    }
+  </script>
+</body>
+</html> 

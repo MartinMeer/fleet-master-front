@@ -16,12 +16,26 @@
 /* Navigation Styles - Car selection menu, sidebar links, mobile nav */
 @import url('./navigation.css');
 
+<<<<<<< HEAD:src/styles.css
+/* Sidebar Button Variants - Three beautiful design options */
+@import url('./styles/sidebar-button-variants.css');
+
+/* Global Button Variants - Variant 3 style applied to all buttons */
+@import url('./styles/global-button-variants.css');
+
+/* Form Styles - Input styling, buttons, form layouts */
+@import url('./styles/forms.css');
+
+/* Popup Styles - All popup overlays, dialogs, modals */
+@import url('./styles/popups.css');
+=======
 /* Component Styles */
 @import url('./components/buttons.css');
 @import url('./components/forms.css');
 @import url('./components/popups.css');
 @import url('./components/cards.css');
 @import url('./components/tables.css');
+>>>>>>> 1ee87e41d5a111c9e5e4757deb0b390cec6fc7cd:OLD-project-for-reference-only/src/styles/styles.css
 
 /* Car Styles - Car list, overview, images, actions */
 @import url('./cars.css');

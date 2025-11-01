@@ -152,9 +152,7 @@
   justify-content: center;
 }
 
-.toast-close:hover {
-  color: var(--primary-color);
-}
+/* Old hover styles removed - now using global button variants */
 
 .toast-body {
   color: var(--text-color);
@@ -231,9 +229,7 @@
   justify-content: center;
 }
 
-.alert-banner .close:hover {
-  opacity: 1;
-}
+/* Old hover styles removed - now using global button variants */
 
 /* Inline Messages */
 .inline-message {

@@ -1,0 +1,1052 @@
+/* ==========================================================================
+   GLOBAL BUTTON VARIANTS - Variant 3 Style
+   Applies the beautiful gradient card design to all buttons in the project
+   ========================================================================== */
+
+/* ==========================================================================
+   PRIMARY BUTTONS (Main action buttons)
+   ========================================================================== */
+
+.btn-primary,
+.btn,
+button[type="submit"],
+input[type="submit"] {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #2d3e50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  z-index: 2;
+}
+
+.btn-primary::before,
+.btn::before,
+button[type="submit"]::before,
+input[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.btn-primary::after,
+.btn::after,
+button[type="submit"]::after,
+input[type="submit"]::after {
+  content: "🚀";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-primary:hover,
+.btn:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.btn-primary:hover::before,
+.btn:hover::before,
+button[type="submit"]:hover::before,
+input[type="submit"]:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:hover::after,
+.btn:hover::after,
+button[type="submit"]:hover::after,
+input[type="submit"]:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.btn-primary:active,
+.btn:active,
+button[type="submit"]:active,
+input[type="submit"]:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* ==========================================================================
+   SECONDARY BUTTONS
+   ========================================================================== */
+
+.btn-secondary {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #2980b9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  z-index: 2;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.btn-secondary::after {
+  content: "📋";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.btn-secondary:hover::before {
+  opacity: 1;
+}
+
+.btn-secondary:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.btn-secondary:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* ==========================================================================
+   SUCCESS BUTTONS
+   ========================================================================== */
+
+.btn-success {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #1e8449;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  z-index: 2;
+}
+
+.btn-success::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.btn-success::after {
+  content: "✅";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.btn-success:hover::before {
+  opacity: 1;
+}
+
+.btn-success:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.btn-success:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* ==========================================================================
+   WARNING BUTTONS
+   ========================================================================== */
+
+.btn-warning {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #d68910;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  z-index: 2;
+}
+
+.btn-warning::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.btn-warning::after {
+  content: "⚠️";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-warning:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.btn-warning:hover::before {
+  opacity: 1;
+}
+
+.btn-warning:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.btn-warning:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* ==========================================================================
+   DANGER BUTTONS
+   ========================================================================== */
+
+.btn-danger {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #c0392b;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  z-index: 2;
+}
+
+.btn-danger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.btn-danger::after {
+  content: "🗑️";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.btn-danger:hover::before {
+  opacity: 1;
+}
+
+.btn-danger:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.btn-danger:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* ==========================================================================
+   INFO BUTTONS
+   ========================================================================== */
+
+.btn-info {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #17a2b8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  z-index: 2;
+}
+
+.btn-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.btn-info::after {
+  content: "ℹ️";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn-info:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.btn-info:hover::before {
+  opacity: 1;
+}
+
+.btn-info:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.btn-info:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* ==========================================================================
+   CUSTOM BUTTON CLASSES
+   ========================================================================== */
+
+/* Auth buttons */
+.auth-btn {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #2d3e50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  width: 100%;
+}
+
+.auth-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.auth-btn::after {
+  content: "🔐";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.auth-btn:hover::before {
+  opacity: 1;
+}
+
+.auth-btn:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+/* Cover page buttons */
+.cover-btn {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #2d3e50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  margin: 0.5rem;
+}
+
+.cover-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.cover-btn::after {
+  content: "🚗";
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  font-size: 1.1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.cover-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.cover-btn:hover::before {
+  opacity: 1;
+}
+
+.cover-btn:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.cover-btn-primary {
+  color: #c0392b;
+}
+
+.cover-btn-primary::before {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+}
+
+/* Back buttons */
+.back-btn,
+.back-to-cover-btn {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #2980b9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+}
+
+.back-btn::before,
+.back-to-cover-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.back-btn::after,
+.back-to-cover-btn::after {
+  content: "←";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.back-btn:hover,
+.back-to-cover-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.back-btn:hover::before,
+.back-to-cover-btn:hover::before {
+  opacity: 1;
+}
+
+.back-btn:hover::after,
+.back-to-cover-btn:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+/* Control buttons (demo page) */
+.control-btn {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #2d3e50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+}
+
+.control-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.control-btn::after {
+  content: "🎨";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.control-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.control-btn:hover::before {
+  opacity: 1;
+}
+
+.control-btn:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.control-btn.active {
+  color: #c0392b;
+}
+
+.control-btn.active::before {
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+}
+
+/* Car action buttons */
+.car-action-btn {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #2d3e50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 40px;
+  margin: 0.2rem;
+}
+
+.car-action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.car-action-btn::after {
+  content: "🔧";
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  font-size: 0.8rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.car-action-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.car-action-btn:hover::before {
+  opacity: 1;
+}
+
+.car-action-btn:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+/* Cookie buttons */
+.cookie-btn {
+  background: var(--surface);
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #2d3e50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 40px;
+  margin: 0.2rem;
+}
+
+.cookie-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.cookie-btn::after {
+  content: "🍪";
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  font-size: 0.8rem;
+  opacity: 0.1;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.cookie-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.cookie-btn:hover::before {
+  opacity: 1;
+}
+
+.cookie-btn:hover::after {
+  opacity: 0.2;
+  transform: scale(1.1);
+}
+
+.cookie-btn-reject::before {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.cookie-btn-reject::after {
+  content: "❌";
+}
+
+/* Close buttons */
+.close-btn {
+  background: var(--surface);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #222;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.close-btn:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.close-btn:hover::before {
+  opacity: 1;
+}
+
+/* Logout button */
+.logout-btn {
+  background: var(--surface);
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 36px;
+  z-index: 2;
+}
+
+.logout-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.logout-btn::after {
+  content: "🚪";
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  font-size: 0.8rem;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  color: #ffffff !important;
+}
+
+.logout-btn:hover::before {
+  opacity: 0.9;
+}
+
+.logout-btn:hover::after {
+  opacity: 0.3;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-warning,
+  .btn-danger,
+  .btn-info,
+  button[type="submit"],
+  input[type="submit"],
+  .auth-btn,
+  .back-btn,
+  .back-to-cover-btn,
+  .control-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    min-height: 40px;
+  }
+  
+  .btn::after,
+  .btn-primary::after,
+  .btn-secondary::after,
+  .btn-success::after,
+  .btn-warning::after,
+  .btn-danger::after,
+  .btn-info::after,
+  button[type="submit"]::after,
+  input[type="submit"]::after,
+  .auth-btn::after,
+  .back-btn::after,
+  .back-to-cover-btn::after,
+  .control-btn::after {
+    font-size: 0.8rem;
+    top: 0.4rem;
+    right: 0.4rem;
+  }
+  
+  .cover-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    min-height: 44px;
+  }
+  
+  .cover-btn::after {
+    font-size: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-warning,
+  .btn-danger,
+  .btn-info,
+  button[type="submit"],
+  input[type="submit"],
+  .auth-btn,
+  .back-btn,
+  .back-to-cover-btn,
+  .control-btn {
+    padding: 1rem 1.8rem;
+    font-size: 1.1rem;
+    min-height: 48px;
+  }
+  
+  .btn::after,
+  .btn-primary::after,
+  .btn-secondary::after,
+  .btn-success::after,
+  .btn-warning::after,
+  .btn-danger::after,
+  .btn-info::after,
+  button[type="submit"]::after,
+  input[type="submit"]::after,
+  .auth-btn::after,
+  .back-btn::after,
+  .back-to-cover-btn::after,
+  .control-btn::after {
+    font-size: 1.1rem;
+    top: 0.6rem;
+    right: 0.6rem;
+  }
+  
+  .cover-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    min-height: 52px;
+  }
+  
+  .cover-btn::after {
+    font-size: 1.2rem;
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+} 
