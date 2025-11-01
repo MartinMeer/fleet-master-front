@@ -29,7 +29,7 @@ FleetMaster Pro is a modern, scalable fleet management and vehicle maintenance t
 - 🔐 **Authentication Ready** - Integrated authentication and authorization flow
 - 📊 **Comprehensive Tracking** - Service history, maintenance plans, mileage tracking, and more
 - 🎯 **Thin Client Design** - UI-focused with backend-driven business logic
-- 🐳 **Docker Ready** - Containerized deployment support
+- 🐳 **Docker Ready** - Full dev/prod Docker setup with hot reload
 - 🚀 **GitHub Pages Compatible** - Easy static hosting deployment
 
 ---
@@ -111,9 +111,15 @@ fleetmaster-monorepo/
 │   └── shared/                # Shared assets (images, etc.)
 │
 ├── infrastructure/
-│   ├── docker-compose.yml     # Docker composition
+│   ├── docker-compose.yml     # Production Docker composition
+│   ├── docker-compose.dev.yml # Development Docker composition
 │   ├── Dockerfile.backend     # Backend Docker image
-│   └── nginx/                 # Nginx configuration
+│   ├── nginx/                 # Gateway nginx configuration
+│   ├── start-dev.sh / .bat    # Start development mode
+│   ├── start-prod.sh / .bat   # Start production mode
+│   ├── stop-dev.sh / .bat     # Stop development
+│   ├── stop-prod.sh / .bat    # Stop production
+│   └── README.md              # Docker documentation
 │
 ├── doc/                       # Documentation
 │   ├── architecture-notes/    # Architecture decisions
@@ -134,9 +140,9 @@ fleetmaster-monorepo/
 
 ### Prerequisites
 
-- **Node.js** >= 18.0.0
+- **Node.js** >= 20.0.0 (for local development)
 - **npm** >= 9.0.0
-- **Docker** (optional, for containerized deployment)
+- **Docker** + **Docker Compose** (for containerized deployment)
 
 ### Installation
 
@@ -154,18 +160,32 @@ fleetmaster-monorepo/
    ```
 
 3. **Start development servers**
+   
+   **Option A: Using Docker (Recommended)**
+   ```bash
+   cd infrastructure
+   
+   # Linux/Mac
+   chmod +x make-executable.sh && ./make-executable.sh
+   ./start-dev.sh
+   
+   # Windows
+   start-dev.bat
+   ```
+   
+   **Option B: Using Node.js directly**
    ```bash
    # Run both apps
    npm run dev
 
    # Or run individually
-   npm run dev:main-app      # Main application only
-   npm run dev:marketing     # Marketing site only
+   cd apps/main-app && npm run dev       # Main application only
+   cd apps/marketing-site && npm run dev # Marketing site only
    ```
 
 4. **Open in browser**
-   - Main App: `http://localhost:3000` (or check console for actual port)
-   - Marketing Site: `http://localhost:3001` (or check console for actual port)
+   - Marketing Site: `http://localhost:3000`
+   - Main App: `http://localhost:3001`
 
 ### Building for Production
 
@@ -184,29 +204,120 @@ Build output will be in `apps/*/dist/` directories.
 
 ## 🐳 Docker Deployment
 
-### Using Docker Compose
+FleetMaster Pro includes **full Docker support** with separate **development** and **production** modes.
 
+### Development Mode (Hot Reload)
+
+Run the application with live code reloading for active development:
+
+**Linux/Mac:**
 ```bash
-# Build Docker images
-npm run docker:build
-
-# Start containers
-npm run docker:up
-
-# View logs
-npm run docker:logs
-
-# Stop containers
-npm run docker:down
+cd infrastructure
+chmod +x make-executable.sh && ./make-executable.sh  # First time only
+./start-dev.sh
 ```
 
-### Manual Docker Build
-
+**Windows:**
 ```bash
-cd apps/marketing-site
-docker build -t fleetmaster-marketing .
-docker run -p 8080:80 fleetmaster-marketing
+cd infrastructure
+start-dev.bat
 ```
+
+**Or manually:**
+```bash
+cd infrastructure
+docker-compose -f docker-compose.dev.yml up --build
+```
+
+**Access:**
+- Marketing Site: http://localhost:3000
+- Main App: http://localhost:3001
+
+**Features:**
+- ✅ Hot reload on code changes
+- ✅ Direct port access to each app
+- ✅ Volume mounting for live updates
+- ✅ Development API endpoints
+- ✅ Faster iteration cycle
+
+### Production Mode (Optimized)
+
+Run the application with production-optimized builds:
+
+**Linux/Mac:**
+```bash
+cd infrastructure
+./start-prod.sh
+```
+
+**Windows:**
+```bash
+cd infrastructure
+start-prod.bat
+```
+
+**Or manually:**
+```bash
+cd infrastructure
+docker-compose -f docker-compose.yml up --build
+```
+
+**Access:**
+- Gateway: http://localhost
+
+**Features:**
+- ✅ Minified, optimized builds
+- ✅ Nginx web server
+- ✅ Security headers enabled
+- ✅ Health checks
+- ✅ Gateway routing
+- ✅ Small image sizes (~25MB per app)
+
+### Stopping Services
+
+**Linux/Mac:**
+```bash
+./stop-dev.sh   # Stop development
+./stop-prod.sh  # Stop production
+```
+
+**Windows:**
+```bash
+stop-dev.bat   # Stop development
+stop-prod.bat  # Stop production
+```
+
+### Docker Architecture
+
+Both frontend apps use **multi-stage Dockerfiles**:
+1. **base** - Install dependencies (shared layer)
+2. **development** - Development server with hot reload
+3. **builder** - Build production assets
+4. **production** - Nginx serving static files
+
+### Push to DockerHub
+
+Share your images on DockerHub:
+
+**Linux/Mac:**
+```bash
+cd infrastructure
+export DOCKERHUB_USERNAME=yourusername
+./docker-push.sh
+```
+
+**Windows:**
+```bash
+cd infrastructure
+set DOCKERHUB_USERNAME=yourusername
+docker-push.bat
+```
+
+### Complete Docker Documentation
+
+For comprehensive Docker setup, configuration, and troubleshooting, see:
+- **[Docker Infrastructure Guide](infrastructure/README.md)** - Complete Docker documentation
+- **[DockerHub Guide](infrastructure/DOCKERHUB_GUIDE.md)** - Push images to DockerHub
 
 ---
 
@@ -256,9 +367,6 @@ npm run build                  # Build all apps
 npm run test                   # Run tests in all workspaces
 npm run lint                   # Run linter in all workspaces
 npm run clean                  # Clean all build outputs and node_modules
-npm run docker:build           # Build Docker images
-npm run docker:up              # Start Docker containers
-npm run docker:down            # Stop Docker containers
 npm run deploy:staging         # Deploy to staging
 npm run deploy:production      # Deploy to production
 ```
@@ -269,6 +377,24 @@ npm run dev:main-app           # Run main app in dev mode
 npm run dev:marketing          # Run marketing site in dev mode
 npm run build:main-app         # Build main app
 npm run build:marketing        # Build marketing site
+```
+
+### Docker Scripts (in infrastructure/)
+
+**Linux/Mac:**
+```bash
+./start-dev.sh                 # Start development mode
+./start-prod.sh                # Start production mode
+./stop-dev.sh                  # Stop development
+./stop-prod.sh                 # Stop production
+```
+
+**Windows:**
+```bash
+start-dev.bat                  # Start development mode
+start-prod.bat                 # Start production mode
+stop-dev.bat                   # Stop development
+stop-prod.bat                  # Stop production
 ```
 
 ---

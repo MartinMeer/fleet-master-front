@@ -1,0 +1,58 @@
+services:
+  # Marketing site (FleetMaster Pro) - Development
+  marketing-site:
+    build:
+      context: ../apps/marketing-site
+      dockerfile: Dockerfile
+      target: development
+    container_name: fleetmaster-marketing-dev
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../apps/marketing-site/src:/app/src:ro
+      - ../apps/marketing-site/index.html:/app/index.html:ro
+      - ../apps/marketing-site/tailwind.config.js:/app/tailwind.config.js:ro
+    environment:
+      - NODE_ENV=development
+    networks:
+      - fleetmaster-network
+
+  # Main application (Car Tracker) - Development
+  main-app:
+    build:
+      context: ../apps/main-app
+      dockerfile: Dockerfile
+      target: development
+    container_name: fleetmaster-main-dev
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - ../apps/main-app/src:/app/src:ro
+      - ../apps/main-app/index.html:/app/index.html:ro
+      - ../apps/main-app/tailwind.config.js:/app/tailwind.config.js:ro
+    environment:
+      - NODE_ENV=development
+    networks:
+      - fleetmaster-network
+
+  # Backend (Java Spring Boot) - Optional for development
+  # backend:
+  #   build:
+  #     context: ../backend-demo
+  #     dockerfile: ../infrastructure/Dockerfile.backend
+  #   container_name: fleetmaster-backend-dev
+  #   restart: unless-stopped
+  #   environment:
+  #     - SPRING_PROFILES_ACTIVE=development
+  #     - SERVER_PORT=8080
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - fleetmaster-network
+
+networks:
+  fleetmaster-network:
+    driver: bridge
+

@@ -10,6 +10,8 @@ PAY YOUR ATTENTION: there must be a clear separation between dev mode with furth
 
 ## FEAT IT! ##
 
+Create favicons
+
 OK READY Add a service-shops feature:
     4.1 Create a service-shops list. Columns: Name, Contacts, Rating, Actions (Edit, Delete for whole entry). Attach to table the Add-new functionality
     4.2 Create a button to service-shops list in maintenance-planning header

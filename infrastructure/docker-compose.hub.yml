@@ -1,10 +1,10 @@
+# Docker Compose configuration using images from DockerHub
+# Update 'yourusername' with your actual DockerHub username
+
 services:
-  # Marketing site (FleetMaster Pro) - Production
+  # Marketing site from DockerHub
   marketing-site:
-    build:
-      context: ../apps/marketing-site
-      dockerfile: Dockerfile
-      target: production
+    image: yourusername/fleetmaster-marketing:latest
     container_name: fleetmaster-marketing
     restart: unless-stopped
     environment:
@@ -18,12 +18,9 @@ services:
     networks:
       - fleetmaster-network
 
-  # Main application (Car Tracker) - Production
+  # Main application from DockerHub
   main-app:
-    build:
-      context: ../apps/main-app
-      dockerfile: Dockerfile
-      target: production
+    image: yourusername/fleetmaster-main:latest
     container_name: fleetmaster-main
     restart: unless-stopped
     environment:
@@ -43,7 +40,7 @@ services:
     container_name: fleetmaster-gateway
     ports:
       - "80:80"
-      - "443:443"  # For SSL if needed
+      - "443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./ssl:/etc/ssl:ro  # For SSL certificates
@@ -61,27 +58,6 @@ services:
     networks:
       - fleetmaster-network
 
-  # Backend (Java Spring Boot) - Disabled until implementation
-  # backend:
-  #   build:
-  #     context: ../backend-demo
-  #     dockerfile: ../infrastructure/Dockerfile.backend
-  #   container_name: fleetmaster-backend
-  #   restart: unless-stopped
-  #   environment:
-  #     - SPRING_PROFILES_ACTIVE=docker
-  #     - SERVER_PORT=8080
-  #   ports:
-  #     - "8080:8080"
-  #   healthcheck:
-  #     test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
-  #     interval: 30s
-  #     timeout: 10s
-  #     retries: 3
-  #     start_period: 60s
-  #   networks:
-  #     - fleetmaster-network
-
 networks:
   fleetmaster-network:
     driver: bridge
@@ -89,6 +65,3 @@ networks:
       config:
         - subnet: 172.20.0.0/16
 
-volumes:
-  backend-data:
-    driver: local 
