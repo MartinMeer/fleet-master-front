@@ -5,6 +5,19 @@ import { NavigationService } from '../services/NavigationService';
 export function AuthHandler({ children }: { children: React.ReactNode }) {
   const [isInitialized, setIsInitialized] = useState(false);
 
+  // In development mode, bypass all authentication checks
+  if (process.env.NODE_ENV === 'development') {
+    return (
+      <>
+        {children}
+        {/* Dev mode indicator */}
+        <div className="fixed bottom-4 left-4 z-50 bg-yellow-100 border border-yellow-300 text-yellow-800 px-3 py-1 rounded-md text-xs font-medium">
+          🚀 Dev Mode - Auth Bypassed
+        </div>
+      </>
+    );
+  }
+
   useEffect(() => {
     const handleAuthFromURL = () => {
       const urlParams = new URLSearchParams(window.location.search);

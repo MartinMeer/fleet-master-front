@@ -134,11 +134,23 @@ export default function Home() {
   }
 
   const handleAccountClick = () => {
+    // In dev mode, show info message instead of navigating
+    if (process.env.NODE_ENV === 'development') {
+      alert('🚀 Dev Mode: Account navigation disabled for backend testing')
+      return
+    }
+    
     // Navigate directly to account page  
     NavigationService.navigateToMarketing('/')
   }
 
   const handleLogoutClick = () => {
+    // In dev mode, show info message instead of logging out
+    if (process.env.NODE_ENV === 'development') {
+      alert('🚀 Dev Mode: Logout disabled for backend testing')
+      return
+    }
+    
     console.log('Logout clicked - clearing auth data...')
     
     // Clear all authentication data (same keys as marketing site AuthService)

@@ -102,6 +102,13 @@ export class DataService {
 
   // Helper method to get auth headers for API calls
   private static getAuthHeaders(): HeadersInit {
+    // In development mode, skip auth headers for easier backend testing
+    if (process.env.NODE_ENV === 'development') {
+      return {
+        'Content-Type': 'application/json'
+      };
+    }
+    
     const token = localStorage.getItem('auth_token');
     return {
       'Content-Type': 'application/json',
@@ -197,7 +204,7 @@ export class DataService {
       try {
         return await this.apiCall<Car>(`/cars/${id}`);
       } catch (error) {
-        if (error.message.includes('404')) {
+        if (error instanceof Error && error.message.includes('404')) {
           return null;
         }
         throw error;

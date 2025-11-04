@@ -59922,6 +59922,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
   function AuthHandler({ children }) {
     const [isInitialized, setIsInitialized] = (0, import_react.useState)(false);
+    if (true) {
+      return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+        children,
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "fixed bottom-4 left-4 z-50 bg-yellow-100 border border-yellow-300 text-yellow-800 px-3 py-1 rounded-md text-xs font-medium", children: "\u{1F680} Dev Mode - Auth Bypassed" })
+      ] });
+    }
     (0, import_react.useEffect)(() => {
       const handleAuthFromURL = () => {
         const urlParams = new URLSearchParams(window.location.search);
@@ -63887,6 +63893,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }
     // Helper method to get auth headers for API calls
     static getAuthHeaders() {
+      if (true) {
+        return {
+          "Content-Type": "application/json"
+        };
+      }
       const token = localStorage.getItem("auth_token");
       return {
         "Content-Type": "application/json",
@@ -63944,7 +63955,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         try {
           return await this.apiCall(`/cars/${id2}`);
         } catch (error) {
-          if (error.message.includes("404")) {
+          if (error instanceof Error && error.message.includes("404")) {
             return null;
           }
           throw error;
@@ -69536,9 +69547,17 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       }
     };
     const handleAccountClick = () => {
+      if (true) {
+        alert("\u{1F680} Dev Mode: Account navigation disabled for backend testing");
+        return;
+      }
       NavigationService.navigateToMarketing("/");
     };
     const handleLogoutClick = () => {
+      if (true) {
+        alert("\u{1F680} Dev Mode: Logout disabled for backend testing");
+        return;
+      }
       console.log("Logout clicked - clearing auth data...");
       localStorage.removeItem("auth_token");
       localStorage.removeItem("user_data");
