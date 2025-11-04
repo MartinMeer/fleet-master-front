@@ -1,0 +1,1829 @@
+openapi: 3.0.3
+info:
+  title: FleetMaster Pro API
+  description: |
+    Comprehensive RESTful API for FleetMaster Pro - a modern fleet management and vehicle maintenance tracking solution.
+    
+    This API provides complete functionality for:
+    - Vehicle management with image uploads
+    - Service record tracking with operations
+    - Alert management for problems and recommendations
+    - Maintenance planning and scheduling
+    
+    ## Features
+    - Full CRUD operations for all resources
+    - Advanced search and filtering capabilities
+    - Pagination support for all list endpoints
+    - File upload support for car images
+    - Comprehensive error handling
+    - Bulk operations for efficiency
+    
+    ## Base URL
+    - Development: `http://localhost:8080/api`
+    - Production: `https://api.yourserver.com/api`
+  version: 1.0.0
+  contact:
+    name: FleetMaster Pro Team
+    email: api-support@fleetmaster.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:8080/api
+    description: Development server
+  - url: https://api.yourserver.com/api
+    description: Production server
+
+paths:
+  # ===== CARS API =====
+  /cars:
+    get:
+      tags:
+        - Cars
+      summary: Get all cars
+      description: Retrieve all cars with optional filtering, searching, and pagination
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Limit'
+        - name: search
+          in: query
+          description: Search in name, brand, model, plate number
+          schema:
+            type: string
+        - name: brand
+          in: query
+          description: Filter by brand
+          schema:
+            type: string
+        - name: year
+          in: query
+          description: Filter by year
+          schema:
+            type: integer
+        - name: minMileage
+          in: query
+          description: Minimum mileage filter
+          schema:
+            type: integer
+        - name: maxMileage
+          in: query
+          description: Maximum mileage filter
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/SortBy'
+        - $ref: '#/components/parameters/SortOrder'
+      responses:
+        '200':
+          description: Cars retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Car'
+                      pagination:
+                        $ref: '#/components/schemas/Pagination'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    
+    post:
+      tags:
+        - Cars
+      summary: Create a new car
+      description: Create a new car with optional image upload
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+                - brand
+                - model
+                - year
+                - mileage
+              properties:
+                name:
+                  type: string
+                  description: Display name
+                  minLength: 1
+                  maxLength: 100
+                brand:
+                  type: string
+                  description: Manufacturer
+                  minLength: 1
+                  maxLength: 50
+                model:
+                  type: string
+                  description: Model name
+                  minLength: 1
+                  maxLength: 50
+                year:
+                  type: integer
+                  description: Manufacturing year
+                  minimum: 1900
+                  maximum: 2024
+                vin:
+                  type: string
+                  description: Vehicle Identification Number
+                  minLength: 17
+                  maxLength: 17
+                plateNumber:
+                  type: string
+                  description: License plate
+                  maxLength: 20
+                mileage:
+                  type: integer
+                  description: Current mileage
+                  minimum: 0
+                lastService:
+                  type: string
+                  format: date
+                  description: Last service date
+                nextService:
+                  type: string
+                  format: date
+                  description: Next service date
+                image:
+                  type: string
+                  format: binary
+                  description: Car image (JPG, PNG, max 5MB)
+      responses:
+        '201':
+          description: Car created successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Car'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /cars/{id}:
+    get:
+      tags:
+        - Cars
+      summary: Get car by ID
+      description: Retrieve a specific car by its ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Car ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Car retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Car'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    
+    put:
+      tags:
+        - Cars
+      summary: Update car
+      description: Update an existing car with optional image upload
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Car ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  maxLength: 100
+                brand:
+                  type: string
+                  maxLength: 50
+                model:
+                  type: string
+                  maxLength: 50
+                year:
+                  type: integer
+                  minimum: 1900
+                  maximum: 2024
+                vin:
+                  type: string
+                  minLength: 17
+                  maxLength: 17
+                plateNumber:
+                  type: string
+                  maxLength: 20
+                mileage:
+                  type: integer
+                  minimum: 0
+                lastService:
+                  type: string
+                  format: date
+                nextService:
+                  type: string
+                  format: date
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Car updated successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Car'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    
+    delete:
+      tags:
+        - Cars
+      summary: Delete car
+      description: Delete a car and all associated data
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Car ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Car deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /cars/bulk:
+    post:
+      tags:
+        - Cars
+      summary: Bulk create cars
+      description: Create multiple cars in a single request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - cars
+              properties:
+                cars:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/CarCreateRequest'
+      responses:
+        '201':
+          description: Cars created successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: object
+                        properties:
+                          created:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/Car'
+                          errors:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/ErrorResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  # ===== ALERTS API =====
+  /alerts:
+    get:
+      tags:
+        - Alerts
+      summary: Get all alerts
+      description: Retrieve all alerts with filtering and pagination
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Limit'
+        - name: carId
+          in: query
+          description: Filter by car ID
+          schema:
+            type: string
+        - name: type
+          in: query
+          description: Filter by alert type
+          schema:
+            type: string
+            enum: [problem, recommendation]
+        - name: priority
+          in: query
+          description: Filter by priority
+          schema:
+            type: string
+            enum: [critical, unclear, can-wait]
+        - name: status
+          in: query
+          description: Filter by status
+          schema:
+            type: string
+            enum: [active, archived]
+            default: active
+        - name: search
+          in: query
+          description: Search in description and location
+          schema:
+            type: string
+        - $ref: '#/components/parameters/SortBy'
+        - $ref: '#/components/parameters/SortOrder'
+      responses:
+        '200':
+          description: Alerts retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Alert'
+                      pagination:
+                        $ref: '#/components/schemas/Pagination'
+    
+    post:
+      tags:
+        - Alerts
+      summary: Create a new alert
+      description: Create a new alert for a car
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlertCreateRequest'
+      responses:
+        '201':
+          description: Alert created successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Alert'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /alerts/{id}:
+    get:
+      tags:
+        - Alerts
+      summary: Get alert by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Alert retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Alert'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    
+    put:
+      tags:
+        - Alerts
+      summary: Update alert
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlertUpdateRequest'
+      responses:
+        '200':
+          description: Alert updated successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/Alert'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+    
+    delete:
+      tags:
+        - Alerts
+      summary: Delete alert
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Alert deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /alerts/stats:
+    get:
+      tags:
+        - Alerts
+      summary: Get alert statistics
+      parameters:
+        - name: carId
+          in: query
+          description: Filter by car ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Alert statistics retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/AlertStats'
+
+  # ===== SERVICE RECORDS API =====
+  /service-records:
+    get:
+      tags:
+        - Service Records
+      summary: Get all service records
+      description: Retrieve all service records with filtering and pagination
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Limit'
+        - name: carId
+          in: query
+          schema:
+            type: string
+        - name: serviceProvider
+          in: query
+          schema:
+            type: string
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [maintenance, repair]
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: minCost
+          in: query
+          schema:
+            type: number
+        - name: maxCost
+          in: query
+          schema:
+            type: number
+        - name: search
+          in: query
+          schema:
+            type: string
+        - $ref: '#/components/parameters/SortBy'
+        - $ref: '#/components/parameters/SortOrder'
+      responses:
+        '200':
+          description: Service records retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/ServiceRecord'
+                      pagination:
+                        $ref: '#/components/schemas/Pagination'
+    
+    post:
+      tags:
+        - Service Records
+      summary: Create service record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRecordCreateRequest'
+      responses:
+        '201':
+          description: Service record created successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/ServiceRecord'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+  /service-records/{id}:
+    get:
+      tags:
+        - Service Records
+      summary: Get service record by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Service record retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/ServiceRecord'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    
+    put:
+      tags:
+        - Service Records
+      summary: Update service record
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRecordUpdateRequest'
+      responses:
+        '200':
+          description: Service record updated successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/ServiceRecord'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+    
+    delete:
+      tags:
+        - Service Records
+      summary: Delete service record
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Service record deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /service-records/stats:
+    get:
+      tags:
+        - Service Records
+      summary: Get service record statistics
+      parameters:
+        - name: carId
+          in: query
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Service record statistics retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/ServiceRecordStats'
+
+  # ===== MAINTENANCE API =====
+  /maintenance:
+    get:
+      tags:
+        - Maintenance
+      summary: Get maintenance entries
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Limit'
+        - name: carId
+          in: query
+          schema:
+            type: string
+        - name: search
+          in: query
+          schema:
+            type: string
+        - $ref: '#/components/parameters/SortBy'
+        - $ref: '#/components/parameters/SortOrder'
+      responses:
+        '200':
+          description: Maintenance entries retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MaintenanceEntry'
+                      pagination:
+                        $ref: '#/components/schemas/Pagination'
+    
+    post:
+      tags:
+        - Maintenance
+      summary: Create maintenance entry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaintenanceEntryCreateRequest'
+      responses:
+        '201':
+          description: Maintenance entry created successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/MaintenanceEntry'
+
+  /maintenance/car/{carId}:
+    delete:
+      tags:
+        - Maintenance
+      summary: Remove maintenance entry for car
+      parameters:
+        - name: carId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Maintenance entry removed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /maintenance-plans:
+    get:
+      tags:
+        - Maintenance Plans
+      summary: Get maintenance plans
+      parameters:
+        - $ref: '#/components/parameters/Page'
+        - $ref: '#/components/parameters/Limit'
+        - name: carId
+          in: query
+          schema:
+            type: string
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [draft, scheduled, in-progress, completed]
+        - name: search
+          in: query
+          schema:
+            type: string
+        - $ref: '#/components/parameters/SortBy'
+        - $ref: '#/components/parameters/SortOrder'
+      responses:
+        '200':
+          description: Maintenance plans retrieved successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/MaintenancePlan'
+                      pagination:
+                        $ref: '#/components/schemas/Pagination'
+    
+    post:
+      tags:
+        - Maintenance Plans
+      summary: Create maintenance plan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaintenancePlanCreateRequest'
+      responses:
+        '201':
+          description: Maintenance plan created successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/MaintenancePlan'
+
+  /maintenance-plans/{id}:
+    put:
+      tags:
+        - Maintenance Plans
+      summary: Update maintenance plan
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaintenancePlanUpdateRequest'
+      responses:
+        '200':
+          description: Maintenance plan updated successfully
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/SuccessResponse'
+                  - type: object
+                    properties:
+                      data:
+                        $ref: '#/components/schemas/MaintenancePlan'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+
+components:
+  parameters:
+    Page:
+      name: page
+      in: query
+      description: Page number (starts from 1)
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+    
+    Limit:
+      name: limit
+      in: query
+      description: Items per page
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+    
+    SortBy:
+      name: sortBy
+      in: query
+      description: Field to sort by
+      schema:
+        type: string
+    
+    SortOrder:
+      name: sortOrder
+      in: query
+      description: Sort order
+      schema:
+        type: string
+        enum: [asc, desc]
+        default: asc
+
+  schemas:
+    # ===== CORE DATA MODELS =====
+    Car:
+      type: object
+      required:
+        - id
+        - name
+        - brand
+        - model
+        - year
+        - mileage
+        - createdAt
+      properties:
+        id:
+          type: string
+          description: Unique identifier
+        name:
+          type: string
+          description: Display name
+          maxLength: 100
+        brand:
+          type: string
+          description: Manufacturer
+          maxLength: 50
+        model:
+          type: string
+          description: Model name
+          maxLength: 50
+        year:
+          type: integer
+          description: Manufacturing year
+          minimum: 1900
+          maximum: 2024
+        vin:
+          type: string
+          description: Vehicle Identification Number
+          minLength: 17
+          maxLength: 17
+          nullable: true
+        plateNumber:
+          type: string
+          description: License plate
+          maxLength: 20
+          nullable: true
+        mileage:
+          type: integer
+          description: Current mileage
+          minimum: 0
+        image:
+          type: string
+          description: Image URL/path
+          nullable: true
+        lastService:
+          type: string
+          format: date
+          description: Last service date
+          nullable: true
+        nextService:
+          type: string
+          format: date
+          description: Next service date
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation timestamp
+
+    Alert:
+      type: object
+      required:
+        - id
+        - carId
+        - carName
+        - type
+        - priority
+        - description
+        - location
+        - mileage
+        - reportedAt
+        - status
+      properties:
+        id:
+          type: string
+          description: Unique identifier
+        carId:
+          type: string
+          description: Associated car ID
+        carName:
+          type: string
+          description: Car display name
+        type:
+          type: string
+          enum: [problem, recommendation]
+          description: Alert type
+        priority:
+          type: string
+          enum: [critical, unclear, can-wait]
+          description: Priority level
+        description:
+          type: string
+          description: Alert description
+          minLength: 10
+          maxLength: 1000
+        location:
+          type: string
+          description: Problem location
+          maxLength: 100
+        mileage:
+          type: integer
+          description: Mileage when reported
+        reportedAt:
+          type: string
+          format: date-time
+          description: Report timestamp
+        status:
+          type: string
+          enum: [active, archived]
+          description: Current status
+
+    ServiceRecord:
+      type: object
+      required:
+        - id
+        - carId
+        - carName
+        - date
+        - mileage
+        - serviceProvider
+        - totalCost
+        - operations
+        - createdAt
+      properties:
+        id:
+          type: string
+          description: Unique identifier
+        carId:
+          type: string
+          description: Associated car ID
+        carName:
+          type: string
+          description: Car display name
+        date:
+          type: string
+          format: date
+          description: Service date
+        mileage:
+          type: integer
+          description: Mileage at service
+        serviceProvider:
+          type: string
+          description: Service provider name
+          maxLength: 200
+        totalCost:
+          type: number
+          format: float
+          description: Total service cost
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ServiceOperation'
+          description: List of operations performed
+        notes:
+          type: string
+          description: Additional notes
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation timestamp
+
+    ServiceOperation:
+      type: object
+      required:
+        - id
+        - type
+        - description
+        - cost
+      properties:
+        id:
+          type: string
+          description: Unique identifier
+        type:
+          type: string
+          enum: [maintenance, repair]
+          description: Operation type
+        description:
+          type: string
+          description: Operation description
+          minLength: 5
+        cost:
+          type: number
+          format: float
+          description: Operation cost
+        parts:
+          type: array
+          items:
+            type: string
+          description: Parts used
+          nullable: true
+        laborCost:
+          type: number
+          format: float
+          description: Labor cost
+          nullable: true
+        linkedAlertId:
+          type: string
+          description: Linked alert ID
+          nullable: true
+        recommendations:
+          type: string
+          description: Post-service recommendations
+          nullable: true
+
+    MaintenanceEntry:
+      type: object
+      required:
+        - id
+        - carId
+        - carName
+        - enteredAt
+        - reason
+      properties:
+        id:
+          type: string
+          description: Unique identifier
+        carId:
+          type: string
+          description: Associated car ID
+        carName:
+          type: string
+          description: Car display name
+        enteredAt:
+          type: string
+          format: date-time
+          description: Entry timestamp
+        reason:
+          type: string
+          description: Maintenance reason
+        estimatedCompletion:
+          type: string
+          format: date-time
+          description: Estimated completion date
+          nullable: true
+
+    MaintenancePlan:
+      type: object
+      required:
+        - id
+        - carId
+        - carName
+        - status
+        - plannedDate
+        - plannedCompletionDate
+        - periodicOperations
+        - repairOperations
+        - totalEstimatedCost
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: string
+          description: Unique identifier
+        carId:
+          type: string
+          description: Associated car ID
+        carName:
+          type: string
+          description: Car display name
+        status:
+          type: string
+          enum: [draft, scheduled, in-progress, completed]
+          description: Plan status
+        plannedDate:
+          type: string
+          format: date-time
+          description: Planned start date
+        plannedCompletionDate:
+          type: string
+          format: date-time
+          description: Planned completion date
+        plannedMileage:
+          type: string
+          description: Planned mileage
+          nullable: true
+        periodicOperations:
+          type: array
+          items:
+            $ref: '#/components/schemas/MaintenanceOperation'
+          description: Scheduled operations
+        repairOperations:
+          type: array
+          items:
+            $ref: '#/components/schemas/MaintenanceOperation'
+          description: Repair operations
+        totalEstimatedCost:
+          type: number
+          format: float
+          description: Total estimated cost
+        serviceProvider:
+          type: string
+          description: Service provider
+          nullable: true
+        notes:
+          type: string
+          description: Additional notes
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation timestamp
+        updatedAt:
+          type: string
+          format: date-time
+          description: Last update timestamp
+
+    MaintenanceOperation:
+      type: object
+      required:
+        - id
+        - operation
+        - mileage
+        - period
+        - notes
+      properties:
+        id:
+          type: string
+          description: Unique identifier
+        operation:
+          type: string
+          description: Operation name
+        mileage:
+          type: integer
+          description: Recommended mileage
+        period:
+          type: integer
+          description: Period in months
+        notes:
+          type: string
+          description: Operation notes
+        estimatedCost:
+          type: number
+          format: float
+          description: Estimated cost
+          nullable: true
+        completed:
+          type: boolean
+          description: Completion status
+          nullable: true
+
+    # ===== REQUEST SCHEMAS =====
+    CarCreateRequest:
+      type: object
+      required:
+        - name
+        - brand
+        - model
+        - year
+        - mileage
+      properties:
+        name:
+          type: string
+          maxLength: 100
+        brand:
+          type: string
+          maxLength: 50
+        model:
+          type: string
+          maxLength: 50
+        year:
+          type: integer
+          minimum: 1900
+          maximum: 2024
+        vin:
+          type: string
+          minLength: 17
+          maxLength: 17
+        plateNumber:
+          type: string
+          maxLength: 20
+        mileage:
+          type: integer
+          minimum: 0
+        lastService:
+          type: string
+          format: date
+        nextService:
+          type: string
+          format: date
+
+    AlertCreateRequest:
+      type: object
+      required:
+        - carId
+        - carName
+        - type
+        - priority
+        - description
+        - location
+        - mileage
+      properties:
+        carId:
+          type: string
+        carName:
+          type: string
+        type:
+          type: string
+          enum: [problem, recommendation]
+        priority:
+          type: string
+          enum: [critical, unclear, can-wait]
+        description:
+          type: string
+          minLength: 10
+          maxLength: 1000
+        location:
+          type: string
+          maxLength: 100
+        mileage:
+          type: integer
+
+    AlertUpdateRequest:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [problem, recommendation]
+        priority:
+          type: string
+          enum: [critical, unclear, can-wait]
+        description:
+          type: string
+          minLength: 10
+          maxLength: 1000
+        location:
+          type: string
+          maxLength: 100
+        status:
+          type: string
+          enum: [active, archived]
+
+    ServiceRecordCreateRequest:
+      type: object
+      required:
+        - carId
+        - carName
+        - date
+        - mileage
+        - serviceProvider
+        - operations
+      properties:
+        carId:
+          type: string
+        carName:
+          type: string
+        date:
+          type: string
+          format: date
+        mileage:
+          type: integer
+        serviceProvider:
+          type: string
+          maxLength: 200
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ServiceOperationCreateRequest'
+          minItems: 1
+        notes:
+          type: string
+
+    ServiceOperationCreateRequest:
+      type: object
+      required:
+        - type
+        - description
+        - cost
+      properties:
+        type:
+          type: string
+          enum: [maintenance, repair]
+        description:
+          type: string
+          minLength: 5
+        cost:
+          type: number
+          format: float
+        parts:
+          type: array
+          items:
+            type: string
+        laborCost:
+          type: number
+          format: float
+        linkedAlertId:
+          type: string
+        recommendations:
+          type: string
+
+    ServiceRecordUpdateRequest:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        mileage:
+          type: integer
+        serviceProvider:
+          type: string
+          maxLength: 200
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ServiceOperation'
+        notes:
+          type: string
+
+    MaintenanceEntryCreateRequest:
+      type: object
+      required:
+        - carId
+        - carName
+        - reason
+      properties:
+        carId:
+          type: string
+        carName:
+          type: string
+        reason:
+          type: string
+        estimatedCompletion:
+          type: string
+          format: date-time
+
+    MaintenancePlanCreateRequest:
+      type: object
+      required:
+        - carId
+        - carName
+        - status
+        - plannedDate
+        - plannedCompletionDate
+        - periodicOperations
+        - repairOperations
+        - totalEstimatedCost
+      properties:
+        carId:
+          type: string
+        carName:
+          type: string
+        status:
+          type: string
+          enum: [draft, scheduled, in-progress, completed]
+        plannedDate:
+          type: string
+          format: date-time
+        plannedCompletionDate:
+          type: string
+          format: date-time
+        plannedMileage:
+          type: string
+        periodicOperations:
+          type: array
+          items:
+            $ref: '#/components/schemas/MaintenanceOperationCreateRequest'
+        repairOperations:
+          type: array
+          items:
+            $ref: '#/components/schemas/MaintenanceOperationCreateRequest'
+        totalEstimatedCost:
+          type: number
+          format: float
+        serviceProvider:
+          type: string
+        notes:
+          type: string
+
+    MaintenanceOperationCreateRequest:
+      type: object
+      required:
+        - operation
+        - mileage
+        - period
+        - notes
+      properties:
+        operation:
+          type: string
+        mileage:
+          type: integer
+        period:
+          type: integer
+        notes:
+          type: string
+        estimatedCost:
+          type: number
+          format: float
+
+    MaintenancePlanUpdateRequest:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [draft, scheduled, in-progress, completed]
+        plannedDate:
+          type: string
+          format: date-time
+        plannedCompletionDate:
+          type: string
+          format: date-time
+        plannedMileage:
+          type: string
+        totalEstimatedCost:
+          type: number
+          format: float
+        serviceProvider:
+          type: string
+        notes:
+          type: string
+
+    # ===== STATISTICS SCHEMAS =====
+    AlertStats:
+      type: object
+      properties:
+        total:
+          type: integer
+        active:
+          type: integer
+        archived:
+          type: integer
+        byType:
+          type: object
+          properties:
+            problem:
+              type: integer
+            recommendation:
+              type: integer
+        byPriority:
+          type: object
+          properties:
+            critical:
+              type: integer
+            unclear:
+              type: integer
+            can-wait:
+              type: integer
+        byCar:
+          type: array
+          items:
+            type: object
+            properties:
+              carId:
+                type: string
+              carName:
+                type: string
+              total:
+                type: integer
+              critical:
+                type: integer
+
+    ServiceRecordStats:
+      type: object
+      properties:
+        total:
+          type: integer
+        totalCost:
+          type: number
+          format: float
+        averageCost:
+          type: number
+          format: float
+        byType:
+          type: object
+          properties:
+            maintenance:
+              type: object
+              properties:
+                count:
+                  type: integer
+                totalCost:
+                  type: number
+                  format: float
+            repair:
+              type: object
+              properties:
+                count:
+                  type: integer
+                totalCost:
+                  type: number
+                  format: float
+        byCar:
+          type: array
+          items:
+            type: object
+            properties:
+              carId:
+                type: string
+              carName:
+                type: string
+              count:
+                type: integer
+              totalCost:
+                type: number
+                format: float
+              averageCost:
+                type: number
+                format: float
+        byMonth:
+          type: array
+          items:
+            type: object
+            properties:
+              month:
+                type: string
+              count:
+                type: integer
+              totalCost:
+                type: number
+                format: float
+
+    # ===== RESPONSE SCHEMAS =====
+    SuccessResponse:
+      type: object
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: "Operation completed successfully"
+
+    ErrorResponse:
+      type: object
+      required:
+        - success
+        - error
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: object
+          required:
+            - code
+            - message
+          properties:
+            code:
+              type: string
+              example: "ERROR_CODE"
+            message:
+              type: string
+              example: "Human readable error message"
+            details:
+              type: object
+              additionalProperties: true
+
+    ValidationErrorResponse:
+      type: object
+      required:
+        - success
+        - error
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: object
+          required:
+            - code
+            - message
+            - details
+          properties:
+            code:
+              type: string
+              example: "VALIDATION_ERROR"
+            message:
+              type: string
+              example: "Request validation failed"
+            details:
+              type: object
+              additionalProperties:
+                type: string
+              example:
+                brand: "Brand is required"
+                year: "Year must be between 1900 and 2024"
+
+    Pagination:
+      type: object
+      required:
+        - page
+        - limit
+        - total
+        - totalPages
+        - hasNext
+        - hasPrev
+      properties:
+        page:
+          type: integer
+          description: Current page number
+          example: 1
+        limit:
+          type: integer
+          description: Items per page
+          example: 20
+        total:
+          type: integer
+          description: Total number of items
+          example: 150
+        totalPages:
+          type: integer
+          description: Total number of pages
+          example: 8
+        hasNext:
+          type: boolean
+          description: Has next page
+          example: true
+        hasPrev:
+          type: boolean
+          description: Has previous page
+          example: false
+
+  responses:
+    BadRequest:
+      description: Bad Request - Invalid request format or parameters
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            success: false
+            error:
+              code: "BAD_REQUEST"
+              message: "Invalid request format"
+
+    NotFound:
+      description: Not Found - Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            success: false
+            error:
+              code: "RESOURCE_NOT_FOUND"
+              message: "The requested resource was not found"
+
+    ValidationError:
+      description: Validation Error - Request validation failed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValidationErrorResponse'
+
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            success: false
+            error:
+              code: "INTERNAL_SERVER_ERROR"
+              message: "An unexpected error occurred"
+
+tags:
+  - name: Cars
+    description: Vehicle management operations
+  - name: Alerts
+    description: Problem and recommendation alerts
+  - name: Service Records
+    description: Service history and operations tracking
+  - name: Maintenance
+    description: Maintenance entries and status tracking
+  - name: Maintenance Plans
+    description: Maintenance planning and scheduling
