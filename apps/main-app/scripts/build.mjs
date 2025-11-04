@@ -51,8 +51,12 @@ if (isProd) {
 } else {
   const ctx = await esbuild.context(esbuildOpts)
   await ctx.watch()
+  
+  // Use 0.0.0.0 in Docker environment to allow external connections
+  const serveHost = process.env.DOCKER_ENV === 'true' || process.env.NODE_ENV === 'development' ? '0.0.0.0' : host;
+  
   const { hosts } = await ctx.serve({
-    host: host,
+    host: serveHost,
     port: port
   })
   console.log(`Running on:`)

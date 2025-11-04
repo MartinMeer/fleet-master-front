@@ -2443,7 +2443,7 @@
           var HostPortal = 4;
           var HostComponent = 5;
           var HostText = 6;
-          var Fragment20 = 7;
+          var Fragment19 = 7;
           var Mode = 8;
           var ContextConsumer = 9;
           var ContextProvider = 10;
@@ -3600,7 +3600,7 @@
                 return "DehydratedFragment";
               case ForwardRef:
                 return getWrappedName$1(type, type.render, "ForwardRef");
-              case Fragment20:
+              case Fragment19:
                 return "Fragment";
               case HostComponent:
                 return type;
@@ -12029,7 +12029,7 @@
               }
             }
             function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-              if (current2 === null || current2.tag !== Fragment20) {
+              if (current2 === null || current2.tag !== Fragment19) {
                 var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
                 created.return = returnFiber;
                 return created;
@@ -12432,7 +12432,7 @@
                 if (child.key === key) {
                   var elementType = element.type;
                   if (elementType === REACT_FRAGMENT_TYPE) {
-                    if (child.tag === Fragment20) {
+                    if (child.tag === Fragment19) {
                       deleteRemainingChildren(returnFiber, child.sibling);
                       var existing = useFiber(child, element.props.children);
                       existing.return = returnFiber;
@@ -17908,7 +17908,7 @@
                 var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
                 return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
               }
-              case Fragment20:
+              case Fragment19:
                 return updateFragment(current2, workInProgress2, renderLanes2);
               case Mode:
                 return updateMode(current2, workInProgress2, renderLanes2);
@@ -18180,7 +18180,7 @@
               case SimpleMemoComponent:
               case FunctionComponent:
               case ForwardRef:
-              case Fragment20:
+              case Fragment19:
               case Mode:
               case Profiler:
               case ContextConsumer:
@@ -22441,7 +22441,7 @@
             return fiber;
           }
           function createFiberFromFragment(elements2, mode, lanes, key) {
-            var fiber = createFiber(Fragment20, elements2, key, mode);
+            var fiber = createFiber(Fragment19, elements2, key, mode);
             fiber.lanes = lanes;
             return fiber;
           }
@@ -44802,7 +44802,7 @@
     var J2 = y5.__private__.convertDateToPDFDate = function(t4) {
       var e4 = t4.getTimezoneOffset(), r4 = e4 < 0 ? "+" : "-", n3 = Math.floor(Math.abs(e4 / 60)), i5 = Math.abs(e4 % 60), a5 = [r4, Q3(n3), "'", Q3(i5), "'"].join("");
       return ["D:", t4.getFullYear(), Q3(t4.getMonth() + 1), Q3(t4.getDate()), Q3(t4.getHours()), Q3(t4.getMinutes()), Q3(t4.getSeconds()), a5].join("");
-    }, X5 = y5.__private__.convertPDFDateToDate = function(t4) {
+    }, X4 = y5.__private__.convertPDFDateToDate = function(t4) {
       var e4 = parseInt(t4.substr(2, 4), 10), r4 = parseInt(t4.substr(6, 2), 10) - 1, n3 = parseInt(t4.substr(8, 2), 10), i5 = parseInt(t4.substr(10, 2), 10), a5 = parseInt(t4.substr(12, 2), 10), o4 = parseInt(t4.substr(14, 2), 10);
       return new Date(e4, r4, n3, i5, a5, o4, 0);
     }, K3 = y5.__private__.setCreationDate = function(t4) {
@@ -44815,7 +44815,7 @@
       return W2 = e4;
     }, Z2 = y5.__private__.getCreationDate = function(t4) {
       var e4 = W2;
-      return "jsDate" === t4 && (e4 = X5(W2)), e4;
+      return "jsDate" === t4 && (e4 = X4(W2)), e4;
     };
     y5.setCreationDate = function(t4) {
       return K3(t4), this;
@@ -45537,33 +45537,33 @@
         return g3.getStringUnitWidth(t4, { font: G4, charSpace: h5, fontSize: gt2, doKerning: false }) * gt2 / N4;
       };
       if ("[object Array]" === Object.prototype.toString.call(e4)) {
-        var X6;
+        var X5;
         s6 = A3(e4), "left" !== u5 && (H5 = s6.map(J3));
         var K4, Z3 = 0;
         if ("right" === u5) {
           r4 -= H5[0], e4 = [], C2 = s6.length;
-          for (var $3 = 0; $3 < C2; $3++) 0 === $3 ? (K4 = br(r4), X6 = yr(n3)) : (K4 = U2(Z3 - H5[$3]), X6 = -W3), e4.push([s6[$3], K4, X6]), Z3 = H5[$3];
+          for (var $3 = 0; $3 < C2; $3++) 0 === $3 ? (K4 = br(r4), X5 = yr(n3)) : (K4 = U2(Z3 - H5[$3]), X5 = -W3), e4.push([s6[$3], K4, X5]), Z3 = H5[$3];
         } else if ("center" === u5) {
           r4 -= H5[0] / 2, e4 = [], C2 = s6.length;
-          for (var Q4 = 0; Q4 < C2; Q4++) 0 === Q4 ? (K4 = br(r4), X6 = yr(n3)) : (K4 = U2((Z3 - H5[Q4]) / 2), X6 = -W3), e4.push([s6[Q4], K4, X6]), Z3 = H5[Q4];
+          for (var Q4 = 0; Q4 < C2; Q4++) 0 === Q4 ? (K4 = br(r4), X5 = yr(n3)) : (K4 = U2((Z3 - H5[Q4]) / 2), X5 = -W3), e4.push([s6[Q4], K4, X5]), Z3 = H5[Q4];
         } else if ("left" === u5) {
           e4 = [], C2 = s6.length;
           for (var tt3 = 0; tt3 < C2; tt3++) e4.push(s6[tt3]);
         } else if ("justify" === u5 && "Identity-H" === G4.encoding) {
           e4 = [], C2 = s6.length, l3 = 0 !== l3 ? l3 : V3;
-          for (var et4 = 0, rt3 = 0; rt3 < C2; rt3++) if (X6 = 0 === rt3 ? yr(n3) : -W3, K4 = 0 === rt3 ? br(r4) : et4, rt3 < C2 - 1) {
+          for (var et4 = 0, rt3 = 0; rt3 < C2; rt3++) if (X5 = 0 === rt3 ? yr(n3) : -W3, K4 = 0 === rt3 ? br(r4) : et4, rt3 < C2 - 1) {
             var nt3 = U2((l3 - H5[rt3]) / (s6[rt3].split(" ").length - 1)), it3 = s6[rt3].split(" ");
-            e4.push([it3[0] + " ", K4, X6]), et4 = 0;
+            e4.push([it3[0] + " ", K4, X5]), et4 = 0;
             for (var at3 = 1; at3 < it3.length; at3++) {
               var ot3 = (J3(it3[at3 - 1] + " " + it3[at3]) - J3(it3[at3])) * N4 + nt3;
               at3 == it3.length - 1 ? e4.push([it3[at3], ot3, 0]) : e4.push([it3[at3] + " ", ot3, 0]), et4 -= ot3;
             }
-          } else e4.push([s6[rt3], K4, X6]);
+          } else e4.push([s6[rt3], K4, X5]);
           e4.push(["", et4, 0]);
         } else {
           if ("justify" !== u5) throw new Error('Unrecognized alignment option, use "left", "center", "right" or "justify".');
           e4 = [], C2 = s6.length, l3 = 0 !== l3 ? l3 : V3;
-          for (rt3 = 0; rt3 < C2; rt3++) X6 = 0 === rt3 ? yr(n3) : -W3, K4 = 0 === rt3 ? br(r4) : 0, rt3 < C2 - 1 ? Y4.push(O4(U2((l3 - H5[rt3]) / (s6[rt3].split(" ").length - 1)))) : Y4.push(0), e4.push([s6[rt3], K4, X6]);
+          for (rt3 = 0; rt3 < C2; rt3++) X5 = 0 === rt3 ? yr(n3) : -W3, K4 = 0 === rt3 ? br(r4) : 0, rt3 < C2 - 1 ? Y4.push(O4(U2((l3 - H5[rt3]) / (s6[rt3].split(" ").length - 1)))) : Y4.push(0), e4.push([s6[rt3], K4, X5]);
         }
       }
       var st3 = "boolean" == typeof i5.R2L ? i5.R2L : bt2;
@@ -46160,7 +46160,7 @@
           t6[f4] = U2 + H4, t6[f4 + 32] = U2 - H4;
           var V2 = 0.707106781 * (W2 + z3);
           t6[f4 + 16] = z3 + V2, t6[f4 + 48] = z3 - V2;
-          var G3 = 0.382683433 * ((U2 = T4 + D3) - (W2 = E4 + B4)), Y3 = 0.5411961 * U2 + G3, J2 = 1.306562965 * W2 + G3, X5 = 0.707106781 * (H4 = D3 + E4), K3 = B4 + X5, Z2 = B4 - X5;
+          var G3 = 0.382683433 * ((U2 = T4 + D3) - (W2 = E4 + B4)), Y3 = 0.5411961 * U2 + G3, J2 = 1.306562965 * W2 + G3, X4 = 0.707106781 * (H4 = D3 + E4), K3 = B4 + X4, Z2 = B4 - X4;
           t6[f4 + 40] = Z2 + Y3, t6[f4 + 24] = Z2 - Y3, t6[f4 + 8] = K3 + J2, t6[f4 + 56] = K3 - J2, f4++;
         }
         for (h7 = 0; h7 < 64; ++h7) l4 = t6[h7] * e5[h7], d4[h7] = l4 > 0 ? l4 + 0.5 | 0 : l4 - 0.5 | 0;
@@ -46465,7 +46465,7 @@
           i5[a6 + o4] = (4278255360 & s6) + (h7 << 16) + u6;
         }
       }
-      function X5(e4, r4, n4, i5, a6) {
+      function X4(e4, r4, n4, i5, a6) {
         t5[r4] = function(t6, e5, r5, n5, o4, s6, c7, u6, h7) {
           for (n5 = c7; n5 < u6; ++n5) for (c7 = 0; c7 < h7; ++c7) o4[s6++] = a6(r5[i5(t6[e5++])]);
         }, t5[e4] = function(e5, r5, o4, s6, c7, u6, h7) {
@@ -46825,10 +46825,10 @@
           }
           var H5;
           if (H5 = u6) e: {
-            var W3, V3, G4, Y4 = s6, J3 = f5, X6 = p5, K4 = b5, Z3 = n4, $3 = Y4.m, Q4 = Y4.s, tt3 = [null], et4 = 1, rt3 = 0, nt3 = Qn[K4];
+            var W3, V3, G4, Y4 = s6, J3 = f5, X5 = p5, K4 = b5, Z3 = n4, $3 = Y4.m, Q4 = Y4.s, tt3 = [null], et4 = 1, rt3 = 0, nt3 = Qn[K4];
             r: for (; ; ) {
               if (Z3 && y6($3, 1)) {
-                var it3 = y6($3, 3) + 2, at3 = q3(J3, it3), ot3 = q3(X6, it3), st3 = at3 * ot3;
+                var it3 = y6($3, 3) + 2, at3 = q3(J3, it3), ot3 = q3(X5, it3), st3 = at3 * ot3;
                 if (!It2(at3, ot3, 0, Y4, tt3)) break r;
                 for (tt3 = tt3[0], Q4.xc = it3, W3 = 0; W3 < st3; ++W3) {
                   var ct3 = tt3[W3] >> 8 & 65535;
@@ -47944,11 +47944,11 @@
       var Wr = t5.PredictorAdd0;
       t5.PredictorAdd1 = V2, R3("Predictor2", "PredictorAdd2"), R3("Predictor3", "PredictorAdd3"), R3("Predictor4", "PredictorAdd4"), R3("Predictor5", "PredictorAdd5"), R3("Predictor6", "PredictorAdd6"), R3("Predictor7", "PredictorAdd7"), R3("Predictor8", "PredictorAdd8"), R3("Predictor9", "PredictorAdd9"), R3("Predictor10", "PredictorAdd10"), R3("Predictor11", "PredictorAdd11"), R3("Predictor12", "PredictorAdd12"), R3("Predictor13", "PredictorAdd13");
       var Vr = t5.PredictorAdd2;
-      X5("ColorIndexInverseTransform", "MapARGB", "32b", function(t6) {
+      X4("ColorIndexInverseTransform", "MapARGB", "32b", function(t6) {
         return t6 >> 8 & 255;
       }, function(t6) {
         return t6;
-      }), X5("VP8LColorIndexInverseTransformAlpha", "MapAlpha", "8b", function(t6) {
+      }), X4("VP8LColorIndexInverseTransformAlpha", "MapAlpha", "8b", function(t6) {
         return t6;
       }, function(t6) {
         return t6 >> 8 & 255;
@@ -48114,7 +48114,7 @@
     for (var A2 = 0; A2 < d4[0] * f3[0] * 4; A2++) p3[A2] = L3[A2];
     return this.width = d4, this.height = f3, this.data = p3, this;
   }
-  var n2, a4, u3, h4, l2, N2, S3, k2, q2, D2, R2, T3, U, z2, H3, W, V, G2, Y2, J, X4, K2, Z, $, Q2, tt, et2, rt, nt, it, at, ot, st, ct, ut, ht, lt, ft, dt, pt, gt, mt, vt, bt, yt, wt, Nt, Lt, At, xt, St, Pt, kt, It, Ft, Ct, Bt, Mt, Ut, zt, Ht, Wt, Vt, Gt, Yt, Jt, Xt, Kt, re, ne, ie, ae, oe, se, ce, ue, he, le, fe, de, pe, ge, me, ve, be, ye, we, Ne, Le;
+  var n2, a4, u3, h4, l2, N2, S3, k2, q2, D2, R2, T3, U, z2, H3, W, V, G2, Y2, J, X3, K2, Z, $, Q2, tt, et2, rt, nt, it, at, ot, st, ct, ut, ht, lt, ft, dt, pt, gt, mt, vt, bt, yt, wt, Nt, Lt, At, xt, St, Pt, kt, It, Ft, Ct, Bt, Mt, Ut, zt, Ht, Wt, Vt, Gt, Yt, Jt, Xt, Kt, re, ne, ie, ae, oe, se, ce, ue, he, le, fe, de, pe, ge, me, ve, be, ye, we, Ne, Le;
   var init_jspdf_es_min = __esm({
     "../../node_modules/jspdf/dist/jspdf.es.min.js"() {
       init_typeof();
@@ -48234,7 +48234,7 @@
         if (isNaN(t4) || isNaN(e3)) throw new Error("Invalid arguments passed to jsPDF.API.__acroform__.getBit");
         return 0 == (t4 & 1 << e3) ? 0 : 1;
       };
-      X4 = q2.__acroform__.getBitForPdf = function(t4, e3) {
+      X3 = q2.__acroform__.getBitForPdf = function(t4, e3) {
         if (isNaN(t4) || isNaN(e3)) throw new Error("Invalid arguments passed to jsPDF.API.__acroform__.getBitForPdf");
         return J(t4, e3 - 1);
       };
@@ -48497,7 +48497,7 @@
           if (isNaN(t4)) throw new Error('Invalid value "' + t4 + '" for attribute F supplied.');
           e3 = t4;
         } }), Object.defineProperty(this, "showWhenPrinted", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(e3, 3));
+          return Boolean(X3(e3, 3));
         }, set: function(t4) {
           true === Boolean(t4) ? this.F = K2(e3, 3) : this.F = Z(e3, 3);
         } });
@@ -48638,15 +48638,15 @@
         }, set: function(t4) {
           p3 = t4;
         } }), Object.defineProperty(this, "readOnly", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 1));
+          return Boolean(X3(this.Ff, 1));
         }, set: function(t4) {
           true === Boolean(t4) ? this.Ff = K2(this.Ff, 1) : this.Ff = Z(this.Ff, 1);
         } }), Object.defineProperty(this, "required", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 2));
+          return Boolean(X3(this.Ff, 2));
         }, set: function(t4) {
           true === Boolean(t4) ? this.Ff = K2(this.Ff, 2) : this.Ff = Z(this.Ff, 2);
         } }), Object.defineProperty(this, "noExport", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 3));
+          return Boolean(X3(this.Ff, 3));
         }, set: function(t4) {
           true === Boolean(t4) ? this.Ff = K2(this.Ff, 3) : this.Ff = Z(this.Ff, 3);
         } });
@@ -48719,27 +48719,27 @@
         }, this.removeOption = function(t5, r3) {
           for (r3 = r3 || false, t5 = (t5 = t5 || "").toString(); -1 !== e3.indexOf(t5) && (e3.splice(e3.indexOf(t5), 1), false !== r3); ) ;
         }, Object.defineProperty(this, "combo", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 18));
+          return Boolean(X3(this.Ff, 18));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 18) : this.Ff = Z(this.Ff, 18);
         } }), Object.defineProperty(this, "edit", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 19));
+          return Boolean(X3(this.Ff, 19));
         }, set: function(t5) {
           true === this.combo && (true === Boolean(t5) ? this.Ff = K2(this.Ff, 19) : this.Ff = Z(this.Ff, 19));
         } }), Object.defineProperty(this, "sort", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 20));
+          return Boolean(X3(this.Ff, 20));
         }, set: function(t5) {
           true === Boolean(t5) ? (this.Ff = K2(this.Ff, 20), e3.sort()) : this.Ff = Z(this.Ff, 20);
         } }), Object.defineProperty(this, "multiSelect", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 22));
+          return Boolean(X3(this.Ff, 22));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 22) : this.Ff = Z(this.Ff, 22);
         } }), Object.defineProperty(this, "doNotSpellCheck", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 23));
+          return Boolean(X3(this.Ff, 23));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 23) : this.Ff = Z(this.Ff, 23);
         } }), Object.defineProperty(this, "commitOnSelChange", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 27));
+          return Boolean(X3(this.Ff, 27));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 27) : this.Ff = Z(this.Ff, 27);
         } }), this.hasAppearanceStream = false;
@@ -48759,19 +48759,19 @@
       H3(gt, pt);
       mt = function() {
         lt.call(this), this.FT = "/Btn", Object.defineProperty(this, "noToggleToOff", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 15));
+          return Boolean(X3(this.Ff, 15));
         }, set: function(t4) {
           true === Boolean(t4) ? this.Ff = K2(this.Ff, 15) : this.Ff = Z(this.Ff, 15);
         } }), Object.defineProperty(this, "radio", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 16));
+          return Boolean(X3(this.Ff, 16));
         }, set: function(t4) {
           true === Boolean(t4) ? this.Ff = K2(this.Ff, 16) : this.Ff = Z(this.Ff, 16);
         } }), Object.defineProperty(this, "pushButton", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 17));
+          return Boolean(X3(this.Ff, 17));
         }, set: function(t4) {
           true === Boolean(t4) ? this.Ff = K2(this.Ff, 17) : this.Ff = Z(this.Ff, 17);
         } }), Object.defineProperty(this, "radioIsUnison", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 26));
+          return Boolean(X3(this.Ff, 26));
         }, set: function(t4) {
           true === Boolean(t4) ? this.Ff = K2(this.Ff, 26) : this.Ff = Z(this.Ff, 26);
         } });
@@ -48868,27 +48868,27 @@
       H3(wt, mt);
       Nt = function() {
         lt.call(this), this.FT = "/Tx", Object.defineProperty(this, "multiline", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 13));
+          return Boolean(X3(this.Ff, 13));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 13) : this.Ff = Z(this.Ff, 13);
         } }), Object.defineProperty(this, "fileSelect", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 21));
+          return Boolean(X3(this.Ff, 21));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 21) : this.Ff = Z(this.Ff, 21);
         } }), Object.defineProperty(this, "doNotSpellCheck", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 23));
+          return Boolean(X3(this.Ff, 23));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 23) : this.Ff = Z(this.Ff, 23);
         } }), Object.defineProperty(this, "doNotScroll", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 24));
+          return Boolean(X3(this.Ff, 24));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 24) : this.Ff = Z(this.Ff, 24);
         } }), Object.defineProperty(this, "comb", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 25));
+          return Boolean(X3(this.Ff, 25));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 25) : this.Ff = Z(this.Ff, 25);
         } }), Object.defineProperty(this, "richText", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 26));
+          return Boolean(X3(this.Ff, 26));
         }, set: function(t5) {
           true === Boolean(t5) ? this.Ff = K2(this.Ff, 26) : this.Ff = Z(this.Ff, 26);
         } });
@@ -48908,7 +48908,7 @@
       H3(Nt, lt);
       Lt = function() {
         Nt.call(this), Object.defineProperty(this, "password", { enumerable: true, configurable: true, get: function() {
-          return Boolean(X4(this.Ff, 14));
+          return Boolean(X3(this.Ff, 14));
         }, set: function(t4) {
           true === Boolean(t4) ? this.Ff = K2(this.Ff, 14) : this.Ff = Z(this.Ff, 14);
         } }), this.password = true;
@@ -59885,9 +59885,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         API_URL: ""
       },
       production: {
-        MARKETING_URL: "",
-        MAIN_APP_URL: "",
-        API_URL: ""
+        MARKETING_URL: "https://martinmeer.github.io/my-car-tech-tracker-front",
+        MAIN_APP_URL: "https://martinmeer.github.io/my-car-tech-tracker-front/app",
+        // IMPORTANT: Configure your actual backend API URL here
+        // Replace with your backend URL (e.g., 'https://api.yourserver.com/api')
+        API_URL: "https://your-api-domain.com/api"
       }
     },
     getCurrentConfig() {
@@ -59902,16 +59904,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       this.config = APP_CONFIG.getCurrentConfig();
     }
     static navigateToLogin(returnUrl) {
-      const url = new URL("/#/login", this.config.MARKETING_URL);
+      let url = `${this.config.MARKETING_URL}/#/login`;
       if (returnUrl) {
-        url.searchParams.set("return_url", returnUrl);
+        const urlObj = new URL(url);
+        urlObj.searchParams.set("return_url", returnUrl);
+        url = urlObj.toString();
       }
-      window.location.href = url.toString();
+      window.location.href = url;
     }
     static navigateToMarketing(page = "/") {
-      const hashPage = page === "/" ? "/" : page.startsWith("#") ? page : `/#${page}`;
-      const url = new URL(hashPage, this.config.MARKETING_URL);
-      window.location.href = url.toString();
+      const hashPage = page === "/" ? "" : page.startsWith("#") ? page : `#${page}`;
+      window.location.href = `${this.config.MARKETING_URL}/${hashPage}`;
     }
   };
 
@@ -63686,15 +63689,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     }
     /**
      * Check if the app should use backend API or localStorage
-     * Priority: localStorage override > environment variable > production default
+     * Priority: localStorage override > valid API URL check > environment variable
      */
     static shouldUseBackend() {
       const override = localStorage.getItem(this.USE_BACKEND_KEY);
       if (override !== null) {
         return override === "true";
       }
+      const config = APP_CONFIG.getCurrentConfig();
+      const hasValidApiUrl = config.API_URL && !config.API_URL.includes("your-api-domain.com") && !config.API_URL.includes("localhost");
       if (false) {
-        return true;
+        return hasValidApiUrl;
       }
       return false;
     }
@@ -63771,7 +63776,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       this.counter = lastCounter ? parseInt(lastCounter, 10) : 0;
     }
     /**
-     * Generate a unique ID for demo mode
+     * Generate a unique ID
      * Format: [prefix]_[timestamp]_[counter]_[random]
      * Example: "car_1703123456789_001_a7b2"
      */
@@ -63819,25 +63824,25 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
      * Generate session ID for this browser session
      */
     static generateSessionId() {
-      let sessionId = sessionStorage.getItem("demo_session_id");
+      let sessionId = sessionStorage.getItem("session_id");
       if (!sessionId) {
         sessionId = this.generateRandomSuffix(8);
-        sessionStorage.setItem("demo_session_id", sessionId);
+        sessionStorage.setItem("session_id", sessionId);
       }
       return sessionId;
     }
     /**
      * Validate if an ID was generated by this system
      */
-    static isValidDemoId(id2) {
+    static isValidId(id2) {
       const pattern = /^[a-z]+_\d+_\d{3}_[a-z0-9]{4}$/;
       return pattern.test(id2);
     }
     /**
-     * Extract information from a demo ID
+     * Extract information from an ID
      */
     static parseId(id2) {
-      if (!this.isValidDemoId(id2)) return null;
+      if (!this.isValidId(id2)) return null;
       const parts = id2.split("_");
       return {
         prefix: parts[0],
@@ -64172,7 +64177,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         }
       });
       try {
-        sessionStorage.removeItem("demo_session_id");
+        sessionStorage.removeItem("session_id");
       } catch (error) {
         console.error("Error clearing session storage:", error);
       }
@@ -64617,7 +64622,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       const idGeneratorInfo = {
         currentCounter: IdGenerator.getCurrentCounter(),
         lastGenerated: localStorage.getItem("id_counter"),
-        sessionId: sessionStorage.getItem("demo_session_id")
+        sessionId: sessionStorage.getItem("session_id")
       };
       setDebugInfo({
         ...configDebugInfo,
@@ -64821,45 +64826,33 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     ] }) });
   }
 
-  // src/pages/Home.tsx
-  var import_react6 = __toESM(require_react(), 1);
+  // src/components/DevModeToggle.tsx
+  var import_react7 = __toESM(require_react(), 1);
 
-  // src/components/ui/dialog.tsx
-  var React42 = __toESM(require_react(), 1);
+  // src/components/ui/popover.tsx
+  var React45 = __toESM(require_react(), 1);
 
-  // ../../node_modules/@radix-ui/react-dialog/dist/index.mjs
-  var React41 = __toESM(require_react(), 1);
-
-  // ../../node_modules/@radix-ui/react-id/dist/index.mjs
-  var React26 = __toESM(require_react(), 1);
-  var useReactId = React26[" useId ".trim().toString()] || (() => void 0);
-  var count = 0;
-  function useId2(deterministicId) {
-    const [id2, setId] = React26.useState(useReactId());
-    useLayoutEffect22(() => {
-      if (!deterministicId) setId((reactId) => reactId ?? String(count++));
-    }, [deterministicId]);
-    return deterministicId || (id2 ? `radix-${id2}` : "");
-  }
+  // ../../node_modules/@radix-ui/react-popover/dist/index.mjs
+  var React44 = __toESM(require_react(), 1);
 
   // ../../node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs
-  var React29 = __toESM(require_react(), 1);
+  var React28 = __toESM(require_react(), 1);
 
   // ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs
-  var React27 = __toESM(require_react(), 1);
+  var React26 = __toESM(require_react(), 1);
   function useCallbackRef(callback) {
-    const callbackRef = React27.useRef(callback);
-    React27.useEffect(() => {
+    const callbackRef = React26.useRef(callback);
+    React26.useEffect(() => {
       callbackRef.current = callback;
     });
-    return React27.useMemo(() => (...args) => callbackRef.current?.(...args), []);
+    return React26.useMemo(() => (...args) => callbackRef.current?.(...args), []);
   }
 
   // ../../node_modules/@radix-ui/react-use-escape-keydown/dist/index.mjs
-  var React28 = __toESM(require_react(), 1);
+  var React27 = __toESM(require_react(), 1);
   function useEscapeKeydown(onEscapeKeyDownProp, ownerDocument = globalThis?.document) {
     const onEscapeKeyDown = useCallbackRef(onEscapeKeyDownProp);
-    React28.useEffect(() => {
+    React27.useEffect(() => {
       const handleKeyDown = (event) => {
         if (event.key === "Escape") {
           onEscapeKeyDown(event);
@@ -64877,12 +64870,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var POINTER_DOWN_OUTSIDE = "dismissableLayer.pointerDownOutside";
   var FOCUS_OUTSIDE = "dismissableLayer.focusOutside";
   var originalBodyPointerEvents;
-  var DismissableLayerContext = React29.createContext({
+  var DismissableLayerContext = React28.createContext({
     layers: /* @__PURE__ */ new Set(),
     layersWithOutsidePointerEventsDisabled: /* @__PURE__ */ new Set(),
     branches: /* @__PURE__ */ new Set()
   });
-  var DismissableLayer = React29.forwardRef(
+  var DismissableLayer = React28.forwardRef(
     (props, forwardedRef) => {
       const {
         disableOutsidePointerEvents = false,
@@ -64893,10 +64886,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         onDismiss,
         ...layerProps
       } = props;
-      const context = React29.useContext(DismissableLayerContext);
-      const [node2, setNode] = React29.useState(null);
+      const context = React28.useContext(DismissableLayerContext);
+      const [node2, setNode] = React28.useState(null);
       const ownerDocument = node2?.ownerDocument ?? globalThis?.document;
-      const [, force] = React29.useState({});
+      const [, force] = React28.useState({});
       const composedRefs = useComposedRefs(forwardedRef, (node22) => setNode(node22));
       const layers = Array.from(context.layers);
       const [highestLayerWithOutsidePointerEventsDisabled] = [...context.layersWithOutsidePointerEventsDisabled].slice(-1);
@@ -64929,7 +64922,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           onDismiss();
         }
       }, ownerDocument);
-      React29.useEffect(() => {
+      React28.useEffect(() => {
         if (!node2) return;
         if (disableOutsidePointerEvents) {
           if (context.layersWithOutsidePointerEventsDisabled.size === 0) {
@@ -64946,7 +64939,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           }
         };
       }, [node2, ownerDocument, disableOutsidePointerEvents, context]);
-      React29.useEffect(() => {
+      React28.useEffect(() => {
         return () => {
           if (!node2) return;
           context.layers.delete(node2);
@@ -64954,7 +64947,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           dispatchUpdate();
         };
       }, [node2, context]);
-      React29.useEffect(() => {
+      React28.useEffect(() => {
         const handleUpdate = () => force({});
         document.addEventListener(CONTEXT_UPDATE, handleUpdate);
         return () => document.removeEventListener(CONTEXT_UPDATE, handleUpdate);
@@ -64980,11 +64973,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   );
   DismissableLayer.displayName = DISMISSABLE_LAYER_NAME;
   var BRANCH_NAME = "DismissableLayerBranch";
-  var DismissableLayerBranch = React29.forwardRef((props, forwardedRef) => {
-    const context = React29.useContext(DismissableLayerContext);
-    const ref = React29.useRef(null);
+  var DismissableLayerBranch = React28.forwardRef((props, forwardedRef) => {
+    const context = React28.useContext(DismissableLayerContext);
+    const ref = React28.useRef(null);
     const composedRefs = useComposedRefs(forwardedRef, ref);
-    React29.useEffect(() => {
+    React28.useEffect(() => {
       const node2 = ref.current;
       if (node2) {
         context.branches.add(node2);
@@ -64998,10 +64991,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   DismissableLayerBranch.displayName = BRANCH_NAME;
   function usePointerDownOutside(onPointerDownOutside, ownerDocument = globalThis?.document) {
     const handlePointerDownOutside = useCallbackRef(onPointerDownOutside);
-    const isPointerInsideReactTreeRef = React29.useRef(false);
-    const handleClickRef = React29.useRef(() => {
+    const isPointerInsideReactTreeRef = React28.useRef(false);
+    const handleClickRef = React28.useRef(() => {
     });
-    React29.useEffect(() => {
+    React28.useEffect(() => {
       const handlePointerDown = (event) => {
         if (event.target && !isPointerInsideReactTreeRef.current) {
           let handleAndDispatchPointerDownOutsideEvent2 = function() {
@@ -65042,8 +65035,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
   function useFocusOutside(onFocusOutside, ownerDocument = globalThis?.document) {
     const handleFocusOutside = useCallbackRef(onFocusOutside);
-    const isFocusInsideReactTreeRef = React29.useRef(false);
-    React29.useEffect(() => {
+    const isFocusInsideReactTreeRef = React28.useRef(false);
+    React28.useEffect(() => {
       const handleFocus = (event) => {
         if (event.target && !isFocusInsideReactTreeRef.current) {
           const eventDetail = { originalEvent: event };
@@ -65073,6 +65066,34 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     } else {
       target.dispatchEvent(event);
     }
+  }
+
+  // ../../node_modules/@radix-ui/react-focus-guards/dist/index.mjs
+  var React29 = __toESM(require_react(), 1);
+  var count = 0;
+  function useFocusGuards() {
+    React29.useEffect(() => {
+      const edgeGuards = document.querySelectorAll("[data-radix-focus-guard]");
+      document.body.insertAdjacentElement("afterbegin", edgeGuards[0] ?? createFocusGuard());
+      document.body.insertAdjacentElement("beforeend", edgeGuards[1] ?? createFocusGuard());
+      count++;
+      return () => {
+        if (count === 1) {
+          document.querySelectorAll("[data-radix-focus-guard]").forEach((node2) => node2.remove());
+        }
+        count--;
+      };
+    }, []);
+  }
+  function createFocusGuard() {
+    const element = document.createElement("span");
+    element.setAttribute("data-radix-focus-guard", "");
+    element.tabIndex = 0;
+    element.style.outline = "none";
+    element.style.opacity = "0";
+    element.style.position = "fixed";
+    element.style.pointerEvents = "none";
+    return element;
   }
 
   // ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs
@@ -65279,25 +65300,2211 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     return items.filter((item) => item.tagName !== "A");
   }
 
-  // ../../node_modules/@radix-ui/react-portal/dist/index.mjs
+  // ../../node_modules/@radix-ui/react-id/dist/index.mjs
   var React31 = __toESM(require_react(), 1);
-  var import_react_dom = __toESM(require_react_dom(), 1);
+  var useReactId = React31[" useId ".trim().toString()] || (() => void 0);
+  var count2 = 0;
+  function useId2(deterministicId) {
+    const [id2, setId] = React31.useState(useReactId());
+    useLayoutEffect22(() => {
+      if (!deterministicId) setId((reactId) => reactId ?? String(count2++));
+    }, [deterministicId]);
+    return deterministicId || (id2 ? `radix-${id2}` : "");
+  }
+
+  // ../../node_modules/@radix-ui/react-popper/dist/index.mjs
+  var React34 = __toESM(require_react(), 1);
+
+  // ../../node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs
+  var sides = ["top", "right", "bottom", "left"];
+  var min = Math.min;
+  var max = Math.max;
+  var round = Math.round;
+  var floor = Math.floor;
+  var createCoords = (v3) => ({
+    x: v3,
+    y: v3
+  });
+  var oppositeSideMap = {
+    left: "right",
+    right: "left",
+    bottom: "top",
+    top: "bottom"
+  };
+  var oppositeAlignmentMap = {
+    start: "end",
+    end: "start"
+  };
+  function clamp(start, value, end) {
+    return max(start, min(value, end));
+  }
+  function evaluate(value, param) {
+    return typeof value === "function" ? value(param) : value;
+  }
+  function getSide(placement) {
+    return placement.split("-")[0];
+  }
+  function getAlignment(placement) {
+    return placement.split("-")[1];
+  }
+  function getOppositeAxis(axis) {
+    return axis === "x" ? "y" : "x";
+  }
+  function getAxisLength(axis) {
+    return axis === "y" ? "height" : "width";
+  }
+  var yAxisSides = /* @__PURE__ */ new Set(["top", "bottom"]);
+  function getSideAxis(placement) {
+    return yAxisSides.has(getSide(placement)) ? "y" : "x";
+  }
+  function getAlignmentAxis(placement) {
+    return getOppositeAxis(getSideAxis(placement));
+  }
+  function getAlignmentSides(placement, rects, rtl) {
+    if (rtl === void 0) {
+      rtl = false;
+    }
+    const alignment = getAlignment(placement);
+    const alignmentAxis = getAlignmentAxis(placement);
+    const length = getAxisLength(alignmentAxis);
+    let mainAlignmentSide = alignmentAxis === "x" ? alignment === (rtl ? "end" : "start") ? "right" : "left" : alignment === "start" ? "bottom" : "top";
+    if (rects.reference[length] > rects.floating[length]) {
+      mainAlignmentSide = getOppositePlacement(mainAlignmentSide);
+    }
+    return [mainAlignmentSide, getOppositePlacement(mainAlignmentSide)];
+  }
+  function getExpandedPlacements(placement) {
+    const oppositePlacement = getOppositePlacement(placement);
+    return [getOppositeAlignmentPlacement(placement), oppositePlacement, getOppositeAlignmentPlacement(oppositePlacement)];
+  }
+  function getOppositeAlignmentPlacement(placement) {
+    return placement.replace(/start|end/g, (alignment) => oppositeAlignmentMap[alignment]);
+  }
+  var lrPlacement = ["left", "right"];
+  var rlPlacement = ["right", "left"];
+  var tbPlacement = ["top", "bottom"];
+  var btPlacement = ["bottom", "top"];
+  function getSideList(side, isStart, rtl) {
+    switch (side) {
+      case "top":
+      case "bottom":
+        if (rtl) return isStart ? rlPlacement : lrPlacement;
+        return isStart ? lrPlacement : rlPlacement;
+      case "left":
+      case "right":
+        return isStart ? tbPlacement : btPlacement;
+      default:
+        return [];
+    }
+  }
+  function getOppositeAxisPlacements(placement, flipAlignment, direction, rtl) {
+    const alignment = getAlignment(placement);
+    let list = getSideList(getSide(placement), direction === "start", rtl);
+    if (alignment) {
+      list = list.map((side) => side + "-" + alignment);
+      if (flipAlignment) {
+        list = list.concat(list.map(getOppositeAlignmentPlacement));
+      }
+    }
+    return list;
+  }
+  function getOppositePlacement(placement) {
+    return placement.replace(/left|right|bottom|top/g, (side) => oppositeSideMap[side]);
+  }
+  function expandPaddingObject(padding) {
+    return {
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      ...padding
+    };
+  }
+  function getPaddingObject(padding) {
+    return typeof padding !== "number" ? expandPaddingObject(padding) : {
+      top: padding,
+      right: padding,
+      bottom: padding,
+      left: padding
+    };
+  }
+  function rectToClientRect(rect) {
+    const {
+      x: x3,
+      y: y5,
+      width,
+      height
+    } = rect;
+    return {
+      width,
+      height,
+      top: y5,
+      left: x3,
+      right: x3 + width,
+      bottom: y5 + height,
+      x: x3,
+      y: y5
+    };
+  }
+
+  // ../../node_modules/@floating-ui/core/dist/floating-ui.core.mjs
+  function computeCoordsFromPlacement(_ref, placement, rtl) {
+    let {
+      reference,
+      floating
+    } = _ref;
+    const sideAxis = getSideAxis(placement);
+    const alignmentAxis = getAlignmentAxis(placement);
+    const alignLength = getAxisLength(alignmentAxis);
+    const side = getSide(placement);
+    const isVertical = sideAxis === "y";
+    const commonX = reference.x + reference.width / 2 - floating.width / 2;
+    const commonY = reference.y + reference.height / 2 - floating.height / 2;
+    const commonAlign = reference[alignLength] / 2 - floating[alignLength] / 2;
+    let coords;
+    switch (side) {
+      case "top":
+        coords = {
+          x: commonX,
+          y: reference.y - floating.height
+        };
+        break;
+      case "bottom":
+        coords = {
+          x: commonX,
+          y: reference.y + reference.height
+        };
+        break;
+      case "right":
+        coords = {
+          x: reference.x + reference.width,
+          y: commonY
+        };
+        break;
+      case "left":
+        coords = {
+          x: reference.x - floating.width,
+          y: commonY
+        };
+        break;
+      default:
+        coords = {
+          x: reference.x,
+          y: reference.y
+        };
+    }
+    switch (getAlignment(placement)) {
+      case "start":
+        coords[alignmentAxis] -= commonAlign * (rtl && isVertical ? -1 : 1);
+        break;
+      case "end":
+        coords[alignmentAxis] += commonAlign * (rtl && isVertical ? -1 : 1);
+        break;
+    }
+    return coords;
+  }
+  var computePosition = async (reference, floating, config) => {
+    const {
+      placement = "bottom",
+      strategy = "absolute",
+      middleware = [],
+      platform: platform2
+    } = config;
+    const validMiddleware = middleware.filter(Boolean);
+    const rtl = await (platform2.isRTL == null ? void 0 : platform2.isRTL(floating));
+    let rects = await platform2.getElementRects({
+      reference,
+      floating,
+      strategy
+    });
+    let {
+      x: x3,
+      y: y5
+    } = computeCoordsFromPlacement(rects, placement, rtl);
+    let statefulPlacement = placement;
+    let middlewareData = {};
+    let resetCount = 0;
+    for (let i4 = 0; i4 < validMiddleware.length; i4++) {
+      const {
+        name,
+        fn
+      } = validMiddleware[i4];
+      const {
+        x: nextX,
+        y: nextY,
+        data: data2,
+        reset
+      } = await fn({
+        x: x3,
+        y: y5,
+        initialPlacement: placement,
+        placement: statefulPlacement,
+        strategy,
+        middlewareData,
+        rects,
+        platform: platform2,
+        elements: {
+          reference,
+          floating
+        }
+      });
+      x3 = nextX != null ? nextX : x3;
+      y5 = nextY != null ? nextY : y5;
+      middlewareData = {
+        ...middlewareData,
+        [name]: {
+          ...middlewareData[name],
+          ...data2
+        }
+      };
+      if (reset && resetCount <= 50) {
+        resetCount++;
+        if (typeof reset === "object") {
+          if (reset.placement) {
+            statefulPlacement = reset.placement;
+          }
+          if (reset.rects) {
+            rects = reset.rects === true ? await platform2.getElementRects({
+              reference,
+              floating,
+              strategy
+            }) : reset.rects;
+          }
+          ({
+            x: x3,
+            y: y5
+          } = computeCoordsFromPlacement(rects, statefulPlacement, rtl));
+        }
+        i4 = -1;
+      }
+    }
+    return {
+      x: x3,
+      y: y5,
+      placement: statefulPlacement,
+      strategy,
+      middlewareData
+    };
+  };
+  async function detectOverflow(state, options) {
+    var _await$platform$isEle;
+    if (options === void 0) {
+      options = {};
+    }
+    const {
+      x: x3,
+      y: y5,
+      platform: platform2,
+      rects,
+      elements: elements2,
+      strategy
+    } = state;
+    const {
+      boundary = "clippingAncestors",
+      rootBoundary = "viewport",
+      elementContext = "floating",
+      altBoundary = false,
+      padding = 0
+    } = evaluate(options, state);
+    const paddingObject = getPaddingObject(padding);
+    const altContext = elementContext === "floating" ? "reference" : "floating";
+    const element = elements2[altBoundary ? altContext : elementContext];
+    const clippingClientRect = rectToClientRect(await platform2.getClippingRect({
+      element: ((_await$platform$isEle = await (platform2.isElement == null ? void 0 : platform2.isElement(element))) != null ? _await$platform$isEle : true) ? element : element.contextElement || await (platform2.getDocumentElement == null ? void 0 : platform2.getDocumentElement(elements2.floating)),
+      boundary,
+      rootBoundary,
+      strategy
+    }));
+    const rect = elementContext === "floating" ? {
+      x: x3,
+      y: y5,
+      width: rects.floating.width,
+      height: rects.floating.height
+    } : rects.reference;
+    const offsetParent = await (platform2.getOffsetParent == null ? void 0 : platform2.getOffsetParent(elements2.floating));
+    const offsetScale = await (platform2.isElement == null ? void 0 : platform2.isElement(offsetParent)) ? await (platform2.getScale == null ? void 0 : platform2.getScale(offsetParent)) || {
+      x: 1,
+      y: 1
+    } : {
+      x: 1,
+      y: 1
+    };
+    const elementClientRect = rectToClientRect(platform2.convertOffsetParentRelativeRectToViewportRelativeRect ? await platform2.convertOffsetParentRelativeRectToViewportRelativeRect({
+      elements: elements2,
+      rect,
+      offsetParent,
+      strategy
+    }) : rect);
+    return {
+      top: (clippingClientRect.top - elementClientRect.top + paddingObject.top) / offsetScale.y,
+      bottom: (elementClientRect.bottom - clippingClientRect.bottom + paddingObject.bottom) / offsetScale.y,
+      left: (clippingClientRect.left - elementClientRect.left + paddingObject.left) / offsetScale.x,
+      right: (elementClientRect.right - clippingClientRect.right + paddingObject.right) / offsetScale.x
+    };
+  }
+  var arrow = (options) => ({
+    name: "arrow",
+    options,
+    async fn(state) {
+      const {
+        x: x3,
+        y: y5,
+        placement,
+        rects,
+        platform: platform2,
+        elements: elements2,
+        middlewareData
+      } = state;
+      const {
+        element,
+        padding = 0
+      } = evaluate(options, state) || {};
+      if (element == null) {
+        return {};
+      }
+      const paddingObject = getPaddingObject(padding);
+      const coords = {
+        x: x3,
+        y: y5
+      };
+      const axis = getAlignmentAxis(placement);
+      const length = getAxisLength(axis);
+      const arrowDimensions = await platform2.getDimensions(element);
+      const isYAxis = axis === "y";
+      const minProp = isYAxis ? "top" : "left";
+      const maxProp = isYAxis ? "bottom" : "right";
+      const clientProp = isYAxis ? "clientHeight" : "clientWidth";
+      const endDiff = rects.reference[length] + rects.reference[axis] - coords[axis] - rects.floating[length];
+      const startDiff = coords[axis] - rects.reference[axis];
+      const arrowOffsetParent = await (platform2.getOffsetParent == null ? void 0 : platform2.getOffsetParent(element));
+      let clientSize = arrowOffsetParent ? arrowOffsetParent[clientProp] : 0;
+      if (!clientSize || !await (platform2.isElement == null ? void 0 : platform2.isElement(arrowOffsetParent))) {
+        clientSize = elements2.floating[clientProp] || rects.floating[length];
+      }
+      const centerToReference = endDiff / 2 - startDiff / 2;
+      const largestPossiblePadding = clientSize / 2 - arrowDimensions[length] / 2 - 1;
+      const minPadding = min(paddingObject[minProp], largestPossiblePadding);
+      const maxPadding = min(paddingObject[maxProp], largestPossiblePadding);
+      const min$1 = minPadding;
+      const max4 = clientSize - arrowDimensions[length] - maxPadding;
+      const center = clientSize / 2 - arrowDimensions[length] / 2 + centerToReference;
+      const offset4 = clamp(min$1, center, max4);
+      const shouldAddOffset = !middlewareData.arrow && getAlignment(placement) != null && center !== offset4 && rects.reference[length] / 2 - (center < min$1 ? minPadding : maxPadding) - arrowDimensions[length] / 2 < 0;
+      const alignmentOffset = shouldAddOffset ? center < min$1 ? center - min$1 : center - max4 : 0;
+      return {
+        [axis]: coords[axis] + alignmentOffset,
+        data: {
+          [axis]: offset4,
+          centerOffset: center - offset4 - alignmentOffset,
+          ...shouldAddOffset && {
+            alignmentOffset
+          }
+        },
+        reset: shouldAddOffset
+      };
+    }
+  });
+  var flip = function(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    return {
+      name: "flip",
+      options,
+      async fn(state) {
+        var _middlewareData$arrow, _middlewareData$flip;
+        const {
+          placement,
+          middlewareData,
+          rects,
+          initialPlacement,
+          platform: platform2,
+          elements: elements2
+        } = state;
+        const {
+          mainAxis: checkMainAxis = true,
+          crossAxis: checkCrossAxis = true,
+          fallbackPlacements: specifiedFallbackPlacements,
+          fallbackStrategy = "bestFit",
+          fallbackAxisSideDirection = "none",
+          flipAlignment = true,
+          ...detectOverflowOptions
+        } = evaluate(options, state);
+        if ((_middlewareData$arrow = middlewareData.arrow) != null && _middlewareData$arrow.alignmentOffset) {
+          return {};
+        }
+        const side = getSide(placement);
+        const initialSideAxis = getSideAxis(initialPlacement);
+        const isBasePlacement = getSide(initialPlacement) === initialPlacement;
+        const rtl = await (platform2.isRTL == null ? void 0 : platform2.isRTL(elements2.floating));
+        const fallbackPlacements = specifiedFallbackPlacements || (isBasePlacement || !flipAlignment ? [getOppositePlacement(initialPlacement)] : getExpandedPlacements(initialPlacement));
+        const hasFallbackAxisSideDirection = fallbackAxisSideDirection !== "none";
+        if (!specifiedFallbackPlacements && hasFallbackAxisSideDirection) {
+          fallbackPlacements.push(...getOppositeAxisPlacements(initialPlacement, flipAlignment, fallbackAxisSideDirection, rtl));
+        }
+        const placements2 = [initialPlacement, ...fallbackPlacements];
+        const overflow = await detectOverflow(state, detectOverflowOptions);
+        const overflows = [];
+        let overflowsData = ((_middlewareData$flip = middlewareData.flip) == null ? void 0 : _middlewareData$flip.overflows) || [];
+        if (checkMainAxis) {
+          overflows.push(overflow[side]);
+        }
+        if (checkCrossAxis) {
+          const sides2 = getAlignmentSides(placement, rects, rtl);
+          overflows.push(overflow[sides2[0]], overflow[sides2[1]]);
+        }
+        overflowsData = [...overflowsData, {
+          placement,
+          overflows
+        }];
+        if (!overflows.every((side2) => side2 <= 0)) {
+          var _middlewareData$flip2, _overflowsData$filter;
+          const nextIndex = (((_middlewareData$flip2 = middlewareData.flip) == null ? void 0 : _middlewareData$flip2.index) || 0) + 1;
+          const nextPlacement = placements2[nextIndex];
+          if (nextPlacement) {
+            const ignoreCrossAxisOverflow = checkCrossAxis === "alignment" ? initialSideAxis !== getSideAxis(nextPlacement) : false;
+            if (!ignoreCrossAxisOverflow || // We leave the current main axis only if every placement on that axis
+            // overflows the main axis.
+            overflowsData.every((d4) => getSideAxis(d4.placement) === initialSideAxis ? d4.overflows[0] > 0 : true)) {
+              return {
+                data: {
+                  index: nextIndex,
+                  overflows: overflowsData
+                },
+                reset: {
+                  placement: nextPlacement
+                }
+              };
+            }
+          }
+          let resetPlacement = (_overflowsData$filter = overflowsData.filter((d4) => d4.overflows[0] <= 0).sort((a5, b3) => a5.overflows[1] - b3.overflows[1])[0]) == null ? void 0 : _overflowsData$filter.placement;
+          if (!resetPlacement) {
+            switch (fallbackStrategy) {
+              case "bestFit": {
+                var _overflowsData$filter2;
+                const placement2 = (_overflowsData$filter2 = overflowsData.filter((d4) => {
+                  if (hasFallbackAxisSideDirection) {
+                    const currentSideAxis = getSideAxis(d4.placement);
+                    return currentSideAxis === initialSideAxis || // Create a bias to the `y` side axis due to horizontal
+                    // reading directions favoring greater width.
+                    currentSideAxis === "y";
+                  }
+                  return true;
+                }).map((d4) => [d4.placement, d4.overflows.filter((overflow2) => overflow2 > 0).reduce((acc, overflow2) => acc + overflow2, 0)]).sort((a5, b3) => a5[1] - b3[1])[0]) == null ? void 0 : _overflowsData$filter2[0];
+                if (placement2) {
+                  resetPlacement = placement2;
+                }
+                break;
+              }
+              case "initialPlacement":
+                resetPlacement = initialPlacement;
+                break;
+            }
+          }
+          if (placement !== resetPlacement) {
+            return {
+              reset: {
+                placement: resetPlacement
+              }
+            };
+          }
+        }
+        return {};
+      }
+    };
+  };
+  function getSideOffsets(overflow, rect) {
+    return {
+      top: overflow.top - rect.height,
+      right: overflow.right - rect.width,
+      bottom: overflow.bottom - rect.height,
+      left: overflow.left - rect.width
+    };
+  }
+  function isAnySideFullyClipped(overflow) {
+    return sides.some((side) => overflow[side] >= 0);
+  }
+  var hide = function(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    return {
+      name: "hide",
+      options,
+      async fn(state) {
+        const {
+          rects
+        } = state;
+        const {
+          strategy = "referenceHidden",
+          ...detectOverflowOptions
+        } = evaluate(options, state);
+        switch (strategy) {
+          case "referenceHidden": {
+            const overflow = await detectOverflow(state, {
+              ...detectOverflowOptions,
+              elementContext: "reference"
+            });
+            const offsets = getSideOffsets(overflow, rects.reference);
+            return {
+              data: {
+                referenceHiddenOffsets: offsets,
+                referenceHidden: isAnySideFullyClipped(offsets)
+              }
+            };
+          }
+          case "escaped": {
+            const overflow = await detectOverflow(state, {
+              ...detectOverflowOptions,
+              altBoundary: true
+            });
+            const offsets = getSideOffsets(overflow, rects.floating);
+            return {
+              data: {
+                escapedOffsets: offsets,
+                escaped: isAnySideFullyClipped(offsets)
+              }
+            };
+          }
+          default: {
+            return {};
+          }
+        }
+      }
+    };
+  };
+  var originSides = /* @__PURE__ */ new Set(["left", "top"]);
+  async function convertValueToCoords(state, options) {
+    const {
+      placement,
+      platform: platform2,
+      elements: elements2
+    } = state;
+    const rtl = await (platform2.isRTL == null ? void 0 : platform2.isRTL(elements2.floating));
+    const side = getSide(placement);
+    const alignment = getAlignment(placement);
+    const isVertical = getSideAxis(placement) === "y";
+    const mainAxisMulti = originSides.has(side) ? -1 : 1;
+    const crossAxisMulti = rtl && isVertical ? -1 : 1;
+    const rawValue = evaluate(options, state);
+    let {
+      mainAxis,
+      crossAxis,
+      alignmentAxis
+    } = typeof rawValue === "number" ? {
+      mainAxis: rawValue,
+      crossAxis: 0,
+      alignmentAxis: null
+    } : {
+      mainAxis: rawValue.mainAxis || 0,
+      crossAxis: rawValue.crossAxis || 0,
+      alignmentAxis: rawValue.alignmentAxis
+    };
+    if (alignment && typeof alignmentAxis === "number") {
+      crossAxis = alignment === "end" ? alignmentAxis * -1 : alignmentAxis;
+    }
+    return isVertical ? {
+      x: crossAxis * crossAxisMulti,
+      y: mainAxis * mainAxisMulti
+    } : {
+      x: mainAxis * mainAxisMulti,
+      y: crossAxis * crossAxisMulti
+    };
+  }
+  var offset = function(options) {
+    if (options === void 0) {
+      options = 0;
+    }
+    return {
+      name: "offset",
+      options,
+      async fn(state) {
+        var _middlewareData$offse, _middlewareData$arrow;
+        const {
+          x: x3,
+          y: y5,
+          placement,
+          middlewareData
+        } = state;
+        const diffCoords = await convertValueToCoords(state, options);
+        if (placement === ((_middlewareData$offse = middlewareData.offset) == null ? void 0 : _middlewareData$offse.placement) && (_middlewareData$arrow = middlewareData.arrow) != null && _middlewareData$arrow.alignmentOffset) {
+          return {};
+        }
+        return {
+          x: x3 + diffCoords.x,
+          y: y5 + diffCoords.y,
+          data: {
+            ...diffCoords,
+            placement
+          }
+        };
+      }
+    };
+  };
+  var shift = function(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    return {
+      name: "shift",
+      options,
+      async fn(state) {
+        const {
+          x: x3,
+          y: y5,
+          placement
+        } = state;
+        const {
+          mainAxis: checkMainAxis = true,
+          crossAxis: checkCrossAxis = false,
+          limiter = {
+            fn: (_ref) => {
+              let {
+                x: x4,
+                y: y6
+              } = _ref;
+              return {
+                x: x4,
+                y: y6
+              };
+            }
+          },
+          ...detectOverflowOptions
+        } = evaluate(options, state);
+        const coords = {
+          x: x3,
+          y: y5
+        };
+        const overflow = await detectOverflow(state, detectOverflowOptions);
+        const crossAxis = getSideAxis(getSide(placement));
+        const mainAxis = getOppositeAxis(crossAxis);
+        let mainAxisCoord = coords[mainAxis];
+        let crossAxisCoord = coords[crossAxis];
+        if (checkMainAxis) {
+          const minSide = mainAxis === "y" ? "top" : "left";
+          const maxSide = mainAxis === "y" ? "bottom" : "right";
+          const min3 = mainAxisCoord + overflow[minSide];
+          const max4 = mainAxisCoord - overflow[maxSide];
+          mainAxisCoord = clamp(min3, mainAxisCoord, max4);
+        }
+        if (checkCrossAxis) {
+          const minSide = crossAxis === "y" ? "top" : "left";
+          const maxSide = crossAxis === "y" ? "bottom" : "right";
+          const min3 = crossAxisCoord + overflow[minSide];
+          const max4 = crossAxisCoord - overflow[maxSide];
+          crossAxisCoord = clamp(min3, crossAxisCoord, max4);
+        }
+        const limitedCoords = limiter.fn({
+          ...state,
+          [mainAxis]: mainAxisCoord,
+          [crossAxis]: crossAxisCoord
+        });
+        return {
+          ...limitedCoords,
+          data: {
+            x: limitedCoords.x - x3,
+            y: limitedCoords.y - y5,
+            enabled: {
+              [mainAxis]: checkMainAxis,
+              [crossAxis]: checkCrossAxis
+            }
+          }
+        };
+      }
+    };
+  };
+  var limitShift = function(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    return {
+      options,
+      fn(state) {
+        const {
+          x: x3,
+          y: y5,
+          placement,
+          rects,
+          middlewareData
+        } = state;
+        const {
+          offset: offset4 = 0,
+          mainAxis: checkMainAxis = true,
+          crossAxis: checkCrossAxis = true
+        } = evaluate(options, state);
+        const coords = {
+          x: x3,
+          y: y5
+        };
+        const crossAxis = getSideAxis(placement);
+        const mainAxis = getOppositeAxis(crossAxis);
+        let mainAxisCoord = coords[mainAxis];
+        let crossAxisCoord = coords[crossAxis];
+        const rawOffset = evaluate(offset4, state);
+        const computedOffset = typeof rawOffset === "number" ? {
+          mainAxis: rawOffset,
+          crossAxis: 0
+        } : {
+          mainAxis: 0,
+          crossAxis: 0,
+          ...rawOffset
+        };
+        if (checkMainAxis) {
+          const len = mainAxis === "y" ? "height" : "width";
+          const limitMin = rects.reference[mainAxis] - rects.floating[len] + computedOffset.mainAxis;
+          const limitMax = rects.reference[mainAxis] + rects.reference[len] - computedOffset.mainAxis;
+          if (mainAxisCoord < limitMin) {
+            mainAxisCoord = limitMin;
+          } else if (mainAxisCoord > limitMax) {
+            mainAxisCoord = limitMax;
+          }
+        }
+        if (checkCrossAxis) {
+          var _middlewareData$offse, _middlewareData$offse2;
+          const len = mainAxis === "y" ? "width" : "height";
+          const isOriginSide = originSides.has(getSide(placement));
+          const limitMin = rects.reference[crossAxis] - rects.floating[len] + (isOriginSide ? ((_middlewareData$offse = middlewareData.offset) == null ? void 0 : _middlewareData$offse[crossAxis]) || 0 : 0) + (isOriginSide ? 0 : computedOffset.crossAxis);
+          const limitMax = rects.reference[crossAxis] + rects.reference[len] + (isOriginSide ? 0 : ((_middlewareData$offse2 = middlewareData.offset) == null ? void 0 : _middlewareData$offse2[crossAxis]) || 0) - (isOriginSide ? computedOffset.crossAxis : 0);
+          if (crossAxisCoord < limitMin) {
+            crossAxisCoord = limitMin;
+          } else if (crossAxisCoord > limitMax) {
+            crossAxisCoord = limitMax;
+          }
+        }
+        return {
+          [mainAxis]: mainAxisCoord,
+          [crossAxis]: crossAxisCoord
+        };
+      }
+    };
+  };
+  var size = function(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    return {
+      name: "size",
+      options,
+      async fn(state) {
+        var _state$middlewareData, _state$middlewareData2;
+        const {
+          placement,
+          rects,
+          platform: platform2,
+          elements: elements2
+        } = state;
+        const {
+          apply: apply2 = () => {
+          },
+          ...detectOverflowOptions
+        } = evaluate(options, state);
+        const overflow = await detectOverflow(state, detectOverflowOptions);
+        const side = getSide(placement);
+        const alignment = getAlignment(placement);
+        const isYAxis = getSideAxis(placement) === "y";
+        const {
+          width,
+          height
+        } = rects.floating;
+        let heightSide;
+        let widthSide;
+        if (side === "top" || side === "bottom") {
+          heightSide = side;
+          widthSide = alignment === (await (platform2.isRTL == null ? void 0 : platform2.isRTL(elements2.floating)) ? "start" : "end") ? "left" : "right";
+        } else {
+          widthSide = side;
+          heightSide = alignment === "end" ? "top" : "bottom";
+        }
+        const maximumClippingHeight = height - overflow.top - overflow.bottom;
+        const maximumClippingWidth = width - overflow.left - overflow.right;
+        const overflowAvailableHeight = min(height - overflow[heightSide], maximumClippingHeight);
+        const overflowAvailableWidth = min(width - overflow[widthSide], maximumClippingWidth);
+        const noShift = !state.middlewareData.shift;
+        let availableHeight = overflowAvailableHeight;
+        let availableWidth = overflowAvailableWidth;
+        if ((_state$middlewareData = state.middlewareData.shift) != null && _state$middlewareData.enabled.x) {
+          availableWidth = maximumClippingWidth;
+        }
+        if ((_state$middlewareData2 = state.middlewareData.shift) != null && _state$middlewareData2.enabled.y) {
+          availableHeight = maximumClippingHeight;
+        }
+        if (noShift && !alignment) {
+          const xMin = max(overflow.left, 0);
+          const xMax = max(overflow.right, 0);
+          const yMin = max(overflow.top, 0);
+          const yMax = max(overflow.bottom, 0);
+          if (isYAxis) {
+            availableWidth = width - 2 * (xMin !== 0 || xMax !== 0 ? xMin + xMax : max(overflow.left, overflow.right));
+          } else {
+            availableHeight = height - 2 * (yMin !== 0 || yMax !== 0 ? yMin + yMax : max(overflow.top, overflow.bottom));
+          }
+        }
+        await apply2({
+          ...state,
+          availableWidth,
+          availableHeight
+        });
+        const nextDimensions = await platform2.getDimensions(elements2.floating);
+        if (width !== nextDimensions.width || height !== nextDimensions.height) {
+          return {
+            reset: {
+              rects: true
+            }
+          };
+        }
+        return {};
+      }
+    };
+  };
+
+  // ../../node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs
+  function hasWindow() {
+    return typeof window !== "undefined";
+  }
+  function getNodeName(node2) {
+    if (isNode(node2)) {
+      return (node2.nodeName || "").toLowerCase();
+    }
+    return "#document";
+  }
+  function getWindow(node2) {
+    var _node$ownerDocument;
+    return (node2 == null || (_node$ownerDocument = node2.ownerDocument) == null ? void 0 : _node$ownerDocument.defaultView) || window;
+  }
+  function getDocumentElement(node2) {
+    var _ref;
+    return (_ref = (isNode(node2) ? node2.ownerDocument : node2.document) || window.document) == null ? void 0 : _ref.documentElement;
+  }
+  function isNode(value) {
+    if (!hasWindow()) {
+      return false;
+    }
+    return value instanceof Node || value instanceof getWindow(value).Node;
+  }
+  function isElement(value) {
+    if (!hasWindow()) {
+      return false;
+    }
+    return value instanceof Element || value instanceof getWindow(value).Element;
+  }
+  function isHTMLElement(value) {
+    if (!hasWindow()) {
+      return false;
+    }
+    return value instanceof HTMLElement || value instanceof getWindow(value).HTMLElement;
+  }
+  function isShadowRoot(value) {
+    if (!hasWindow() || typeof ShadowRoot === "undefined") {
+      return false;
+    }
+    return value instanceof ShadowRoot || value instanceof getWindow(value).ShadowRoot;
+  }
+  var invalidOverflowDisplayValues = /* @__PURE__ */ new Set(["inline", "contents"]);
+  function isOverflowElement(element) {
+    const {
+      overflow,
+      overflowX,
+      overflowY,
+      display
+    } = getComputedStyle2(element);
+    return /auto|scroll|overlay|hidden|clip/.test(overflow + overflowY + overflowX) && !invalidOverflowDisplayValues.has(display);
+  }
+  var tableElements = /* @__PURE__ */ new Set(["table", "td", "th"]);
+  function isTableElement(element) {
+    return tableElements.has(getNodeName(element));
+  }
+  var topLayerSelectors = [":popover-open", ":modal"];
+  function isTopLayer(element) {
+    return topLayerSelectors.some((selector) => {
+      try {
+        return element.matches(selector);
+      } catch (_e) {
+        return false;
+      }
+    });
+  }
+  var transformProperties = ["transform", "translate", "scale", "rotate", "perspective"];
+  var willChangeValues = ["transform", "translate", "scale", "rotate", "perspective", "filter"];
+  var containValues = ["paint", "layout", "strict", "content"];
+  function isContainingBlock(elementOrCss) {
+    const webkit = isWebKit();
+    const css = isElement(elementOrCss) ? getComputedStyle2(elementOrCss) : elementOrCss;
+    return transformProperties.some((value) => css[value] ? css[value] !== "none" : false) || (css.containerType ? css.containerType !== "normal" : false) || !webkit && (css.backdropFilter ? css.backdropFilter !== "none" : false) || !webkit && (css.filter ? css.filter !== "none" : false) || willChangeValues.some((value) => (css.willChange || "").includes(value)) || containValues.some((value) => (css.contain || "").includes(value));
+  }
+  function getContainingBlock(element) {
+    let currentNode = getParentNode(element);
+    while (isHTMLElement(currentNode) && !isLastTraversableNode(currentNode)) {
+      if (isContainingBlock(currentNode)) {
+        return currentNode;
+      } else if (isTopLayer(currentNode)) {
+        return null;
+      }
+      currentNode = getParentNode(currentNode);
+    }
+    return null;
+  }
+  function isWebKit() {
+    if (typeof CSS === "undefined" || !CSS.supports) return false;
+    return CSS.supports("-webkit-backdrop-filter", "none");
+  }
+  var lastTraversableNodeNames = /* @__PURE__ */ new Set(["html", "body", "#document"]);
+  function isLastTraversableNode(node2) {
+    return lastTraversableNodeNames.has(getNodeName(node2));
+  }
+  function getComputedStyle2(element) {
+    return getWindow(element).getComputedStyle(element);
+  }
+  function getNodeScroll(element) {
+    if (isElement(element)) {
+      return {
+        scrollLeft: element.scrollLeft,
+        scrollTop: element.scrollTop
+      };
+    }
+    return {
+      scrollLeft: element.scrollX,
+      scrollTop: element.scrollY
+    };
+  }
+  function getParentNode(node2) {
+    if (getNodeName(node2) === "html") {
+      return node2;
+    }
+    const result = (
+      // Step into the shadow DOM of the parent of a slotted node.
+      node2.assignedSlot || // DOM Element detected.
+      node2.parentNode || // ShadowRoot detected.
+      isShadowRoot(node2) && node2.host || // Fallback.
+      getDocumentElement(node2)
+    );
+    return isShadowRoot(result) ? result.host : result;
+  }
+  function getNearestOverflowAncestor(node2) {
+    const parentNode = getParentNode(node2);
+    if (isLastTraversableNode(parentNode)) {
+      return node2.ownerDocument ? node2.ownerDocument.body : node2.body;
+    }
+    if (isHTMLElement(parentNode) && isOverflowElement(parentNode)) {
+      return parentNode;
+    }
+    return getNearestOverflowAncestor(parentNode);
+  }
+  function getOverflowAncestors(node2, list, traverseIframes) {
+    var _node$ownerDocument2;
+    if (list === void 0) {
+      list = [];
+    }
+    if (traverseIframes === void 0) {
+      traverseIframes = true;
+    }
+    const scrollableAncestor = getNearestOverflowAncestor(node2);
+    const isBody = scrollableAncestor === ((_node$ownerDocument2 = node2.ownerDocument) == null ? void 0 : _node$ownerDocument2.body);
+    const win = getWindow(scrollableAncestor);
+    if (isBody) {
+      const frameElement = getFrameElement(win);
+      return list.concat(win, win.visualViewport || [], isOverflowElement(scrollableAncestor) ? scrollableAncestor : [], frameElement && traverseIframes ? getOverflowAncestors(frameElement) : []);
+    }
+    return list.concat(scrollableAncestor, getOverflowAncestors(scrollableAncestor, [], traverseIframes));
+  }
+  function getFrameElement(win) {
+    return win.parent && Object.getPrototypeOf(win.parent) ? win.frameElement : null;
+  }
+
+  // ../../node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs
+  function getCssDimensions(element) {
+    const css = getComputedStyle2(element);
+    let width = parseFloat(css.width) || 0;
+    let height = parseFloat(css.height) || 0;
+    const hasOffset = isHTMLElement(element);
+    const offsetWidth = hasOffset ? element.offsetWidth : width;
+    const offsetHeight = hasOffset ? element.offsetHeight : height;
+    const shouldFallback = round(width) !== offsetWidth || round(height) !== offsetHeight;
+    if (shouldFallback) {
+      width = offsetWidth;
+      height = offsetHeight;
+    }
+    return {
+      width,
+      height,
+      $: shouldFallback
+    };
+  }
+  function unwrapElement(element) {
+    return !isElement(element) ? element.contextElement : element;
+  }
+  function getScale(element) {
+    const domElement = unwrapElement(element);
+    if (!isHTMLElement(domElement)) {
+      return createCoords(1);
+    }
+    const rect = domElement.getBoundingClientRect();
+    const {
+      width,
+      height,
+      $: $2
+    } = getCssDimensions(domElement);
+    let x3 = ($2 ? round(rect.width) : rect.width) / width;
+    let y5 = ($2 ? round(rect.height) : rect.height) / height;
+    if (!x3 || !Number.isFinite(x3)) {
+      x3 = 1;
+    }
+    if (!y5 || !Number.isFinite(y5)) {
+      y5 = 1;
+    }
+    return {
+      x: x3,
+      y: y5
+    };
+  }
+  var noOffsets = /* @__PURE__ */ createCoords(0);
+  function getVisualOffsets(element) {
+    const win = getWindow(element);
+    if (!isWebKit() || !win.visualViewport) {
+      return noOffsets;
+    }
+    return {
+      x: win.visualViewport.offsetLeft,
+      y: win.visualViewport.offsetTop
+    };
+  }
+  function shouldAddVisualOffsets(element, isFixed, floatingOffsetParent) {
+    if (isFixed === void 0) {
+      isFixed = false;
+    }
+    if (!floatingOffsetParent || isFixed && floatingOffsetParent !== getWindow(element)) {
+      return false;
+    }
+    return isFixed;
+  }
+  function getBoundingClientRect(element, includeScale, isFixedStrategy, offsetParent) {
+    if (includeScale === void 0) {
+      includeScale = false;
+    }
+    if (isFixedStrategy === void 0) {
+      isFixedStrategy = false;
+    }
+    const clientRect = element.getBoundingClientRect();
+    const domElement = unwrapElement(element);
+    let scale = createCoords(1);
+    if (includeScale) {
+      if (offsetParent) {
+        if (isElement(offsetParent)) {
+          scale = getScale(offsetParent);
+        }
+      } else {
+        scale = getScale(element);
+      }
+    }
+    const visualOffsets = shouldAddVisualOffsets(domElement, isFixedStrategy, offsetParent) ? getVisualOffsets(domElement) : createCoords(0);
+    let x3 = (clientRect.left + visualOffsets.x) / scale.x;
+    let y5 = (clientRect.top + visualOffsets.y) / scale.y;
+    let width = clientRect.width / scale.x;
+    let height = clientRect.height / scale.y;
+    if (domElement) {
+      const win = getWindow(domElement);
+      const offsetWin = offsetParent && isElement(offsetParent) ? getWindow(offsetParent) : offsetParent;
+      let currentWin = win;
+      let currentIFrame = getFrameElement(currentWin);
+      while (currentIFrame && offsetParent && offsetWin !== currentWin) {
+        const iframeScale = getScale(currentIFrame);
+        const iframeRect = currentIFrame.getBoundingClientRect();
+        const css = getComputedStyle2(currentIFrame);
+        const left = iframeRect.left + (currentIFrame.clientLeft + parseFloat(css.paddingLeft)) * iframeScale.x;
+        const top = iframeRect.top + (currentIFrame.clientTop + parseFloat(css.paddingTop)) * iframeScale.y;
+        x3 *= iframeScale.x;
+        y5 *= iframeScale.y;
+        width *= iframeScale.x;
+        height *= iframeScale.y;
+        x3 += left;
+        y5 += top;
+        currentWin = getWindow(currentIFrame);
+        currentIFrame = getFrameElement(currentWin);
+      }
+    }
+    return rectToClientRect({
+      width,
+      height,
+      x: x3,
+      y: y5
+    });
+  }
+  function getWindowScrollBarX(element, rect) {
+    const leftScroll = getNodeScroll(element).scrollLeft;
+    if (!rect) {
+      return getBoundingClientRect(getDocumentElement(element)).left + leftScroll;
+    }
+    return rect.left + leftScroll;
+  }
+  function getHTMLOffset(documentElement, scroll, ignoreScrollbarX) {
+    if (ignoreScrollbarX === void 0) {
+      ignoreScrollbarX = false;
+    }
+    const htmlRect = documentElement.getBoundingClientRect();
+    const x3 = htmlRect.left + scroll.scrollLeft - (ignoreScrollbarX ? 0 : (
+      // RTL <body> scrollbar.
+      getWindowScrollBarX(documentElement, htmlRect)
+    ));
+    const y5 = htmlRect.top + scroll.scrollTop;
+    return {
+      x: x3,
+      y: y5
+    };
+  }
+  function convertOffsetParentRelativeRectToViewportRelativeRect(_ref) {
+    let {
+      elements: elements2,
+      rect,
+      offsetParent,
+      strategy
+    } = _ref;
+    const isFixed = strategy === "fixed";
+    const documentElement = getDocumentElement(offsetParent);
+    const topLayer = elements2 ? isTopLayer(elements2.floating) : false;
+    if (offsetParent === documentElement || topLayer && isFixed) {
+      return rect;
+    }
+    let scroll = {
+      scrollLeft: 0,
+      scrollTop: 0
+    };
+    let scale = createCoords(1);
+    const offsets = createCoords(0);
+    const isOffsetParentAnElement = isHTMLElement(offsetParent);
+    if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {
+      if (getNodeName(offsetParent) !== "body" || isOverflowElement(documentElement)) {
+        scroll = getNodeScroll(offsetParent);
+      }
+      if (isHTMLElement(offsetParent)) {
+        const offsetRect = getBoundingClientRect(offsetParent);
+        scale = getScale(offsetParent);
+        offsets.x = offsetRect.x + offsetParent.clientLeft;
+        offsets.y = offsetRect.y + offsetParent.clientTop;
+      }
+    }
+    const htmlOffset = documentElement && !isOffsetParentAnElement && !isFixed ? getHTMLOffset(documentElement, scroll, true) : createCoords(0);
+    return {
+      width: rect.width * scale.x,
+      height: rect.height * scale.y,
+      x: rect.x * scale.x - scroll.scrollLeft * scale.x + offsets.x + htmlOffset.x,
+      y: rect.y * scale.y - scroll.scrollTop * scale.y + offsets.y + htmlOffset.y
+    };
+  }
+  function getClientRects(element) {
+    return Array.from(element.getClientRects());
+  }
+  function getDocumentRect(element) {
+    const html2 = getDocumentElement(element);
+    const scroll = getNodeScroll(element);
+    const body = element.ownerDocument.body;
+    const width = max(html2.scrollWidth, html2.clientWidth, body.scrollWidth, body.clientWidth);
+    const height = max(html2.scrollHeight, html2.clientHeight, body.scrollHeight, body.clientHeight);
+    let x3 = -scroll.scrollLeft + getWindowScrollBarX(element);
+    const y5 = -scroll.scrollTop;
+    if (getComputedStyle2(body).direction === "rtl") {
+      x3 += max(html2.clientWidth, body.clientWidth) - width;
+    }
+    return {
+      width,
+      height,
+      x: x3,
+      y: y5
+    };
+  }
+  function getViewportRect(element, strategy) {
+    const win = getWindow(element);
+    const html2 = getDocumentElement(element);
+    const visualViewport = win.visualViewport;
+    let width = html2.clientWidth;
+    let height = html2.clientHeight;
+    let x3 = 0;
+    let y5 = 0;
+    if (visualViewport) {
+      width = visualViewport.width;
+      height = visualViewport.height;
+      const visualViewportBased = isWebKit();
+      if (!visualViewportBased || visualViewportBased && strategy === "fixed") {
+        x3 = visualViewport.offsetLeft;
+        y5 = visualViewport.offsetTop;
+      }
+    }
+    return {
+      width,
+      height,
+      x: x3,
+      y: y5
+    };
+  }
+  var absoluteOrFixed = /* @__PURE__ */ new Set(["absolute", "fixed"]);
+  function getInnerBoundingClientRect(element, strategy) {
+    const clientRect = getBoundingClientRect(element, true, strategy === "fixed");
+    const top = clientRect.top + element.clientTop;
+    const left = clientRect.left + element.clientLeft;
+    const scale = isHTMLElement(element) ? getScale(element) : createCoords(1);
+    const width = element.clientWidth * scale.x;
+    const height = element.clientHeight * scale.y;
+    const x3 = left * scale.x;
+    const y5 = top * scale.y;
+    return {
+      width,
+      height,
+      x: x3,
+      y: y5
+    };
+  }
+  function getClientRectFromClippingAncestor(element, clippingAncestor, strategy) {
+    let rect;
+    if (clippingAncestor === "viewport") {
+      rect = getViewportRect(element, strategy);
+    } else if (clippingAncestor === "document") {
+      rect = getDocumentRect(getDocumentElement(element));
+    } else if (isElement(clippingAncestor)) {
+      rect = getInnerBoundingClientRect(clippingAncestor, strategy);
+    } else {
+      const visualOffsets = getVisualOffsets(element);
+      rect = {
+        x: clippingAncestor.x - visualOffsets.x,
+        y: clippingAncestor.y - visualOffsets.y,
+        width: clippingAncestor.width,
+        height: clippingAncestor.height
+      };
+    }
+    return rectToClientRect(rect);
+  }
+  function hasFixedPositionAncestor(element, stopNode) {
+    const parentNode = getParentNode(element);
+    if (parentNode === stopNode || !isElement(parentNode) || isLastTraversableNode(parentNode)) {
+      return false;
+    }
+    return getComputedStyle2(parentNode).position === "fixed" || hasFixedPositionAncestor(parentNode, stopNode);
+  }
+  function getClippingElementAncestors(element, cache) {
+    const cachedResult = cache.get(element);
+    if (cachedResult) {
+      return cachedResult;
+    }
+    let result = getOverflowAncestors(element, [], false).filter((el) => isElement(el) && getNodeName(el) !== "body");
+    let currentContainingBlockComputedStyle = null;
+    const elementIsFixed = getComputedStyle2(element).position === "fixed";
+    let currentNode = elementIsFixed ? getParentNode(element) : element;
+    while (isElement(currentNode) && !isLastTraversableNode(currentNode)) {
+      const computedStyle = getComputedStyle2(currentNode);
+      const currentNodeIsContaining = isContainingBlock(currentNode);
+      if (!currentNodeIsContaining && computedStyle.position === "fixed") {
+        currentContainingBlockComputedStyle = null;
+      }
+      const shouldDropCurrentNode = elementIsFixed ? !currentNodeIsContaining && !currentContainingBlockComputedStyle : !currentNodeIsContaining && computedStyle.position === "static" && !!currentContainingBlockComputedStyle && absoluteOrFixed.has(currentContainingBlockComputedStyle.position) || isOverflowElement(currentNode) && !currentNodeIsContaining && hasFixedPositionAncestor(element, currentNode);
+      if (shouldDropCurrentNode) {
+        result = result.filter((ancestor) => ancestor !== currentNode);
+      } else {
+        currentContainingBlockComputedStyle = computedStyle;
+      }
+      currentNode = getParentNode(currentNode);
+    }
+    cache.set(element, result);
+    return result;
+  }
+  function getClippingRect(_ref) {
+    let {
+      element,
+      boundary,
+      rootBoundary,
+      strategy
+    } = _ref;
+    const elementClippingAncestors = boundary === "clippingAncestors" ? isTopLayer(element) ? [] : getClippingElementAncestors(element, this._c) : [].concat(boundary);
+    const clippingAncestors = [...elementClippingAncestors, rootBoundary];
+    const firstClippingAncestor = clippingAncestors[0];
+    const clippingRect = clippingAncestors.reduce((accRect, clippingAncestor) => {
+      const rect = getClientRectFromClippingAncestor(element, clippingAncestor, strategy);
+      accRect.top = max(rect.top, accRect.top);
+      accRect.right = min(rect.right, accRect.right);
+      accRect.bottom = min(rect.bottom, accRect.bottom);
+      accRect.left = max(rect.left, accRect.left);
+      return accRect;
+    }, getClientRectFromClippingAncestor(element, firstClippingAncestor, strategy));
+    return {
+      width: clippingRect.right - clippingRect.left,
+      height: clippingRect.bottom - clippingRect.top,
+      x: clippingRect.left,
+      y: clippingRect.top
+    };
+  }
+  function getDimensions(element) {
+    const {
+      width,
+      height
+    } = getCssDimensions(element);
+    return {
+      width,
+      height
+    };
+  }
+  function getRectRelativeToOffsetParent(element, offsetParent, strategy) {
+    const isOffsetParentAnElement = isHTMLElement(offsetParent);
+    const documentElement = getDocumentElement(offsetParent);
+    const isFixed = strategy === "fixed";
+    const rect = getBoundingClientRect(element, true, isFixed, offsetParent);
+    let scroll = {
+      scrollLeft: 0,
+      scrollTop: 0
+    };
+    const offsets = createCoords(0);
+    function setLeftRTLScrollbarOffset() {
+      offsets.x = getWindowScrollBarX(documentElement);
+    }
+    if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {
+      if (getNodeName(offsetParent) !== "body" || isOverflowElement(documentElement)) {
+        scroll = getNodeScroll(offsetParent);
+      }
+      if (isOffsetParentAnElement) {
+        const offsetRect = getBoundingClientRect(offsetParent, true, isFixed, offsetParent);
+        offsets.x = offsetRect.x + offsetParent.clientLeft;
+        offsets.y = offsetRect.y + offsetParent.clientTop;
+      } else if (documentElement) {
+        setLeftRTLScrollbarOffset();
+      }
+    }
+    if (isFixed && !isOffsetParentAnElement && documentElement) {
+      setLeftRTLScrollbarOffset();
+    }
+    const htmlOffset = documentElement && !isOffsetParentAnElement && !isFixed ? getHTMLOffset(documentElement, scroll) : createCoords(0);
+    const x3 = rect.left + scroll.scrollLeft - offsets.x - htmlOffset.x;
+    const y5 = rect.top + scroll.scrollTop - offsets.y - htmlOffset.y;
+    return {
+      x: x3,
+      y: y5,
+      width: rect.width,
+      height: rect.height
+    };
+  }
+  function isStaticPositioned(element) {
+    return getComputedStyle2(element).position === "static";
+  }
+  function getTrueOffsetParent(element, polyfill) {
+    if (!isHTMLElement(element) || getComputedStyle2(element).position === "fixed") {
+      return null;
+    }
+    if (polyfill) {
+      return polyfill(element);
+    }
+    let rawOffsetParent = element.offsetParent;
+    if (getDocumentElement(element) === rawOffsetParent) {
+      rawOffsetParent = rawOffsetParent.ownerDocument.body;
+    }
+    return rawOffsetParent;
+  }
+  function getOffsetParent(element, polyfill) {
+    const win = getWindow(element);
+    if (isTopLayer(element)) {
+      return win;
+    }
+    if (!isHTMLElement(element)) {
+      let svgOffsetParent = getParentNode(element);
+      while (svgOffsetParent && !isLastTraversableNode(svgOffsetParent)) {
+        if (isElement(svgOffsetParent) && !isStaticPositioned(svgOffsetParent)) {
+          return svgOffsetParent;
+        }
+        svgOffsetParent = getParentNode(svgOffsetParent);
+      }
+      return win;
+    }
+    let offsetParent = getTrueOffsetParent(element, polyfill);
+    while (offsetParent && isTableElement(offsetParent) && isStaticPositioned(offsetParent)) {
+      offsetParent = getTrueOffsetParent(offsetParent, polyfill);
+    }
+    if (offsetParent && isLastTraversableNode(offsetParent) && isStaticPositioned(offsetParent) && !isContainingBlock(offsetParent)) {
+      return win;
+    }
+    return offsetParent || getContainingBlock(element) || win;
+  }
+  var getElementRects = async function(data2) {
+    const getOffsetParentFn = this.getOffsetParent || getOffsetParent;
+    const getDimensionsFn = this.getDimensions;
+    const floatingDimensions = await getDimensionsFn(data2.floating);
+    return {
+      reference: getRectRelativeToOffsetParent(data2.reference, await getOffsetParentFn(data2.floating), data2.strategy),
+      floating: {
+        x: 0,
+        y: 0,
+        width: floatingDimensions.width,
+        height: floatingDimensions.height
+      }
+    };
+  };
+  function isRTL(element) {
+    return getComputedStyle2(element).direction === "rtl";
+  }
+  var platform = {
+    convertOffsetParentRelativeRectToViewportRelativeRect,
+    getDocumentElement,
+    getClippingRect,
+    getOffsetParent,
+    getElementRects,
+    getClientRects,
+    getDimensions,
+    getScale,
+    isElement,
+    isRTL
+  };
+  function rectsAreEqual(a5, b3) {
+    return a5.x === b3.x && a5.y === b3.y && a5.width === b3.width && a5.height === b3.height;
+  }
+  function observeMove(element, onMove) {
+    let io = null;
+    let timeoutId;
+    const root2 = getDocumentElement(element);
+    function cleanup() {
+      var _io;
+      clearTimeout(timeoutId);
+      (_io = io) == null || _io.disconnect();
+      io = null;
+    }
+    function refresh(skip, threshold) {
+      if (skip === void 0) {
+        skip = false;
+      }
+      if (threshold === void 0) {
+        threshold = 1;
+      }
+      cleanup();
+      const elementRectForRootMargin = element.getBoundingClientRect();
+      const {
+        left,
+        top,
+        width,
+        height
+      } = elementRectForRootMargin;
+      if (!skip) {
+        onMove();
+      }
+      if (!width || !height) {
+        return;
+      }
+      const insetTop = floor(top);
+      const insetRight = floor(root2.clientWidth - (left + width));
+      const insetBottom = floor(root2.clientHeight - (top + height));
+      const insetLeft = floor(left);
+      const rootMargin = -insetTop + "px " + -insetRight + "px " + -insetBottom + "px " + -insetLeft + "px";
+      const options = {
+        rootMargin,
+        threshold: max(0, min(1, threshold)) || 1
+      };
+      let isFirstUpdate = true;
+      function handleObserve(entries2) {
+        const ratio = entries2[0].intersectionRatio;
+        if (ratio !== threshold) {
+          if (!isFirstUpdate) {
+            return refresh();
+          }
+          if (!ratio) {
+            timeoutId = setTimeout(() => {
+              refresh(false, 1e-7);
+            }, 1e3);
+          } else {
+            refresh(false, ratio);
+          }
+        }
+        if (ratio === 1 && !rectsAreEqual(elementRectForRootMargin, element.getBoundingClientRect())) {
+          refresh();
+        }
+        isFirstUpdate = false;
+      }
+      try {
+        io = new IntersectionObserver(handleObserve, {
+          ...options,
+          // Handle <iframe>s
+          root: root2.ownerDocument
+        });
+      } catch (_e) {
+        io = new IntersectionObserver(handleObserve, options);
+      }
+      io.observe(element);
+    }
+    refresh(true);
+    return cleanup;
+  }
+  function autoUpdate(reference, floating, update, options) {
+    if (options === void 0) {
+      options = {};
+    }
+    const {
+      ancestorScroll = true,
+      ancestorResize = true,
+      elementResize = typeof ResizeObserver === "function",
+      layoutShift = typeof IntersectionObserver === "function",
+      animationFrame = false
+    } = options;
+    const referenceEl = unwrapElement(reference);
+    const ancestors = ancestorScroll || ancestorResize ? [...referenceEl ? getOverflowAncestors(referenceEl) : [], ...getOverflowAncestors(floating)] : [];
+    ancestors.forEach((ancestor) => {
+      ancestorScroll && ancestor.addEventListener("scroll", update, {
+        passive: true
+      });
+      ancestorResize && ancestor.addEventListener("resize", update);
+    });
+    const cleanupIo = referenceEl && layoutShift ? observeMove(referenceEl, update) : null;
+    let reobserveFrame = -1;
+    let resizeObserver = null;
+    if (elementResize) {
+      resizeObserver = new ResizeObserver((_ref) => {
+        let [firstEntry] = _ref;
+        if (firstEntry && firstEntry.target === referenceEl && resizeObserver) {
+          resizeObserver.unobserve(floating);
+          cancelAnimationFrame(reobserveFrame);
+          reobserveFrame = requestAnimationFrame(() => {
+            var _resizeObserver;
+            (_resizeObserver = resizeObserver) == null || _resizeObserver.observe(floating);
+          });
+        }
+        update();
+      });
+      if (referenceEl && !animationFrame) {
+        resizeObserver.observe(referenceEl);
+      }
+      resizeObserver.observe(floating);
+    }
+    let frameId;
+    let prevRefRect = animationFrame ? getBoundingClientRect(reference) : null;
+    if (animationFrame) {
+      frameLoop();
+    }
+    function frameLoop() {
+      const nextRefRect = getBoundingClientRect(reference);
+      if (prevRefRect && !rectsAreEqual(prevRefRect, nextRefRect)) {
+        update();
+      }
+      prevRefRect = nextRefRect;
+      frameId = requestAnimationFrame(frameLoop);
+    }
+    update();
+    return () => {
+      var _resizeObserver2;
+      ancestors.forEach((ancestor) => {
+        ancestorScroll && ancestor.removeEventListener("scroll", update);
+        ancestorResize && ancestor.removeEventListener("resize", update);
+      });
+      cleanupIo == null || cleanupIo();
+      (_resizeObserver2 = resizeObserver) == null || _resizeObserver2.disconnect();
+      resizeObserver = null;
+      if (animationFrame) {
+        cancelAnimationFrame(frameId);
+      }
+    };
+  }
+  var offset2 = offset;
+  var shift2 = shift;
+  var flip2 = flip;
+  var size2 = size;
+  var hide2 = hide;
+  var arrow2 = arrow;
+  var limitShift2 = limitShift;
+  var computePosition2 = (reference, floating, options) => {
+    const cache = /* @__PURE__ */ new Map();
+    const mergedOptions = {
+      platform,
+      ...options
+    };
+    const platformWithCache = {
+      ...mergedOptions.platform,
+      _c: cache
+    };
+    return computePosition(reference, floating, {
+      ...mergedOptions,
+      platform: platformWithCache
+    });
+  };
+
+  // ../../node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.mjs
+  var React32 = __toESM(require_react(), 1);
+  var import_react5 = __toESM(require_react(), 1);
+  var ReactDOM2 = __toESM(require_react_dom(), 1);
+  var isClient = typeof document !== "undefined";
+  var noop = function noop2() {
+  };
+  var index = isClient ? import_react5.useLayoutEffect : noop;
+  function deepEqual(a5, b3) {
+    if (a5 === b3) {
+      return true;
+    }
+    if (typeof a5 !== typeof b3) {
+      return false;
+    }
+    if (typeof a5 === "function" && a5.toString() === b3.toString()) {
+      return true;
+    }
+    let length;
+    let i4;
+    let keys;
+    if (a5 && b3 && typeof a5 === "object") {
+      if (Array.isArray(a5)) {
+        length = a5.length;
+        if (length !== b3.length) return false;
+        for (i4 = length; i4-- !== 0; ) {
+          if (!deepEqual(a5[i4], b3[i4])) {
+            return false;
+          }
+        }
+        return true;
+      }
+      keys = Object.keys(a5);
+      length = keys.length;
+      if (length !== Object.keys(b3).length) {
+        return false;
+      }
+      for (i4 = length; i4-- !== 0; ) {
+        if (!{}.hasOwnProperty.call(b3, keys[i4])) {
+          return false;
+        }
+      }
+      for (i4 = length; i4-- !== 0; ) {
+        const key = keys[i4];
+        if (key === "_owner" && a5.$$typeof) {
+          continue;
+        }
+        if (!deepEqual(a5[key], b3[key])) {
+          return false;
+        }
+      }
+      return true;
+    }
+    return a5 !== a5 && b3 !== b3;
+  }
+  function getDPR(element) {
+    if (typeof window === "undefined") {
+      return 1;
+    }
+    const win = element.ownerDocument.defaultView || window;
+    return win.devicePixelRatio || 1;
+  }
+  function roundByDPR(element, value) {
+    const dpr = getDPR(element);
+    return Math.round(value * dpr) / dpr;
+  }
+  function useLatestRef(value) {
+    const ref = React32.useRef(value);
+    index(() => {
+      ref.current = value;
+    });
+    return ref;
+  }
+  function useFloating(options) {
+    if (options === void 0) {
+      options = {};
+    }
+    const {
+      placement = "bottom",
+      strategy = "absolute",
+      middleware = [],
+      platform: platform2,
+      elements: {
+        reference: externalReference,
+        floating: externalFloating
+      } = {},
+      transform = true,
+      whileElementsMounted,
+      open: open2
+    } = options;
+    const [data2, setData] = React32.useState({
+      x: 0,
+      y: 0,
+      strategy,
+      placement,
+      middlewareData: {},
+      isPositioned: false
+    });
+    const [latestMiddleware, setLatestMiddleware] = React32.useState(middleware);
+    if (!deepEqual(latestMiddleware, middleware)) {
+      setLatestMiddleware(middleware);
+    }
+    const [_reference, _setReference] = React32.useState(null);
+    const [_floating, _setFloating] = React32.useState(null);
+    const setReference = React32.useCallback((node2) => {
+      if (node2 !== referenceRef.current) {
+        referenceRef.current = node2;
+        _setReference(node2);
+      }
+    }, []);
+    const setFloating = React32.useCallback((node2) => {
+      if (node2 !== floatingRef.current) {
+        floatingRef.current = node2;
+        _setFloating(node2);
+      }
+    }, []);
+    const referenceEl = externalReference || _reference;
+    const floatingEl = externalFloating || _floating;
+    const referenceRef = React32.useRef(null);
+    const floatingRef = React32.useRef(null);
+    const dataRef = React32.useRef(data2);
+    const hasWhileElementsMounted = whileElementsMounted != null;
+    const whileElementsMountedRef = useLatestRef(whileElementsMounted);
+    const platformRef = useLatestRef(platform2);
+    const openRef = useLatestRef(open2);
+    const update = React32.useCallback(() => {
+      if (!referenceRef.current || !floatingRef.current) {
+        return;
+      }
+      const config = {
+        placement,
+        strategy,
+        middleware: latestMiddleware
+      };
+      if (platformRef.current) {
+        config.platform = platformRef.current;
+      }
+      computePosition2(referenceRef.current, floatingRef.current, config).then((data3) => {
+        const fullData = {
+          ...data3,
+          // The floating element's position may be recomputed while it's closed
+          // but still mounted (such as when transitioning out). To ensure
+          // `isPositioned` will be `false` initially on the next open, avoid
+          // setting it to `true` when `open === false` (must be specified).
+          isPositioned: openRef.current !== false
+        };
+        if (isMountedRef.current && !deepEqual(dataRef.current, fullData)) {
+          dataRef.current = fullData;
+          ReactDOM2.flushSync(() => {
+            setData(fullData);
+          });
+        }
+      });
+    }, [latestMiddleware, placement, strategy, platformRef, openRef]);
+    index(() => {
+      if (open2 === false && dataRef.current.isPositioned) {
+        dataRef.current.isPositioned = false;
+        setData((data3) => ({
+          ...data3,
+          isPositioned: false
+        }));
+      }
+    }, [open2]);
+    const isMountedRef = React32.useRef(false);
+    index(() => {
+      isMountedRef.current = true;
+      return () => {
+        isMountedRef.current = false;
+      };
+    }, []);
+    index(() => {
+      if (referenceEl) referenceRef.current = referenceEl;
+      if (floatingEl) floatingRef.current = floatingEl;
+      if (referenceEl && floatingEl) {
+        if (whileElementsMountedRef.current) {
+          return whileElementsMountedRef.current(referenceEl, floatingEl, update);
+        }
+        update();
+      }
+    }, [referenceEl, floatingEl, update, whileElementsMountedRef, hasWhileElementsMounted]);
+    const refs = React32.useMemo(() => ({
+      reference: referenceRef,
+      floating: floatingRef,
+      setReference,
+      setFloating
+    }), [setReference, setFloating]);
+    const elements2 = React32.useMemo(() => ({
+      reference: referenceEl,
+      floating: floatingEl
+    }), [referenceEl, floatingEl]);
+    const floatingStyles = React32.useMemo(() => {
+      const initialStyles = {
+        position: strategy,
+        left: 0,
+        top: 0
+      };
+      if (!elements2.floating) {
+        return initialStyles;
+      }
+      const x3 = roundByDPR(elements2.floating, data2.x);
+      const y5 = roundByDPR(elements2.floating, data2.y);
+      if (transform) {
+        return {
+          ...initialStyles,
+          transform: "translate(" + x3 + "px, " + y5 + "px)",
+          ...getDPR(elements2.floating) >= 1.5 && {
+            willChange: "transform"
+          }
+        };
+      }
+      return {
+        position: strategy,
+        left: x3,
+        top: y5
+      };
+    }, [strategy, transform, elements2.floating, data2.x, data2.y]);
+    return React32.useMemo(() => ({
+      ...data2,
+      update,
+      refs,
+      elements: elements2,
+      floatingStyles
+    }), [data2, update, refs, elements2, floatingStyles]);
+  }
+  var arrow$1 = (options) => {
+    function isRef(value) {
+      return {}.hasOwnProperty.call(value, "current");
+    }
+    return {
+      name: "arrow",
+      options,
+      fn(state) {
+        const {
+          element,
+          padding
+        } = typeof options === "function" ? options(state) : options;
+        if (element && isRef(element)) {
+          if (element.current != null) {
+            return arrow2({
+              element: element.current,
+              padding
+            }).fn(state);
+          }
+          return {};
+        }
+        if (element) {
+          return arrow2({
+            element,
+            padding
+          }).fn(state);
+        }
+        return {};
+      }
+    };
+  };
+  var offset3 = (options, deps) => ({
+    ...offset2(options),
+    options: [options, deps]
+  });
+  var shift3 = (options, deps) => ({
+    ...shift2(options),
+    options: [options, deps]
+  });
+  var limitShift3 = (options, deps) => ({
+    ...limitShift2(options),
+    options: [options, deps]
+  });
+  var flip3 = (options, deps) => ({
+    ...flip2(options),
+    options: [options, deps]
+  });
+  var size3 = (options, deps) => ({
+    ...size2(options),
+    options: [options, deps]
+  });
+  var hide3 = (options, deps) => ({
+    ...hide2(options),
+    options: [options, deps]
+  });
+  var arrow3 = (options, deps) => ({
+    ...arrow$1(options),
+    options: [options, deps]
+  });
+
+  // ../../node_modules/@radix-ui/react-arrow/dist/index.mjs
+  var React33 = __toESM(require_react(), 1);
   var import_jsx_runtime13 = __toESM(require_jsx_runtime(), 1);
+  var NAME = "Arrow";
+  var Arrow = React33.forwardRef((props, forwardedRef) => {
+    const { children, width = 10, height = 5, ...arrowProps } = props;
+    return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(
+      Primitive.svg,
+      {
+        ...arrowProps,
+        ref: forwardedRef,
+        width,
+        height,
+        viewBox: "0 0 30 10",
+        preserveAspectRatio: "none",
+        children: props.asChild ? children : /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("polygon", { points: "0,0 30,0 15,10" })
+      }
+    );
+  });
+  Arrow.displayName = NAME;
+  var Root2 = Arrow;
+
+  // ../../node_modules/@radix-ui/react-popper/dist/index.mjs
+  var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1);
+  var POPPER_NAME = "Popper";
+  var [createPopperContext, createPopperScope] = createContextScope(POPPER_NAME);
+  var [PopperProvider, usePopperContext] = createPopperContext(POPPER_NAME);
+  var Popper = (props) => {
+    const { __scopePopper, children } = props;
+    const [anchor, setAnchor] = React34.useState(null);
+    return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(PopperProvider, { scope: __scopePopper, anchor, onAnchorChange: setAnchor, children });
+  };
+  Popper.displayName = POPPER_NAME;
+  var ANCHOR_NAME = "PopperAnchor";
+  var PopperAnchor = React34.forwardRef(
+    (props, forwardedRef) => {
+      const { __scopePopper, virtualRef, ...anchorProps } = props;
+      const context = usePopperContext(ANCHOR_NAME, __scopePopper);
+      const ref = React34.useRef(null);
+      const composedRefs = useComposedRefs(forwardedRef, ref);
+      React34.useEffect(() => {
+        context.onAnchorChange(virtualRef?.current || ref.current);
+      });
+      return virtualRef ? null : /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Primitive.div, { ...anchorProps, ref: composedRefs });
+    }
+  );
+  PopperAnchor.displayName = ANCHOR_NAME;
+  var CONTENT_NAME = "PopperContent";
+  var [PopperContentProvider, useContentContext] = createPopperContext(CONTENT_NAME);
+  var PopperContent = React34.forwardRef(
+    (props, forwardedRef) => {
+      const {
+        __scopePopper,
+        side = "bottom",
+        sideOffset = 0,
+        align = "center",
+        alignOffset = 0,
+        arrowPadding = 0,
+        avoidCollisions = true,
+        collisionBoundary = [],
+        collisionPadding: collisionPaddingProp = 0,
+        sticky = "partial",
+        hideWhenDetached = false,
+        updatePositionStrategy = "optimized",
+        onPlaced,
+        ...contentProps
+      } = props;
+      const context = usePopperContext(CONTENT_NAME, __scopePopper);
+      const [content, setContent] = React34.useState(null);
+      const composedRefs = useComposedRefs(forwardedRef, (node2) => setContent(node2));
+      const [arrow4, setArrow] = React34.useState(null);
+      const arrowSize = useSize(arrow4);
+      const arrowWidth = arrowSize?.width ?? 0;
+      const arrowHeight = arrowSize?.height ?? 0;
+      const desiredPlacement = side + (align !== "center" ? "-" + align : "");
+      const collisionPadding = typeof collisionPaddingProp === "number" ? collisionPaddingProp : { top: 0, right: 0, bottom: 0, left: 0, ...collisionPaddingProp };
+      const boundary = Array.isArray(collisionBoundary) ? collisionBoundary : [collisionBoundary];
+      const hasExplicitBoundaries = boundary.length > 0;
+      const detectOverflowOptions = {
+        padding: collisionPadding,
+        boundary: boundary.filter(isNotNull),
+        // with `strategy: 'fixed'`, this is the only way to get it to respect boundaries
+        altBoundary: hasExplicitBoundaries
+      };
+      const { refs, floatingStyles, placement, isPositioned, middlewareData } = useFloating({
+        // default to `fixed` strategy so users don't have to pick and we also avoid focus scroll issues
+        strategy: "fixed",
+        placement: desiredPlacement,
+        whileElementsMounted: (...args) => {
+          const cleanup = autoUpdate(...args, {
+            animationFrame: updatePositionStrategy === "always"
+          });
+          return cleanup;
+        },
+        elements: {
+          reference: context.anchor
+        },
+        middleware: [
+          offset3({ mainAxis: sideOffset + arrowHeight, alignmentAxis: alignOffset }),
+          avoidCollisions && shift3({
+            mainAxis: true,
+            crossAxis: false,
+            limiter: sticky === "partial" ? limitShift3() : void 0,
+            ...detectOverflowOptions
+          }),
+          avoidCollisions && flip3({ ...detectOverflowOptions }),
+          size3({
+            ...detectOverflowOptions,
+            apply: ({ elements: elements2, rects, availableWidth, availableHeight }) => {
+              const { width: anchorWidth, height: anchorHeight } = rects.reference;
+              const contentStyle = elements2.floating.style;
+              contentStyle.setProperty("--radix-popper-available-width", `${availableWidth}px`);
+              contentStyle.setProperty("--radix-popper-available-height", `${availableHeight}px`);
+              contentStyle.setProperty("--radix-popper-anchor-width", `${anchorWidth}px`);
+              contentStyle.setProperty("--radix-popper-anchor-height", `${anchorHeight}px`);
+            }
+          }),
+          arrow4 && arrow3({ element: arrow4, padding: arrowPadding }),
+          transformOrigin({ arrowWidth, arrowHeight }),
+          hideWhenDetached && hide3({ strategy: "referenceHidden", ...detectOverflowOptions })
+        ]
+      });
+      const [placedSide, placedAlign] = getSideAndAlignFromPlacement(placement);
+      const handlePlaced = useCallbackRef(onPlaced);
+      useLayoutEffect22(() => {
+        if (isPositioned) {
+          handlePlaced?.();
+        }
+      }, [isPositioned, handlePlaced]);
+      const arrowX = middlewareData.arrow?.x;
+      const arrowY = middlewareData.arrow?.y;
+      const cannotCenterArrow = middlewareData.arrow?.centerOffset !== 0;
+      const [contentZIndex, setContentZIndex] = React34.useState();
+      useLayoutEffect22(() => {
+        if (content) setContentZIndex(window.getComputedStyle(content).zIndex);
+      }, [content]);
+      return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+        "div",
+        {
+          ref: refs.setFloating,
+          "data-radix-popper-content-wrapper": "",
+          style: {
+            ...floatingStyles,
+            transform: isPositioned ? floatingStyles.transform : "translate(0, -200%)",
+            // keep off the page when measuring
+            minWidth: "max-content",
+            zIndex: contentZIndex,
+            ["--radix-popper-transform-origin"]: [
+              middlewareData.transformOrigin?.x,
+              middlewareData.transformOrigin?.y
+            ].join(" "),
+            // hide the content if using the hide middleware and should be hidden
+            // set visibility to hidden and disable pointer events so the UI behaves
+            // as if the PopperContent isn't there at all
+            ...middlewareData.hide?.referenceHidden && {
+              visibility: "hidden",
+              pointerEvents: "none"
+            }
+          },
+          dir: props.dir,
+          children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+            PopperContentProvider,
+            {
+              scope: __scopePopper,
+              placedSide,
+              onArrowChange: setArrow,
+              arrowX,
+              arrowY,
+              shouldHideArrow: cannotCenterArrow,
+              children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+                Primitive.div,
+                {
+                  "data-side": placedSide,
+                  "data-align": placedAlign,
+                  ...contentProps,
+                  ref: composedRefs,
+                  style: {
+                    ...contentProps.style,
+                    // if the PopperContent hasn't been placed yet (not all measurements done)
+                    // we prevent animations so that users's animation don't kick in too early referring wrong sides
+                    animation: !isPositioned ? "none" : void 0
+                  }
+                }
+              )
+            }
+          )
+        }
+      );
+    }
+  );
+  PopperContent.displayName = CONTENT_NAME;
+  var ARROW_NAME = "PopperArrow";
+  var OPPOSITE_SIDE = {
+    top: "bottom",
+    right: "left",
+    bottom: "top",
+    left: "right"
+  };
+  var PopperArrow = React34.forwardRef(function PopperArrow2(props, forwardedRef) {
+    const { __scopePopper, ...arrowProps } = props;
+    const contentContext = useContentContext(ARROW_NAME, __scopePopper);
+    const baseSide = OPPOSITE_SIDE[contentContext.placedSide];
+    return (
+      // we have to use an extra wrapper because `ResizeObserver` (used by `useSize`)
+      // doesn't report size as we'd expect on SVG elements.
+      // it reports their bounding box which is effectively the largest path inside the SVG.
+      /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+        "span",
+        {
+          ref: contentContext.onArrowChange,
+          style: {
+            position: "absolute",
+            left: contentContext.arrowX,
+            top: contentContext.arrowY,
+            [baseSide]: 0,
+            transformOrigin: {
+              top: "",
+              right: "0 0",
+              bottom: "center 0",
+              left: "100% 0"
+            }[contentContext.placedSide],
+            transform: {
+              top: "translateY(100%)",
+              right: "translateY(50%) rotate(90deg) translateX(-50%)",
+              bottom: `rotate(180deg)`,
+              left: "translateY(50%) rotate(-90deg) translateX(50%)"
+            }[contentContext.placedSide],
+            visibility: contentContext.shouldHideArrow ? "hidden" : void 0
+          },
+          children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+            Root2,
+            {
+              ...arrowProps,
+              ref: forwardedRef,
+              style: {
+                ...arrowProps.style,
+                // ensures the element can be measured correctly (mostly for if SVG)
+                display: "block"
+              }
+            }
+          )
+        }
+      )
+    );
+  });
+  PopperArrow.displayName = ARROW_NAME;
+  function isNotNull(value) {
+    return value !== null;
+  }
+  var transformOrigin = (options) => ({
+    name: "transformOrigin",
+    options,
+    fn(data2) {
+      const { placement, rects, middlewareData } = data2;
+      const cannotCenterArrow = middlewareData.arrow?.centerOffset !== 0;
+      const isArrowHidden = cannotCenterArrow;
+      const arrowWidth = isArrowHidden ? 0 : options.arrowWidth;
+      const arrowHeight = isArrowHidden ? 0 : options.arrowHeight;
+      const [placedSide, placedAlign] = getSideAndAlignFromPlacement(placement);
+      const noArrowAlign = { start: "0%", center: "50%", end: "100%" }[placedAlign];
+      const arrowXCenter = (middlewareData.arrow?.x ?? 0) + arrowWidth / 2;
+      const arrowYCenter = (middlewareData.arrow?.y ?? 0) + arrowHeight / 2;
+      let x3 = "";
+      let y5 = "";
+      if (placedSide === "bottom") {
+        x3 = isArrowHidden ? noArrowAlign : `${arrowXCenter}px`;
+        y5 = `${-arrowHeight}px`;
+      } else if (placedSide === "top") {
+        x3 = isArrowHidden ? noArrowAlign : `${arrowXCenter}px`;
+        y5 = `${rects.floating.height + arrowHeight}px`;
+      } else if (placedSide === "right") {
+        x3 = `${-arrowHeight}px`;
+        y5 = isArrowHidden ? noArrowAlign : `${arrowYCenter}px`;
+      } else if (placedSide === "left") {
+        x3 = `${rects.floating.width + arrowHeight}px`;
+        y5 = isArrowHidden ? noArrowAlign : `${arrowYCenter}px`;
+      }
+      return { data: { x: x3, y: y5 } };
+    }
+  });
+  function getSideAndAlignFromPlacement(placement) {
+    const [side, align = "center"] = placement.split("-");
+    return [side, align];
+  }
+  var Root22 = Popper;
+  var Anchor = PopperAnchor;
+  var Content = PopperContent;
+  var Arrow2 = PopperArrow;
+
+  // ../../node_modules/@radix-ui/react-portal/dist/index.mjs
+  var React35 = __toESM(require_react(), 1);
+  var import_react_dom2 = __toESM(require_react_dom(), 1);
+  var import_jsx_runtime15 = __toESM(require_jsx_runtime(), 1);
   var PORTAL_NAME = "Portal";
-  var Portal = React31.forwardRef((props, forwardedRef) => {
+  var Portal = React35.forwardRef((props, forwardedRef) => {
     const { container: containerProp, ...portalProps } = props;
-    const [mounted, setMounted] = React31.useState(false);
+    const [mounted, setMounted] = React35.useState(false);
     useLayoutEffect22(() => setMounted(true), []);
     const container = containerProp || mounted && globalThis?.document?.body;
-    return container ? import_react_dom.default.createPortal(/* @__PURE__ */ (0, import_jsx_runtime13.jsx)(Primitive.div, { ...portalProps, ref: forwardedRef }), container) : null;
+    return container ? import_react_dom2.default.createPortal(/* @__PURE__ */ (0, import_jsx_runtime15.jsx)(Primitive.div, { ...portalProps, ref: forwardedRef }), container) : null;
   });
   Portal.displayName = PORTAL_NAME;
 
   // ../../node_modules/@radix-ui/react-presence/dist/index.mjs
   var React210 = __toESM(require_react(), 1);
-  var React32 = __toESM(require_react(), 1);
+  var React36 = __toESM(require_react(), 1);
   function useStateMachine(initialState, machine) {
-    return React32.useReducer((state, event) => {
+    return React36.useReducer((state, event) => {
       const nextState = machine[state][event];
       return nextState ?? state;
     }, initialState);
@@ -65419,33 +67626,126 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     return element.props.ref || element.ref;
   }
 
-  // ../../node_modules/@radix-ui/react-focus-guards/dist/index.mjs
-  var React33 = __toESM(require_react(), 1);
-  var count2 = 0;
-  function useFocusGuards() {
-    React33.useEffect(() => {
-      const edgeGuards = document.querySelectorAll("[data-radix-focus-guard]");
-      document.body.insertAdjacentElement("afterbegin", edgeGuards[0] ?? createFocusGuard());
-      document.body.insertAdjacentElement("beforeend", edgeGuards[1] ?? createFocusGuard());
-      count2++;
-      return () => {
-        if (count2 === 1) {
-          document.querySelectorAll("[data-radix-focus-guard]").forEach((node2) => node2.remove());
+  // ../../node_modules/aria-hidden/dist/es2015/index.js
+  var getDefaultParent = function(originalTarget) {
+    if (typeof document === "undefined") {
+      return null;
+    }
+    var sampleTarget = Array.isArray(originalTarget) ? originalTarget[0] : originalTarget;
+    return sampleTarget.ownerDocument.body;
+  };
+  var counterMap = /* @__PURE__ */ new WeakMap();
+  var uncontrolledNodes = /* @__PURE__ */ new WeakMap();
+  var markerMap = {};
+  var lockCount = 0;
+  var unwrapHost = function(node2) {
+    return node2 && (node2.host || unwrapHost(node2.parentNode));
+  };
+  var correctTargets = function(parent, targets) {
+    return targets.map(function(target) {
+      if (parent.contains(target)) {
+        return target;
+      }
+      var correctedTarget = unwrapHost(target);
+      if (correctedTarget && parent.contains(correctedTarget)) {
+        return correctedTarget;
+      }
+      console.error("aria-hidden", target, "in not contained inside", parent, ". Doing nothing");
+      return null;
+    }).filter(function(x3) {
+      return Boolean(x3);
+    });
+  };
+  var applyAttributeToOthers = function(originalTarget, parentNode, markerName, controlAttribute) {
+    var targets = correctTargets(parentNode, Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
+    if (!markerMap[markerName]) {
+      markerMap[markerName] = /* @__PURE__ */ new WeakMap();
+    }
+    var markerCounter = markerMap[markerName];
+    var hiddenNodes = [];
+    var elementsToKeep = /* @__PURE__ */ new Set();
+    var elementsToStop = new Set(targets);
+    var keep = function(el) {
+      if (!el || elementsToKeep.has(el)) {
+        return;
+      }
+      elementsToKeep.add(el);
+      keep(el.parentNode);
+    };
+    targets.forEach(keep);
+    var deep = function(parent) {
+      if (!parent || elementsToStop.has(parent)) {
+        return;
+      }
+      Array.prototype.forEach.call(parent.children, function(node2) {
+        if (elementsToKeep.has(node2)) {
+          deep(node2);
+        } else {
+          try {
+            var attr = node2.getAttribute(controlAttribute);
+            var alreadyHidden = attr !== null && attr !== "false";
+            var counterValue = (counterMap.get(node2) || 0) + 1;
+            var markerValue = (markerCounter.get(node2) || 0) + 1;
+            counterMap.set(node2, counterValue);
+            markerCounter.set(node2, markerValue);
+            hiddenNodes.push(node2);
+            if (counterValue === 1 && alreadyHidden) {
+              uncontrolledNodes.set(node2, true);
+            }
+            if (markerValue === 1) {
+              node2.setAttribute(markerName, "true");
+            }
+            if (!alreadyHidden) {
+              node2.setAttribute(controlAttribute, "true");
+            }
+          } catch (e3) {
+            console.error("aria-hidden: cannot operate on ", node2, e3);
+          }
         }
-        count2--;
+      });
+    };
+    deep(parentNode);
+    elementsToKeep.clear();
+    lockCount++;
+    return function() {
+      hiddenNodes.forEach(function(node2) {
+        var counterValue = counterMap.get(node2) - 1;
+        var markerValue = markerCounter.get(node2) - 1;
+        counterMap.set(node2, counterValue);
+        markerCounter.set(node2, markerValue);
+        if (!counterValue) {
+          if (!uncontrolledNodes.has(node2)) {
+            node2.removeAttribute(controlAttribute);
+          }
+          uncontrolledNodes.delete(node2);
+        }
+        if (!markerValue) {
+          node2.removeAttribute(markerName);
+        }
+      });
+      lockCount--;
+      if (!lockCount) {
+        counterMap = /* @__PURE__ */ new WeakMap();
+        counterMap = /* @__PURE__ */ new WeakMap();
+        uncontrolledNodes = /* @__PURE__ */ new WeakMap();
+        markerMap = {};
+      }
+    };
+  };
+  var hideOthers = function(originalTarget, parentNode, markerName) {
+    if (markerName === void 0) {
+      markerName = "data-aria-hidden";
+    }
+    var targets = Array.from(Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
+    var activeParentNode = parentNode || getDefaultParent(originalTarget);
+    if (!activeParentNode) {
+      return function() {
+        return null;
       };
-    }, []);
-  }
-  function createFocusGuard() {
-    const element = document.createElement("span");
-    element.setAttribute("data-radix-focus-guard", "");
-    element.tabIndex = 0;
-    element.style.outline = "none";
-    element.style.opacity = "0";
-    element.style.position = "fixed";
-    element.style.pointerEvents = "none";
-    return element;
-  }
+    }
+    targets.push.apply(targets, Array.from(activeParentNode.querySelectorAll("[aria-live], script")));
+    return applyAttributeToOthers(targets, activeParentNode, markerName, "aria-hidden");
+  };
 
   // ../../node_modules/tslib/tslib.es6.mjs
   var __assign = function() {
@@ -65480,10 +67780,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
 
   // ../../node_modules/react-remove-scroll/dist/es2015/Combination.js
-  var React40 = __toESM(require_react());
+  var React43 = __toESM(require_react());
 
   // ../../node_modules/react-remove-scroll/dist/es2015/UI.js
-  var React36 = __toESM(require_react());
+  var React39 = __toESM(require_react());
 
   // ../../node_modules/react-remove-scroll-bar/dist/es2015/constants.js
   var zeroRightClassName = "right-scroll-bar-position";
@@ -65502,9 +67802,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
 
   // ../../node_modules/use-callback-ref/dist/es2015/useRef.js
-  var import_react5 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
   function useCallbackRef2(initialValue, callback) {
-    var ref = (0, import_react5.useState)(function() {
+    var ref = (0, import_react6.useState)(function() {
       return {
         // value
         value: initialValue,
@@ -65530,8 +67830,8 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
 
   // ../../node_modules/use-callback-ref/dist/es2015/useMergeRef.js
-  var React34 = __toESM(require_react());
-  var useIsomorphicLayoutEffect2 = typeof window !== "undefined" ? React34.useLayoutEffect : React34.useEffect;
+  var React37 = __toESM(require_react());
+  var useIsomorphicLayoutEffect2 = typeof window !== "undefined" ? React37.useLayoutEffect : React37.useEffect;
   var currentValues = /* @__PURE__ */ new WeakMap();
   function useMergeRefs(refs, defaultValue) {
     var callbackRef = useCallbackRef2(defaultValue || null, function(newValue) {
@@ -65648,7 +67948,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   }
 
   // ../../node_modules/use-sidecar/dist/es2015/exports.js
-  var React35 = __toESM(require_react());
+  var React38 = __toESM(require_react());
   var SideCar = function(_a2) {
     var sideCar = _a2.sideCar, rest = __rest(_a2, ["sideCar"]);
     if (!sideCar) {
@@ -65658,7 +67958,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     if (!Target) {
       throw new Error("Sidecar medium not found");
     }
-    return React35.createElement(Target, __assign({}, rest));
+    return React38.createElement(Target, __assign({}, rest));
   };
   SideCar.isSideCarExport = true;
   function exportSidecar(medium, exported) {
@@ -65673,9 +67973,9 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var nothing = function() {
     return;
   };
-  var RemoveScroll = React36.forwardRef(function(props, parentRef) {
-    var ref = React36.useRef(null);
-    var _a2 = React36.useState({
+  var RemoveScroll = React39.forwardRef(function(props, parentRef) {
+    var ref = React39.useRef(null);
+    var _a2 = React39.useState({
       onScrollCapture: nothing,
       onWheelCapture: nothing,
       onTouchMoveCapture: nothing
@@ -65684,11 +67984,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     var SideCar2 = sideCar;
     var containerRef = useMergeRefs([ref, parentRef]);
     var containerProps = __assign(__assign({}, rest), callbacks);
-    return React36.createElement(
-      React36.Fragment,
+    return React39.createElement(
+      React39.Fragment,
       null,
-      enabled && React36.createElement(SideCar2, { sideCar: effectCar, removeScrollBar, shards, noRelative, noIsolation, inert, setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref, gapMode }),
-      forwardProps ? React36.cloneElement(React36.Children.only(children), __assign(__assign({}, containerProps), { ref: containerRef })) : React36.createElement(Container, __assign({}, containerProps, { className, ref: containerRef }), children)
+      enabled && React39.createElement(SideCar2, { sideCar: effectCar, removeScrollBar, shards, noRelative, noIsolation, inert, setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref, gapMode }),
+      forwardProps ? React39.cloneElement(React39.Children.only(children), __assign(__assign({}, containerProps), { ref: containerRef })) : React39.createElement(Container, __assign({}, containerProps, { className, ref: containerRef }), children)
     );
   });
   RemoveScroll.defaultProps = {
@@ -65702,13 +68002,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   };
 
   // ../../node_modules/react-remove-scroll/dist/es2015/SideEffect.js
-  var React39 = __toESM(require_react());
+  var React42 = __toESM(require_react());
 
   // ../../node_modules/react-remove-scroll-bar/dist/es2015/component.js
-  var React38 = __toESM(require_react());
+  var React41 = __toESM(require_react());
 
   // ../../node_modules/react-style-singleton/dist/es2015/hook.js
-  var React37 = __toESM(require_react());
+  var React40 = __toESM(require_react());
 
   // ../../node_modules/get-nonce/dist/es2015/index.js
   var currentNonce;
@@ -65772,7 +68072,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var styleHookSingleton = function() {
     var sheet = stylesheetSingleton();
     return function(styles, isDynamic) {
-      React37.useEffect(function() {
+      React40.useEffect(function() {
         sheet.add(styles);
         return function() {
           sheet.remove();
@@ -65846,7 +68146,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     return isFinite(counter) ? counter : 0;
   };
   var useLockAttribute = function() {
-    React38.useEffect(function() {
+    React41.useEffect(function() {
       document.body.setAttribute(lockAttribute, (getCurrentUseCounter() + 1).toString());
       return function() {
         var newCounter = getCurrentUseCounter() - 1;
@@ -65861,10 +68161,10 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var RemoveScrollBar = function(_a2) {
     var noRelative = _a2.noRelative, noImportant = _a2.noImportant, _b2 = _a2.gapMode, gapMode = _b2 === void 0 ? "margin" : _b2;
     useLockAttribute();
-    var gap = React38.useMemo(function() {
+    var gap = React41.useMemo(function() {
       return getGapWidth(gapMode);
     }, [gapMode]);
-    return React38.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? "!important" : "") });
+    return React41.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? "!important" : "") });
   };
 
   // ../../node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js
@@ -66005,16 +68305,16 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var idCounter = 0;
   var lockStack = [];
   function RemoveScrollSideCar(props) {
-    var shouldPreventQueue = React39.useRef([]);
-    var touchStartRef = React39.useRef([0, 0]);
-    var activeAxis = React39.useRef();
-    var id2 = React39.useState(idCounter++)[0];
-    var Style2 = React39.useState(styleSingleton)[0];
-    var lastProps = React39.useRef(props);
-    React39.useEffect(function() {
+    var shouldPreventQueue = React42.useRef([]);
+    var touchStartRef = React42.useRef([0, 0]);
+    var activeAxis = React42.useRef();
+    var id2 = React42.useState(idCounter++)[0];
+    var Style2 = React42.useState(styleSingleton)[0];
+    var lastProps = React42.useRef(props);
+    React42.useEffect(function() {
       lastProps.current = props;
     }, [props]);
-    React39.useEffect(function() {
+    React42.useEffect(function() {
       if (props.inert) {
         document.body.classList.add("block-interactivity-".concat(id2));
         var allow_1 = __spreadArray([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
@@ -66030,7 +68330,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       }
       return;
     }, [props.inert, props.lockRef.current, props.shards]);
-    var shouldCancelEvent = React39.useCallback(function(event, parent) {
+    var shouldCancelEvent = React42.useCallback(function(event, parent) {
       if ("touches" in event && event.touches.length === 2 || event.type === "wheel" && event.ctrlKey) {
         return !lastProps.current.allowPinchZoom;
       }
@@ -66066,7 +68366,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       var cancelingAxis = activeAxis.current || currentAxis;
       return handleScroll(cancelingAxis, parent, event, cancelingAxis === "h" ? deltaX : deltaY, true);
     }, []);
-    var shouldPrevent = React39.useCallback(function(_event) {
+    var shouldPrevent = React42.useCallback(function(_event) {
       var event = _event;
       if (!lockStack.length || lockStack[lockStack.length - 1] !== Style2) {
         return;
@@ -66093,7 +68393,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         }
       }
     }, []);
-    var shouldCancel = React39.useCallback(function(name, delta, target, should) {
+    var shouldCancel = React42.useCallback(function(name, delta, target, should) {
       var event = { name, delta, target, should, shadowParent: getOutermostShadowParent(target) };
       shouldPreventQueue.current.push(event);
       setTimeout(function() {
@@ -66102,17 +68402,17 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         });
       }, 1);
     }, []);
-    var scrollTouchStart = React39.useCallback(function(event) {
+    var scrollTouchStart = React42.useCallback(function(event) {
       touchStartRef.current = getTouchXY(event);
       activeAxis.current = void 0;
     }, []);
-    var scrollWheel = React39.useCallback(function(event) {
+    var scrollWheel = React42.useCallback(function(event) {
       shouldCancel(event.type, getDeltaXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
     }, []);
-    var scrollTouchMove = React39.useCallback(function(event) {
+    var scrollTouchMove = React42.useCallback(function(event) {
       shouldCancel(event.type, getTouchXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
     }, []);
-    React39.useEffect(function() {
+    React42.useEffect(function() {
       lockStack.push(Style2);
       props.setCallbacks({
         onScrollCapture: scrollWheel,
@@ -66132,11 +68432,11 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       };
     }, []);
     var removeScrollBar = props.removeScrollBar, inert = props.inert;
-    return React39.createElement(
-      React39.Fragment,
+    return React42.createElement(
+      React42.Fragment,
       null,
-      inert ? React39.createElement(Style2, { styles: generateStyle(id2) }) : null,
-      removeScrollBar ? React39.createElement(RemoveScrollBar, { noRelative: props.noRelative, gapMode: props.gapMode }) : null
+      inert ? React42.createElement(Style2, { styles: generateStyle(id2) }) : null,
+      removeScrollBar ? React42.createElement(RemoveScrollBar, { noRelative: props.noRelative, gapMode: props.gapMode }) : null
     );
   }
   function getOutermostShadowParent(node2) {
@@ -66155,180 +68455,79 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   var sidecar_default = exportSidecar(effectCar, RemoveScrollSideCar);
 
   // ../../node_modules/react-remove-scroll/dist/es2015/Combination.js
-  var ReactRemoveScroll = React40.forwardRef(function(props, ref) {
-    return React40.createElement(RemoveScroll, __assign({}, props, { ref, sideCar: sidecar_default }));
+  var ReactRemoveScroll = React43.forwardRef(function(props, ref) {
+    return React43.createElement(RemoveScroll, __assign({}, props, { ref, sideCar: sidecar_default }));
   });
   ReactRemoveScroll.classNames = RemoveScroll.classNames;
   var Combination_default = ReactRemoveScroll;
 
-  // ../../node_modules/aria-hidden/dist/es2015/index.js
-  var getDefaultParent = function(originalTarget) {
-    if (typeof document === "undefined") {
-      return null;
-    }
-    var sampleTarget = Array.isArray(originalTarget) ? originalTarget[0] : originalTarget;
-    return sampleTarget.ownerDocument.body;
-  };
-  var counterMap = /* @__PURE__ */ new WeakMap();
-  var uncontrolledNodes = /* @__PURE__ */ new WeakMap();
-  var markerMap = {};
-  var lockCount = 0;
-  var unwrapHost = function(node2) {
-    return node2 && (node2.host || unwrapHost(node2.parentNode));
-  };
-  var correctTargets = function(parent, targets) {
-    return targets.map(function(target) {
-      if (parent.contains(target)) {
-        return target;
-      }
-      var correctedTarget = unwrapHost(target);
-      if (correctedTarget && parent.contains(correctedTarget)) {
-        return correctedTarget;
-      }
-      console.error("aria-hidden", target, "in not contained inside", parent, ". Doing nothing");
-      return null;
-    }).filter(function(x3) {
-      return Boolean(x3);
-    });
-  };
-  var applyAttributeToOthers = function(originalTarget, parentNode, markerName, controlAttribute) {
-    var targets = correctTargets(parentNode, Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
-    if (!markerMap[markerName]) {
-      markerMap[markerName] = /* @__PURE__ */ new WeakMap();
-    }
-    var markerCounter = markerMap[markerName];
-    var hiddenNodes = [];
-    var elementsToKeep = /* @__PURE__ */ new Set();
-    var elementsToStop = new Set(targets);
-    var keep = function(el) {
-      if (!el || elementsToKeep.has(el)) {
-        return;
-      }
-      elementsToKeep.add(el);
-      keep(el.parentNode);
-    };
-    targets.forEach(keep);
-    var deep = function(parent) {
-      if (!parent || elementsToStop.has(parent)) {
-        return;
-      }
-      Array.prototype.forEach.call(parent.children, function(node2) {
-        if (elementsToKeep.has(node2)) {
-          deep(node2);
-        } else {
-          try {
-            var attr = node2.getAttribute(controlAttribute);
-            var alreadyHidden = attr !== null && attr !== "false";
-            var counterValue = (counterMap.get(node2) || 0) + 1;
-            var markerValue = (markerCounter.get(node2) || 0) + 1;
-            counterMap.set(node2, counterValue);
-            markerCounter.set(node2, markerValue);
-            hiddenNodes.push(node2);
-            if (counterValue === 1 && alreadyHidden) {
-              uncontrolledNodes.set(node2, true);
-            }
-            if (markerValue === 1) {
-              node2.setAttribute(markerName, "true");
-            }
-            if (!alreadyHidden) {
-              node2.setAttribute(controlAttribute, "true");
-            }
-          } catch (e3) {
-            console.error("aria-hidden: cannot operate on ", node2, e3);
-          }
-        }
-      });
-    };
-    deep(parentNode);
-    elementsToKeep.clear();
-    lockCount++;
-    return function() {
-      hiddenNodes.forEach(function(node2) {
-        var counterValue = counterMap.get(node2) - 1;
-        var markerValue = markerCounter.get(node2) - 1;
-        counterMap.set(node2, counterValue);
-        markerCounter.set(node2, markerValue);
-        if (!counterValue) {
-          if (!uncontrolledNodes.has(node2)) {
-            node2.removeAttribute(controlAttribute);
-          }
-          uncontrolledNodes.delete(node2);
-        }
-        if (!markerValue) {
-          node2.removeAttribute(markerName);
-        }
-      });
-      lockCount--;
-      if (!lockCount) {
-        counterMap = /* @__PURE__ */ new WeakMap();
-        counterMap = /* @__PURE__ */ new WeakMap();
-        uncontrolledNodes = /* @__PURE__ */ new WeakMap();
-        markerMap = {};
-      }
-    };
-  };
-  var hideOthers = function(originalTarget, parentNode, markerName) {
-    if (markerName === void 0) {
-      markerName = "data-aria-hidden";
-    }
-    var targets = Array.from(Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
-    var activeParentNode = parentNode || getDefaultParent(originalTarget);
-    if (!activeParentNode) {
-      return function() {
-        return null;
-      };
-    }
-    targets.push.apply(targets, Array.from(activeParentNode.querySelectorAll("[aria-live], script")));
-    return applyAttributeToOthers(targets, activeParentNode, markerName, "aria-hidden");
-  };
-
-  // ../../node_modules/@radix-ui/react-dialog/dist/index.mjs
-  var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1);
-  var DIALOG_NAME = "Dialog";
-  var [createDialogContext, createDialogScope] = createContextScope(DIALOG_NAME);
-  var [DialogProvider, useDialogContext] = createDialogContext(DIALOG_NAME);
-  var Dialog = (props) => {
+  // ../../node_modules/@radix-ui/react-popover/dist/index.mjs
+  var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1);
+  var POPOVER_NAME = "Popover";
+  var [createPopoverContext, createPopoverScope] = createContextScope(POPOVER_NAME, [
+    createPopperScope
+  ]);
+  var usePopperScope = createPopperScope();
+  var [PopoverProvider, usePopoverContext] = createPopoverContext(POPOVER_NAME);
+  var Popover = (props) => {
     const {
-      __scopeDialog,
+      __scopePopover,
       children,
       open: openProp,
       defaultOpen,
       onOpenChange,
-      modal = true
+      modal = false
     } = props;
-    const triggerRef = React41.useRef(null);
-    const contentRef = React41.useRef(null);
+    const popperScope = usePopperScope(__scopePopover);
+    const triggerRef = React44.useRef(null);
+    const [hasCustomAnchor, setHasCustomAnchor] = React44.useState(false);
     const [open2, setOpen] = useControllableState({
       prop: openProp,
       defaultProp: defaultOpen ?? false,
       onChange: onOpenChange,
-      caller: DIALOG_NAME
+      caller: POPOVER_NAME
     });
-    return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
-      DialogProvider,
+    return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Root22, { ...popperScope, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+      PopoverProvider,
       {
-        scope: __scopeDialog,
-        triggerRef,
-        contentRef,
+        scope: __scopePopover,
         contentId: useId2(),
-        titleId: useId2(),
-        descriptionId: useId2(),
+        triggerRef,
         open: open2,
         onOpenChange: setOpen,
-        onOpenToggle: React41.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
+        onOpenToggle: React44.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
+        hasCustomAnchor,
+        onCustomAnchorAdd: React44.useCallback(() => setHasCustomAnchor(true), []),
+        onCustomAnchorRemove: React44.useCallback(() => setHasCustomAnchor(false), []),
         modal,
         children
       }
-    );
+    ) });
   };
-  Dialog.displayName = DIALOG_NAME;
-  var TRIGGER_NAME = "DialogTrigger";
-  var DialogTrigger = React41.forwardRef(
+  Popover.displayName = POPOVER_NAME;
+  var ANCHOR_NAME2 = "PopoverAnchor";
+  var PopoverAnchor = React44.forwardRef(
     (props, forwardedRef) => {
-      const { __scopeDialog, ...triggerProps } = props;
-      const context = useDialogContext(TRIGGER_NAME, __scopeDialog);
+      const { __scopePopover, ...anchorProps } = props;
+      const context = usePopoverContext(ANCHOR_NAME2, __scopePopover);
+      const popperScope = usePopperScope(__scopePopover);
+      const { onCustomAnchorAdd, onCustomAnchorRemove } = context;
+      React44.useEffect(() => {
+        onCustomAnchorAdd();
+        return () => onCustomAnchorRemove();
+      }, [onCustomAnchorAdd, onCustomAnchorRemove]);
+      return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Anchor, { ...popperScope, ...anchorProps, ref: forwardedRef });
+    }
+  );
+  PopoverAnchor.displayName = ANCHOR_NAME2;
+  var TRIGGER_NAME = "PopoverTrigger";
+  var PopoverTrigger = React44.forwardRef(
+    (props, forwardedRef) => {
+      const { __scopePopover, ...triggerProps } = props;
+      const context = usePopoverContext(TRIGGER_NAME, __scopePopover);
+      const popperScope = usePopperScope(__scopePopover);
       const composedTriggerRef = useComposedRefs(forwardedRef, context.triggerRef);
-      return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+      const trigger = /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
         Primitive.button,
         {
           type: "button",
@@ -66341,41 +68540,439 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
           onClick: composeEventHandlers2(props.onClick, context.onOpenToggle)
         }
       );
+      return context.hasCustomAnchor ? trigger : /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Anchor, { asChild: true, ...popperScope, children: trigger });
     }
   );
-  DialogTrigger.displayName = TRIGGER_NAME;
-  var PORTAL_NAME2 = "DialogPortal";
-  var [PortalProvider, usePortalContext] = createDialogContext(PORTAL_NAME2, {
+  PopoverTrigger.displayName = TRIGGER_NAME;
+  var PORTAL_NAME2 = "PopoverPortal";
+  var [PortalProvider, usePortalContext] = createPopoverContext(PORTAL_NAME2, {
+    forceMount: void 0
+  });
+  var PopoverPortal = (props) => {
+    const { __scopePopover, forceMount, children, container } = props;
+    const context = usePopoverContext(PORTAL_NAME2, __scopePopover);
+    return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(PortalProvider, { scope: __scopePopover, forceMount, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Portal, { asChild: true, container, children }) }) });
+  };
+  PopoverPortal.displayName = PORTAL_NAME2;
+  var CONTENT_NAME2 = "PopoverContent";
+  var PopoverContent = React44.forwardRef(
+    (props, forwardedRef) => {
+      const portalContext = usePortalContext(CONTENT_NAME2, props.__scopePopover);
+      const { forceMount = portalContext.forceMount, ...contentProps } = props;
+      const context = usePopoverContext(CONTENT_NAME2, props.__scopePopover);
+      return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(PopoverContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(PopoverContentNonModal, { ...contentProps, ref: forwardedRef }) });
+    }
+  );
+  PopoverContent.displayName = CONTENT_NAME2;
+  var Slot2 = createSlot("PopoverContent.RemoveScroll");
+  var PopoverContentModal = React44.forwardRef(
+    (props, forwardedRef) => {
+      const context = usePopoverContext(CONTENT_NAME2, props.__scopePopover);
+      const contentRef = React44.useRef(null);
+      const composedRefs = useComposedRefs(forwardedRef, contentRef);
+      const isRightClickOutsideRef = React44.useRef(false);
+      React44.useEffect(() => {
+        const content = contentRef.current;
+        if (content) return hideOthers(content);
+      }, []);
+      return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Combination_default, { as: Slot2, allowPinchZoom: true, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        PopoverContentImpl,
+        {
+          ...props,
+          ref: composedRefs,
+          trapFocus: context.open,
+          disableOutsidePointerEvents: true,
+          onCloseAutoFocus: composeEventHandlers2(props.onCloseAutoFocus, (event) => {
+            event.preventDefault();
+            if (!isRightClickOutsideRef.current) context.triggerRef.current?.focus();
+          }),
+          onPointerDownOutside: composeEventHandlers2(
+            props.onPointerDownOutside,
+            (event) => {
+              const originalEvent = event.detail.originalEvent;
+              const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
+              const isRightClick = originalEvent.button === 2 || ctrlLeftClick;
+              isRightClickOutsideRef.current = isRightClick;
+            },
+            { checkForDefaultPrevented: false }
+          ),
+          onFocusOutside: composeEventHandlers2(
+            props.onFocusOutside,
+            (event) => event.preventDefault(),
+            { checkForDefaultPrevented: false }
+          )
+        }
+      ) });
+    }
+  );
+  var PopoverContentNonModal = React44.forwardRef(
+    (props, forwardedRef) => {
+      const context = usePopoverContext(CONTENT_NAME2, props.__scopePopover);
+      const hasInteractedOutsideRef = React44.useRef(false);
+      const hasPointerDownOutsideRef = React44.useRef(false);
+      return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        PopoverContentImpl,
+        {
+          ...props,
+          ref: forwardedRef,
+          trapFocus: false,
+          disableOutsidePointerEvents: false,
+          onCloseAutoFocus: (event) => {
+            props.onCloseAutoFocus?.(event);
+            if (!event.defaultPrevented) {
+              if (!hasInteractedOutsideRef.current) context.triggerRef.current?.focus();
+              event.preventDefault();
+            }
+            hasInteractedOutsideRef.current = false;
+            hasPointerDownOutsideRef.current = false;
+          },
+          onInteractOutside: (event) => {
+            props.onInteractOutside?.(event);
+            if (!event.defaultPrevented) {
+              hasInteractedOutsideRef.current = true;
+              if (event.detail.originalEvent.type === "pointerdown") {
+                hasPointerDownOutsideRef.current = true;
+              }
+            }
+            const target = event.target;
+            const targetIsTrigger = context.triggerRef.current?.contains(target);
+            if (targetIsTrigger) event.preventDefault();
+            if (event.detail.originalEvent.type === "focusin" && hasPointerDownOutsideRef.current) {
+              event.preventDefault();
+            }
+          }
+        }
+      );
+    }
+  );
+  var PopoverContentImpl = React44.forwardRef(
+    (props, forwardedRef) => {
+      const {
+        __scopePopover,
+        trapFocus,
+        onOpenAutoFocus,
+        onCloseAutoFocus,
+        disableOutsidePointerEvents,
+        onEscapeKeyDown,
+        onPointerDownOutside,
+        onFocusOutside,
+        onInteractOutside,
+        ...contentProps
+      } = props;
+      const context = usePopoverContext(CONTENT_NAME2, __scopePopover);
+      const popperScope = usePopperScope(__scopePopover);
+      useFocusGuards();
+      return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        FocusScope,
+        {
+          asChild: true,
+          loop: true,
+          trapped: trapFocus,
+          onMountAutoFocus: onOpenAutoFocus,
+          onUnmountAutoFocus: onCloseAutoFocus,
+          children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+            DismissableLayer,
+            {
+              asChild: true,
+              disableOutsidePointerEvents,
+              onInteractOutside,
+              onEscapeKeyDown,
+              onPointerDownOutside,
+              onFocusOutside,
+              onDismiss: () => context.onOpenChange(false),
+              children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+                Content,
+                {
+                  "data-state": getState2(context.open),
+                  role: "dialog",
+                  id: context.contentId,
+                  ...popperScope,
+                  ...contentProps,
+                  ref: forwardedRef,
+                  style: {
+                    ...contentProps.style,
+                    // re-namespace exposed content custom properties
+                    ...{
+                      "--radix-popover-content-transform-origin": "var(--radix-popper-transform-origin)",
+                      "--radix-popover-content-available-width": "var(--radix-popper-available-width)",
+                      "--radix-popover-content-available-height": "var(--radix-popper-available-height)",
+                      "--radix-popover-trigger-width": "var(--radix-popper-anchor-width)",
+                      "--radix-popover-trigger-height": "var(--radix-popper-anchor-height)"
+                    }
+                  }
+                }
+              )
+            }
+          )
+        }
+      );
+    }
+  );
+  var CLOSE_NAME = "PopoverClose";
+  var PopoverClose = React44.forwardRef(
+    (props, forwardedRef) => {
+      const { __scopePopover, ...closeProps } = props;
+      const context = usePopoverContext(CLOSE_NAME, __scopePopover);
+      return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+        Primitive.button,
+        {
+          type: "button",
+          ...closeProps,
+          ref: forwardedRef,
+          onClick: composeEventHandlers2(props.onClick, () => context.onOpenChange(false))
+        }
+      );
+    }
+  );
+  PopoverClose.displayName = CLOSE_NAME;
+  var ARROW_NAME2 = "PopoverArrow";
+  var PopoverArrow = React44.forwardRef(
+    (props, forwardedRef) => {
+      const { __scopePopover, ...arrowProps } = props;
+      const popperScope = usePopperScope(__scopePopover);
+      return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
+    }
+  );
+  PopoverArrow.displayName = ARROW_NAME2;
+  function getState2(open2) {
+    return open2 ? "open" : "closed";
+  }
+  var Root23 = Popover;
+  var Trigger = PopoverTrigger;
+  var Portal2 = PopoverPortal;
+  var Content2 = PopoverContent;
+
+  // src/components/ui/popover.tsx
+  var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
+  var Popover2 = Root23;
+  var PopoverTrigger2 = Trigger;
+  var PopoverContent2 = React45.forwardRef(({ className, align = "center", sideOffset = 4, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(Portal2, { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+    Content2,
+    {
+      ref,
+      align,
+      sideOffset,
+      className: cn(
+        "z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-popover-content-transform-origin]",
+        className
+      ),
+      ...props
+    }
+  ) }));
+  PopoverContent2.displayName = Content2.displayName;
+
+  // src/components/ui/label.tsx
+  var React47 = __toESM(require_react(), 1);
+
+  // ../../node_modules/@radix-ui/react-label/dist/index.mjs
+  var React46 = __toESM(require_react(), 1);
+  var import_jsx_runtime18 = __toESM(require_jsx_runtime(), 1);
+  var NAME2 = "Label";
+  var Label = React46.forwardRef((props, forwardedRef) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
+      Primitive.label,
+      {
+        ...props,
+        ref: forwardedRef,
+        onMouseDown: (event) => {
+          const target = event.target;
+          if (target.closest("button, input, select, textarea")) return;
+          props.onMouseDown?.(event);
+          if (!event.defaultPrevented && event.detail > 1) event.preventDefault();
+        }
+      }
+    );
+  });
+  Label.displayName = NAME2;
+  var Root3 = Label;
+
+  // src/components/ui/label.tsx
+  var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
+  var labelVariants = cva(
+    "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+  );
+  var Label2 = React47.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
+    Root3,
+    {
+      ref,
+      className: cn(labelVariants(), className),
+      ...props
+    }
+  ));
+  Label2.displayName = Root3.displayName;
+
+  // src/components/DevModeToggle.tsx
+  var import_jsx_runtime20 = __toESM(require_jsx_runtime(), 1);
+  var DevModeToggle = () => {
+    const [isUsingBackend, setIsUsingBackend] = (0, import_react7.useState)(false);
+    const [isOpen, setIsOpen] = (0, import_react7.useState)(false);
+    if (false) {
+      return null;
+    }
+    (0, import_react7.useEffect)(() => {
+      setIsUsingBackend(ConfigService.shouldUseBackend());
+    }, []);
+    const handleToggle = (checked) => {
+      ConfigService.setBackendOverride(checked);
+      setIsUsingBackend(checked);
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    };
+    const getCurrentModeInfo = () => {
+      return isUsingBackend ? { label: "Backend API", icon: Database, variant: "default" } : { label: "localStorage", icon: HardDrive, variant: "secondary" };
+    };
+    const modeInfo = getCurrentModeInfo();
+    const ModeIcon = modeInfo.icon;
+    return /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)(Popover2, { open: isOpen, onOpenChange: setIsOpen, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(PopoverTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+        Button,
+        {
+          variant: "ghost",
+          size: "sm",
+          className: "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+          "aria-label": "Development mode settings",
+          children: /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Settings, { className: "h-4 w-4" })
+        }
+      ) }),
+      /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(PopoverContent2, { className: "w-80", align: "end", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "space-y-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("h4", { className: "font-medium leading-none", children: "Development Mode" }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("p", { className: "text-sm text-muted-foreground", children: "Switch between data storage modes for testing" })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "flex items-center justify-between space-x-2", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(ModeIcon, { className: "h-4 w-4" }),
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Label2, { htmlFor: "backend-mode", className: "text-sm font-medium", children: "Use Backend API" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+            Switch2,
+            {
+              id: "backend-mode",
+              checked: isUsingBackend,
+              onCheckedChange: handleToggle
+            }
+          )
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "flex items-center justify-between", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("span", { className: "text-sm text-muted-foreground", children: "Current mode:" }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(Badge, { variant: modeInfo.variant, className: "text-xs", children: modeInfo.label })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("div", { className: "pt-2 border-t", children: /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("div", { className: "text-xs text-muted-foreground space-y-1", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("p", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("strong", { children: "localStorage:" }),
+            " Data stored locally, no server needed"
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime20.jsxs)("p", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime20.jsx)("strong", { children: "Backend API:" }),
+            " Data fetched from configured API server"
+          ] })
+        ] }) })
+      ] }) })
+    ] });
+  };
+
+  // src/pages/Home.tsx
+  var import_react8 = __toESM(require_react(), 1);
+
+  // src/components/ui/dialog.tsx
+  var React49 = __toESM(require_react(), 1);
+
+  // ../../node_modules/@radix-ui/react-dialog/dist/index.mjs
+  var React48 = __toESM(require_react(), 1);
+  var import_jsx_runtime21 = __toESM(require_jsx_runtime(), 1);
+  var DIALOG_NAME = "Dialog";
+  var [createDialogContext, createDialogScope] = createContextScope(DIALOG_NAME);
+  var [DialogProvider, useDialogContext] = createDialogContext(DIALOG_NAME);
+  var Dialog = (props) => {
+    const {
+      __scopeDialog,
+      children,
+      open: openProp,
+      defaultOpen,
+      onOpenChange,
+      modal = true
+    } = props;
+    const triggerRef = React48.useRef(null);
+    const contentRef = React48.useRef(null);
+    const [open2, setOpen] = useControllableState({
+      prop: openProp,
+      defaultProp: defaultOpen ?? false,
+      onChange: onOpenChange,
+      caller: DIALOG_NAME
+    });
+    return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
+      DialogProvider,
+      {
+        scope: __scopeDialog,
+        triggerRef,
+        contentRef,
+        contentId: useId2(),
+        titleId: useId2(),
+        descriptionId: useId2(),
+        open: open2,
+        onOpenChange: setOpen,
+        onOpenToggle: React48.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
+        modal,
+        children
+      }
+    );
+  };
+  Dialog.displayName = DIALOG_NAME;
+  var TRIGGER_NAME2 = "DialogTrigger";
+  var DialogTrigger = React48.forwardRef(
+    (props, forwardedRef) => {
+      const { __scopeDialog, ...triggerProps } = props;
+      const context = useDialogContext(TRIGGER_NAME2, __scopeDialog);
+      const composedTriggerRef = useComposedRefs(forwardedRef, context.triggerRef);
+      return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
+        Primitive.button,
+        {
+          type: "button",
+          "aria-haspopup": "dialog",
+          "aria-expanded": context.open,
+          "aria-controls": context.contentId,
+          "data-state": getState3(context.open),
+          ...triggerProps,
+          ref: composedTriggerRef,
+          onClick: composeEventHandlers2(props.onClick, context.onOpenToggle)
+        }
+      );
+    }
+  );
+  DialogTrigger.displayName = TRIGGER_NAME2;
+  var PORTAL_NAME3 = "DialogPortal";
+  var [PortalProvider2, usePortalContext2] = createDialogContext(PORTAL_NAME3, {
     forceMount: void 0
   });
   var DialogPortal = (props) => {
     const { __scopeDialog, forceMount, children, container } = props;
-    const context = useDialogContext(PORTAL_NAME2, __scopeDialog);
-    return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(PortalProvider, { scope: __scopeDialog, forceMount, children: React41.Children.map(children, (child) => /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Portal, { asChild: true, container, children: child }) })) });
+    const context = useDialogContext(PORTAL_NAME3, __scopeDialog);
+    return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(PortalProvider2, { scope: __scopeDialog, forceMount, children: React48.Children.map(children, (child) => /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Portal, { asChild: true, container, children: child }) })) });
   };
-  DialogPortal.displayName = PORTAL_NAME2;
+  DialogPortal.displayName = PORTAL_NAME3;
   var OVERLAY_NAME = "DialogOverlay";
-  var DialogOverlay = React41.forwardRef(
+  var DialogOverlay = React48.forwardRef(
     (props, forwardedRef) => {
-      const portalContext = usePortalContext(OVERLAY_NAME, props.__scopeDialog);
+      const portalContext = usePortalContext2(OVERLAY_NAME, props.__scopeDialog);
       const { forceMount = portalContext.forceMount, ...overlayProps } = props;
       const context = useDialogContext(OVERLAY_NAME, props.__scopeDialog);
-      return context.modal ? /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DialogOverlayImpl, { ...overlayProps, ref: forwardedRef }) }) : null;
+      return context.modal ? /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(DialogOverlayImpl, { ...overlayProps, ref: forwardedRef }) }) : null;
     }
   );
   DialogOverlay.displayName = OVERLAY_NAME;
-  var Slot2 = createSlot("DialogOverlay.RemoveScroll");
-  var DialogOverlayImpl = React41.forwardRef(
+  var Slot3 = createSlot("DialogOverlay.RemoveScroll");
+  var DialogOverlayImpl = React48.forwardRef(
     (props, forwardedRef) => {
       const { __scopeDialog, ...overlayProps } = props;
       const context = useDialogContext(OVERLAY_NAME, __scopeDialog);
       return (
         // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
         // ie. when `Overlay` and `Content` are siblings
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Combination_default, { as: Slot2, allowPinchZoom: true, shards: [context.contentRef], children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Combination_default, { as: Slot3, allowPinchZoom: true, shards: [context.contentRef], children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
           Primitive.div,
           {
-            "data-state": getState2(context.open),
+            "data-state": getState3(context.open),
             ...overlayProps,
             ref: forwardedRef,
             style: { pointerEvents: "auto", ...overlayProps.style }
@@ -66384,26 +68981,26 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       );
     }
   );
-  var CONTENT_NAME = "DialogContent";
-  var DialogContent = React41.forwardRef(
+  var CONTENT_NAME3 = "DialogContent";
+  var DialogContent = React48.forwardRef(
     (props, forwardedRef) => {
-      const portalContext = usePortalContext(CONTENT_NAME, props.__scopeDialog);
+      const portalContext = usePortalContext2(CONTENT_NAME3, props.__scopeDialog);
       const { forceMount = portalContext.forceMount, ...contentProps } = props;
-      const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
-      return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DialogContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DialogContentNonModal, { ...contentProps, ref: forwardedRef }) });
+      const context = useDialogContext(CONTENT_NAME3, props.__scopeDialog);
+      return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(DialogContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(DialogContentNonModal, { ...contentProps, ref: forwardedRef }) });
     }
   );
-  DialogContent.displayName = CONTENT_NAME;
-  var DialogContentModal = React41.forwardRef(
+  DialogContent.displayName = CONTENT_NAME3;
+  var DialogContentModal = React48.forwardRef(
     (props, forwardedRef) => {
-      const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
-      const contentRef = React41.useRef(null);
+      const context = useDialogContext(CONTENT_NAME3, props.__scopeDialog);
+      const contentRef = React48.useRef(null);
       const composedRefs = useComposedRefs(forwardedRef, context.contentRef, contentRef);
-      React41.useEffect(() => {
+      React48.useEffect(() => {
         const content = contentRef.current;
         if (content) return hideOthers(content);
       }, []);
-      return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
         DialogContentImpl,
         {
           ...props,
@@ -66428,12 +69025,12 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       );
     }
   );
-  var DialogContentNonModal = React41.forwardRef(
+  var DialogContentNonModal = React48.forwardRef(
     (props, forwardedRef) => {
-      const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
-      const hasInteractedOutsideRef = React41.useRef(false);
-      const hasPointerDownOutsideRef = React41.useRef(false);
-      return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+      const context = useDialogContext(CONTENT_NAME3, props.__scopeDialog);
+      const hasInteractedOutsideRef = React48.useRef(false);
+      const hasPointerDownOutsideRef = React48.useRef(false);
+      return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
         DialogContentImpl,
         {
           ...props,
@@ -66468,15 +69065,15 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       );
     }
   );
-  var DialogContentImpl = React41.forwardRef(
+  var DialogContentImpl = React48.forwardRef(
     (props, forwardedRef) => {
       const { __scopeDialog, trapFocus, onOpenAutoFocus, onCloseAutoFocus, ...contentProps } = props;
-      const context = useDialogContext(CONTENT_NAME, __scopeDialog);
-      const contentRef = React41.useRef(null);
+      const context = useDialogContext(CONTENT_NAME3, __scopeDialog);
+      const contentRef = React48.useRef(null);
       const composedRefs = useComposedRefs(forwardedRef, contentRef);
       useFocusGuards();
-      return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(import_jsx_runtime14.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
           FocusScope,
           {
             asChild: true,
@@ -66484,14 +69081,14 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             trapped: trapFocus,
             onMountAutoFocus: onOpenAutoFocus,
             onUnmountAutoFocus: onCloseAutoFocus,
-            children: /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+            children: /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
               DismissableLayer,
               {
                 role: "dialog",
                 id: context.contentId,
                 "aria-describedby": context.descriptionId,
                 "aria-labelledby": context.titleId,
-                "data-state": getState2(context.open),
+                "data-state": getState3(context.open),
                 ...contentProps,
                 ref: composedRefs,
                 onDismiss: () => context.onOpenChange(false)
@@ -66499,37 +69096,37 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
             )
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(import_jsx_runtime14.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(TitleWarning, { titleId: context.titleId }),
-          /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(DescriptionWarning, { contentRef, descriptionId: context.descriptionId })
+        /* @__PURE__ */ (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(TitleWarning, { titleId: context.titleId }),
+          /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(DescriptionWarning, { contentRef, descriptionId: context.descriptionId })
         ] })
       ] });
     }
   );
   var TITLE_NAME = "DialogTitle";
-  var DialogTitle = React41.forwardRef(
+  var DialogTitle = React48.forwardRef(
     (props, forwardedRef) => {
       const { __scopeDialog, ...titleProps } = props;
       const context = useDialogContext(TITLE_NAME, __scopeDialog);
-      return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Primitive.h2, { id: context.titleId, ...titleProps, ref: forwardedRef });
+      return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Primitive.h2, { id: context.titleId, ...titleProps, ref: forwardedRef });
     }
   );
   DialogTitle.displayName = TITLE_NAME;
   var DESCRIPTION_NAME = "DialogDescription";
-  var DialogDescription = React41.forwardRef(
+  var DialogDescription = React48.forwardRef(
     (props, forwardedRef) => {
       const { __scopeDialog, ...descriptionProps } = props;
       const context = useDialogContext(DESCRIPTION_NAME, __scopeDialog);
-      return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(Primitive.p, { id: context.descriptionId, ...descriptionProps, ref: forwardedRef });
+      return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(Primitive.p, { id: context.descriptionId, ...descriptionProps, ref: forwardedRef });
     }
   );
   DialogDescription.displayName = DESCRIPTION_NAME;
-  var CLOSE_NAME = "DialogClose";
-  var DialogClose = React41.forwardRef(
+  var CLOSE_NAME2 = "DialogClose";
+  var DialogClose = React48.forwardRef(
     (props, forwardedRef) => {
       const { __scopeDialog, ...closeProps } = props;
-      const context = useDialogContext(CLOSE_NAME, __scopeDialog);
-      return /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(
+      const context = useDialogContext(CLOSE_NAME2, __scopeDialog);
+      return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(
         Primitive.button,
         {
           type: "button",
@@ -66540,13 +69137,13 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
       );
     }
   );
-  DialogClose.displayName = CLOSE_NAME;
-  function getState2(open2) {
+  DialogClose.displayName = CLOSE_NAME2;
+  function getState3(open2) {
     return open2 ? "open" : "closed";
   }
   var TITLE_WARNING_NAME = "DialogTitleWarning";
   var [WarningProvider, useWarningContext] = createContext22(TITLE_WARNING_NAME, {
-    contentName: CONTENT_NAME,
+    contentName: CONTENT_NAME3,
     titleName: TITLE_NAME,
     docsSlug: "dialog"
   });
@@ -66557,7 +69154,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 If you want to hide the \`${titleWarningContext.titleName}\`, you can wrap it with our VisuallyHidden component.
 
 For more information, see https://radix-ui.com/primitives/docs/components/${titleWarningContext.docsSlug}`;
-    React41.useEffect(() => {
+    React48.useEffect(() => {
       if (titleId) {
         const hasTitle = document.getElementById(titleId);
         if (!hasTitle) console.error(MESSAGE);
@@ -66569,7 +69166,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   var DescriptionWarning = ({ contentRef, descriptionId }) => {
     const descriptionWarningContext = useWarningContext(DESCRIPTION_WARNING_NAME);
     const MESSAGE = `Warning: Missing \`Description\` or \`aria-describedby={undefined}\` for {${descriptionWarningContext.contentName}}.`;
-    React41.useEffect(() => {
+    React48.useEffect(() => {
       const describedById = contentRef.current?.getAttribute("aria-describedby");
       if (descriptionId && describedById) {
         const hasDescription = document.getElementById(descriptionId);
@@ -66578,21 +69175,21 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     }, [MESSAGE, contentRef, descriptionId]);
     return null;
   };
-  var Root2 = Dialog;
-  var Trigger = DialogTrigger;
-  var Portal2 = DialogPortal;
+  var Root4 = Dialog;
+  var Trigger2 = DialogTrigger;
+  var Portal3 = DialogPortal;
   var Overlay = DialogOverlay;
-  var Content = DialogContent;
+  var Content3 = DialogContent;
   var Title = DialogTitle;
   var Description = DialogDescription;
   var Close = DialogClose;
 
   // src/components/ui/dialog.tsx
-  var import_jsx_runtime15 = __toESM(require_jsx_runtime(), 1);
-  var Dialog2 = Root2;
-  var DialogTrigger2 = Trigger;
-  var DialogPortal2 = Portal2;
-  var DialogOverlay2 = React42.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+  var import_jsx_runtime22 = __toESM(require_jsx_runtime(), 1);
+  var Dialog2 = Root4;
+  var DialogTrigger2 = Trigger2;
+  var DialogPortal2 = Portal3;
+  var DialogOverlay2 = React49.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(
     Overlay,
     {
       ref,
@@ -66604,10 +69201,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     }
   ));
   DialogOverlay2.displayName = Overlay.displayName;
-  var DialogContent2 = React42.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(DialogPortal2, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(DialogOverlay2, {}),
-    /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(
-      Content,
+  var DialogContent2 = React49.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)(DialogPortal2, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(DialogOverlay2, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)(
+      Content3,
       {
         ref,
         className: cn(
@@ -66617,19 +69214,19 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         ...props,
         children: [
           children,
-          /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(Close, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(X, { className: "h-4 w-4" }),
-            /* @__PURE__ */ (0, import_jsx_runtime15.jsx)("span", { className: "sr-only", children: "Close" })
+          /* @__PURE__ */ (0, import_jsx_runtime22.jsxs)(Close, { className: "absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(X, { className: "h-4 w-4" }),
+            /* @__PURE__ */ (0, import_jsx_runtime22.jsx)("span", { className: "sr-only", children: "Close" })
           ] })
         ]
       }
     )
   ] }));
-  DialogContent2.displayName = Content.displayName;
+  DialogContent2.displayName = Content3.displayName;
   var DialogHeader = ({
     className,
     ...props
-  }) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+  }) => /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(
     "div",
     {
       className: cn(
@@ -66643,7 +69240,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   var DialogFooter = ({
     className,
     ...props
-  }) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+  }) => /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(
     "div",
     {
       className: cn(
@@ -66654,7 +69251,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     }
   );
   DialogFooter.displayName = "DialogFooter";
-  var DialogTitle2 = React42.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+  var DialogTitle2 = React49.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(
     Title,
     {
       ref,
@@ -66666,7 +69263,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     }
   ));
   DialogTitle2.displayName = Title.displayName;
-  var DialogDescription2 = React42.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(
+  var DialogDescription2 = React49.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(
     Description,
     {
       ref,
@@ -66847,14 +69444,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   };
 
   // src/pages/Home.tsx
-  var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime23 = __toESM(require_jsx_runtime(), 1);
   function Home() {
-    const [selectedTab, setSelectedTab] = (0, import_react6.useState)("fleet");
-    const [isPlansDialogOpen, setIsPlansDialogOpen] = (0, import_react6.useState)(false);
-    const [cars, setCars] = (0, import_react6.useState)([]);
-    const [carStatusMap, setCarStatusMap] = (0, import_react6.useState)(/* @__PURE__ */ new Map());
-    const [savedPlans, setSavedPlans] = (0, import_react6.useState)([]);
-    const [fleetStats, setFleetStats] = (0, import_react6.useState)({
+    const [selectedTab, setSelectedTab] = (0, import_react8.useState)("fleet");
+    const [isPlansDialogOpen, setIsPlansDialogOpen] = (0, import_react8.useState)(false);
+    const [cars, setCars] = (0, import_react8.useState)([]);
+    const [carStatusMap, setCarStatusMap] = (0, import_react8.useState)(/* @__PURE__ */ new Map());
+    const [savedPlans, setSavedPlans] = (0, import_react8.useState)([]);
+    const [fleetStats, setFleetStats] = (0, import_react8.useState)({
       totalCars: 0,
       activeCars: 0,
       carsInMaintenance: 0,
@@ -66862,8 +69459,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       totalActiveAlerts: 0,
       totalCriticalAlerts: 0
     });
-    const [isLoading, setIsLoading] = (0, import_react6.useState)(true);
-    const [error, setError] = (0, import_react6.useState)(null);
+    const [isLoading, setIsLoading] = (0, import_react8.useState)(true);
+    const [error, setError] = (0, import_react8.useState)(null);
     const loadDashboardData = async () => {
       try {
         setIsLoading(true);
@@ -66886,7 +69483,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         setIsLoading(false);
       }
     };
-    (0, import_react6.useEffect)(() => {
+    (0, import_react8.useEffect)(() => {
       loadDashboardData();
       const handleMaintenanceChange = () => {
         loadDashboardData();
@@ -66906,7 +69503,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         window.removeEventListener("focus", handleFocus);
       };
     }, []);
-    (0, import_react6.useEffect)(() => {
+    (0, import_react8.useEffect)(() => {
       if (isPlansDialogOpen) {
         DataService.getMaintenancePlans().then(setSavedPlans);
       }
@@ -66950,114 +69547,114 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       NavigationService.navigateToMarketing("/");
     };
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "text-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445..." })
+      return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "text-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445..." })
       ] }) });
     }
     if (error) {
-      return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "text-center max-w-md mx-auto px-4", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(TriangleAlert, { className: "h-12 w-12 text-red-500 mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h2", { className: "text-xl font-semibold text-gray-900 mb-2", children: "\u041E\u0448\u0438\u0431\u043A\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0438" }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-gray-600 mb-4", children: error }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Button, { onClick: loadDashboardData, children: "\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C \u0441\u043D\u043E\u0432\u0430" })
+      return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "text-center max-w-md mx-auto px-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TriangleAlert, { className: "h-12 w-12 text-red-500 mx-auto mb-4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h2", { className: "text-xl font-semibold text-gray-900 mb-2", children: "\u041E\u0448\u0438\u0431\u043A\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0438" }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-gray-600 mb-4", children: error }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Button, { onClick: loadDashboardData, children: "\u041F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C \u0441\u043D\u043E\u0432\u0430" })
       ] }) });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("header", { className: "bg-white shadow-sm border-b", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center justify-between", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h1", { className: "text-xl font-bold text-gray-900", children: "FleetMasterPro" }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-sm text-gray-600", children: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0430\u0432\u0442\u043E\u043F\u0430\u0440\u043A\u043E\u043C" })
+    return /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("header", { className: "bg-white shadow-sm border-b", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h1", { className: "text-xl font-bold text-gray-900", children: "FleetMasterPro" }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-sm text-gray-600", children: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0430\u0432\u0442\u043E\u043F\u0430\u0440\u043A\u043E\u043C" })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center space-x-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Settings, { className: "h-4 w-4" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Button, { variant: "ghost", size: "sm", onClick: handleAccountClick, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(User, { className: "h-4 w-4" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Button, { variant: "ghost", size: "sm", onClick: handleLogoutClick, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(LogOut, { className: "h-4 w-4" }) })
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center space-x-2", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Settings, { className: "h-4 w-4" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Button, { variant: "ghost", size: "sm", onClick: handleAccountClick, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(User, { className: "h-4 w-4" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Button, { variant: "ghost", size: "sm", onClick: handleLogoutClick, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(LogOut, { className: "h-4 w-4" }) })
         ] })
       ] }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("main", { className: "px-4 py-6 pb-20", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Car, { className: "h-8 w-8 text-blue-600" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-2xl font-bold", children: fleetStats.activeCars }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-sm text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438 \u0433\u043E\u0442\u043E\u0432\u044B\u0435 \u043A \u0440\u0430\u0431\u043E\u0442\u0435" })
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("main", { className: "px-4 py-6 pb-20", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Car, { className: "h-8 w-8 text-blue-600" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-2xl font-bold", children: fleetStats.activeCars }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-sm text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438 \u0433\u043E\u0442\u043E\u0432\u044B\u0435 \u043A \u0440\u0430\u0431\u043E\u0442\u0435" })
             ] })
           ] }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/in-maintenance", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Card, { className: "hover:bg-gray-50 transition-colors cursor-pointer", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Wrench, { className: "h-8 w-8 text-orange-600" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-2xl font-bold", children: fleetStats.carsInMaintenance }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-sm text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438 \u043D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435" })
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/in-maintenance", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Card, { className: "hover:bg-gray-50 transition-colors cursor-pointer", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Wrench, { className: "h-8 w-8 text-orange-600" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-2xl font-bold", children: fleetStats.carsInMaintenance }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-sm text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438 \u043D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435" })
             ] })
           ] }) }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/alerts", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Card, { className: "hover:bg-gray-50 transition-colors cursor-pointer", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(TriangleAlert, { className: "h-8 w-8 text-red-600" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-2xl font-bold", children: fleetStats.totalActiveAlerts }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" })
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/alerts", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Card, { className: "hover:bg-gray-50 transition-colors cursor-pointer", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TriangleAlert, { className: "h-8 w-8 text-red-600" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-2xl font-bold", children: fleetStats.totalActiveAlerts }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" })
             ] })
           ] }) }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Dialog2, { open: isPlansDialogOpen, onOpenChange: setIsPlansDialogOpen, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(DialogTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Card, { className: "hover:bg-gray-50 transition-colors cursor-pointer", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center space-x-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Calendar, { className: "h-8 w-8 text-orange-600" }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-2xl font-bold", children: savedPlans.length }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u043B\u0430\u043D\u043E\u0432 \u0422\u041E" })
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Dialog2, { open: isPlansDialogOpen, onOpenChange: setIsPlansDialogOpen, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(DialogTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Card, { className: "hover:bg-gray-50 transition-colors cursor-pointer", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center space-x-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Calendar, { className: "h-8 w-8 text-orange-600" }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-2xl font-bold", children: savedPlans.length }),
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u043B\u0430\u043D\u043E\u0432 \u0422\u041E" })
               ] })
             ] }) }) }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(DialogContent2, { className: "max-w-4xl max-h-[90vh] overflow-y-auto", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(DialogTitle2, { children: "\u041F\u043B\u0430\u043D\u044B \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "space-y-4", children: savedPlans.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "text-center text-gray-500 py-8", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { children: "\u041D\u0435\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0445 \u043F\u043B\u0430\u043D\u043E\u0432" }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "mt-4", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/maintenance-planning", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { onClick: () => setIsPlansDialogOpen(false), children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(DialogContent2, { className: "max-w-4xl max-h-[90vh] overflow-y-auto", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(DialogTitle2, { children: "\u041F\u043B\u0430\u043D\u044B \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "space-y-4", children: savedPlans.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "text-center text-gray-500 py-8", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { children: "\u041D\u0435\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0445 \u043F\u043B\u0430\u043D\u043E\u0432" }),
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "mt-4", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/maintenance-planning", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Button, { onClick: () => setIsPlansDialogOpen(false), children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
                   "\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043F\u043B\u0430\u043D \u0422\u041E"
                 ] }) }) })
-              ] }) : /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex justify-between items-center", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { className: "text-sm text-gray-600", children: [
+              ] }) : /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex justify-between items-center", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { className: "text-sm text-gray-600", children: [
                     "\u0412\u0441\u0435\u0433\u043E \u043F\u043B\u0430\u043D\u043E\u0432: ",
                     savedPlans.length
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/maintenance-planning", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { onClick: () => setIsPlansDialogOpen(false), size: "sm", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/maintenance-planning", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Button, { onClick: () => setIsPlansDialogOpen(false), size: "sm", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
                     "\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043D\u043E\u0432\u044B\u0439 \u043F\u043B\u0430\u043D"
                   ] }) })
                 ] }),
-                savedPlans.map((plan) => /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "border rounded-lg p-4", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex justify-between items-start mb-2", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex-1", children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h4", { className: "font-medium", children: plan.carName }),
-                      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { className: "text-sm text-gray-600", children: [
+                savedPlans.map((plan) => /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "border rounded-lg p-4", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex justify-between items-start mb-2", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex-1", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h4", { className: "font-medium", children: plan.carName }),
+                      /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { className: "text-sm text-gray-600", children: [
                         "\u041D\u0430\u0447\u0430\u043B\u043E: ",
                         plan.plannedDate
                       ] }),
-                      /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { className: "text-sm text-gray-600", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { className: "text-sm text-gray-600", children: [
                         "\u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u0435: ",
                         plan.plannedCompletionDate
                       ] })
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center space-x-2", children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Badge, { children: plan.status === "draft" ? "\u0427\u0435\u0440\u043D\u043E\u0432\u0438\u043A" : "\u0417\u0430\u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u043E" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: `/maintenance-planning/${plan.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+                    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center space-x-2", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Badge, { children: plan.status === "draft" ? "\u0427\u0435\u0440\u043D\u043E\u0432\u0438\u043A" : "\u0417\u0430\u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u043E" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: `/maintenance-planning/${plan.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
                         Button,
                         {
                           size: "sm",
                           variant: "outline",
                           onClick: () => setIsPlansDialogOpen(false),
                           className: "text-xs",
-                          children: "\u041F\u0440\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C"
+                          children: "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
                         }
                       ) })
                     ] })
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "text-sm", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "text-sm", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { children: [
                       "\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0439: ",
                       plan.periodicOperations.length + plan.repairOperations.length
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { children: [
                       "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: ",
                       plan.totalEstimatedCost.toLocaleString(),
                       " \u20BD"
@@ -67068,25 +69665,25 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Card, { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(CardHeader, { className: "flex flex-row items-center justify-between", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardTitle, { className: "text-lg", children: "\u041C\u043E\u0439 \u0430\u0432\u0442\u043E\u043F\u0430\u0440\u043A" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/add-car", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { variant: "outline", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Card, { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(CardHeader, { className: "flex flex-row items-center justify-between", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardTitle, { className: "text-lg", children: "\u041C\u043E\u0439 \u0430\u0432\u0442\u043E\u043F\u0430\u0440\u043A" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/add-car", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Button, { variant: "outline", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
               "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0430\u0432\u0442\u043E"
             ] }) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardContent, { children: cars.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "text-center py-8", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Car, { className: "h-12 w-12 text-gray-400 mx-auto mb-4" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-gray-500 mb-4", children: "\u0423 \u0432\u0430\u0441 \u043F\u043E\u043A\u0430 \u043D\u0435\u0442 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u043D\u044B\u0445 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435\u0439" }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/add-car", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardContent, { children: cars.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "text-center py-8", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Car, { className: "h-12 w-12 text-gray-400 mx-auto mb-4" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-gray-500 mb-4", children: "\u0423 \u0432\u0430\u0441 \u043F\u043E\u043A\u0430 \u043D\u0435\u0442 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u043D\u044B\u0445 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435\u0439" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/add-car", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Button, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
               "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043F\u0435\u0440\u0432\u044B\u0439 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C"
             ] }) })
-          ] }) : /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "space-y-4", children: cars.map((car) => {
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "space-y-4", children: cars.map((car) => {
             const statusInfo = getCarStatusInfo(car.id);
-            return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "border rounded-lg p-4 hover:bg-gray-50 transition-colors", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center space-x-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(
+            return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: `/car/${car.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "border rounded-lg p-4 hover:bg-gray-50 transition-colors", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center space-x-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
                 "img",
                 {
                   src: car.image || "/img/car-by-deault.png",
@@ -67094,12 +69691,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   className: "w-16 h-16 rounded-lg object-cover"
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex-1", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("h3", { className: "font-semibold", children: car.name }),
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Badge, { className: statusInfo.statusColor, children: statusInfo.statusText })
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: "font-semibold", children: car.name }),
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Badge, { className: statusInfo.statusColor, children: statusInfo.statusText })
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { className: "text-sm text-gray-600", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { className: "text-sm text-gray-600", children: [
                   car.brand,
                   " ",
                   car.model,
@@ -67107,75 +69704,61 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   car.year,
                   ")"
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { className: "text-xs text-gray-500", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { className: "text-xs text-gray-500", children: [
                   "\u041F\u0440\u043E\u0431\u0435\u0433: ",
                   car.mileage.toLocaleString(),
                   " \u043A\u043C"
                 ] }),
-                car.nextService && /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { className: "text-xs text-gray-500", children: [
+                car.nextService && /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { className: "text-xs text-gray-500", children: [
                   "\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0435 \u0422\u041E: ",
                   car.nextService
                 ] }),
-                statusInfo.alertCount > 0 && /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("p", { className: "text-xs text-orange-600", children: [
+                statusInfo.alertCount > 0 && /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { className: "text-xs text-orange-600", children: [
                   "\u0410\u043A\u0442\u0438\u0432\u043D\u044B\u0445 \u0443\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u0439: ",
                   statusInfo.alertCount,
                   statusInfo.criticalAlertCount > 0 && ` (\u043A\u0440\u0438\u0442\u0438\u0447\u043D\u044B\u0445: ${statusInfo.criticalAlertCount})`
                 ] })
-              ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex flex-col space-y-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: `/car/${car.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { size: "sm", variant: "outline", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Car, { className: "h-4 w-4 mr-1" }),
-                  "\u041E\u0431\u0437\u043E\u0440"
-                ] }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: `/periodical-maintenance-guide/${car.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { size: "sm", variant: "outline", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Settings, { className: "h-4 w-4 mr-1" }),
-                  "\u0422\u041E"
-                ] }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: `/maintenance-planning?carId=${car.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { size: "sm", variant: "outline", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Calendar, { className: "h-4 w-4 mr-1" }),
-                  "\u041F\u043B\u0430\u043D"
-                ] }) })
               ] })
-            ] }) }, car.id);
+            ] }) }) }, car.id);
           }) }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Card, { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardTitle, { className: "text-lg", children: "\u0411\u044B\u0441\u0442\u0440\u044B\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "grid grid-cols-1 sm:grid-cols-4 gap-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/add-service-record", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { className: "w-full", variant: "outline", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Wrench, { className: "h-4 w-4 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Card, { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardTitle, { className: "text-lg", children: "\u0411\u044B\u0441\u0442\u0440\u044B\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "grid grid-cols-1 sm:grid-cols-4 gap-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/add-service-record", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Button, { className: "w-full", variant: "outline", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Wrench, { className: "h-4 w-4 mr-2" }),
               "\u041E\u0442\u0447\u0435\u0442 \u043E \u0441\u0435\u0440\u0432\u0438\u0441\u0435"
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/user-alert", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { className: "w-full", variant: "outline", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(TriangleAlert, { className: "h-4 w-4 mr-2" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/user-alert", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Button, { className: "w-full", variant: "outline", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TriangleAlert, { className: "h-4 w-4 mr-2" }),
               "\u0421\u043E\u043E\u0431\u0449\u0438\u0442\u044C \u043E \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0435"
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/maintenance-planning", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Button, { className: "w-full", variant: "outline", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Calendar, { className: "h-4 w-4 mr-2" }),
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/maintenance-planning", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Button, { className: "w-full", variant: "outline", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Calendar, { className: "h-4 w-4 mr-2" }),
               "\u041F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0422\u041E"
             ] }) })
           ] }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(Card, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardTitle, { className: "text-lg", children: "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0435 \u0441\u043E\u0431\u044B\u0442\u0438\u044F (\u0440\u0430\u0437\u0434\u0435\u043B \u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435)" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: "space-y-3", children: recentActivities.map((activity, index3) => /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-start space-x-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex-shrink-0 mt-1", children: [
-              activity.type === "service" && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Wrench, { className: "h-4 w-4 text-blue-600" }),
-              activity.type === "problem" && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(TriangleAlert, { className: "h-4 w-4 text-red-600" }),
-              activity.type === "maintenance" && /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Calendar, { className: "h-4 w-4 text-green-600" })
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(Card, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardTitle, { className: "text-lg", children: "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0435 \u0441\u043E\u0431\u044B\u0442\u0438\u044F (\u0440\u0430\u0437\u0434\u0435\u043B \u0432 \u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0435)" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("div", { className: "space-y-3", children: recentActivities.map((activity, index3) => /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-start space-x-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex-shrink-0 mt-1", children: [
+              activity.type === "service" && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Wrench, { className: "h-4 w-4 text-blue-600" }),
+              activity.type === "problem" && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TriangleAlert, { className: "h-4 w-4 text-red-600" }),
+              activity.type === "maintenance" && /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Calendar, { className: "h-4 w-4 text-green-600" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex-1", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-sm", children: activity.message }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "flex items-center justify-between mt-1", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("p", { className: "text-xs text-gray-500", children: activity.date }),
-                /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Badge, { className: getPriorityColor(activity.priority), children: activity.priority === "high" ? "\u0412\u044B\u0441\u043E\u043A\u0438\u0439" : activity.priority === "medium" ? "\u0421\u0440\u0435\u0434\u043D\u0438\u0439" : "\u041D\u0438\u0437\u043A\u0438\u0439" })
+            /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex-1", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-sm", children: activity.message }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center justify-between mt-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("p", { className: "text-xs text-gray-500", children: activity.date }),
+                /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Badge, { className: getPriorityColor(activity.priority), children: activity.priority === "high" ? "\u0412\u044B\u0441\u043E\u043A\u0438\u0439" : activity.priority === "medium" ? "\u0421\u0440\u0435\u0434\u043D\u0438\u0439" : "\u041D\u0438\u0437\u043A\u0438\u0439" })
               ] })
             ] })
           ] }, index3)) }) })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("nav", { className: "fixed bottom-0 left-0 right-0 bg-white border-t lg:hidden", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)("div", { className: "grid grid-cols-4 gap-1 p-2", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("nav", { className: "fixed bottom-0 left-0 right-0 bg-white border-t lg:hidden", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "grid grid-cols-4 gap-1 p-2", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(
           Button,
           {
             variant: selectedTab === "fleet" ? "default" : "ghost",
@@ -67183,12 +69766,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             className: "flex flex-col h-12",
             onClick: () => setSelectedTab("fleet"),
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Car, { className: "h-4 w-4" }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: "text-xs mt-1", children: "\u0410\u0432\u0442\u043E\u043F\u0430\u0440\u043A" })
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Car, { className: "h-4 w-4" }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: "text-xs mt-1", children: "\u0410\u0432\u0442\u043E\u043F\u0430\u0440\u043A" })
             ]
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/service-history", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/service-history", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(
           Button,
           {
             variant: selectedTab === "service" ? "default" : "ghost",
@@ -67196,12 +69779,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             className: "flex flex-col h-12",
             onClick: () => setSelectedTab("service"),
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Wrench, { className: "h-4 w-4" }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: "text-xs mt-1", children: "\u0421\u0435\u0440\u0432\u0438\u0441" })
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Wrench, { className: "h-4 w-4" }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: "text-xs mt-1", children: "\u0421\u0435\u0440\u0432\u0438\u0441" })
             ]
           }
         ) }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/alerts", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/alerts", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(
           Button,
           {
             variant: selectedTab === "problems" ? "default" : "ghost",
@@ -67209,12 +69792,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             className: "flex flex-col h-12",
             onClick: () => setSelectedTab("problems"),
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(TriangleAlert, { className: "h-4 w-4" }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: "text-xs mt-1", children: "\u041F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" })
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(TriangleAlert, { className: "h-4 w-4" }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: "text-xs mt-1", children: "\u041F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" })
             ]
           }
         ) }),
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Link, { to: "/service-history", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Link, { to: "/service-history", children: /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)(
           Button,
           {
             variant: selectedTab === "history" ? "default" : "ghost",
@@ -67222,8 +69805,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             className: "flex flex-col h-12",
             onClick: () => setSelectedTab("history"),
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(FileText, { className: "h-4 w-4" }),
-              /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("span", { className: "text-xs mt-1", children: "\u0418\u0441\u0442\u043E\u0440\u0438\u044F" })
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(FileText, { className: "h-4 w-4" }),
+              /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("span", { className: "text-xs mt-1", children: "\u0418\u0441\u0442\u043E\u0440\u0438\u044F" })
             ]
           }
         ) })
@@ -67232,14 +69815,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   }
 
   // src/pages/CarOverview.tsx
-  var import_react9 = __toESM(require_react(), 1);
+  var import_react10 = __toESM(require_react(), 1);
 
   // src/components/ui/input.tsx
-  var React43 = __toESM(require_react(), 1);
-  var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
-  var Input = React43.forwardRef(
+  var React50 = __toESM(require_react(), 1);
+  var import_jsx_runtime24 = __toESM(require_jsx_runtime(), 1);
+  var Input = React50.forwardRef(
     ({ className, type, ...props }, ref) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(
         "input",
         {
           type,
@@ -67255,51 +69838,11 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   );
   Input.displayName = "Input";
 
-  // src/components/ui/label.tsx
-  var React45 = __toESM(require_react(), 1);
-
-  // ../../node_modules/@radix-ui/react-label/dist/index.mjs
-  var React44 = __toESM(require_react(), 1);
-  var import_jsx_runtime18 = __toESM(require_jsx_runtime(), 1);
-  var NAME = "Label";
-  var Label = React44.forwardRef((props, forwardedRef) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime18.jsx)(
-      Primitive.label,
-      {
-        ...props,
-        ref: forwardedRef,
-        onMouseDown: (event) => {
-          const target = event.target;
-          if (target.closest("button, input, select, textarea")) return;
-          props.onMouseDown?.(event);
-          if (!event.defaultPrevented && event.detail > 1) event.preventDefault();
-        }
-      }
-    );
-  });
-  Label.displayName = NAME;
-  var Root3 = Label;
-
-  // src/components/ui/label.tsx
-  var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
-  var labelVariants = cva(
-    "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-  );
-  var Label2 = React45.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
-    Root3,
-    {
-      ref,
-      className: cn(labelVariants(), className),
-      ...props
-    }
-  ));
-  Label2.displayName = Root3.displayName;
-
   // src/components/ui/textarea.tsx
-  var React46 = __toESM(require_react(), 1);
-  var import_jsx_runtime20 = __toESM(require_jsx_runtime(), 1);
-  var Textarea = React46.forwardRef(({ className, ...props }, ref) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime20.jsx)(
+  var React51 = __toESM(require_react(), 1);
+  var import_jsx_runtime25 = __toESM(require_jsx_runtime(), 1);
+  var Textarea = React51.forwardRef(({ className, ...props }, ref) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
       "textarea",
       {
         className: cn(
@@ -69548,8 +72091,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   };
 
   // ../../node_modules/react-day-picker/dist/index.esm.js
-  var import_jsx_runtime21 = __toESM(require_jsx_runtime());
-  var import_react7 = __toESM(require_react());
+  var import_jsx_runtime26 = __toESM(require_jsx_runtime());
+  var import_react9 = __toESM(require_react());
 
   // ../../node_modules/date-fns/esm/_lib/toInteger/index.js
   function toInteger(dirtyNumber) {
@@ -69743,7 +72286,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
 
   // ../../node_modules/date-fns/esm/max/index.js
   init_typeof();
-  function max(dirtyDatesArray) {
+  function max2(dirtyDatesArray) {
     requiredArgs(1, arguments);
     var datesArray;
     if (dirtyDatesArray && typeof dirtyDatesArray.forEach === "function") {
@@ -69765,7 +72308,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
 
   // ../../node_modules/date-fns/esm/min/index.js
   init_typeof();
-  function min(dirtyDatesArray) {
+  function min2(dirtyDatesArray) {
     requiredArgs(1, arguments);
     var datesArray;
     if (dirtyDatesArray && typeof dirtyDatesArray.forEach === "function") {
@@ -71806,7 +74349,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       toDate: toDate3 ? startOfDay2(toDate3) : void 0
     };
   }
-  var DayPickerContext = (0, import_react7.createContext)(void 0);
+  var DayPickerContext = (0, import_react9.createContext)(void 0);
   function DayPickerProvider(props) {
     var _a2;
     var initialProps = props.initialProps;
@@ -71821,10 +74364,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       onSelect = initialProps.onSelect;
     }
     var value = __assign2(__assign2(__assign2({}, defaultContextValues), initialProps), { captionLayout, classNames: __assign2(__assign2({}, defaultContextValues.classNames), initialProps.classNames), components: __assign2({}, initialProps.components), formatters: __assign2(__assign2({}, defaultContextValues.formatters), initialProps.formatters), fromDate, labels: __assign2(__assign2({}, defaultContextValues.labels), initialProps.labels), mode: initialProps.mode || defaultContextValues.mode, modifiers: __assign2(__assign2({}, defaultContextValues.modifiers), initialProps.modifiers), modifiersClassNames: __assign2(__assign2({}, defaultContextValues.modifiersClassNames), initialProps.modifiersClassNames), onSelect, styles: __assign2(__assign2({}, defaultContextValues.styles), initialProps.styles), toDate: toDate3 });
-    return (0, import_jsx_runtime21.jsx)(DayPickerContext.Provider, { value, children: props.children });
+    return (0, import_jsx_runtime26.jsx)(DayPickerContext.Provider, { value, children: props.children });
   }
   function useDayPicker() {
-    var context = (0, import_react7.useContext)(DayPickerContext);
+    var context = (0, import_react9.useContext)(DayPickerContext);
     if (!context) {
       throw new Error("useDayPicker must be used within a DayPickerProvider.");
     }
@@ -71832,25 +74375,25 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   }
   function CaptionLabel(props) {
     var _a2 = useDayPicker(), locale2 = _a2.locale, classNames = _a2.classNames, styles = _a2.styles, formatCaption2 = _a2.formatters.formatCaption;
-    return (0, import_jsx_runtime21.jsx)("div", { className: classNames.caption_label, style: styles.caption_label, "aria-live": "polite", role: "presentation", id: props.id, children: formatCaption2(props.displayMonth, { locale: locale2 }) });
+    return (0, import_jsx_runtime26.jsx)("div", { className: classNames.caption_label, style: styles.caption_label, "aria-live": "polite", role: "presentation", id: props.id, children: formatCaption2(props.displayMonth, { locale: locale2 }) });
   }
   function IconDropdown(props) {
-    return (0, import_jsx_runtime21.jsx)("svg", __assign2({ width: "8px", height: "8px", viewBox: "0 0 120 120", "data-testid": "iconDropdown" }, props, { children: (0, import_jsx_runtime21.jsx)("path", { d: "M4.22182541,48.2218254 C8.44222828,44.0014225 15.2388494,43.9273804 19.5496459,47.9996989 L19.7781746,48.2218254 L60,88.443 L100.221825,48.2218254 C104.442228,44.0014225 111.238849,43.9273804 115.549646,47.9996989 L115.778175,48.2218254 C119.998577,52.4422283 120.07262,59.2388494 116.000301,63.5496459 L115.778175,63.7781746 L67.7781746,111.778175 C63.5577717,115.998577 56.7611506,116.07262 52.4503541,112.000301 L52.2218254,111.778175 L4.22182541,63.7781746 C-0.0739418023,59.4824074 -0.0739418023,52.5175926 4.22182541,48.2218254 Z", fill: "currentColor", fillRule: "nonzero" }) }));
+    return (0, import_jsx_runtime26.jsx)("svg", __assign2({ width: "8px", height: "8px", viewBox: "0 0 120 120", "data-testid": "iconDropdown" }, props, { children: (0, import_jsx_runtime26.jsx)("path", { d: "M4.22182541,48.2218254 C8.44222828,44.0014225 15.2388494,43.9273804 19.5496459,47.9996989 L19.7781746,48.2218254 L60,88.443 L100.221825,48.2218254 C104.442228,44.0014225 111.238849,43.9273804 115.549646,47.9996989 L115.778175,48.2218254 C119.998577,52.4422283 120.07262,59.2388494 116.000301,63.5496459 L115.778175,63.7781746 L67.7781746,111.778175 C63.5577717,115.998577 56.7611506,116.07262 52.4503541,112.000301 L52.2218254,111.778175 L4.22182541,63.7781746 C-0.0739418023,59.4824074 -0.0739418023,52.5175926 4.22182541,48.2218254 Z", fill: "currentColor", fillRule: "nonzero" }) }));
   }
   function Dropdown(props) {
     var _a2, _b2;
     var onChange = props.onChange, value = props.value, children = props.children, caption = props.caption, className = props.className, style = props.style;
     var dayPicker = useDayPicker();
     var IconDropdownComponent = (_b2 = (_a2 = dayPicker.components) === null || _a2 === void 0 ? void 0 : _a2.IconDropdown) !== null && _b2 !== void 0 ? _b2 : IconDropdown;
-    return (0, import_jsx_runtime21.jsxs)("div", { className, style, children: [(0, import_jsx_runtime21.jsx)("span", { className: dayPicker.classNames.vhidden, children: props["aria-label"] }), (0, import_jsx_runtime21.jsx)("select", { name: props.name, "aria-label": props["aria-label"], className: dayPicker.classNames.dropdown, style: dayPicker.styles.dropdown, value, onChange, children }), (0, import_jsx_runtime21.jsxs)("div", { className: dayPicker.classNames.caption_label, style: dayPicker.styles.caption_label, "aria-hidden": "true", children: [caption, (0, import_jsx_runtime21.jsx)(IconDropdownComponent, { className: dayPicker.classNames.dropdown_icon, style: dayPicker.styles.dropdown_icon })] })] });
+    return (0, import_jsx_runtime26.jsxs)("div", { className, style, children: [(0, import_jsx_runtime26.jsx)("span", { className: dayPicker.classNames.vhidden, children: props["aria-label"] }), (0, import_jsx_runtime26.jsx)("select", { name: props.name, "aria-label": props["aria-label"], className: dayPicker.classNames.dropdown, style: dayPicker.styles.dropdown, value, onChange, children }), (0, import_jsx_runtime26.jsxs)("div", { className: dayPicker.classNames.caption_label, style: dayPicker.styles.caption_label, "aria-hidden": "true", children: [caption, (0, import_jsx_runtime26.jsx)(IconDropdownComponent, { className: dayPicker.classNames.dropdown_icon, style: dayPicker.styles.dropdown_icon })] })] });
   }
   function MonthsDropdown(props) {
     var _a2;
     var _b2 = useDayPicker(), fromDate = _b2.fromDate, toDate3 = _b2.toDate, styles = _b2.styles, locale2 = _b2.locale, formatMonthCaption2 = _b2.formatters.formatMonthCaption, classNames = _b2.classNames, components = _b2.components, labelMonthDropdown2 = _b2.labels.labelMonthDropdown;
     if (!fromDate)
-      return (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, {});
+      return (0, import_jsx_runtime26.jsx)(import_jsx_runtime26.Fragment, {});
     if (!toDate3)
-      return (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, {});
+      return (0, import_jsx_runtime26.jsx)(import_jsx_runtime26.Fragment, {});
     var dropdownMonths = [];
     if (isSameYear(fromDate, toDate3)) {
       var date = startOfMonth(fromDate);
@@ -71869,8 +74412,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       props.onChange(newMonth);
     };
     var DropdownComponent = (_a2 = components === null || components === void 0 ? void 0 : components.Dropdown) !== null && _a2 !== void 0 ? _a2 : Dropdown;
-    return (0, import_jsx_runtime21.jsx)(DropdownComponent, { name: "months", "aria-label": labelMonthDropdown2(), className: classNames.dropdown_month, style: styles.dropdown_month, onChange: handleChange, value: props.displayMonth.getMonth(), caption: formatMonthCaption2(props.displayMonth, { locale: locale2 }), children: dropdownMonths.map(function(m6) {
-      return (0, import_jsx_runtime21.jsx)("option", { value: m6.getMonth(), children: formatMonthCaption2(m6, { locale: locale2 }) }, m6.getMonth());
+    return (0, import_jsx_runtime26.jsx)(DropdownComponent, { name: "months", "aria-label": labelMonthDropdown2(), className: classNames.dropdown_month, style: styles.dropdown_month, onChange: handleChange, value: props.displayMonth.getMonth(), caption: formatMonthCaption2(props.displayMonth, { locale: locale2 }), children: dropdownMonths.map(function(m6) {
+      return (0, import_jsx_runtime26.jsx)("option", { value: m6.getMonth(), children: formatMonthCaption2(m6, { locale: locale2 }) }, m6.getMonth());
     }) });
   }
   function YearsDropdown(props) {
@@ -71879,9 +74422,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     var _b2 = useDayPicker(), fromDate = _b2.fromDate, toDate3 = _b2.toDate, locale2 = _b2.locale, styles = _b2.styles, classNames = _b2.classNames, components = _b2.components, formatYearCaption2 = _b2.formatters.formatYearCaption, labelYearDropdown2 = _b2.labels.labelYearDropdown;
     var years = [];
     if (!fromDate)
-      return (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, {});
+      return (0, import_jsx_runtime26.jsx)(import_jsx_runtime26.Fragment, {});
     if (!toDate3)
-      return (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, {});
+      return (0, import_jsx_runtime26.jsx)(import_jsx_runtime26.Fragment, {});
     var fromYear = fromDate.getFullYear();
     var toYear = toDate3.getFullYear();
     for (var year = fromYear; year <= toYear; year++) {
@@ -71892,12 +74435,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       props.onChange(newMonth);
     };
     var DropdownComponent = (_a2 = components === null || components === void 0 ? void 0 : components.Dropdown) !== null && _a2 !== void 0 ? _a2 : Dropdown;
-    return (0, import_jsx_runtime21.jsx)(DropdownComponent, { name: "years", "aria-label": labelYearDropdown2(), className: classNames.dropdown_year, style: styles.dropdown_year, onChange: handleChange, value: displayMonth.getFullYear(), caption: formatYearCaption2(displayMonth, { locale: locale2 }), children: years.map(function(year2) {
-      return (0, import_jsx_runtime21.jsx)("option", { value: year2.getFullYear(), children: formatYearCaption2(year2, { locale: locale2 }) }, year2.getFullYear());
+    return (0, import_jsx_runtime26.jsx)(DropdownComponent, { name: "years", "aria-label": labelYearDropdown2(), className: classNames.dropdown_year, style: styles.dropdown_year, onChange: handleChange, value: displayMonth.getFullYear(), caption: formatYearCaption2(displayMonth, { locale: locale2 }), children: years.map(function(year2) {
+      return (0, import_jsx_runtime26.jsx)("option", { value: year2.getFullYear(), children: formatYearCaption2(year2, { locale: locale2 }) }, year2.getFullYear());
     }) });
   }
   function useControlledValue(defaultValue, controlledValue) {
-    var _a2 = (0, import_react7.useState)(defaultValue), uncontrolledValue = _a2[0], setValue = _a2[1];
+    var _a2 = (0, import_react9.useState)(defaultValue), uncontrolledValue = _a2[0], setValue = _a2[1];
     var value = controlledValue === void 0 ? uncontrolledValue : controlledValue;
     return [value, setValue];
   }
@@ -71974,7 +74517,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     }
     return addMonths(month, -offset4);
   }
-  var NavigationContext2 = (0, import_react7.createContext)(void 0);
+  var NavigationContext2 = (0, import_react9.createContext)(void 0);
   function NavigationProvider(props) {
     var dayPicker = useDayPicker();
     var _a2 = useNavigationState(), currentMonth = _a2[0], goToMonth = _a2[1];
@@ -72005,10 +74548,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       nextMonth,
       isDateDisplayed
     };
-    return (0, import_jsx_runtime21.jsx)(NavigationContext2.Provider, { value, children: props.children });
+    return (0, import_jsx_runtime26.jsx)(NavigationContext2.Provider, { value, children: props.children });
   }
   function useNavigation2() {
-    var context = (0, import_react7.useContext)(NavigationContext2);
+    var context = (0, import_react9.useContext)(NavigationContext2);
     if (!context) {
       throw new Error("useNavigation must be used within a NavigationProvider");
     }
@@ -72022,16 +74565,16 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       goToMonth(addMonths(newMonth, props.displayIndex ? -props.displayIndex : 0));
     };
     var CaptionLabelComponent = (_a2 = components === null || components === void 0 ? void 0 : components.CaptionLabel) !== null && _a2 !== void 0 ? _a2 : CaptionLabel;
-    var captionLabel = (0, import_jsx_runtime21.jsx)(CaptionLabelComponent, { id: props.id, displayMonth: props.displayMonth });
-    return (0, import_jsx_runtime21.jsxs)("div", { className: classNames.caption_dropdowns, style: styles.caption_dropdowns, children: [(0, import_jsx_runtime21.jsx)("div", { className: classNames.vhidden, children: captionLabel }), (0, import_jsx_runtime21.jsx)(MonthsDropdown, { onChange: handleMonthChange, displayMonth: props.displayMonth }), (0, import_jsx_runtime21.jsx)(YearsDropdown, { onChange: handleMonthChange, displayMonth: props.displayMonth })] });
+    var captionLabel = (0, import_jsx_runtime26.jsx)(CaptionLabelComponent, { id: props.id, displayMonth: props.displayMonth });
+    return (0, import_jsx_runtime26.jsxs)("div", { className: classNames.caption_dropdowns, style: styles.caption_dropdowns, children: [(0, import_jsx_runtime26.jsx)("div", { className: classNames.vhidden, children: captionLabel }), (0, import_jsx_runtime26.jsx)(MonthsDropdown, { onChange: handleMonthChange, displayMonth: props.displayMonth }), (0, import_jsx_runtime26.jsx)(YearsDropdown, { onChange: handleMonthChange, displayMonth: props.displayMonth })] });
   }
   function IconLeft(props) {
-    return (0, import_jsx_runtime21.jsx)("svg", __assign2({ width: "16px", height: "16px", viewBox: "0 0 120 120" }, props, { children: (0, import_jsx_runtime21.jsx)("path", { d: "M69.490332,3.34314575 C72.6145263,0.218951416 77.6798462,0.218951416 80.8040405,3.34314575 C83.8617626,6.40086786 83.9268205,11.3179931 80.9992143,14.4548388 L80.8040405,14.6568542 L35.461,60 L80.8040405,105.343146 C83.8617626,108.400868 83.9268205,113.317993 80.9992143,116.454839 L80.8040405,116.656854 C77.7463184,119.714576 72.8291931,119.779634 69.6923475,116.852028 L69.490332,116.656854 L18.490332,65.6568542 C15.4326099,62.5991321 15.367552,57.6820069 18.2951583,54.5451612 L18.490332,54.3431458 L69.490332,3.34314575 Z", fill: "currentColor", fillRule: "nonzero" }) }));
+    return (0, import_jsx_runtime26.jsx)("svg", __assign2({ width: "16px", height: "16px", viewBox: "0 0 120 120" }, props, { children: (0, import_jsx_runtime26.jsx)("path", { d: "M69.490332,3.34314575 C72.6145263,0.218951416 77.6798462,0.218951416 80.8040405,3.34314575 C83.8617626,6.40086786 83.9268205,11.3179931 80.9992143,14.4548388 L80.8040405,14.6568542 L35.461,60 L80.8040405,105.343146 C83.8617626,108.400868 83.9268205,113.317993 80.9992143,116.454839 L80.8040405,116.656854 C77.7463184,119.714576 72.8291931,119.779634 69.6923475,116.852028 L69.490332,116.656854 L18.490332,65.6568542 C15.4326099,62.5991321 15.367552,57.6820069 18.2951583,54.5451612 L18.490332,54.3431458 L69.490332,3.34314575 Z", fill: "currentColor", fillRule: "nonzero" }) }));
   }
   function IconRight(props) {
-    return (0, import_jsx_runtime21.jsx)("svg", __assign2({ width: "16px", height: "16px", viewBox: "0 0 120 120" }, props, { children: (0, import_jsx_runtime21.jsx)("path", { d: "M49.8040405,3.34314575 C46.6798462,0.218951416 41.6145263,0.218951416 38.490332,3.34314575 C35.4326099,6.40086786 35.367552,11.3179931 38.2951583,14.4548388 L38.490332,14.6568542 L83.8333725,60 L38.490332,105.343146 C35.4326099,108.400868 35.367552,113.317993 38.2951583,116.454839 L38.490332,116.656854 C41.5480541,119.714576 46.4651794,119.779634 49.602025,116.852028 L49.8040405,116.656854 L100.804041,65.6568542 C103.861763,62.5991321 103.926821,57.6820069 100.999214,54.5451612 L100.804041,54.3431458 L49.8040405,3.34314575 Z", fill: "currentColor" }) }));
+    return (0, import_jsx_runtime26.jsx)("svg", __assign2({ width: "16px", height: "16px", viewBox: "0 0 120 120" }, props, { children: (0, import_jsx_runtime26.jsx)("path", { d: "M49.8040405,3.34314575 C46.6798462,0.218951416 41.6145263,0.218951416 38.490332,3.34314575 C35.4326099,6.40086786 35.367552,11.3179931 38.2951583,14.4548388 L38.490332,14.6568542 L83.8333725,60 L38.490332,105.343146 C35.4326099,108.400868 35.367552,113.317993 38.2951583,116.454839 L38.490332,116.656854 C41.5480541,119.714576 46.4651794,119.779634 49.602025,116.852028 L49.8040405,116.656854 L100.804041,65.6568542 C103.861763,62.5991321 103.926821,57.6820069 100.999214,54.5451612 L100.804041,54.3431458 L49.8040405,3.34314575 Z", fill: "currentColor" }) }));
   }
-  var Button2 = (0, import_react7.forwardRef)(function(props, ref) {
+  var Button2 = (0, import_react9.forwardRef)(function(props, ref) {
     var _a2 = useDayPicker(), classNames = _a2.classNames, styles = _a2.styles;
     var classNamesArr = [classNames.button_reset, classNames.button];
     if (props.className) {
@@ -72042,13 +74585,13 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     if (props.style) {
       Object.assign(style, props.style);
     }
-    return (0, import_jsx_runtime21.jsx)("button", __assign2({}, props, { ref, type: "button", className, style }));
+    return (0, import_jsx_runtime26.jsx)("button", __assign2({}, props, { ref, type: "button", className, style }));
   });
   function Navigation(props) {
     var _a2, _b2;
     var _c = useDayPicker(), dir = _c.dir, locale2 = _c.locale, classNames = _c.classNames, styles = _c.styles, _d = _c.labels, labelPrevious2 = _d.labelPrevious, labelNext2 = _d.labelNext, components = _c.components;
     if (!props.nextMonth && !props.previousMonth) {
-      return (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, {});
+      return (0, import_jsx_runtime26.jsx)(import_jsx_runtime26.Fragment, {});
     }
     var previousLabel = labelPrevious2(props.previousMonth, { locale: locale2 });
     var previousClassName = [
@@ -72062,7 +74605,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     ].join(" ");
     var IconRightComponent = (_a2 = components === null || components === void 0 ? void 0 : components.IconRight) !== null && _a2 !== void 0 ? _a2 : IconRight;
     var IconLeftComponent = (_b2 = components === null || components === void 0 ? void 0 : components.IconLeft) !== null && _b2 !== void 0 ? _b2 : IconLeft;
-    return (0, import_jsx_runtime21.jsxs)("div", { className: classNames.nav, style: styles.nav, children: [!props.hidePrevious && (0, import_jsx_runtime21.jsx)(Button2, { name: "previous-month", "aria-label": previousLabel, className: previousClassName, style: styles.nav_button_previous, disabled: !props.previousMonth, onClick: props.onPreviousClick, children: dir === "rtl" ? (0, import_jsx_runtime21.jsx)(IconRightComponent, { className: classNames.nav_icon, style: styles.nav_icon }) : (0, import_jsx_runtime21.jsx)(IconLeftComponent, { className: classNames.nav_icon, style: styles.nav_icon }) }), !props.hideNext && (0, import_jsx_runtime21.jsx)(Button2, { name: "next-month", "aria-label": nextLabel, className: nextClassName, style: styles.nav_button_next, disabled: !props.nextMonth, onClick: props.onNextClick, children: dir === "rtl" ? (0, import_jsx_runtime21.jsx)(IconLeftComponent, { className: classNames.nav_icon, style: styles.nav_icon }) : (0, import_jsx_runtime21.jsx)(IconRightComponent, { className: classNames.nav_icon, style: styles.nav_icon }) })] });
+    return (0, import_jsx_runtime26.jsxs)("div", { className: classNames.nav, style: styles.nav, children: [!props.hidePrevious && (0, import_jsx_runtime26.jsx)(Button2, { name: "previous-month", "aria-label": previousLabel, className: previousClassName, style: styles.nav_button_previous, disabled: !props.previousMonth, onClick: props.onPreviousClick, children: dir === "rtl" ? (0, import_jsx_runtime26.jsx)(IconRightComponent, { className: classNames.nav_icon, style: styles.nav_icon }) : (0, import_jsx_runtime26.jsx)(IconLeftComponent, { className: classNames.nav_icon, style: styles.nav_icon }) }), !props.hideNext && (0, import_jsx_runtime26.jsx)(Button2, { name: "next-month", "aria-label": nextLabel, className: nextClassName, style: styles.nav_button_next, disabled: !props.nextMonth, onClick: props.onNextClick, children: dir === "rtl" ? (0, import_jsx_runtime26.jsx)(IconLeftComponent, { className: classNames.nav_icon, style: styles.nav_icon }) : (0, import_jsx_runtime26.jsx)(IconRightComponent, { className: classNames.nav_icon, style: styles.nav_icon }) })] });
   }
   function CaptionNavigation(props) {
     var numberOfMonths = useDayPicker().numberOfMonths;
@@ -72084,7 +74627,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         return;
       goToMonth(nextMonth);
     };
-    return (0, import_jsx_runtime21.jsx)(Navigation, { displayMonth: props.displayMonth, hideNext, hidePrevious, nextMonth, previousMonth, onPreviousClick: handlePreviousClick, onNextClick: handleNextClick });
+    return (0, import_jsx_runtime26.jsx)(Navigation, { displayMonth: props.displayMonth, hideNext, hidePrevious, nextMonth, previousMonth, onPreviousClick: handlePreviousClick, onNextClick: handleNextClick });
   }
   function Caption(props) {
     var _a2;
@@ -72092,21 +74635,21 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     var CaptionLabelComponent = (_a2 = components === null || components === void 0 ? void 0 : components.CaptionLabel) !== null && _a2 !== void 0 ? _a2 : CaptionLabel;
     var caption;
     if (disableNavigation) {
-      caption = (0, import_jsx_runtime21.jsx)(CaptionLabelComponent, { id: props.id, displayMonth: props.displayMonth });
+      caption = (0, import_jsx_runtime26.jsx)(CaptionLabelComponent, { id: props.id, displayMonth: props.displayMonth });
     } else if (captionLayout === "dropdown") {
-      caption = (0, import_jsx_runtime21.jsx)(CaptionDropdowns, { displayMonth: props.displayMonth, id: props.id });
+      caption = (0, import_jsx_runtime26.jsx)(CaptionDropdowns, { displayMonth: props.displayMonth, id: props.id });
     } else if (captionLayout === "dropdown-buttons") {
-      caption = (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [(0, import_jsx_runtime21.jsx)(CaptionDropdowns, { displayMonth: props.displayMonth, displayIndex: props.displayIndex, id: props.id }), (0, import_jsx_runtime21.jsx)(CaptionNavigation, { displayMonth: props.displayMonth, displayIndex: props.displayIndex, id: props.id })] });
+      caption = (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(CaptionDropdowns, { displayMonth: props.displayMonth, displayIndex: props.displayIndex, id: props.id }), (0, import_jsx_runtime26.jsx)(CaptionNavigation, { displayMonth: props.displayMonth, displayIndex: props.displayIndex, id: props.id })] });
     } else {
-      caption = (0, import_jsx_runtime21.jsxs)(import_jsx_runtime21.Fragment, { children: [(0, import_jsx_runtime21.jsx)(CaptionLabelComponent, { id: props.id, displayMonth: props.displayMonth, displayIndex: props.displayIndex }), (0, import_jsx_runtime21.jsx)(CaptionNavigation, { displayMonth: props.displayMonth, id: props.id })] });
+      caption = (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(CaptionLabelComponent, { id: props.id, displayMonth: props.displayMonth, displayIndex: props.displayIndex }), (0, import_jsx_runtime26.jsx)(CaptionNavigation, { displayMonth: props.displayMonth, id: props.id })] });
     }
-    return (0, import_jsx_runtime21.jsx)("div", { className: classNames.caption, style: styles.caption, children: caption });
+    return (0, import_jsx_runtime26.jsx)("div", { className: classNames.caption, style: styles.caption, children: caption });
   }
   function Footer(props) {
     var _a2 = useDayPicker(), footer = _a2.footer, styles = _a2.styles, tfoot = _a2.classNames.tfoot;
     if (!footer)
-      return (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, {});
-    return (0, import_jsx_runtime21.jsx)("tfoot", { className: tfoot, style: styles.tfoot, children: (0, import_jsx_runtime21.jsx)("tr", { children: (0, import_jsx_runtime21.jsx)("td", { colSpan: 8, children: footer }) }) });
+      return (0, import_jsx_runtime26.jsx)(import_jsx_runtime26.Fragment, {});
+    return (0, import_jsx_runtime26.jsx)("tfoot", { className: tfoot, style: styles.tfoot, children: (0, import_jsx_runtime26.jsx)("tr", { children: (0, import_jsx_runtime26.jsx)("td", { colSpan: 8, children: footer }) }) });
   }
   function getWeekdays(locale2, weekStartsOn, ISOWeek) {
     var start = ISOWeek ? startOfISOWeek2(/* @__PURE__ */ new Date()) : startOfWeek2(/* @__PURE__ */ new Date(), { locale: locale2, weekStartsOn });
@@ -72120,21 +74663,21 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   function HeadRow() {
     var _a2 = useDayPicker(), classNames = _a2.classNames, styles = _a2.styles, showWeekNumber = _a2.showWeekNumber, locale2 = _a2.locale, weekStartsOn = _a2.weekStartsOn, ISOWeek = _a2.ISOWeek, formatWeekdayName2 = _a2.formatters.formatWeekdayName, labelWeekday2 = _a2.labels.labelWeekday;
     var weekdays = getWeekdays(locale2, weekStartsOn, ISOWeek);
-    return (0, import_jsx_runtime21.jsxs)("tr", { style: styles.head_row, className: classNames.head_row, children: [showWeekNumber && (0, import_jsx_runtime21.jsx)("td", { style: styles.head_cell, className: classNames.head_cell }), weekdays.map(function(weekday, i4) {
-      return (0, import_jsx_runtime21.jsx)("th", { scope: "col", className: classNames.head_cell, style: styles.head_cell, "aria-label": labelWeekday2(weekday, { locale: locale2 }), children: formatWeekdayName2(weekday, { locale: locale2 }) }, i4);
+    return (0, import_jsx_runtime26.jsxs)("tr", { style: styles.head_row, className: classNames.head_row, children: [showWeekNumber && (0, import_jsx_runtime26.jsx)("td", { style: styles.head_cell, className: classNames.head_cell }), weekdays.map(function(weekday, i4) {
+      return (0, import_jsx_runtime26.jsx)("th", { scope: "col", className: classNames.head_cell, style: styles.head_cell, "aria-label": labelWeekday2(weekday, { locale: locale2 }), children: formatWeekdayName2(weekday, { locale: locale2 }) }, i4);
     })] });
   }
   function Head() {
     var _a2;
     var _b2 = useDayPicker(), classNames = _b2.classNames, styles = _b2.styles, components = _b2.components;
     var HeadRowComponent = (_a2 = components === null || components === void 0 ? void 0 : components.HeadRow) !== null && _a2 !== void 0 ? _a2 : HeadRow;
-    return (0, import_jsx_runtime21.jsx)("thead", { style: styles.head, className: classNames.head, children: (0, import_jsx_runtime21.jsx)(HeadRowComponent, {}) });
+    return (0, import_jsx_runtime26.jsx)("thead", { style: styles.head, className: classNames.head, children: (0, import_jsx_runtime26.jsx)(HeadRowComponent, {}) });
   }
   function DayContent(props) {
     var _a2 = useDayPicker(), locale2 = _a2.locale, formatDay2 = _a2.formatters.formatDay;
-    return (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, { children: formatDay2(props.date, { locale: locale2 }) });
+    return (0, import_jsx_runtime26.jsx)(import_jsx_runtime26.Fragment, { children: formatDay2(props.date, { locale: locale2 }) });
   }
-  var SelectMultipleContext = (0, import_react7.createContext)(void 0);
+  var SelectMultipleContext = (0, import_react9.createContext)(void 0);
   function SelectMultipleProvider(props) {
     if (!isDayPickerMultiple(props.initialProps)) {
       var emptyContextValue = {
@@ -72143,9 +74686,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           disabled: []
         }
       };
-      return (0, import_jsx_runtime21.jsx)(SelectMultipleContext.Provider, { value: emptyContextValue, children: props.children });
+      return (0, import_jsx_runtime26.jsx)(SelectMultipleContext.Provider, { value: emptyContextValue, children: props.children });
     }
-    return (0, import_jsx_runtime21.jsx)(SelectMultipleProviderInternal, { initialProps: props.initialProps, children: props.children });
+    return (0, import_jsx_runtime26.jsx)(SelectMultipleProviderInternal, { initialProps: props.initialProps, children: props.children });
   }
   function SelectMultipleProviderInternal(_a2) {
     var initialProps = _a2.initialProps, children = _a2.children;
@@ -72189,10 +74732,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       onDayClick,
       modifiers
     };
-    return (0, import_jsx_runtime21.jsx)(SelectMultipleContext.Provider, { value: contextValue, children });
+    return (0, import_jsx_runtime26.jsx)(SelectMultipleContext.Provider, { value: contextValue, children });
   }
   function useSelectMultiple() {
-    var context = (0, import_react7.useContext)(SelectMultipleContext);
+    var context = (0, import_react9.useContext)(SelectMultipleContext);
     if (!context) {
       throw new Error("useSelectMultiple must be used within a SelectMultipleProvider");
     }
@@ -72229,7 +74772,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     }
     return { from: day, to: void 0 };
   }
-  var SelectRangeContext = (0, import_react7.createContext)(void 0);
+  var SelectRangeContext = (0, import_react9.createContext)(void 0);
   function SelectRangeProvider(props) {
     if (!isDayPickerRange(props.initialProps)) {
       var emptyContextValue = {
@@ -72241,9 +74784,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           disabled: []
         }
       };
-      return (0, import_jsx_runtime21.jsx)(SelectRangeContext.Provider, { value: emptyContextValue, children: props.children });
+      return (0, import_jsx_runtime26.jsx)(SelectRangeContext.Provider, { value: emptyContextValue, children: props.children });
     }
-    return (0, import_jsx_runtime21.jsx)(SelectRangeProviderInternal, { initialProps: props.initialProps, children: props.children });
+    return (0, import_jsx_runtime26.jsx)(SelectRangeProviderInternal, { initialProps: props.initialProps, children: props.children });
   }
   function SelectRangeProviderInternal(_a2) {
     var initialProps = _a2.initialProps, children = _a2.children;
@@ -72330,10 +74873,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         });
       }
     }
-    return (0, import_jsx_runtime21.jsx)(SelectRangeContext.Provider, { value: { selected, onDayClick, modifiers }, children });
+    return (0, import_jsx_runtime26.jsx)(SelectRangeContext.Provider, { value: { selected, onDayClick, modifiers }, children });
   }
   function useSelectRange() {
-    var context = (0, import_react7.useContext)(SelectRangeContext);
+    var context = (0, import_react9.useContext)(SelectRangeContext);
     if (!context) {
       throw new Error("useSelectRange must be used within a SelectRangeProvider");
     }
@@ -72394,7 +74937,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     }
     return internalModifiers;
   }
-  var ModifiersContext = (0, import_react7.createContext)(void 0);
+  var ModifiersContext = (0, import_react9.createContext)(void 0);
   function ModifiersProvider(props) {
     var dayPicker = useDayPicker();
     var selectMultiple = useSelectMultiple();
@@ -72402,10 +74945,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     var internalModifiers = getInternalModifiers(dayPicker, selectMultiple, selectRange);
     var customModifiers = getCustomModifiers(dayPicker.modifiers);
     var modifiers = __assign2(__assign2({}, internalModifiers), customModifiers);
-    return (0, import_jsx_runtime21.jsx)(ModifiersContext.Provider, { value: modifiers, children: props.children });
+    return (0, import_jsx_runtime26.jsx)(ModifiersContext.Provider, { value: modifiers, children: props.children });
   }
   function useModifiers() {
-    var context = (0, import_react7.useContext)(ModifiersContext);
+    var context = (0, import_react9.useContext)(ModifiersContext);
     if (!context) {
       throw new Error("useModifiers must be used within a ModifiersProvider");
     }
@@ -72557,9 +75100,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     };
     var newFocusedDay = moveFns[moveBy](focusedDay, direction === "after" ? 1 : -1);
     if (direction === "before" && fromDate) {
-      newFocusedDay = max([fromDate, newFocusedDay]);
+      newFocusedDay = max2([fromDate, newFocusedDay]);
     } else if (direction === "after" && toDate3) {
-      newFocusedDay = min([toDate3, newFocusedDay]);
+      newFocusedDay = min2([toDate3, newFocusedDay]);
     }
     var isFocusable = true;
     if (modifiers) {
@@ -72581,12 +75124,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       });
     }
   }
-  var FocusContext = (0, import_react7.createContext)(void 0);
+  var FocusContext = (0, import_react9.createContext)(void 0);
   function FocusProvider(props) {
     var navigation = useNavigation2();
     var modifiers = useModifiers();
-    var _a2 = (0, import_react7.useState)(), focusedDay = _a2[0], setFocusedDay = _a2[1];
-    var _b2 = (0, import_react7.useState)(), lastFocused = _b2[0], setLastFocused = _b2[1];
+    var _a2 = (0, import_react9.useState)(), focusedDay = _a2[0], setFocusedDay = _a2[1];
+    var _b2 = (0, import_react9.useState)(), lastFocused = _b2[0], setLastFocused = _b2[1];
     var initialFocusTarget = getInitialFocusTarget(navigation.displayMonths, modifiers);
     var focusTarget = (focusedDay !== null && focusedDay !== void 0 ? focusedDay : lastFocused && navigation.isDateDisplayed(lastFocused)) ? lastFocused : initialFocusTarget;
     var blur = function() {
@@ -72647,10 +75190,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         return moveFocus("endOfWeek", "after");
       }
     };
-    return (0, import_jsx_runtime21.jsx)(FocusContext.Provider, { value, children: props.children });
+    return (0, import_jsx_runtime26.jsx)(FocusContext.Provider, { value, children: props.children });
   }
   function useFocusContext() {
-    var context = (0, import_react7.useContext)(FocusContext);
+    var context = (0, import_react9.useContext)(FocusContext);
     if (!context) {
       throw new Error("useFocusContext must be used within a FocusProvider");
     }
@@ -72661,15 +75204,15 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     var activeModifiers = getActiveModifiers(day, modifiers, displayMonth);
     return activeModifiers;
   }
-  var SelectSingleContext = (0, import_react7.createContext)(void 0);
+  var SelectSingleContext = (0, import_react9.createContext)(void 0);
   function SelectSingleProvider(props) {
     if (!isDayPickerSingle(props.initialProps)) {
       var emptyContextValue = {
         selected: void 0
       };
-      return (0, import_jsx_runtime21.jsx)(SelectSingleContext.Provider, { value: emptyContextValue, children: props.children });
+      return (0, import_jsx_runtime26.jsx)(SelectSingleContext.Provider, { value: emptyContextValue, children: props.children });
     }
-    return (0, import_jsx_runtime21.jsx)(SelectSingleProviderInternal, { initialProps: props.initialProps, children: props.children });
+    return (0, import_jsx_runtime26.jsx)(SelectSingleProviderInternal, { initialProps: props.initialProps, children: props.children });
   }
   function SelectSingleProviderInternal(_a2) {
     var initialProps = _a2.initialProps, children = _a2.children;
@@ -72686,10 +75229,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       selected: initialProps.selected,
       onDayClick
     };
-    return (0, import_jsx_runtime21.jsx)(SelectSingleContext.Provider, { value: contextValue, children });
+    return (0, import_jsx_runtime26.jsx)(SelectSingleContext.Provider, { value: contextValue, children });
   }
   function useSelectSingle() {
-    var context = (0, import_react7.useContext)(SelectSingleContext);
+    var context = (0, import_react9.useContext)(SelectSingleContext);
     if (!context) {
       throw new Error("useSelectSingle must be used within a SelectSingleProvider");
     }
@@ -72865,7 +75408,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     var eventHandlers = useDayEventHandlers(day, activeModifiers);
     var selectedDays = useSelectedDays();
     var isButton = Boolean(dayPicker.onDayClick || dayPicker.mode !== "default");
-    (0, import_react7.useEffect)(function() {
+    (0, import_react9.useEffect)(function() {
       var _a3;
       if (activeModifiers.outside)
         return;
@@ -72887,7 +75430,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     var style = getDayStyle(dayPicker, activeModifiers);
     var isHidden2 = Boolean(activeModifiers.outside && !dayPicker.showOutsideDays || activeModifiers.hidden);
     var DayContentComponent = (_c = (_b2 = dayPicker.components) === null || _b2 === void 0 ? void 0 : _b2.DayContent) !== null && _c !== void 0 ? _c : DayContent;
-    var children = (0, import_jsx_runtime21.jsx)(DayContentComponent, { date: day, displayMonth, activeModifiers });
+    var children = (0, import_jsx_runtime26.jsx)(DayContentComponent, { date: day, displayMonth, activeModifiers });
     var divProps = {
       style,
       className,
@@ -72908,28 +75451,28 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     return dayRender;
   }
   function Day(props) {
-    var buttonRef = (0, import_react7.useRef)(null);
+    var buttonRef = (0, import_react9.useRef)(null);
     var dayRender = useDayRender(props.date, props.displayMonth, buttonRef);
     if (dayRender.isHidden) {
-      return (0, import_jsx_runtime21.jsx)("div", { role: "gridcell" });
+      return (0, import_jsx_runtime26.jsx)("div", { role: "gridcell" });
     }
     if (!dayRender.isButton) {
-      return (0, import_jsx_runtime21.jsx)("div", __assign2({}, dayRender.divProps));
+      return (0, import_jsx_runtime26.jsx)("div", __assign2({}, dayRender.divProps));
     }
-    return (0, import_jsx_runtime21.jsx)(Button2, __assign2({ name: "day", ref: buttonRef }, dayRender.buttonProps));
+    return (0, import_jsx_runtime26.jsx)(Button2, __assign2({ name: "day", ref: buttonRef }, dayRender.buttonProps));
   }
   function WeekNumber(props) {
     var weekNumber = props.number, dates = props.dates;
     var _a2 = useDayPicker(), onWeekNumberClick = _a2.onWeekNumberClick, styles = _a2.styles, classNames = _a2.classNames, locale2 = _a2.locale, labelWeekNumber2 = _a2.labels.labelWeekNumber, formatWeekNumber2 = _a2.formatters.formatWeekNumber;
     var content = formatWeekNumber2(Number(weekNumber), { locale: locale2 });
     if (!onWeekNumberClick) {
-      return (0, import_jsx_runtime21.jsx)("span", { className: classNames.weeknumber, style: styles.weeknumber, children: content });
+      return (0, import_jsx_runtime26.jsx)("span", { className: classNames.weeknumber, style: styles.weeknumber, children: content });
     }
     var label = labelWeekNumber2(Number(weekNumber), { locale: locale2 });
     var handleClick = function(e3) {
       onWeekNumberClick(weekNumber, dates, e3);
     };
-    return (0, import_jsx_runtime21.jsx)(Button2, { name: "week-number", "aria-label": label, className: classNames.weeknumber, style: styles.weeknumber, onClick: handleClick, children: content });
+    return (0, import_jsx_runtime26.jsx)(Button2, { name: "week-number", "aria-label": label, className: classNames.weeknumber, style: styles.weeknumber, onClick: handleClick, children: content });
   }
   function Row(props) {
     var _a2, _b2;
@@ -72938,10 +75481,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     var WeeknumberComponent = (_b2 = components === null || components === void 0 ? void 0 : components.WeekNumber) !== null && _b2 !== void 0 ? _b2 : WeekNumber;
     var weekNumberCell;
     if (showWeekNumber) {
-      weekNumberCell = (0, import_jsx_runtime21.jsx)("td", { className: classNames.cell, style: styles.cell, children: (0, import_jsx_runtime21.jsx)(WeeknumberComponent, { number: props.weekNumber, dates: props.dates }) });
+      weekNumberCell = (0, import_jsx_runtime26.jsx)("td", { className: classNames.cell, style: styles.cell, children: (0, import_jsx_runtime26.jsx)(WeeknumberComponent, { number: props.weekNumber, dates: props.dates }) });
     }
-    return (0, import_jsx_runtime21.jsxs)("tr", { className: classNames.row, style: styles.row, children: [weekNumberCell, props.dates.map(function(date) {
-      return (0, import_jsx_runtime21.jsx)("td", { className: classNames.cell, style: styles.cell, role: "presentation", children: (0, import_jsx_runtime21.jsx)(DayComponent, { displayMonth: props.displayMonth, date }) }, getUnixTime(date));
+    return (0, import_jsx_runtime26.jsxs)("tr", { className: classNames.row, style: styles.row, children: [weekNumberCell, props.dates.map(function(date) {
+      return (0, import_jsx_runtime26.jsx)("td", { className: classNames.cell, style: styles.cell, role: "presentation", children: (0, import_jsx_runtime26.jsx)(DayComponent, { displayMonth: props.displayMonth, date }) }, getUnixTime(date));
     })] });
   }
   function daysToMonthWeeks(fromDate, toDate3, options) {
@@ -72996,14 +75539,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     var HeadComponent = (_a2 = components === null || components === void 0 ? void 0 : components.Head) !== null && _a2 !== void 0 ? _a2 : Head;
     var RowComponent = (_b2 = components === null || components === void 0 ? void 0 : components.Row) !== null && _b2 !== void 0 ? _b2 : Row;
     var FooterComponent = (_c = components === null || components === void 0 ? void 0 : components.Footer) !== null && _c !== void 0 ? _c : Footer;
-    return (0, import_jsx_runtime21.jsxs)("table", { id: props.id, className: classNames.table, style: styles.table, role: "grid", "aria-labelledby": props["aria-labelledby"], children: [!hideHead && (0, import_jsx_runtime21.jsx)(HeadComponent, {}), (0, import_jsx_runtime21.jsx)("tbody", { className: classNames.tbody, style: styles.tbody, children: weeks.map(function(week) {
-      return (0, import_jsx_runtime21.jsx)(RowComponent, { displayMonth: props.displayMonth, dates: week.dates, weekNumber: week.weekNumber }, week.weekNumber);
-    }) }), (0, import_jsx_runtime21.jsx)(FooterComponent, { displayMonth: props.displayMonth })] });
+    return (0, import_jsx_runtime26.jsxs)("table", { id: props.id, className: classNames.table, style: styles.table, role: "grid", "aria-labelledby": props["aria-labelledby"], children: [!hideHead && (0, import_jsx_runtime26.jsx)(HeadComponent, {}), (0, import_jsx_runtime26.jsx)("tbody", { className: classNames.tbody, style: styles.tbody, children: weeks.map(function(week) {
+      return (0, import_jsx_runtime26.jsx)(RowComponent, { displayMonth: props.displayMonth, dates: week.dates, weekNumber: week.weekNumber }, week.weekNumber);
+    }) }), (0, import_jsx_runtime26.jsx)(FooterComponent, { displayMonth: props.displayMonth })] });
   }
   function canUseDOM() {
     return !!(typeof window !== "undefined" && window.document && window.document.createElement);
   }
-  var useIsomorphicLayoutEffect3 = canUseDOM() ? import_react7.useLayoutEffect : import_react7.useEffect;
+  var useIsomorphicLayoutEffect3 = canUseDOM() ? import_react9.useLayoutEffect : import_react9.useEffect;
   var serverHandoffComplete = false;
   var id = 0;
   function genId() {
@@ -73012,13 +75555,13 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   function useId3(providedId) {
     var _a2;
     var initialId = providedId !== null && providedId !== void 0 ? providedId : serverHandoffComplete ? genId() : null;
-    var _b2 = (0, import_react7.useState)(initialId), id2 = _b2[0], setId = _b2[1];
+    var _b2 = (0, import_react9.useState)(initialId), id2 = _b2[0], setId = _b2[1];
     useIsomorphicLayoutEffect3(function() {
       if (id2 === null) {
         setId(genId());
       }
     }, []);
-    (0, import_react7.useEffect)(function() {
+    (0, import_react9.useEffect)(function() {
       if (serverHandoffComplete === false) {
         serverHandoffComplete = true;
       }
@@ -73054,20 +75597,20 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       style = __assign2(__assign2({}, style), styles.caption_between);
     }
     var CaptionComponent = (_b2 = components === null || components === void 0 ? void 0 : components.Caption) !== null && _b2 !== void 0 ? _b2 : Caption;
-    return (0, import_jsx_runtime21.jsxs)("div", { className: className.join(" "), style, children: [(0, import_jsx_runtime21.jsx)(CaptionComponent, { id: captionId, displayMonth: props.displayMonth, displayIndex: props.displayIndex }), (0, import_jsx_runtime21.jsx)(Table, { id: tableId, "aria-labelledby": captionId, displayMonth: props.displayMonth })] }, props.displayIndex);
+    return (0, import_jsx_runtime26.jsxs)("div", { className: className.join(" "), style, children: [(0, import_jsx_runtime26.jsx)(CaptionComponent, { id: captionId, displayMonth: props.displayMonth, displayIndex: props.displayIndex }), (0, import_jsx_runtime26.jsx)(Table, { id: tableId, "aria-labelledby": captionId, displayMonth: props.displayMonth })] }, props.displayIndex);
   }
   function Months(props) {
     var _a2 = useDayPicker(), classNames = _a2.classNames, styles = _a2.styles;
-    return (0, import_jsx_runtime21.jsx)("div", { className: classNames.months, style: styles.months, children: props.children });
+    return (0, import_jsx_runtime26.jsx)("div", { className: classNames.months, style: styles.months, children: props.children });
   }
-  function Root4(_a2) {
+  function Root5(_a2) {
     var _b2, _c;
     var initialProps = _a2.initialProps;
     var dayPicker = useDayPicker();
     var focusContext = useFocusContext();
     var navigation = useNavigation2();
-    var _d = (0, import_react7.useState)(false), hasInitialFocus = _d[0], setHasInitialFocus = _d[1];
-    (0, import_react7.useEffect)(function() {
+    var _d = (0, import_react9.useState)(false), hasInitialFocus = _d[0], setHasInitialFocus = _d[1];
+    (0, import_react9.useEffect)(function() {
       if (!dayPicker.initialFocus)
         return;
       if (!focusContext.focusTarget)
@@ -73098,27 +75641,27 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       return __assign2(__assign2({}, attrs), (_a3 = {}, _a3[key] = initialProps[key], _a3));
     }, {});
     var MonthsComponent = (_c = (_b2 = initialProps.components) === null || _b2 === void 0 ? void 0 : _b2.Months) !== null && _c !== void 0 ? _c : Months;
-    return (0, import_jsx_runtime21.jsx)("div", __assign2({ className: classNames.join(" "), style, dir: dayPicker.dir, id: dayPicker.id, nonce: initialProps.nonce, title: initialProps.title, lang: initialProps.lang }, dataAttributes, { children: (0, import_jsx_runtime21.jsx)(MonthsComponent, { children: navigation.displayMonths.map(function(month, i4) {
-      return (0, import_jsx_runtime21.jsx)(Month, { displayIndex: i4, displayMonth: month }, i4);
+    return (0, import_jsx_runtime26.jsx)("div", __assign2({ className: classNames.join(" "), style, dir: dayPicker.dir, id: dayPicker.id, nonce: initialProps.nonce, title: initialProps.title, lang: initialProps.lang }, dataAttributes, { children: (0, import_jsx_runtime26.jsx)(MonthsComponent, { children: navigation.displayMonths.map(function(month, i4) {
+      return (0, import_jsx_runtime26.jsx)(Month, { displayIndex: i4, displayMonth: month }, i4);
     }) }) }));
   }
   function RootProvider(props) {
     var children = props.children, initialProps = __rest2(props, ["children"]);
-    return (0, import_jsx_runtime21.jsx)(DayPickerProvider, { initialProps, children: (0, import_jsx_runtime21.jsx)(NavigationProvider, { children: (0, import_jsx_runtime21.jsx)(SelectSingleProvider, { initialProps, children: (0, import_jsx_runtime21.jsx)(SelectMultipleProvider, { initialProps, children: (0, import_jsx_runtime21.jsx)(SelectRangeProvider, { initialProps, children: (0, import_jsx_runtime21.jsx)(ModifiersProvider, { children: (0, import_jsx_runtime21.jsx)(FocusProvider, { children }) }) }) }) }) }) });
+    return (0, import_jsx_runtime26.jsx)(DayPickerProvider, { initialProps, children: (0, import_jsx_runtime26.jsx)(NavigationProvider, { children: (0, import_jsx_runtime26.jsx)(SelectSingleProvider, { initialProps, children: (0, import_jsx_runtime26.jsx)(SelectMultipleProvider, { initialProps, children: (0, import_jsx_runtime26.jsx)(SelectRangeProvider, { initialProps, children: (0, import_jsx_runtime26.jsx)(ModifiersProvider, { children: (0, import_jsx_runtime26.jsx)(FocusProvider, { children }) }) }) }) }) }) });
   }
   function DayPicker(props) {
-    return (0, import_jsx_runtime21.jsx)(RootProvider, __assign2({}, props, { children: (0, import_jsx_runtime21.jsx)(Root4, { initialProps: props }) }));
+    return (0, import_jsx_runtime26.jsx)(RootProvider, __assign2({}, props, { children: (0, import_jsx_runtime26.jsx)(Root5, { initialProps: props }) }));
   }
 
   // src/components/ui/calendar.tsx
-  var import_jsx_runtime22 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime27 = __toESM(require_jsx_runtime(), 1);
   function Calendar2({
     className,
     classNames,
     showOutsideDays = true,
     ...props
   }) {
-    return /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
       DayPicker,
       {
         showOutsideDays,
@@ -73158,8 +75701,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           ...classNames
         },
         components: {
-          IconLeft: ({ className: className2, ...props2 }) => /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(ChevronLeft, { className: cn("h-4 w-4", className2), ...props2 }),
-          IconRight: ({ className: className2, ...props2 }) => /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(ChevronRight, { className: cn("h-4 w-4", className2), ...props2 })
+          IconLeft: ({ className: className2, ...props2 }) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(ChevronLeft, { className: cn("h-4 w-4", className2), ...props2 }),
+          IconRight: ({ className: className2, ...props2 }) => /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(ChevronRight, { className: cn("h-4 w-4", className2), ...props2 })
         },
         ...props
       }
@@ -73167,2488 +75710,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   }
   Calendar2.displayName = "Calendar";
 
-  // src/components/ui/popover.tsx
-  var React51 = __toESM(require_react(), 1);
-
-  // ../../node_modules/@radix-ui/react-popover/dist/index.mjs
-  var React50 = __toESM(require_react(), 1);
-
-  // ../../node_modules/@radix-ui/react-popper/dist/index.mjs
-  var React49 = __toESM(require_react(), 1);
-
-  // ../../node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs
-  var sides = ["top", "right", "bottom", "left"];
-  var min2 = Math.min;
-  var max2 = Math.max;
-  var round = Math.round;
-  var floor = Math.floor;
-  var createCoords = (v3) => ({
-    x: v3,
-    y: v3
-  });
-  var oppositeSideMap = {
-    left: "right",
-    right: "left",
-    bottom: "top",
-    top: "bottom"
-  };
-  var oppositeAlignmentMap = {
-    start: "end",
-    end: "start"
-  };
-  function clamp(start, value, end) {
-    return max2(start, min2(value, end));
-  }
-  function evaluate(value, param) {
-    return typeof value === "function" ? value(param) : value;
-  }
-  function getSide(placement) {
-    return placement.split("-")[0];
-  }
-  function getAlignment(placement) {
-    return placement.split("-")[1];
-  }
-  function getOppositeAxis(axis) {
-    return axis === "x" ? "y" : "x";
-  }
-  function getAxisLength(axis) {
-    return axis === "y" ? "height" : "width";
-  }
-  var yAxisSides = /* @__PURE__ */ new Set(["top", "bottom"]);
-  function getSideAxis(placement) {
-    return yAxisSides.has(getSide(placement)) ? "y" : "x";
-  }
-  function getAlignmentAxis(placement) {
-    return getOppositeAxis(getSideAxis(placement));
-  }
-  function getAlignmentSides(placement, rects, rtl) {
-    if (rtl === void 0) {
-      rtl = false;
-    }
-    const alignment = getAlignment(placement);
-    const alignmentAxis = getAlignmentAxis(placement);
-    const length = getAxisLength(alignmentAxis);
-    let mainAlignmentSide = alignmentAxis === "x" ? alignment === (rtl ? "end" : "start") ? "right" : "left" : alignment === "start" ? "bottom" : "top";
-    if (rects.reference[length] > rects.floating[length]) {
-      mainAlignmentSide = getOppositePlacement(mainAlignmentSide);
-    }
-    return [mainAlignmentSide, getOppositePlacement(mainAlignmentSide)];
-  }
-  function getExpandedPlacements(placement) {
-    const oppositePlacement = getOppositePlacement(placement);
-    return [getOppositeAlignmentPlacement(placement), oppositePlacement, getOppositeAlignmentPlacement(oppositePlacement)];
-  }
-  function getOppositeAlignmentPlacement(placement) {
-    return placement.replace(/start|end/g, (alignment) => oppositeAlignmentMap[alignment]);
-  }
-  var lrPlacement = ["left", "right"];
-  var rlPlacement = ["right", "left"];
-  var tbPlacement = ["top", "bottom"];
-  var btPlacement = ["bottom", "top"];
-  function getSideList(side, isStart, rtl) {
-    switch (side) {
-      case "top":
-      case "bottom":
-        if (rtl) return isStart ? rlPlacement : lrPlacement;
-        return isStart ? lrPlacement : rlPlacement;
-      case "left":
-      case "right":
-        return isStart ? tbPlacement : btPlacement;
-      default:
-        return [];
-    }
-  }
-  function getOppositeAxisPlacements(placement, flipAlignment, direction, rtl) {
-    const alignment = getAlignment(placement);
-    let list = getSideList(getSide(placement), direction === "start", rtl);
-    if (alignment) {
-      list = list.map((side) => side + "-" + alignment);
-      if (flipAlignment) {
-        list = list.concat(list.map(getOppositeAlignmentPlacement));
-      }
-    }
-    return list;
-  }
-  function getOppositePlacement(placement) {
-    return placement.replace(/left|right|bottom|top/g, (side) => oppositeSideMap[side]);
-  }
-  function expandPaddingObject(padding) {
-    return {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-      ...padding
-    };
-  }
-  function getPaddingObject(padding) {
-    return typeof padding !== "number" ? expandPaddingObject(padding) : {
-      top: padding,
-      right: padding,
-      bottom: padding,
-      left: padding
-    };
-  }
-  function rectToClientRect(rect) {
-    const {
-      x: x3,
-      y: y5,
-      width,
-      height
-    } = rect;
-    return {
-      width,
-      height,
-      top: y5,
-      left: x3,
-      right: x3 + width,
-      bottom: y5 + height,
-      x: x3,
-      y: y5
-    };
-  }
-
-  // ../../node_modules/@floating-ui/core/dist/floating-ui.core.mjs
-  function computeCoordsFromPlacement(_ref, placement, rtl) {
-    let {
-      reference,
-      floating
-    } = _ref;
-    const sideAxis = getSideAxis(placement);
-    const alignmentAxis = getAlignmentAxis(placement);
-    const alignLength = getAxisLength(alignmentAxis);
-    const side = getSide(placement);
-    const isVertical = sideAxis === "y";
-    const commonX = reference.x + reference.width / 2 - floating.width / 2;
-    const commonY = reference.y + reference.height / 2 - floating.height / 2;
-    const commonAlign = reference[alignLength] / 2 - floating[alignLength] / 2;
-    let coords;
-    switch (side) {
-      case "top":
-        coords = {
-          x: commonX,
-          y: reference.y - floating.height
-        };
-        break;
-      case "bottom":
-        coords = {
-          x: commonX,
-          y: reference.y + reference.height
-        };
-        break;
-      case "right":
-        coords = {
-          x: reference.x + reference.width,
-          y: commonY
-        };
-        break;
-      case "left":
-        coords = {
-          x: reference.x - floating.width,
-          y: commonY
-        };
-        break;
-      default:
-        coords = {
-          x: reference.x,
-          y: reference.y
-        };
-    }
-    switch (getAlignment(placement)) {
-      case "start":
-        coords[alignmentAxis] -= commonAlign * (rtl && isVertical ? -1 : 1);
-        break;
-      case "end":
-        coords[alignmentAxis] += commonAlign * (rtl && isVertical ? -1 : 1);
-        break;
-    }
-    return coords;
-  }
-  var computePosition = async (reference, floating, config) => {
-    const {
-      placement = "bottom",
-      strategy = "absolute",
-      middleware = [],
-      platform: platform2
-    } = config;
-    const validMiddleware = middleware.filter(Boolean);
-    const rtl = await (platform2.isRTL == null ? void 0 : platform2.isRTL(floating));
-    let rects = await platform2.getElementRects({
-      reference,
-      floating,
-      strategy
-    });
-    let {
-      x: x3,
-      y: y5
-    } = computeCoordsFromPlacement(rects, placement, rtl);
-    let statefulPlacement = placement;
-    let middlewareData = {};
-    let resetCount = 0;
-    for (let i4 = 0; i4 < validMiddleware.length; i4++) {
-      const {
-        name,
-        fn
-      } = validMiddleware[i4];
-      const {
-        x: nextX,
-        y: nextY,
-        data: data2,
-        reset
-      } = await fn({
-        x: x3,
-        y: y5,
-        initialPlacement: placement,
-        placement: statefulPlacement,
-        strategy,
-        middlewareData,
-        rects,
-        platform: platform2,
-        elements: {
-          reference,
-          floating
-        }
-      });
-      x3 = nextX != null ? nextX : x3;
-      y5 = nextY != null ? nextY : y5;
-      middlewareData = {
-        ...middlewareData,
-        [name]: {
-          ...middlewareData[name],
-          ...data2
-        }
-      };
-      if (reset && resetCount <= 50) {
-        resetCount++;
-        if (typeof reset === "object") {
-          if (reset.placement) {
-            statefulPlacement = reset.placement;
-          }
-          if (reset.rects) {
-            rects = reset.rects === true ? await platform2.getElementRects({
-              reference,
-              floating,
-              strategy
-            }) : reset.rects;
-          }
-          ({
-            x: x3,
-            y: y5
-          } = computeCoordsFromPlacement(rects, statefulPlacement, rtl));
-        }
-        i4 = -1;
-      }
-    }
-    return {
-      x: x3,
-      y: y5,
-      placement: statefulPlacement,
-      strategy,
-      middlewareData
-    };
-  };
-  async function detectOverflow(state, options) {
-    var _await$platform$isEle;
-    if (options === void 0) {
-      options = {};
-    }
-    const {
-      x: x3,
-      y: y5,
-      platform: platform2,
-      rects,
-      elements: elements2,
-      strategy
-    } = state;
-    const {
-      boundary = "clippingAncestors",
-      rootBoundary = "viewport",
-      elementContext = "floating",
-      altBoundary = false,
-      padding = 0
-    } = evaluate(options, state);
-    const paddingObject = getPaddingObject(padding);
-    const altContext = elementContext === "floating" ? "reference" : "floating";
-    const element = elements2[altBoundary ? altContext : elementContext];
-    const clippingClientRect = rectToClientRect(await platform2.getClippingRect({
-      element: ((_await$platform$isEle = await (platform2.isElement == null ? void 0 : platform2.isElement(element))) != null ? _await$platform$isEle : true) ? element : element.contextElement || await (platform2.getDocumentElement == null ? void 0 : platform2.getDocumentElement(elements2.floating)),
-      boundary,
-      rootBoundary,
-      strategy
-    }));
-    const rect = elementContext === "floating" ? {
-      x: x3,
-      y: y5,
-      width: rects.floating.width,
-      height: rects.floating.height
-    } : rects.reference;
-    const offsetParent = await (platform2.getOffsetParent == null ? void 0 : platform2.getOffsetParent(elements2.floating));
-    const offsetScale = await (platform2.isElement == null ? void 0 : platform2.isElement(offsetParent)) ? await (platform2.getScale == null ? void 0 : platform2.getScale(offsetParent)) || {
-      x: 1,
-      y: 1
-    } : {
-      x: 1,
-      y: 1
-    };
-    const elementClientRect = rectToClientRect(platform2.convertOffsetParentRelativeRectToViewportRelativeRect ? await platform2.convertOffsetParentRelativeRectToViewportRelativeRect({
-      elements: elements2,
-      rect,
-      offsetParent,
-      strategy
-    }) : rect);
-    return {
-      top: (clippingClientRect.top - elementClientRect.top + paddingObject.top) / offsetScale.y,
-      bottom: (elementClientRect.bottom - clippingClientRect.bottom + paddingObject.bottom) / offsetScale.y,
-      left: (clippingClientRect.left - elementClientRect.left + paddingObject.left) / offsetScale.x,
-      right: (elementClientRect.right - clippingClientRect.right + paddingObject.right) / offsetScale.x
-    };
-  }
-  var arrow = (options) => ({
-    name: "arrow",
-    options,
-    async fn(state) {
-      const {
-        x: x3,
-        y: y5,
-        placement,
-        rects,
-        platform: platform2,
-        elements: elements2,
-        middlewareData
-      } = state;
-      const {
-        element,
-        padding = 0
-      } = evaluate(options, state) || {};
-      if (element == null) {
-        return {};
-      }
-      const paddingObject = getPaddingObject(padding);
-      const coords = {
-        x: x3,
-        y: y5
-      };
-      const axis = getAlignmentAxis(placement);
-      const length = getAxisLength(axis);
-      const arrowDimensions = await platform2.getDimensions(element);
-      const isYAxis = axis === "y";
-      const minProp = isYAxis ? "top" : "left";
-      const maxProp = isYAxis ? "bottom" : "right";
-      const clientProp = isYAxis ? "clientHeight" : "clientWidth";
-      const endDiff = rects.reference[length] + rects.reference[axis] - coords[axis] - rects.floating[length];
-      const startDiff = coords[axis] - rects.reference[axis];
-      const arrowOffsetParent = await (platform2.getOffsetParent == null ? void 0 : platform2.getOffsetParent(element));
-      let clientSize = arrowOffsetParent ? arrowOffsetParent[clientProp] : 0;
-      if (!clientSize || !await (platform2.isElement == null ? void 0 : platform2.isElement(arrowOffsetParent))) {
-        clientSize = elements2.floating[clientProp] || rects.floating[length];
-      }
-      const centerToReference = endDiff / 2 - startDiff / 2;
-      const largestPossiblePadding = clientSize / 2 - arrowDimensions[length] / 2 - 1;
-      const minPadding = min2(paddingObject[minProp], largestPossiblePadding);
-      const maxPadding = min2(paddingObject[maxProp], largestPossiblePadding);
-      const min$1 = minPadding;
-      const max4 = clientSize - arrowDimensions[length] - maxPadding;
-      const center = clientSize / 2 - arrowDimensions[length] / 2 + centerToReference;
-      const offset4 = clamp(min$1, center, max4);
-      const shouldAddOffset = !middlewareData.arrow && getAlignment(placement) != null && center !== offset4 && rects.reference[length] / 2 - (center < min$1 ? minPadding : maxPadding) - arrowDimensions[length] / 2 < 0;
-      const alignmentOffset = shouldAddOffset ? center < min$1 ? center - min$1 : center - max4 : 0;
-      return {
-        [axis]: coords[axis] + alignmentOffset,
-        data: {
-          [axis]: offset4,
-          centerOffset: center - offset4 - alignmentOffset,
-          ...shouldAddOffset && {
-            alignmentOffset
-          }
-        },
-        reset: shouldAddOffset
-      };
-    }
-  });
-  var flip = function(options) {
-    if (options === void 0) {
-      options = {};
-    }
-    return {
-      name: "flip",
-      options,
-      async fn(state) {
-        var _middlewareData$arrow, _middlewareData$flip;
-        const {
-          placement,
-          middlewareData,
-          rects,
-          initialPlacement,
-          platform: platform2,
-          elements: elements2
-        } = state;
-        const {
-          mainAxis: checkMainAxis = true,
-          crossAxis: checkCrossAxis = true,
-          fallbackPlacements: specifiedFallbackPlacements,
-          fallbackStrategy = "bestFit",
-          fallbackAxisSideDirection = "none",
-          flipAlignment = true,
-          ...detectOverflowOptions
-        } = evaluate(options, state);
-        if ((_middlewareData$arrow = middlewareData.arrow) != null && _middlewareData$arrow.alignmentOffset) {
-          return {};
-        }
-        const side = getSide(placement);
-        const initialSideAxis = getSideAxis(initialPlacement);
-        const isBasePlacement = getSide(initialPlacement) === initialPlacement;
-        const rtl = await (platform2.isRTL == null ? void 0 : platform2.isRTL(elements2.floating));
-        const fallbackPlacements = specifiedFallbackPlacements || (isBasePlacement || !flipAlignment ? [getOppositePlacement(initialPlacement)] : getExpandedPlacements(initialPlacement));
-        const hasFallbackAxisSideDirection = fallbackAxisSideDirection !== "none";
-        if (!specifiedFallbackPlacements && hasFallbackAxisSideDirection) {
-          fallbackPlacements.push(...getOppositeAxisPlacements(initialPlacement, flipAlignment, fallbackAxisSideDirection, rtl));
-        }
-        const placements2 = [initialPlacement, ...fallbackPlacements];
-        const overflow = await detectOverflow(state, detectOverflowOptions);
-        const overflows = [];
-        let overflowsData = ((_middlewareData$flip = middlewareData.flip) == null ? void 0 : _middlewareData$flip.overflows) || [];
-        if (checkMainAxis) {
-          overflows.push(overflow[side]);
-        }
-        if (checkCrossAxis) {
-          const sides2 = getAlignmentSides(placement, rects, rtl);
-          overflows.push(overflow[sides2[0]], overflow[sides2[1]]);
-        }
-        overflowsData = [...overflowsData, {
-          placement,
-          overflows
-        }];
-        if (!overflows.every((side2) => side2 <= 0)) {
-          var _middlewareData$flip2, _overflowsData$filter;
-          const nextIndex = (((_middlewareData$flip2 = middlewareData.flip) == null ? void 0 : _middlewareData$flip2.index) || 0) + 1;
-          const nextPlacement = placements2[nextIndex];
-          if (nextPlacement) {
-            const ignoreCrossAxisOverflow = checkCrossAxis === "alignment" ? initialSideAxis !== getSideAxis(nextPlacement) : false;
-            if (!ignoreCrossAxisOverflow || // We leave the current main axis only if every placement on that axis
-            // overflows the main axis.
-            overflowsData.every((d4) => getSideAxis(d4.placement) === initialSideAxis ? d4.overflows[0] > 0 : true)) {
-              return {
-                data: {
-                  index: nextIndex,
-                  overflows: overflowsData
-                },
-                reset: {
-                  placement: nextPlacement
-                }
-              };
-            }
-          }
-          let resetPlacement = (_overflowsData$filter = overflowsData.filter((d4) => d4.overflows[0] <= 0).sort((a5, b3) => a5.overflows[1] - b3.overflows[1])[0]) == null ? void 0 : _overflowsData$filter.placement;
-          if (!resetPlacement) {
-            switch (fallbackStrategy) {
-              case "bestFit": {
-                var _overflowsData$filter2;
-                const placement2 = (_overflowsData$filter2 = overflowsData.filter((d4) => {
-                  if (hasFallbackAxisSideDirection) {
-                    const currentSideAxis = getSideAxis(d4.placement);
-                    return currentSideAxis === initialSideAxis || // Create a bias to the `y` side axis due to horizontal
-                    // reading directions favoring greater width.
-                    currentSideAxis === "y";
-                  }
-                  return true;
-                }).map((d4) => [d4.placement, d4.overflows.filter((overflow2) => overflow2 > 0).reduce((acc, overflow2) => acc + overflow2, 0)]).sort((a5, b3) => a5[1] - b3[1])[0]) == null ? void 0 : _overflowsData$filter2[0];
-                if (placement2) {
-                  resetPlacement = placement2;
-                }
-                break;
-              }
-              case "initialPlacement":
-                resetPlacement = initialPlacement;
-                break;
-            }
-          }
-          if (placement !== resetPlacement) {
-            return {
-              reset: {
-                placement: resetPlacement
-              }
-            };
-          }
-        }
-        return {};
-      }
-    };
-  };
-  function getSideOffsets(overflow, rect) {
-    return {
-      top: overflow.top - rect.height,
-      right: overflow.right - rect.width,
-      bottom: overflow.bottom - rect.height,
-      left: overflow.left - rect.width
-    };
-  }
-  function isAnySideFullyClipped(overflow) {
-    return sides.some((side) => overflow[side] >= 0);
-  }
-  var hide = function(options) {
-    if (options === void 0) {
-      options = {};
-    }
-    return {
-      name: "hide",
-      options,
-      async fn(state) {
-        const {
-          rects
-        } = state;
-        const {
-          strategy = "referenceHidden",
-          ...detectOverflowOptions
-        } = evaluate(options, state);
-        switch (strategy) {
-          case "referenceHidden": {
-            const overflow = await detectOverflow(state, {
-              ...detectOverflowOptions,
-              elementContext: "reference"
-            });
-            const offsets = getSideOffsets(overflow, rects.reference);
-            return {
-              data: {
-                referenceHiddenOffsets: offsets,
-                referenceHidden: isAnySideFullyClipped(offsets)
-              }
-            };
-          }
-          case "escaped": {
-            const overflow = await detectOverflow(state, {
-              ...detectOverflowOptions,
-              altBoundary: true
-            });
-            const offsets = getSideOffsets(overflow, rects.floating);
-            return {
-              data: {
-                escapedOffsets: offsets,
-                escaped: isAnySideFullyClipped(offsets)
-              }
-            };
-          }
-          default: {
-            return {};
-          }
-        }
-      }
-    };
-  };
-  var originSides = /* @__PURE__ */ new Set(["left", "top"]);
-  async function convertValueToCoords(state, options) {
-    const {
-      placement,
-      platform: platform2,
-      elements: elements2
-    } = state;
-    const rtl = await (platform2.isRTL == null ? void 0 : platform2.isRTL(elements2.floating));
-    const side = getSide(placement);
-    const alignment = getAlignment(placement);
-    const isVertical = getSideAxis(placement) === "y";
-    const mainAxisMulti = originSides.has(side) ? -1 : 1;
-    const crossAxisMulti = rtl && isVertical ? -1 : 1;
-    const rawValue = evaluate(options, state);
-    let {
-      mainAxis,
-      crossAxis,
-      alignmentAxis
-    } = typeof rawValue === "number" ? {
-      mainAxis: rawValue,
-      crossAxis: 0,
-      alignmentAxis: null
-    } : {
-      mainAxis: rawValue.mainAxis || 0,
-      crossAxis: rawValue.crossAxis || 0,
-      alignmentAxis: rawValue.alignmentAxis
-    };
-    if (alignment && typeof alignmentAxis === "number") {
-      crossAxis = alignment === "end" ? alignmentAxis * -1 : alignmentAxis;
-    }
-    return isVertical ? {
-      x: crossAxis * crossAxisMulti,
-      y: mainAxis * mainAxisMulti
-    } : {
-      x: mainAxis * mainAxisMulti,
-      y: crossAxis * crossAxisMulti
-    };
-  }
-  var offset = function(options) {
-    if (options === void 0) {
-      options = 0;
-    }
-    return {
-      name: "offset",
-      options,
-      async fn(state) {
-        var _middlewareData$offse, _middlewareData$arrow;
-        const {
-          x: x3,
-          y: y5,
-          placement,
-          middlewareData
-        } = state;
-        const diffCoords = await convertValueToCoords(state, options);
-        if (placement === ((_middlewareData$offse = middlewareData.offset) == null ? void 0 : _middlewareData$offse.placement) && (_middlewareData$arrow = middlewareData.arrow) != null && _middlewareData$arrow.alignmentOffset) {
-          return {};
-        }
-        return {
-          x: x3 + diffCoords.x,
-          y: y5 + diffCoords.y,
-          data: {
-            ...diffCoords,
-            placement
-          }
-        };
-      }
-    };
-  };
-  var shift = function(options) {
-    if (options === void 0) {
-      options = {};
-    }
-    return {
-      name: "shift",
-      options,
-      async fn(state) {
-        const {
-          x: x3,
-          y: y5,
-          placement
-        } = state;
-        const {
-          mainAxis: checkMainAxis = true,
-          crossAxis: checkCrossAxis = false,
-          limiter = {
-            fn: (_ref) => {
-              let {
-                x: x4,
-                y: y6
-              } = _ref;
-              return {
-                x: x4,
-                y: y6
-              };
-            }
-          },
-          ...detectOverflowOptions
-        } = evaluate(options, state);
-        const coords = {
-          x: x3,
-          y: y5
-        };
-        const overflow = await detectOverflow(state, detectOverflowOptions);
-        const crossAxis = getSideAxis(getSide(placement));
-        const mainAxis = getOppositeAxis(crossAxis);
-        let mainAxisCoord = coords[mainAxis];
-        let crossAxisCoord = coords[crossAxis];
-        if (checkMainAxis) {
-          const minSide = mainAxis === "y" ? "top" : "left";
-          const maxSide = mainAxis === "y" ? "bottom" : "right";
-          const min3 = mainAxisCoord + overflow[minSide];
-          const max4 = mainAxisCoord - overflow[maxSide];
-          mainAxisCoord = clamp(min3, mainAxisCoord, max4);
-        }
-        if (checkCrossAxis) {
-          const minSide = crossAxis === "y" ? "top" : "left";
-          const maxSide = crossAxis === "y" ? "bottom" : "right";
-          const min3 = crossAxisCoord + overflow[minSide];
-          const max4 = crossAxisCoord - overflow[maxSide];
-          crossAxisCoord = clamp(min3, crossAxisCoord, max4);
-        }
-        const limitedCoords = limiter.fn({
-          ...state,
-          [mainAxis]: mainAxisCoord,
-          [crossAxis]: crossAxisCoord
-        });
-        return {
-          ...limitedCoords,
-          data: {
-            x: limitedCoords.x - x3,
-            y: limitedCoords.y - y5,
-            enabled: {
-              [mainAxis]: checkMainAxis,
-              [crossAxis]: checkCrossAxis
-            }
-          }
-        };
-      }
-    };
-  };
-  var limitShift = function(options) {
-    if (options === void 0) {
-      options = {};
-    }
-    return {
-      options,
-      fn(state) {
-        const {
-          x: x3,
-          y: y5,
-          placement,
-          rects,
-          middlewareData
-        } = state;
-        const {
-          offset: offset4 = 0,
-          mainAxis: checkMainAxis = true,
-          crossAxis: checkCrossAxis = true
-        } = evaluate(options, state);
-        const coords = {
-          x: x3,
-          y: y5
-        };
-        const crossAxis = getSideAxis(placement);
-        const mainAxis = getOppositeAxis(crossAxis);
-        let mainAxisCoord = coords[mainAxis];
-        let crossAxisCoord = coords[crossAxis];
-        const rawOffset = evaluate(offset4, state);
-        const computedOffset = typeof rawOffset === "number" ? {
-          mainAxis: rawOffset,
-          crossAxis: 0
-        } : {
-          mainAxis: 0,
-          crossAxis: 0,
-          ...rawOffset
-        };
-        if (checkMainAxis) {
-          const len = mainAxis === "y" ? "height" : "width";
-          const limitMin = rects.reference[mainAxis] - rects.floating[len] + computedOffset.mainAxis;
-          const limitMax = rects.reference[mainAxis] + rects.reference[len] - computedOffset.mainAxis;
-          if (mainAxisCoord < limitMin) {
-            mainAxisCoord = limitMin;
-          } else if (mainAxisCoord > limitMax) {
-            mainAxisCoord = limitMax;
-          }
-        }
-        if (checkCrossAxis) {
-          var _middlewareData$offse, _middlewareData$offse2;
-          const len = mainAxis === "y" ? "width" : "height";
-          const isOriginSide = originSides.has(getSide(placement));
-          const limitMin = rects.reference[crossAxis] - rects.floating[len] + (isOriginSide ? ((_middlewareData$offse = middlewareData.offset) == null ? void 0 : _middlewareData$offse[crossAxis]) || 0 : 0) + (isOriginSide ? 0 : computedOffset.crossAxis);
-          const limitMax = rects.reference[crossAxis] + rects.reference[len] + (isOriginSide ? 0 : ((_middlewareData$offse2 = middlewareData.offset) == null ? void 0 : _middlewareData$offse2[crossAxis]) || 0) - (isOriginSide ? computedOffset.crossAxis : 0);
-          if (crossAxisCoord < limitMin) {
-            crossAxisCoord = limitMin;
-          } else if (crossAxisCoord > limitMax) {
-            crossAxisCoord = limitMax;
-          }
-        }
-        return {
-          [mainAxis]: mainAxisCoord,
-          [crossAxis]: crossAxisCoord
-        };
-      }
-    };
-  };
-  var size = function(options) {
-    if (options === void 0) {
-      options = {};
-    }
-    return {
-      name: "size",
-      options,
-      async fn(state) {
-        var _state$middlewareData, _state$middlewareData2;
-        const {
-          placement,
-          rects,
-          platform: platform2,
-          elements: elements2
-        } = state;
-        const {
-          apply: apply2 = () => {
-          },
-          ...detectOverflowOptions
-        } = evaluate(options, state);
-        const overflow = await detectOverflow(state, detectOverflowOptions);
-        const side = getSide(placement);
-        const alignment = getAlignment(placement);
-        const isYAxis = getSideAxis(placement) === "y";
-        const {
-          width,
-          height
-        } = rects.floating;
-        let heightSide;
-        let widthSide;
-        if (side === "top" || side === "bottom") {
-          heightSide = side;
-          widthSide = alignment === (await (platform2.isRTL == null ? void 0 : platform2.isRTL(elements2.floating)) ? "start" : "end") ? "left" : "right";
-        } else {
-          widthSide = side;
-          heightSide = alignment === "end" ? "top" : "bottom";
-        }
-        const maximumClippingHeight = height - overflow.top - overflow.bottom;
-        const maximumClippingWidth = width - overflow.left - overflow.right;
-        const overflowAvailableHeight = min2(height - overflow[heightSide], maximumClippingHeight);
-        const overflowAvailableWidth = min2(width - overflow[widthSide], maximumClippingWidth);
-        const noShift = !state.middlewareData.shift;
-        let availableHeight = overflowAvailableHeight;
-        let availableWidth = overflowAvailableWidth;
-        if ((_state$middlewareData = state.middlewareData.shift) != null && _state$middlewareData.enabled.x) {
-          availableWidth = maximumClippingWidth;
-        }
-        if ((_state$middlewareData2 = state.middlewareData.shift) != null && _state$middlewareData2.enabled.y) {
-          availableHeight = maximumClippingHeight;
-        }
-        if (noShift && !alignment) {
-          const xMin = max2(overflow.left, 0);
-          const xMax = max2(overflow.right, 0);
-          const yMin = max2(overflow.top, 0);
-          const yMax = max2(overflow.bottom, 0);
-          if (isYAxis) {
-            availableWidth = width - 2 * (xMin !== 0 || xMax !== 0 ? xMin + xMax : max2(overflow.left, overflow.right));
-          } else {
-            availableHeight = height - 2 * (yMin !== 0 || yMax !== 0 ? yMin + yMax : max2(overflow.top, overflow.bottom));
-          }
-        }
-        await apply2({
-          ...state,
-          availableWidth,
-          availableHeight
-        });
-        const nextDimensions = await platform2.getDimensions(elements2.floating);
-        if (width !== nextDimensions.width || height !== nextDimensions.height) {
-          return {
-            reset: {
-              rects: true
-            }
-          };
-        }
-        return {};
-      }
-    };
-  };
-
-  // ../../node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs
-  function hasWindow() {
-    return typeof window !== "undefined";
-  }
-  function getNodeName(node2) {
-    if (isNode(node2)) {
-      return (node2.nodeName || "").toLowerCase();
-    }
-    return "#document";
-  }
-  function getWindow(node2) {
-    var _node$ownerDocument;
-    return (node2 == null || (_node$ownerDocument = node2.ownerDocument) == null ? void 0 : _node$ownerDocument.defaultView) || window;
-  }
-  function getDocumentElement(node2) {
-    var _ref;
-    return (_ref = (isNode(node2) ? node2.ownerDocument : node2.document) || window.document) == null ? void 0 : _ref.documentElement;
-  }
-  function isNode(value) {
-    if (!hasWindow()) {
-      return false;
-    }
-    return value instanceof Node || value instanceof getWindow(value).Node;
-  }
-  function isElement(value) {
-    if (!hasWindow()) {
-      return false;
-    }
-    return value instanceof Element || value instanceof getWindow(value).Element;
-  }
-  function isHTMLElement(value) {
-    if (!hasWindow()) {
-      return false;
-    }
-    return value instanceof HTMLElement || value instanceof getWindow(value).HTMLElement;
-  }
-  function isShadowRoot(value) {
-    if (!hasWindow() || typeof ShadowRoot === "undefined") {
-      return false;
-    }
-    return value instanceof ShadowRoot || value instanceof getWindow(value).ShadowRoot;
-  }
-  var invalidOverflowDisplayValues = /* @__PURE__ */ new Set(["inline", "contents"]);
-  function isOverflowElement(element) {
-    const {
-      overflow,
-      overflowX,
-      overflowY,
-      display
-    } = getComputedStyle2(element);
-    return /auto|scroll|overlay|hidden|clip/.test(overflow + overflowY + overflowX) && !invalidOverflowDisplayValues.has(display);
-  }
-  var tableElements = /* @__PURE__ */ new Set(["table", "td", "th"]);
-  function isTableElement(element) {
-    return tableElements.has(getNodeName(element));
-  }
-  var topLayerSelectors = [":popover-open", ":modal"];
-  function isTopLayer(element) {
-    return topLayerSelectors.some((selector) => {
-      try {
-        return element.matches(selector);
-      } catch (_e) {
-        return false;
-      }
-    });
-  }
-  var transformProperties = ["transform", "translate", "scale", "rotate", "perspective"];
-  var willChangeValues = ["transform", "translate", "scale", "rotate", "perspective", "filter"];
-  var containValues = ["paint", "layout", "strict", "content"];
-  function isContainingBlock(elementOrCss) {
-    const webkit = isWebKit();
-    const css = isElement(elementOrCss) ? getComputedStyle2(elementOrCss) : elementOrCss;
-    return transformProperties.some((value) => css[value] ? css[value] !== "none" : false) || (css.containerType ? css.containerType !== "normal" : false) || !webkit && (css.backdropFilter ? css.backdropFilter !== "none" : false) || !webkit && (css.filter ? css.filter !== "none" : false) || willChangeValues.some((value) => (css.willChange || "").includes(value)) || containValues.some((value) => (css.contain || "").includes(value));
-  }
-  function getContainingBlock(element) {
-    let currentNode = getParentNode(element);
-    while (isHTMLElement(currentNode) && !isLastTraversableNode(currentNode)) {
-      if (isContainingBlock(currentNode)) {
-        return currentNode;
-      } else if (isTopLayer(currentNode)) {
-        return null;
-      }
-      currentNode = getParentNode(currentNode);
-    }
-    return null;
-  }
-  function isWebKit() {
-    if (typeof CSS === "undefined" || !CSS.supports) return false;
-    return CSS.supports("-webkit-backdrop-filter", "none");
-  }
-  var lastTraversableNodeNames = /* @__PURE__ */ new Set(["html", "body", "#document"]);
-  function isLastTraversableNode(node2) {
-    return lastTraversableNodeNames.has(getNodeName(node2));
-  }
-  function getComputedStyle2(element) {
-    return getWindow(element).getComputedStyle(element);
-  }
-  function getNodeScroll(element) {
-    if (isElement(element)) {
-      return {
-        scrollLeft: element.scrollLeft,
-        scrollTop: element.scrollTop
-      };
-    }
-    return {
-      scrollLeft: element.scrollX,
-      scrollTop: element.scrollY
-    };
-  }
-  function getParentNode(node2) {
-    if (getNodeName(node2) === "html") {
-      return node2;
-    }
-    const result = (
-      // Step into the shadow DOM of the parent of a slotted node.
-      node2.assignedSlot || // DOM Element detected.
-      node2.parentNode || // ShadowRoot detected.
-      isShadowRoot(node2) && node2.host || // Fallback.
-      getDocumentElement(node2)
-    );
-    return isShadowRoot(result) ? result.host : result;
-  }
-  function getNearestOverflowAncestor(node2) {
-    const parentNode = getParentNode(node2);
-    if (isLastTraversableNode(parentNode)) {
-      return node2.ownerDocument ? node2.ownerDocument.body : node2.body;
-    }
-    if (isHTMLElement(parentNode) && isOverflowElement(parentNode)) {
-      return parentNode;
-    }
-    return getNearestOverflowAncestor(parentNode);
-  }
-  function getOverflowAncestors(node2, list, traverseIframes) {
-    var _node$ownerDocument2;
-    if (list === void 0) {
-      list = [];
-    }
-    if (traverseIframes === void 0) {
-      traverseIframes = true;
-    }
-    const scrollableAncestor = getNearestOverflowAncestor(node2);
-    const isBody = scrollableAncestor === ((_node$ownerDocument2 = node2.ownerDocument) == null ? void 0 : _node$ownerDocument2.body);
-    const win = getWindow(scrollableAncestor);
-    if (isBody) {
-      const frameElement = getFrameElement(win);
-      return list.concat(win, win.visualViewport || [], isOverflowElement(scrollableAncestor) ? scrollableAncestor : [], frameElement && traverseIframes ? getOverflowAncestors(frameElement) : []);
-    }
-    return list.concat(scrollableAncestor, getOverflowAncestors(scrollableAncestor, [], traverseIframes));
-  }
-  function getFrameElement(win) {
-    return win.parent && Object.getPrototypeOf(win.parent) ? win.frameElement : null;
-  }
-
-  // ../../node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs
-  function getCssDimensions(element) {
-    const css = getComputedStyle2(element);
-    let width = parseFloat(css.width) || 0;
-    let height = parseFloat(css.height) || 0;
-    const hasOffset = isHTMLElement(element);
-    const offsetWidth = hasOffset ? element.offsetWidth : width;
-    const offsetHeight = hasOffset ? element.offsetHeight : height;
-    const shouldFallback = round(width) !== offsetWidth || round(height) !== offsetHeight;
-    if (shouldFallback) {
-      width = offsetWidth;
-      height = offsetHeight;
-    }
-    return {
-      width,
-      height,
-      $: shouldFallback
-    };
-  }
-  function unwrapElement(element) {
-    return !isElement(element) ? element.contextElement : element;
-  }
-  function getScale(element) {
-    const domElement = unwrapElement(element);
-    if (!isHTMLElement(domElement)) {
-      return createCoords(1);
-    }
-    const rect = domElement.getBoundingClientRect();
-    const {
-      width,
-      height,
-      $: $2
-    } = getCssDimensions(domElement);
-    let x3 = ($2 ? round(rect.width) : rect.width) / width;
-    let y5 = ($2 ? round(rect.height) : rect.height) / height;
-    if (!x3 || !Number.isFinite(x3)) {
-      x3 = 1;
-    }
-    if (!y5 || !Number.isFinite(y5)) {
-      y5 = 1;
-    }
-    return {
-      x: x3,
-      y: y5
-    };
-  }
-  var noOffsets = /* @__PURE__ */ createCoords(0);
-  function getVisualOffsets(element) {
-    const win = getWindow(element);
-    if (!isWebKit() || !win.visualViewport) {
-      return noOffsets;
-    }
-    return {
-      x: win.visualViewport.offsetLeft,
-      y: win.visualViewport.offsetTop
-    };
-  }
-  function shouldAddVisualOffsets(element, isFixed, floatingOffsetParent) {
-    if (isFixed === void 0) {
-      isFixed = false;
-    }
-    if (!floatingOffsetParent || isFixed && floatingOffsetParent !== getWindow(element)) {
-      return false;
-    }
-    return isFixed;
-  }
-  function getBoundingClientRect(element, includeScale, isFixedStrategy, offsetParent) {
-    if (includeScale === void 0) {
-      includeScale = false;
-    }
-    if (isFixedStrategy === void 0) {
-      isFixedStrategy = false;
-    }
-    const clientRect = element.getBoundingClientRect();
-    const domElement = unwrapElement(element);
-    let scale = createCoords(1);
-    if (includeScale) {
-      if (offsetParent) {
-        if (isElement(offsetParent)) {
-          scale = getScale(offsetParent);
-        }
-      } else {
-        scale = getScale(element);
-      }
-    }
-    const visualOffsets = shouldAddVisualOffsets(domElement, isFixedStrategy, offsetParent) ? getVisualOffsets(domElement) : createCoords(0);
-    let x3 = (clientRect.left + visualOffsets.x) / scale.x;
-    let y5 = (clientRect.top + visualOffsets.y) / scale.y;
-    let width = clientRect.width / scale.x;
-    let height = clientRect.height / scale.y;
-    if (domElement) {
-      const win = getWindow(domElement);
-      const offsetWin = offsetParent && isElement(offsetParent) ? getWindow(offsetParent) : offsetParent;
-      let currentWin = win;
-      let currentIFrame = getFrameElement(currentWin);
-      while (currentIFrame && offsetParent && offsetWin !== currentWin) {
-        const iframeScale = getScale(currentIFrame);
-        const iframeRect = currentIFrame.getBoundingClientRect();
-        const css = getComputedStyle2(currentIFrame);
-        const left = iframeRect.left + (currentIFrame.clientLeft + parseFloat(css.paddingLeft)) * iframeScale.x;
-        const top = iframeRect.top + (currentIFrame.clientTop + parseFloat(css.paddingTop)) * iframeScale.y;
-        x3 *= iframeScale.x;
-        y5 *= iframeScale.y;
-        width *= iframeScale.x;
-        height *= iframeScale.y;
-        x3 += left;
-        y5 += top;
-        currentWin = getWindow(currentIFrame);
-        currentIFrame = getFrameElement(currentWin);
-      }
-    }
-    return rectToClientRect({
-      width,
-      height,
-      x: x3,
-      y: y5
-    });
-  }
-  function getWindowScrollBarX(element, rect) {
-    const leftScroll = getNodeScroll(element).scrollLeft;
-    if (!rect) {
-      return getBoundingClientRect(getDocumentElement(element)).left + leftScroll;
-    }
-    return rect.left + leftScroll;
-  }
-  function getHTMLOffset(documentElement, scroll, ignoreScrollbarX) {
-    if (ignoreScrollbarX === void 0) {
-      ignoreScrollbarX = false;
-    }
-    const htmlRect = documentElement.getBoundingClientRect();
-    const x3 = htmlRect.left + scroll.scrollLeft - (ignoreScrollbarX ? 0 : (
-      // RTL <body> scrollbar.
-      getWindowScrollBarX(documentElement, htmlRect)
-    ));
-    const y5 = htmlRect.top + scroll.scrollTop;
-    return {
-      x: x3,
-      y: y5
-    };
-  }
-  function convertOffsetParentRelativeRectToViewportRelativeRect(_ref) {
-    let {
-      elements: elements2,
-      rect,
-      offsetParent,
-      strategy
-    } = _ref;
-    const isFixed = strategy === "fixed";
-    const documentElement = getDocumentElement(offsetParent);
-    const topLayer = elements2 ? isTopLayer(elements2.floating) : false;
-    if (offsetParent === documentElement || topLayer && isFixed) {
-      return rect;
-    }
-    let scroll = {
-      scrollLeft: 0,
-      scrollTop: 0
-    };
-    let scale = createCoords(1);
-    const offsets = createCoords(0);
-    const isOffsetParentAnElement = isHTMLElement(offsetParent);
-    if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {
-      if (getNodeName(offsetParent) !== "body" || isOverflowElement(documentElement)) {
-        scroll = getNodeScroll(offsetParent);
-      }
-      if (isHTMLElement(offsetParent)) {
-        const offsetRect = getBoundingClientRect(offsetParent);
-        scale = getScale(offsetParent);
-        offsets.x = offsetRect.x + offsetParent.clientLeft;
-        offsets.y = offsetRect.y + offsetParent.clientTop;
-      }
-    }
-    const htmlOffset = documentElement && !isOffsetParentAnElement && !isFixed ? getHTMLOffset(documentElement, scroll, true) : createCoords(0);
-    return {
-      width: rect.width * scale.x,
-      height: rect.height * scale.y,
-      x: rect.x * scale.x - scroll.scrollLeft * scale.x + offsets.x + htmlOffset.x,
-      y: rect.y * scale.y - scroll.scrollTop * scale.y + offsets.y + htmlOffset.y
-    };
-  }
-  function getClientRects(element) {
-    return Array.from(element.getClientRects());
-  }
-  function getDocumentRect(element) {
-    const html2 = getDocumentElement(element);
-    const scroll = getNodeScroll(element);
-    const body = element.ownerDocument.body;
-    const width = max2(html2.scrollWidth, html2.clientWidth, body.scrollWidth, body.clientWidth);
-    const height = max2(html2.scrollHeight, html2.clientHeight, body.scrollHeight, body.clientHeight);
-    let x3 = -scroll.scrollLeft + getWindowScrollBarX(element);
-    const y5 = -scroll.scrollTop;
-    if (getComputedStyle2(body).direction === "rtl") {
-      x3 += max2(html2.clientWidth, body.clientWidth) - width;
-    }
-    return {
-      width,
-      height,
-      x: x3,
-      y: y5
-    };
-  }
-  function getViewportRect(element, strategy) {
-    const win = getWindow(element);
-    const html2 = getDocumentElement(element);
-    const visualViewport = win.visualViewport;
-    let width = html2.clientWidth;
-    let height = html2.clientHeight;
-    let x3 = 0;
-    let y5 = 0;
-    if (visualViewport) {
-      width = visualViewport.width;
-      height = visualViewport.height;
-      const visualViewportBased = isWebKit();
-      if (!visualViewportBased || visualViewportBased && strategy === "fixed") {
-        x3 = visualViewport.offsetLeft;
-        y5 = visualViewport.offsetTop;
-      }
-    }
-    return {
-      width,
-      height,
-      x: x3,
-      y: y5
-    };
-  }
-  var absoluteOrFixed = /* @__PURE__ */ new Set(["absolute", "fixed"]);
-  function getInnerBoundingClientRect(element, strategy) {
-    const clientRect = getBoundingClientRect(element, true, strategy === "fixed");
-    const top = clientRect.top + element.clientTop;
-    const left = clientRect.left + element.clientLeft;
-    const scale = isHTMLElement(element) ? getScale(element) : createCoords(1);
-    const width = element.clientWidth * scale.x;
-    const height = element.clientHeight * scale.y;
-    const x3 = left * scale.x;
-    const y5 = top * scale.y;
-    return {
-      width,
-      height,
-      x: x3,
-      y: y5
-    };
-  }
-  function getClientRectFromClippingAncestor(element, clippingAncestor, strategy) {
-    let rect;
-    if (clippingAncestor === "viewport") {
-      rect = getViewportRect(element, strategy);
-    } else if (clippingAncestor === "document") {
-      rect = getDocumentRect(getDocumentElement(element));
-    } else if (isElement(clippingAncestor)) {
-      rect = getInnerBoundingClientRect(clippingAncestor, strategy);
-    } else {
-      const visualOffsets = getVisualOffsets(element);
-      rect = {
-        x: clippingAncestor.x - visualOffsets.x,
-        y: clippingAncestor.y - visualOffsets.y,
-        width: clippingAncestor.width,
-        height: clippingAncestor.height
-      };
-    }
-    return rectToClientRect(rect);
-  }
-  function hasFixedPositionAncestor(element, stopNode) {
-    const parentNode = getParentNode(element);
-    if (parentNode === stopNode || !isElement(parentNode) || isLastTraversableNode(parentNode)) {
-      return false;
-    }
-    return getComputedStyle2(parentNode).position === "fixed" || hasFixedPositionAncestor(parentNode, stopNode);
-  }
-  function getClippingElementAncestors(element, cache) {
-    const cachedResult = cache.get(element);
-    if (cachedResult) {
-      return cachedResult;
-    }
-    let result = getOverflowAncestors(element, [], false).filter((el) => isElement(el) && getNodeName(el) !== "body");
-    let currentContainingBlockComputedStyle = null;
-    const elementIsFixed = getComputedStyle2(element).position === "fixed";
-    let currentNode = elementIsFixed ? getParentNode(element) : element;
-    while (isElement(currentNode) && !isLastTraversableNode(currentNode)) {
-      const computedStyle = getComputedStyle2(currentNode);
-      const currentNodeIsContaining = isContainingBlock(currentNode);
-      if (!currentNodeIsContaining && computedStyle.position === "fixed") {
-        currentContainingBlockComputedStyle = null;
-      }
-      const shouldDropCurrentNode = elementIsFixed ? !currentNodeIsContaining && !currentContainingBlockComputedStyle : !currentNodeIsContaining && computedStyle.position === "static" && !!currentContainingBlockComputedStyle && absoluteOrFixed.has(currentContainingBlockComputedStyle.position) || isOverflowElement(currentNode) && !currentNodeIsContaining && hasFixedPositionAncestor(element, currentNode);
-      if (shouldDropCurrentNode) {
-        result = result.filter((ancestor) => ancestor !== currentNode);
-      } else {
-        currentContainingBlockComputedStyle = computedStyle;
-      }
-      currentNode = getParentNode(currentNode);
-    }
-    cache.set(element, result);
-    return result;
-  }
-  function getClippingRect(_ref) {
-    let {
-      element,
-      boundary,
-      rootBoundary,
-      strategy
-    } = _ref;
-    const elementClippingAncestors = boundary === "clippingAncestors" ? isTopLayer(element) ? [] : getClippingElementAncestors(element, this._c) : [].concat(boundary);
-    const clippingAncestors = [...elementClippingAncestors, rootBoundary];
-    const firstClippingAncestor = clippingAncestors[0];
-    const clippingRect = clippingAncestors.reduce((accRect, clippingAncestor) => {
-      const rect = getClientRectFromClippingAncestor(element, clippingAncestor, strategy);
-      accRect.top = max2(rect.top, accRect.top);
-      accRect.right = min2(rect.right, accRect.right);
-      accRect.bottom = min2(rect.bottom, accRect.bottom);
-      accRect.left = max2(rect.left, accRect.left);
-      return accRect;
-    }, getClientRectFromClippingAncestor(element, firstClippingAncestor, strategy));
-    return {
-      width: clippingRect.right - clippingRect.left,
-      height: clippingRect.bottom - clippingRect.top,
-      x: clippingRect.left,
-      y: clippingRect.top
-    };
-  }
-  function getDimensions(element) {
-    const {
-      width,
-      height
-    } = getCssDimensions(element);
-    return {
-      width,
-      height
-    };
-  }
-  function getRectRelativeToOffsetParent(element, offsetParent, strategy) {
-    const isOffsetParentAnElement = isHTMLElement(offsetParent);
-    const documentElement = getDocumentElement(offsetParent);
-    const isFixed = strategy === "fixed";
-    const rect = getBoundingClientRect(element, true, isFixed, offsetParent);
-    let scroll = {
-      scrollLeft: 0,
-      scrollTop: 0
-    };
-    const offsets = createCoords(0);
-    function setLeftRTLScrollbarOffset() {
-      offsets.x = getWindowScrollBarX(documentElement);
-    }
-    if (isOffsetParentAnElement || !isOffsetParentAnElement && !isFixed) {
-      if (getNodeName(offsetParent) !== "body" || isOverflowElement(documentElement)) {
-        scroll = getNodeScroll(offsetParent);
-      }
-      if (isOffsetParentAnElement) {
-        const offsetRect = getBoundingClientRect(offsetParent, true, isFixed, offsetParent);
-        offsets.x = offsetRect.x + offsetParent.clientLeft;
-        offsets.y = offsetRect.y + offsetParent.clientTop;
-      } else if (documentElement) {
-        setLeftRTLScrollbarOffset();
-      }
-    }
-    if (isFixed && !isOffsetParentAnElement && documentElement) {
-      setLeftRTLScrollbarOffset();
-    }
-    const htmlOffset = documentElement && !isOffsetParentAnElement && !isFixed ? getHTMLOffset(documentElement, scroll) : createCoords(0);
-    const x3 = rect.left + scroll.scrollLeft - offsets.x - htmlOffset.x;
-    const y5 = rect.top + scroll.scrollTop - offsets.y - htmlOffset.y;
-    return {
-      x: x3,
-      y: y5,
-      width: rect.width,
-      height: rect.height
-    };
-  }
-  function isStaticPositioned(element) {
-    return getComputedStyle2(element).position === "static";
-  }
-  function getTrueOffsetParent(element, polyfill) {
-    if (!isHTMLElement(element) || getComputedStyle2(element).position === "fixed") {
-      return null;
-    }
-    if (polyfill) {
-      return polyfill(element);
-    }
-    let rawOffsetParent = element.offsetParent;
-    if (getDocumentElement(element) === rawOffsetParent) {
-      rawOffsetParent = rawOffsetParent.ownerDocument.body;
-    }
-    return rawOffsetParent;
-  }
-  function getOffsetParent(element, polyfill) {
-    const win = getWindow(element);
-    if (isTopLayer(element)) {
-      return win;
-    }
-    if (!isHTMLElement(element)) {
-      let svgOffsetParent = getParentNode(element);
-      while (svgOffsetParent && !isLastTraversableNode(svgOffsetParent)) {
-        if (isElement(svgOffsetParent) && !isStaticPositioned(svgOffsetParent)) {
-          return svgOffsetParent;
-        }
-        svgOffsetParent = getParentNode(svgOffsetParent);
-      }
-      return win;
-    }
-    let offsetParent = getTrueOffsetParent(element, polyfill);
-    while (offsetParent && isTableElement(offsetParent) && isStaticPositioned(offsetParent)) {
-      offsetParent = getTrueOffsetParent(offsetParent, polyfill);
-    }
-    if (offsetParent && isLastTraversableNode(offsetParent) && isStaticPositioned(offsetParent) && !isContainingBlock(offsetParent)) {
-      return win;
-    }
-    return offsetParent || getContainingBlock(element) || win;
-  }
-  var getElementRects = async function(data2) {
-    const getOffsetParentFn = this.getOffsetParent || getOffsetParent;
-    const getDimensionsFn = this.getDimensions;
-    const floatingDimensions = await getDimensionsFn(data2.floating);
-    return {
-      reference: getRectRelativeToOffsetParent(data2.reference, await getOffsetParentFn(data2.floating), data2.strategy),
-      floating: {
-        x: 0,
-        y: 0,
-        width: floatingDimensions.width,
-        height: floatingDimensions.height
-      }
-    };
-  };
-  function isRTL(element) {
-    return getComputedStyle2(element).direction === "rtl";
-  }
-  var platform = {
-    convertOffsetParentRelativeRectToViewportRelativeRect,
-    getDocumentElement,
-    getClippingRect,
-    getOffsetParent,
-    getElementRects,
-    getClientRects,
-    getDimensions,
-    getScale,
-    isElement,
-    isRTL
-  };
-  function rectsAreEqual(a5, b3) {
-    return a5.x === b3.x && a5.y === b3.y && a5.width === b3.width && a5.height === b3.height;
-  }
-  function observeMove(element, onMove) {
-    let io = null;
-    let timeoutId;
-    const root2 = getDocumentElement(element);
-    function cleanup() {
-      var _io;
-      clearTimeout(timeoutId);
-      (_io = io) == null || _io.disconnect();
-      io = null;
-    }
-    function refresh(skip, threshold) {
-      if (skip === void 0) {
-        skip = false;
-      }
-      if (threshold === void 0) {
-        threshold = 1;
-      }
-      cleanup();
-      const elementRectForRootMargin = element.getBoundingClientRect();
-      const {
-        left,
-        top,
-        width,
-        height
-      } = elementRectForRootMargin;
-      if (!skip) {
-        onMove();
-      }
-      if (!width || !height) {
-        return;
-      }
-      const insetTop = floor(top);
-      const insetRight = floor(root2.clientWidth - (left + width));
-      const insetBottom = floor(root2.clientHeight - (top + height));
-      const insetLeft = floor(left);
-      const rootMargin = -insetTop + "px " + -insetRight + "px " + -insetBottom + "px " + -insetLeft + "px";
-      const options = {
-        rootMargin,
-        threshold: max2(0, min2(1, threshold)) || 1
-      };
-      let isFirstUpdate = true;
-      function handleObserve(entries2) {
-        const ratio = entries2[0].intersectionRatio;
-        if (ratio !== threshold) {
-          if (!isFirstUpdate) {
-            return refresh();
-          }
-          if (!ratio) {
-            timeoutId = setTimeout(() => {
-              refresh(false, 1e-7);
-            }, 1e3);
-          } else {
-            refresh(false, ratio);
-          }
-        }
-        if (ratio === 1 && !rectsAreEqual(elementRectForRootMargin, element.getBoundingClientRect())) {
-          refresh();
-        }
-        isFirstUpdate = false;
-      }
-      try {
-        io = new IntersectionObserver(handleObserve, {
-          ...options,
-          // Handle <iframe>s
-          root: root2.ownerDocument
-        });
-      } catch (_e) {
-        io = new IntersectionObserver(handleObserve, options);
-      }
-      io.observe(element);
-    }
-    refresh(true);
-    return cleanup;
-  }
-  function autoUpdate(reference, floating, update, options) {
-    if (options === void 0) {
-      options = {};
-    }
-    const {
-      ancestorScroll = true,
-      ancestorResize = true,
-      elementResize = typeof ResizeObserver === "function",
-      layoutShift = typeof IntersectionObserver === "function",
-      animationFrame = false
-    } = options;
-    const referenceEl = unwrapElement(reference);
-    const ancestors = ancestorScroll || ancestorResize ? [...referenceEl ? getOverflowAncestors(referenceEl) : [], ...getOverflowAncestors(floating)] : [];
-    ancestors.forEach((ancestor) => {
-      ancestorScroll && ancestor.addEventListener("scroll", update, {
-        passive: true
-      });
-      ancestorResize && ancestor.addEventListener("resize", update);
-    });
-    const cleanupIo = referenceEl && layoutShift ? observeMove(referenceEl, update) : null;
-    let reobserveFrame = -1;
-    let resizeObserver = null;
-    if (elementResize) {
-      resizeObserver = new ResizeObserver((_ref) => {
-        let [firstEntry] = _ref;
-        if (firstEntry && firstEntry.target === referenceEl && resizeObserver) {
-          resizeObserver.unobserve(floating);
-          cancelAnimationFrame(reobserveFrame);
-          reobserveFrame = requestAnimationFrame(() => {
-            var _resizeObserver;
-            (_resizeObserver = resizeObserver) == null || _resizeObserver.observe(floating);
-          });
-        }
-        update();
-      });
-      if (referenceEl && !animationFrame) {
-        resizeObserver.observe(referenceEl);
-      }
-      resizeObserver.observe(floating);
-    }
-    let frameId;
-    let prevRefRect = animationFrame ? getBoundingClientRect(reference) : null;
-    if (animationFrame) {
-      frameLoop();
-    }
-    function frameLoop() {
-      const nextRefRect = getBoundingClientRect(reference);
-      if (prevRefRect && !rectsAreEqual(prevRefRect, nextRefRect)) {
-        update();
-      }
-      prevRefRect = nextRefRect;
-      frameId = requestAnimationFrame(frameLoop);
-    }
-    update();
-    return () => {
-      var _resizeObserver2;
-      ancestors.forEach((ancestor) => {
-        ancestorScroll && ancestor.removeEventListener("scroll", update);
-        ancestorResize && ancestor.removeEventListener("resize", update);
-      });
-      cleanupIo == null || cleanupIo();
-      (_resizeObserver2 = resizeObserver) == null || _resizeObserver2.disconnect();
-      resizeObserver = null;
-      if (animationFrame) {
-        cancelAnimationFrame(frameId);
-      }
-    };
-  }
-  var offset2 = offset;
-  var shift2 = shift;
-  var flip2 = flip;
-  var size2 = size;
-  var hide2 = hide;
-  var arrow2 = arrow;
-  var limitShift2 = limitShift;
-  var computePosition2 = (reference, floating, options) => {
-    const cache = /* @__PURE__ */ new Map();
-    const mergedOptions = {
-      platform,
-      ...options
-    };
-    const platformWithCache = {
-      ...mergedOptions.platform,
-      _c: cache
-    };
-    return computePosition(reference, floating, {
-      ...mergedOptions,
-      platform: platformWithCache
-    });
-  };
-
-  // ../../node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.mjs
-  var React47 = __toESM(require_react(), 1);
-  var import_react8 = __toESM(require_react(), 1);
-  var ReactDOM3 = __toESM(require_react_dom(), 1);
-  var isClient = typeof document !== "undefined";
-  var noop = function noop2() {
-  };
-  var index = isClient ? import_react8.useLayoutEffect : noop;
-  function deepEqual(a5, b3) {
-    if (a5 === b3) {
-      return true;
-    }
-    if (typeof a5 !== typeof b3) {
-      return false;
-    }
-    if (typeof a5 === "function" && a5.toString() === b3.toString()) {
-      return true;
-    }
-    let length;
-    let i4;
-    let keys;
-    if (a5 && b3 && typeof a5 === "object") {
-      if (Array.isArray(a5)) {
-        length = a5.length;
-        if (length !== b3.length) return false;
-        for (i4 = length; i4-- !== 0; ) {
-          if (!deepEqual(a5[i4], b3[i4])) {
-            return false;
-          }
-        }
-        return true;
-      }
-      keys = Object.keys(a5);
-      length = keys.length;
-      if (length !== Object.keys(b3).length) {
-        return false;
-      }
-      for (i4 = length; i4-- !== 0; ) {
-        if (!{}.hasOwnProperty.call(b3, keys[i4])) {
-          return false;
-        }
-      }
-      for (i4 = length; i4-- !== 0; ) {
-        const key = keys[i4];
-        if (key === "_owner" && a5.$$typeof) {
-          continue;
-        }
-        if (!deepEqual(a5[key], b3[key])) {
-          return false;
-        }
-      }
-      return true;
-    }
-    return a5 !== a5 && b3 !== b3;
-  }
-  function getDPR(element) {
-    if (typeof window === "undefined") {
-      return 1;
-    }
-    const win = element.ownerDocument.defaultView || window;
-    return win.devicePixelRatio || 1;
-  }
-  function roundByDPR(element, value) {
-    const dpr = getDPR(element);
-    return Math.round(value * dpr) / dpr;
-  }
-  function useLatestRef(value) {
-    const ref = React47.useRef(value);
-    index(() => {
-      ref.current = value;
-    });
-    return ref;
-  }
-  function useFloating(options) {
-    if (options === void 0) {
-      options = {};
-    }
-    const {
-      placement = "bottom",
-      strategy = "absolute",
-      middleware = [],
-      platform: platform2,
-      elements: {
-        reference: externalReference,
-        floating: externalFloating
-      } = {},
-      transform = true,
-      whileElementsMounted,
-      open: open2
-    } = options;
-    const [data2, setData] = React47.useState({
-      x: 0,
-      y: 0,
-      strategy,
-      placement,
-      middlewareData: {},
-      isPositioned: false
-    });
-    const [latestMiddleware, setLatestMiddleware] = React47.useState(middleware);
-    if (!deepEqual(latestMiddleware, middleware)) {
-      setLatestMiddleware(middleware);
-    }
-    const [_reference, _setReference] = React47.useState(null);
-    const [_floating, _setFloating] = React47.useState(null);
-    const setReference = React47.useCallback((node2) => {
-      if (node2 !== referenceRef.current) {
-        referenceRef.current = node2;
-        _setReference(node2);
-      }
-    }, []);
-    const setFloating = React47.useCallback((node2) => {
-      if (node2 !== floatingRef.current) {
-        floatingRef.current = node2;
-        _setFloating(node2);
-      }
-    }, []);
-    const referenceEl = externalReference || _reference;
-    const floatingEl = externalFloating || _floating;
-    const referenceRef = React47.useRef(null);
-    const floatingRef = React47.useRef(null);
-    const dataRef = React47.useRef(data2);
-    const hasWhileElementsMounted = whileElementsMounted != null;
-    const whileElementsMountedRef = useLatestRef(whileElementsMounted);
-    const platformRef = useLatestRef(platform2);
-    const openRef = useLatestRef(open2);
-    const update = React47.useCallback(() => {
-      if (!referenceRef.current || !floatingRef.current) {
-        return;
-      }
-      const config = {
-        placement,
-        strategy,
-        middleware: latestMiddleware
-      };
-      if (platformRef.current) {
-        config.platform = platformRef.current;
-      }
-      computePosition2(referenceRef.current, floatingRef.current, config).then((data3) => {
-        const fullData = {
-          ...data3,
-          // The floating element's position may be recomputed while it's closed
-          // but still mounted (such as when transitioning out). To ensure
-          // `isPositioned` will be `false` initially on the next open, avoid
-          // setting it to `true` when `open === false` (must be specified).
-          isPositioned: openRef.current !== false
-        };
-        if (isMountedRef.current && !deepEqual(dataRef.current, fullData)) {
-          dataRef.current = fullData;
-          ReactDOM3.flushSync(() => {
-            setData(fullData);
-          });
-        }
-      });
-    }, [latestMiddleware, placement, strategy, platformRef, openRef]);
-    index(() => {
-      if (open2 === false && dataRef.current.isPositioned) {
-        dataRef.current.isPositioned = false;
-        setData((data3) => ({
-          ...data3,
-          isPositioned: false
-        }));
-      }
-    }, [open2]);
-    const isMountedRef = React47.useRef(false);
-    index(() => {
-      isMountedRef.current = true;
-      return () => {
-        isMountedRef.current = false;
-      };
-    }, []);
-    index(() => {
-      if (referenceEl) referenceRef.current = referenceEl;
-      if (floatingEl) floatingRef.current = floatingEl;
-      if (referenceEl && floatingEl) {
-        if (whileElementsMountedRef.current) {
-          return whileElementsMountedRef.current(referenceEl, floatingEl, update);
-        }
-        update();
-      }
-    }, [referenceEl, floatingEl, update, whileElementsMountedRef, hasWhileElementsMounted]);
-    const refs = React47.useMemo(() => ({
-      reference: referenceRef,
-      floating: floatingRef,
-      setReference,
-      setFloating
-    }), [setReference, setFloating]);
-    const elements2 = React47.useMemo(() => ({
-      reference: referenceEl,
-      floating: floatingEl
-    }), [referenceEl, floatingEl]);
-    const floatingStyles = React47.useMemo(() => {
-      const initialStyles = {
-        position: strategy,
-        left: 0,
-        top: 0
-      };
-      if (!elements2.floating) {
-        return initialStyles;
-      }
-      const x3 = roundByDPR(elements2.floating, data2.x);
-      const y5 = roundByDPR(elements2.floating, data2.y);
-      if (transform) {
-        return {
-          ...initialStyles,
-          transform: "translate(" + x3 + "px, " + y5 + "px)",
-          ...getDPR(elements2.floating) >= 1.5 && {
-            willChange: "transform"
-          }
-        };
-      }
-      return {
-        position: strategy,
-        left: x3,
-        top: y5
-      };
-    }, [strategy, transform, elements2.floating, data2.x, data2.y]);
-    return React47.useMemo(() => ({
-      ...data2,
-      update,
-      refs,
-      elements: elements2,
-      floatingStyles
-    }), [data2, update, refs, elements2, floatingStyles]);
-  }
-  var arrow$1 = (options) => {
-    function isRef(value) {
-      return {}.hasOwnProperty.call(value, "current");
-    }
-    return {
-      name: "arrow",
-      options,
-      fn(state) {
-        const {
-          element,
-          padding
-        } = typeof options === "function" ? options(state) : options;
-        if (element && isRef(element)) {
-          if (element.current != null) {
-            return arrow2({
-              element: element.current,
-              padding
-            }).fn(state);
-          }
-          return {};
-        }
-        if (element) {
-          return arrow2({
-            element,
-            padding
-          }).fn(state);
-        }
-        return {};
-      }
-    };
-  };
-  var offset3 = (options, deps) => ({
-    ...offset2(options),
-    options: [options, deps]
-  });
-  var shift3 = (options, deps) => ({
-    ...shift2(options),
-    options: [options, deps]
-  });
-  var limitShift3 = (options, deps) => ({
-    ...limitShift2(options),
-    options: [options, deps]
-  });
-  var flip3 = (options, deps) => ({
-    ...flip2(options),
-    options: [options, deps]
-  });
-  var size3 = (options, deps) => ({
-    ...size2(options),
-    options: [options, deps]
-  });
-  var hide3 = (options, deps) => ({
-    ...hide2(options),
-    options: [options, deps]
-  });
-  var arrow3 = (options, deps) => ({
-    ...arrow$1(options),
-    options: [options, deps]
-  });
-
-  // ../../node_modules/@radix-ui/react-arrow/dist/index.mjs
-  var React48 = __toESM(require_react(), 1);
-  var import_jsx_runtime23 = __toESM(require_jsx_runtime(), 1);
-  var NAME2 = "Arrow";
-  var Arrow = React48.forwardRef((props, forwardedRef) => {
-    const { children, width = 10, height = 5, ...arrowProps } = props;
-    return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(
-      Primitive.svg,
-      {
-        ...arrowProps,
-        ref: forwardedRef,
-        width,
-        height,
-        viewBox: "0 0 30 10",
-        preserveAspectRatio: "none",
-        children: props.asChild ? children : /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("polygon", { points: "0,0 30,0 15,10" })
-      }
-    );
-  });
-  Arrow.displayName = NAME2;
-  var Root5 = Arrow;
-
-  // ../../node_modules/@radix-ui/react-popper/dist/index.mjs
-  var import_jsx_runtime24 = __toESM(require_jsx_runtime(), 1);
-  var POPPER_NAME = "Popper";
-  var [createPopperContext, createPopperScope] = createContextScope(POPPER_NAME);
-  var [PopperProvider, usePopperContext] = createPopperContext(POPPER_NAME);
-  var Popper = (props) => {
-    const { __scopePopper, children } = props;
-    const [anchor, setAnchor] = React49.useState(null);
-    return /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(PopperProvider, { scope: __scopePopper, anchor, onAnchorChange: setAnchor, children });
-  };
-  Popper.displayName = POPPER_NAME;
-  var ANCHOR_NAME = "PopperAnchor";
-  var PopperAnchor = React49.forwardRef(
-    (props, forwardedRef) => {
-      const { __scopePopper, virtualRef, ...anchorProps } = props;
-      const context = usePopperContext(ANCHOR_NAME, __scopePopper);
-      const ref = React49.useRef(null);
-      const composedRefs = useComposedRefs(forwardedRef, ref);
-      React49.useEffect(() => {
-        context.onAnchorChange(virtualRef?.current || ref.current);
-      });
-      return virtualRef ? null : /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(Primitive.div, { ...anchorProps, ref: composedRefs });
-    }
-  );
-  PopperAnchor.displayName = ANCHOR_NAME;
-  var CONTENT_NAME2 = "PopperContent";
-  var [PopperContentProvider, useContentContext] = createPopperContext(CONTENT_NAME2);
-  var PopperContent = React49.forwardRef(
-    (props, forwardedRef) => {
-      const {
-        __scopePopper,
-        side = "bottom",
-        sideOffset = 0,
-        align = "center",
-        alignOffset = 0,
-        arrowPadding = 0,
-        avoidCollisions = true,
-        collisionBoundary = [],
-        collisionPadding: collisionPaddingProp = 0,
-        sticky = "partial",
-        hideWhenDetached = false,
-        updatePositionStrategy = "optimized",
-        onPlaced,
-        ...contentProps
-      } = props;
-      const context = usePopperContext(CONTENT_NAME2, __scopePopper);
-      const [content, setContent] = React49.useState(null);
-      const composedRefs = useComposedRefs(forwardedRef, (node2) => setContent(node2));
-      const [arrow4, setArrow] = React49.useState(null);
-      const arrowSize = useSize(arrow4);
-      const arrowWidth = arrowSize?.width ?? 0;
-      const arrowHeight = arrowSize?.height ?? 0;
-      const desiredPlacement = side + (align !== "center" ? "-" + align : "");
-      const collisionPadding = typeof collisionPaddingProp === "number" ? collisionPaddingProp : { top: 0, right: 0, bottom: 0, left: 0, ...collisionPaddingProp };
-      const boundary = Array.isArray(collisionBoundary) ? collisionBoundary : [collisionBoundary];
-      const hasExplicitBoundaries = boundary.length > 0;
-      const detectOverflowOptions = {
-        padding: collisionPadding,
-        boundary: boundary.filter(isNotNull),
-        // with `strategy: 'fixed'`, this is the only way to get it to respect boundaries
-        altBoundary: hasExplicitBoundaries
-      };
-      const { refs, floatingStyles, placement, isPositioned, middlewareData } = useFloating({
-        // default to `fixed` strategy so users don't have to pick and we also avoid focus scroll issues
-        strategy: "fixed",
-        placement: desiredPlacement,
-        whileElementsMounted: (...args) => {
-          const cleanup = autoUpdate(...args, {
-            animationFrame: updatePositionStrategy === "always"
-          });
-          return cleanup;
-        },
-        elements: {
-          reference: context.anchor
-        },
-        middleware: [
-          offset3({ mainAxis: sideOffset + arrowHeight, alignmentAxis: alignOffset }),
-          avoidCollisions && shift3({
-            mainAxis: true,
-            crossAxis: false,
-            limiter: sticky === "partial" ? limitShift3() : void 0,
-            ...detectOverflowOptions
-          }),
-          avoidCollisions && flip3({ ...detectOverflowOptions }),
-          size3({
-            ...detectOverflowOptions,
-            apply: ({ elements: elements2, rects, availableWidth, availableHeight }) => {
-              const { width: anchorWidth, height: anchorHeight } = rects.reference;
-              const contentStyle = elements2.floating.style;
-              contentStyle.setProperty("--radix-popper-available-width", `${availableWidth}px`);
-              contentStyle.setProperty("--radix-popper-available-height", `${availableHeight}px`);
-              contentStyle.setProperty("--radix-popper-anchor-width", `${anchorWidth}px`);
-              contentStyle.setProperty("--radix-popper-anchor-height", `${anchorHeight}px`);
-            }
-          }),
-          arrow4 && arrow3({ element: arrow4, padding: arrowPadding }),
-          transformOrigin({ arrowWidth, arrowHeight }),
-          hideWhenDetached && hide3({ strategy: "referenceHidden", ...detectOverflowOptions })
-        ]
-      });
-      const [placedSide, placedAlign] = getSideAndAlignFromPlacement(placement);
-      const handlePlaced = useCallbackRef(onPlaced);
-      useLayoutEffect22(() => {
-        if (isPositioned) {
-          handlePlaced?.();
-        }
-      }, [isPositioned, handlePlaced]);
-      const arrowX = middlewareData.arrow?.x;
-      const arrowY = middlewareData.arrow?.y;
-      const cannotCenterArrow = middlewareData.arrow?.centerOffset !== 0;
-      const [contentZIndex, setContentZIndex] = React49.useState();
-      useLayoutEffect22(() => {
-        if (content) setContentZIndex(window.getComputedStyle(content).zIndex);
-      }, [content]);
-      return /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(
-        "div",
-        {
-          ref: refs.setFloating,
-          "data-radix-popper-content-wrapper": "",
-          style: {
-            ...floatingStyles,
-            transform: isPositioned ? floatingStyles.transform : "translate(0, -200%)",
-            // keep off the page when measuring
-            minWidth: "max-content",
-            zIndex: contentZIndex,
-            ["--radix-popper-transform-origin"]: [
-              middlewareData.transformOrigin?.x,
-              middlewareData.transformOrigin?.y
-            ].join(" "),
-            // hide the content if using the hide middleware and should be hidden
-            // set visibility to hidden and disable pointer events so the UI behaves
-            // as if the PopperContent isn't there at all
-            ...middlewareData.hide?.referenceHidden && {
-              visibility: "hidden",
-              pointerEvents: "none"
-            }
-          },
-          dir: props.dir,
-          children: /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(
-            PopperContentProvider,
-            {
-              scope: __scopePopper,
-              placedSide,
-              onArrowChange: setArrow,
-              arrowX,
-              arrowY,
-              shouldHideArrow: cannotCenterArrow,
-              children: /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(
-                Primitive.div,
-                {
-                  "data-side": placedSide,
-                  "data-align": placedAlign,
-                  ...contentProps,
-                  ref: composedRefs,
-                  style: {
-                    ...contentProps.style,
-                    // if the PopperContent hasn't been placed yet (not all measurements done)
-                    // we prevent animations so that users's animation don't kick in too early referring wrong sides
-                    animation: !isPositioned ? "none" : void 0
-                  }
-                }
-              )
-            }
-          )
-        }
-      );
-    }
-  );
-  PopperContent.displayName = CONTENT_NAME2;
-  var ARROW_NAME = "PopperArrow";
-  var OPPOSITE_SIDE = {
-    top: "bottom",
-    right: "left",
-    bottom: "top",
-    left: "right"
-  };
-  var PopperArrow = React49.forwardRef(function PopperArrow2(props, forwardedRef) {
-    const { __scopePopper, ...arrowProps } = props;
-    const contentContext = useContentContext(ARROW_NAME, __scopePopper);
-    const baseSide = OPPOSITE_SIDE[contentContext.placedSide];
-    return (
-      // we have to use an extra wrapper because `ResizeObserver` (used by `useSize`)
-      // doesn't report size as we'd expect on SVG elements.
-      // it reports their bounding box which is effectively the largest path inside the SVG.
-      /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(
-        "span",
-        {
-          ref: contentContext.onArrowChange,
-          style: {
-            position: "absolute",
-            left: contentContext.arrowX,
-            top: contentContext.arrowY,
-            [baseSide]: 0,
-            transformOrigin: {
-              top: "",
-              right: "0 0",
-              bottom: "center 0",
-              left: "100% 0"
-            }[contentContext.placedSide],
-            transform: {
-              top: "translateY(100%)",
-              right: "translateY(50%) rotate(90deg) translateX(-50%)",
-              bottom: `rotate(180deg)`,
-              left: "translateY(50%) rotate(-90deg) translateX(50%)"
-            }[contentContext.placedSide],
-            visibility: contentContext.shouldHideArrow ? "hidden" : void 0
-          },
-          children: /* @__PURE__ */ (0, import_jsx_runtime24.jsx)(
-            Root5,
-            {
-              ...arrowProps,
-              ref: forwardedRef,
-              style: {
-                ...arrowProps.style,
-                // ensures the element can be measured correctly (mostly for if SVG)
-                display: "block"
-              }
-            }
-          )
-        }
-      )
-    );
-  });
-  PopperArrow.displayName = ARROW_NAME;
-  function isNotNull(value) {
-    return value !== null;
-  }
-  var transformOrigin = (options) => ({
-    name: "transformOrigin",
-    options,
-    fn(data2) {
-      const { placement, rects, middlewareData } = data2;
-      const cannotCenterArrow = middlewareData.arrow?.centerOffset !== 0;
-      const isArrowHidden = cannotCenterArrow;
-      const arrowWidth = isArrowHidden ? 0 : options.arrowWidth;
-      const arrowHeight = isArrowHidden ? 0 : options.arrowHeight;
-      const [placedSide, placedAlign] = getSideAndAlignFromPlacement(placement);
-      const noArrowAlign = { start: "0%", center: "50%", end: "100%" }[placedAlign];
-      const arrowXCenter = (middlewareData.arrow?.x ?? 0) + arrowWidth / 2;
-      const arrowYCenter = (middlewareData.arrow?.y ?? 0) + arrowHeight / 2;
-      let x3 = "";
-      let y5 = "";
-      if (placedSide === "bottom") {
-        x3 = isArrowHidden ? noArrowAlign : `${arrowXCenter}px`;
-        y5 = `${-arrowHeight}px`;
-      } else if (placedSide === "top") {
-        x3 = isArrowHidden ? noArrowAlign : `${arrowXCenter}px`;
-        y5 = `${rects.floating.height + arrowHeight}px`;
-      } else if (placedSide === "right") {
-        x3 = `${-arrowHeight}px`;
-        y5 = isArrowHidden ? noArrowAlign : `${arrowYCenter}px`;
-      } else if (placedSide === "left") {
-        x3 = `${rects.floating.width + arrowHeight}px`;
-        y5 = isArrowHidden ? noArrowAlign : `${arrowYCenter}px`;
-      }
-      return { data: { x: x3, y: y5 } };
-    }
-  });
-  function getSideAndAlignFromPlacement(placement) {
-    const [side, align = "center"] = placement.split("-");
-    return [side, align];
-  }
-  var Root22 = Popper;
-  var Anchor = PopperAnchor;
-  var Content2 = PopperContent;
-  var Arrow2 = PopperArrow;
-
-  // ../../node_modules/@radix-ui/react-popover/dist/index.mjs
-  var import_jsx_runtime25 = __toESM(require_jsx_runtime(), 1);
-  var POPOVER_NAME = "Popover";
-  var [createPopoverContext, createPopoverScope] = createContextScope(POPOVER_NAME, [
-    createPopperScope
-  ]);
-  var usePopperScope = createPopperScope();
-  var [PopoverProvider, usePopoverContext] = createPopoverContext(POPOVER_NAME);
-  var Popover = (props) => {
-    const {
-      __scopePopover,
-      children,
-      open: openProp,
-      defaultOpen,
-      onOpenChange,
-      modal = false
-    } = props;
-    const popperScope = usePopperScope(__scopePopover);
-    const triggerRef = React50.useRef(null);
-    const [hasCustomAnchor, setHasCustomAnchor] = React50.useState(false);
-    const [open2, setOpen] = useControllableState({
-      prop: openProp,
-      defaultProp: defaultOpen ?? false,
-      onChange: onOpenChange,
-      caller: POPOVER_NAME
-    });
-    return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Root22, { ...popperScope, children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
-      PopoverProvider,
-      {
-        scope: __scopePopover,
-        contentId: useId2(),
-        triggerRef,
-        open: open2,
-        onOpenChange: setOpen,
-        onOpenToggle: React50.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
-        hasCustomAnchor,
-        onCustomAnchorAdd: React50.useCallback(() => setHasCustomAnchor(true), []),
-        onCustomAnchorRemove: React50.useCallback(() => setHasCustomAnchor(false), []),
-        modal,
-        children
-      }
-    ) });
-  };
-  Popover.displayName = POPOVER_NAME;
-  var ANCHOR_NAME2 = "PopoverAnchor";
-  var PopoverAnchor = React50.forwardRef(
-    (props, forwardedRef) => {
-      const { __scopePopover, ...anchorProps } = props;
-      const context = usePopoverContext(ANCHOR_NAME2, __scopePopover);
-      const popperScope = usePopperScope(__scopePopover);
-      const { onCustomAnchorAdd, onCustomAnchorRemove } = context;
-      React50.useEffect(() => {
-        onCustomAnchorAdd();
-        return () => onCustomAnchorRemove();
-      }, [onCustomAnchorAdd, onCustomAnchorRemove]);
-      return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Anchor, { ...popperScope, ...anchorProps, ref: forwardedRef });
-    }
-  );
-  PopoverAnchor.displayName = ANCHOR_NAME2;
-  var TRIGGER_NAME2 = "PopoverTrigger";
-  var PopoverTrigger = React50.forwardRef(
-    (props, forwardedRef) => {
-      const { __scopePopover, ...triggerProps } = props;
-      const context = usePopoverContext(TRIGGER_NAME2, __scopePopover);
-      const popperScope = usePopperScope(__scopePopover);
-      const composedTriggerRef = useComposedRefs(forwardedRef, context.triggerRef);
-      const trigger = /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
-        Primitive.button,
-        {
-          type: "button",
-          "aria-haspopup": "dialog",
-          "aria-expanded": context.open,
-          "aria-controls": context.contentId,
-          "data-state": getState3(context.open),
-          ...triggerProps,
-          ref: composedTriggerRef,
-          onClick: composeEventHandlers2(props.onClick, context.onOpenToggle)
-        }
-      );
-      return context.hasCustomAnchor ? trigger : /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Anchor, { asChild: true, ...popperScope, children: trigger });
-    }
-  );
-  PopoverTrigger.displayName = TRIGGER_NAME2;
-  var PORTAL_NAME3 = "PopoverPortal";
-  var [PortalProvider2, usePortalContext2] = createPopoverContext(PORTAL_NAME3, {
-    forceMount: void 0
-  });
-  var PopoverPortal = (props) => {
-    const { __scopePopover, forceMount, children, container } = props;
-    const context = usePopoverContext(PORTAL_NAME3, __scopePopover);
-    return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(PortalProvider2, { scope: __scopePopover, forceMount, children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Portal, { asChild: true, container, children }) }) });
-  };
-  PopoverPortal.displayName = PORTAL_NAME3;
-  var CONTENT_NAME3 = "PopoverContent";
-  var PopoverContent = React50.forwardRef(
-    (props, forwardedRef) => {
-      const portalContext = usePortalContext2(CONTENT_NAME3, props.__scopePopover);
-      const { forceMount = portalContext.forceMount, ...contentProps } = props;
-      const context = usePopoverContext(CONTENT_NAME3, props.__scopePopover);
-      return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(PopoverContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(PopoverContentNonModal, { ...contentProps, ref: forwardedRef }) });
-    }
-  );
-  PopoverContent.displayName = CONTENT_NAME3;
-  var Slot3 = createSlot("PopoverContent.RemoveScroll");
-  var PopoverContentModal = React50.forwardRef(
-    (props, forwardedRef) => {
-      const context = usePopoverContext(CONTENT_NAME3, props.__scopePopover);
-      const contentRef = React50.useRef(null);
-      const composedRefs = useComposedRefs(forwardedRef, contentRef);
-      const isRightClickOutsideRef = React50.useRef(false);
-      React50.useEffect(() => {
-        const content = contentRef.current;
-        if (content) return hideOthers(content);
-      }, []);
-      return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Combination_default, { as: Slot3, allowPinchZoom: true, children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
-        PopoverContentImpl,
-        {
-          ...props,
-          ref: composedRefs,
-          trapFocus: context.open,
-          disableOutsidePointerEvents: true,
-          onCloseAutoFocus: composeEventHandlers2(props.onCloseAutoFocus, (event) => {
-            event.preventDefault();
-            if (!isRightClickOutsideRef.current) context.triggerRef.current?.focus();
-          }),
-          onPointerDownOutside: composeEventHandlers2(
-            props.onPointerDownOutside,
-            (event) => {
-              const originalEvent = event.detail.originalEvent;
-              const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
-              const isRightClick = originalEvent.button === 2 || ctrlLeftClick;
-              isRightClickOutsideRef.current = isRightClick;
-            },
-            { checkForDefaultPrevented: false }
-          ),
-          onFocusOutside: composeEventHandlers2(
-            props.onFocusOutside,
-            (event) => event.preventDefault(),
-            { checkForDefaultPrevented: false }
-          )
-        }
-      ) });
-    }
-  );
-  var PopoverContentNonModal = React50.forwardRef(
-    (props, forwardedRef) => {
-      const context = usePopoverContext(CONTENT_NAME3, props.__scopePopover);
-      const hasInteractedOutsideRef = React50.useRef(false);
-      const hasPointerDownOutsideRef = React50.useRef(false);
-      return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
-        PopoverContentImpl,
-        {
-          ...props,
-          ref: forwardedRef,
-          trapFocus: false,
-          disableOutsidePointerEvents: false,
-          onCloseAutoFocus: (event) => {
-            props.onCloseAutoFocus?.(event);
-            if (!event.defaultPrevented) {
-              if (!hasInteractedOutsideRef.current) context.triggerRef.current?.focus();
-              event.preventDefault();
-            }
-            hasInteractedOutsideRef.current = false;
-            hasPointerDownOutsideRef.current = false;
-          },
-          onInteractOutside: (event) => {
-            props.onInteractOutside?.(event);
-            if (!event.defaultPrevented) {
-              hasInteractedOutsideRef.current = true;
-              if (event.detail.originalEvent.type === "pointerdown") {
-                hasPointerDownOutsideRef.current = true;
-              }
-            }
-            const target = event.target;
-            const targetIsTrigger = context.triggerRef.current?.contains(target);
-            if (targetIsTrigger) event.preventDefault();
-            if (event.detail.originalEvent.type === "focusin" && hasPointerDownOutsideRef.current) {
-              event.preventDefault();
-            }
-          }
-        }
-      );
-    }
-  );
-  var PopoverContentImpl = React50.forwardRef(
-    (props, forwardedRef) => {
-      const {
-        __scopePopover,
-        trapFocus,
-        onOpenAutoFocus,
-        onCloseAutoFocus,
-        disableOutsidePointerEvents,
-        onEscapeKeyDown,
-        onPointerDownOutside,
-        onFocusOutside,
-        onInteractOutside,
-        ...contentProps
-      } = props;
-      const context = usePopoverContext(CONTENT_NAME3, __scopePopover);
-      const popperScope = usePopperScope(__scopePopover);
-      useFocusGuards();
-      return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
-        FocusScope,
-        {
-          asChild: true,
-          loop: true,
-          trapped: trapFocus,
-          onMountAutoFocus: onOpenAutoFocus,
-          onUnmountAutoFocus: onCloseAutoFocus,
-          children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
-            DismissableLayer,
-            {
-              asChild: true,
-              disableOutsidePointerEvents,
-              onInteractOutside,
-              onEscapeKeyDown,
-              onPointerDownOutside,
-              onFocusOutside,
-              onDismiss: () => context.onOpenChange(false),
-              children: /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
-                Content2,
-                {
-                  "data-state": getState3(context.open),
-                  role: "dialog",
-                  id: context.contentId,
-                  ...popperScope,
-                  ...contentProps,
-                  ref: forwardedRef,
-                  style: {
-                    ...contentProps.style,
-                    // re-namespace exposed content custom properties
-                    ...{
-                      "--radix-popover-content-transform-origin": "var(--radix-popper-transform-origin)",
-                      "--radix-popover-content-available-width": "var(--radix-popper-available-width)",
-                      "--radix-popover-content-available-height": "var(--radix-popper-available-height)",
-                      "--radix-popover-trigger-width": "var(--radix-popper-anchor-width)",
-                      "--radix-popover-trigger-height": "var(--radix-popper-anchor-height)"
-                    }
-                  }
-                }
-              )
-            }
-          )
-        }
-      );
-    }
-  );
-  var CLOSE_NAME2 = "PopoverClose";
-  var PopoverClose = React50.forwardRef(
-    (props, forwardedRef) => {
-      const { __scopePopover, ...closeProps } = props;
-      const context = usePopoverContext(CLOSE_NAME2, __scopePopover);
-      return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(
-        Primitive.button,
-        {
-          type: "button",
-          ...closeProps,
-          ref: forwardedRef,
-          onClick: composeEventHandlers2(props.onClick, () => context.onOpenChange(false))
-        }
-      );
-    }
-  );
-  PopoverClose.displayName = CLOSE_NAME2;
-  var ARROW_NAME2 = "PopoverArrow";
-  var PopoverArrow = React50.forwardRef(
-    (props, forwardedRef) => {
-      const { __scopePopover, ...arrowProps } = props;
-      const popperScope = usePopperScope(__scopePopover);
-      return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
-    }
-  );
-  PopoverArrow.displayName = ARROW_NAME2;
-  function getState3(open2) {
-    return open2 ? "open" : "closed";
-  }
-  var Root23 = Popover;
-  var Trigger2 = PopoverTrigger;
-  var Portal3 = PopoverPortal;
-  var Content22 = PopoverContent;
-
-  // src/components/ui/popover.tsx
-  var import_jsx_runtime26 = __toESM(require_jsx_runtime(), 1);
-  var Popover2 = Root23;
-  var PopoverTrigger2 = Trigger2;
-  var PopoverContent2 = React51.forwardRef(({ className, align = "center", sideOffset = 4, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(Portal3, { children: /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(
-    Content22,
-    {
-      ref,
-      align,
-      sideOffset,
-      className: cn(
-        "z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-popover-content-transform-origin]",
-        className
-      ),
-      ...props
-    }
-  ) }));
-  PopoverContent2.displayName = Content22.displayName;
-
   // src/components/ui/date-input.tsx
-  var import_jsx_runtime27 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime28 = __toESM(require_jsx_runtime(), 1);
   var DateInput = React52.forwardRef(
     ({ value = "", onChange, placeholder = "\u0434\u0434.\u043C\u043C.\u0433\u0433\u0433\u0433", disabled, className, ...props }, ref) => {
       const [date, setDate] = React52.useState(
@@ -75691,8 +75754,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           setDate(value ? new Date(dateUtils.russianToISO(value)) : void 0);
         }
       };
-      return /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)("div", { className: "relative", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "relative", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
           Input,
           {
             ...props,
@@ -75706,8 +75769,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             className: cn("pr-10", className)
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime27.jsxs)(Popover2, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(PopoverTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Popover2, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(PopoverTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
             Button,
             {
               variant: "outline",
@@ -75717,10 +75780,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 "absolute right-0 top-0 h-full w-10 rounded-l-none border-l-0",
                 disabled && "opacity-50"
               ),
-              children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(Calendar, { className: "h-4 w-4" })
+              children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Calendar, { className: "h-4 w-4" })
             }
           ) }),
-          /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(PopoverContent2, { className: "w-auto p-0", align: "end", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(PopoverContent2, { className: "w-auto p-0", align: "end", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
             Calendar2,
             {
               mode: "single",
@@ -75736,401 +75799,18 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   );
   DateInput.displayName = "DateInput";
 
-  // src/services/PMGService.ts
-  var PMGService = class {
-    /**
-     * Get manufacturer-specific regulations for a car
-     */
-    static async getCarMaintenanceRegulations(carId) {
-      const car = await DataService.getCarById(carId);
-      if (!car) {
-        throw new Error("Car not found");
-      }
-      const stored = localStorage.getItem(`car-maintenance-guide-${carId}`);
-      if (stored) {
-        try {
-          const guide = JSON.parse(stored);
-          return guide.regulations;
-        } catch (error) {
-          console.error("Error parsing stored car guide:", error);
-        }
-      }
-      return this.getManufacturerDefaultRegulations(car.brand, car.model, car.year);
-    }
-    /**
-     * Get manufacturer-specific default regulations
-     */
-    static getManufacturerDefaultRegulations(brand, model, year) {
-      if (brand.toLowerCase().includes("honda")) {
-        return [
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u043E\u0442\u043E\u0440\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-            "mileage": "10000",
-            "period": "6",
-            "notes": "\u041E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E \u043C\u0430\u0441\u043B\u043E 0W-20/5W-30. \u041F\u0440\u0438 \u0442\u044F\u0436\u0451\u043B\u044B\u0445 \u0443\u0441\u043B\u043E\u0432\u0438\u044F\u0445 - \u0441\u043E\u043A\u0440\u0430\u0442\u0438\u0442\u044C \u0434\u043E 8000 \u043A\u043C"
-          },
-          {
-            "operation": "\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 \u0446\u0435\u043F\u0438 \u0413\u0420\u041C \u0438 \u043D\u0430\u0442\u044F\u0436\u0438\u0442\u0435\u043B\u044F",
-            "mileage": "60000",
-            "period": "48",
-            "notes": "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043D\u0430\u0442\u044F\u0436\u0435\u043D\u0438\u044F \u0446\u0435\u043F\u0438, \u0438\u0437\u043D\u043E\u0441 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u0449\u0438\u0445 \u0438 \u043D\u0430\u0442\u044F\u0436\u0438\u0442\u0435\u043B\u044F. \u041E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E \u043F\u0440\u0438 \u043F\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u0438 \u0448\u0443\u043C\u043E\u0432"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F",
-            "mileage": "30000",
-            "period": "24",
-            "notes": "\u041A\u0440\u0438\u0442\u0438\u0447\u043D\u043E \u0434\u043B\u044F K24A1 \u0438\u0437-\u0437\u0430 \u043F\u0440\u044F\u043C\u043E\u0433\u043E \u0437\u0430\u0431\u043E\u0440\u0430 \u0432\u043E\u0437\u0434\u0443\u0445\u0430"
-          },
-          {
-            "operation": "\u041F\u0440\u043E\u043C\u044B\u0432\u043A\u0430 \u0441\u0438\u0441\u0442\u0435\u043C\u044B VTEC",
-            "mileage": "50000",
-            "period": "36",
-            "notes": "\u0427\u0438\u0441\u0442\u043A\u0430 \u0441\u043E\u043B\u0435\u043D\u043E\u0438\u0434\u0430 VTEC \u0438 \u0441\u0435\u0442\u043A\u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430 (\u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u0430\u044F \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0430 K24)"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0432\u0435\u0447\u0435\u0439 \u0437\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u044F",
-            "mileage": "100000",
-            "period": "60",
-            "notes": "NGK IZFR6K11. \u041E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0437\u0430\u043C\u0435\u043D\u0430 \u043F\u043E \u0440\u0435\u0433\u043B\u0430\u043C\u0435\u043D\u0442\u0443"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
-            "mileage": "30000",
-            "period": "24",
-            "notes": "DOT 3/4. \u0413\u0438\u0433\u0440\u043E\u0441\u043A\u043E\u043F\u0438\u0447\u043D\u043E\u0441\u0442\u044C \u0432\u043B\u0438\u044F\u0435\u0442 \u043D\u0430 ABS"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438 \u0410\u041A\u041F\u041F",
-            "mileage": "60000",
-            "period": "48",
-            "notes": "\u0422\u043E\u043B\u044C\u043A\u043E Honda ATF DW-1."
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0430\u044E\u0449\u0435\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
-            "mileage": "100000",
-            "period": "60",
-            "notes": "Honda Type 2 (\u0441\u0438\u043D\u044F\u044F). \u041D\u0435 \u0441\u043C\u0435\u0448\u0438\u0432\u0430\u0442\u044C \u0441 \u0434\u0440\u0443\u0433\u0438\u043C\u0438 \u0442\u0438\u043F\u0430\u043C\u0438!"
-          },
-          {
-            "operation": "\u0420\u0435\u0433\u0443\u043B\u0438\u0440\u043E\u0432\u043A\u0430 \u043A\u043B\u0430\u043F\u0430\u043D\u043E\u0432",
-            "mileage": "40000",
-            "period": "36",
-            "notes": "\u0422\u0440\u0435\u0431\u0443\u0435\u0442 \u0441\u043F\u0435\u0446\u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0435\u043C\u043D\u044F \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
-            "mileage": "80000",
-            "period": "60",
-            "notes": "\u041A\u043E\u043D\u0442\u0440\u043E\u043B\u044C \u043D\u0430\u0442\u044F\u0436\u0438\u0442\u0435\u043B\u044F \u0438 \u043E\u0431\u0432\u043E\u0434\u043D\u044B\u0445 \u0440\u043E\u043B\u0438\u043A\u043E\u0432"
-          },
-          {
-            "operation": "\u0427\u0438\u0441\u0442\u043A\u0430 \u0434\u0440\u043E\u0441\u0441\u0435\u043B\u044C\u043D\u043E\u0439 \u0437\u0430\u0441\u043B\u043E\u043D\u043A\u0438",
-            "mileage": "50000",
-            "period": "36",
-            "notes": "\u0425\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u0430\u044F \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0430 K24 - \u043D\u0435\u0441\u0442\u0430\u0431\u0438\u043B\u044C\u043D\u044B\u0435 \u0445\u043E\u043B\u043E\u0441\u0442\u044B\u0435 \u043E\u0431\u043E\u0440\u043E\u0442\u044B"
-          },
-          {
-            "operation": "\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 \u043F\u043E\u0434\u0432\u0435\u0441\u043A\u0438",
-            "mileage": "20000",
-            "period": "12",
-            "notes": "\u041E\u0441\u043E\u0431\u043E\u0435 \u0432\u043D\u0438\u043C\u0430\u043D\u0438\u0435 \u0437\u0430\u0434\u043D\u0438\u043C \u0440\u044B\u0447\u0430\u0433\u0430\u043C (\u043E\u0442\u0437\u044B\u0432\u043D\u0430\u044F \u043A\u0430\u043C\u043F\u0430\u043D\u0438\u044F HMC-2004-32)"
-          }
-        ];
-      }
-      if (brand.toLowerCase().includes("toyota")) {
-        return [
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u043E\u0442\u043E\u0440\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-            "mileage": "10000",
-            "period": "6",
-            "notes": "\u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0443\u0435\u0442\u0441\u044F \u0441\u0438\u043D\u0442\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u043C\u0430\u0441\u043B\u043E 0W-20/5W-30"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-            "mileage": "30000",
-            "period": "24",
-            "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
-            "mileage": "40000",
-            "period": "24",
-            "notes": "DOT 3/4. \u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0435\u043C\u043D\u044F \u0413\u0420\u041C",
-            "mileage": "90000",
-            "period": "60",
-            "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0435\u043C\u043D\u044F \u0413\u0420\u041C \u0438 \u043D\u0430\u0442\u044F\u0436\u0438\u0442\u0435\u043B\u044F"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0432\u0435\u0447\u0435\u0439 \u0437\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u044F",
-            "mileage": "120000",
-            "period": "60",
-            "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0432\u0435\u0447\u0435\u0439 \u0437\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u044F"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0430\u044E\u0449\u0435\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
-            "mileage": "100000",
-            "period": "60",
-            "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0430\u044E\u0449\u0435\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438"
-          }
-        ];
-      }
-      if (brand.toLowerCase().includes("bmw")) {
-        return [
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u043E\u0442\u043E\u0440\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-            "mileage": "15000",
-            "period": "12",
-            "notes": "BMW LL-01/LL-04 \u043C\u0430\u0441\u043B\u043E. \u0418\u043D\u0442\u0435\u0440\u0432\u0430\u043B \u0437\u0430\u0432\u0438\u0441\u0438\u0442 \u043E\u0442 \u0443\u0441\u043B\u043E\u0432\u0438\u0439 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u0438"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
-            "mileage": "20000",
-            "period": "24",
-            "notes": "DOT 4. \u041E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0437\u0430\u043C\u0435\u043D\u0430 \u043A\u0430\u0436\u0434\u044B\u0435 2 \u0433\u043E\u0434\u0430"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-            "mileage": "30000",
-            "period": "24",
-            "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u0430\u0441\u043B\u044F\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-            "mileage": "15000",
-            "period": "12",
-            "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u0430\u0441\u043B\u044F\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430"
-          },
-          {
-            "operation": "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u044B\u0445 \u043A\u043E\u043B\u043E\u0434\u043E\u043A",
-            "mileage": "20000",
-            "period": "12",
-            "notes": "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u044B\u0445 \u043A\u043E\u043B\u043E\u0434\u043E\u043A"
-          }
-        ];
-      }
-      if (brand.toLowerCase().includes("mercedes")) {
-        return [
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u043E\u0442\u043E\u0440\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-            "mileage": "20000",
-            "period": "12",
-            "notes": "MB 229.5 \u043C\u0430\u0441\u043B\u043E. \u0414\u043B\u0438\u043D\u043D\u044B\u0439 \u0438\u043D\u0442\u0435\u0440\u0432\u0430\u043B \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
-            "mileage": "20000",
-            "period": "24",
-            "notes": "DOT 4+. \u0417\u0430\u043C\u0435\u043D\u0430 \u043A\u0430\u0436\u0434\u044B\u0435 2 \u0433\u043E\u0434\u0430"
-          },
-          {
-            "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-            "mileage": "40000",
-            "period": "24",
-            "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
-          },
-          {
-            "operation": "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u044B",
-            "mileage": "20000",
-            "period": "12",
-            "notes": "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u044B\u0445 \u043A\u043E\u043B\u043E\u0434\u043E\u043A \u0438 \u0434\u0438\u0441\u043A\u043E\u0432"
-          }
-        ];
-      }
-      return [
-        {
-          "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u043E\u0442\u043E\u0440\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-          "mileage": "10000",
-          "period": "6",
-          "notes": "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u0430\u044F \u0437\u0430\u043C\u0435\u043D\u0430 \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430"
-        },
-        {
-          "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-          "mileage": "30000",
-          "period": "24",
-          "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F"
-        },
-        {
-          "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
-          "mileage": "30000",
-          "period": "24",
-          "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438"
-        },
-        {
-          "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0432\u0435\u0447\u0435\u0439 \u0437\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u044F",
-          "mileage": "60000",
-          "period": "48",
-          "notes": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0432\u0435\u0447\u0435\u0439 \u0437\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u044F"
-        }
-      ];
-    }
-    /**
-     * Save car-specific maintenance guide
-     */
-    static async saveCarMaintenanceGuide(carId, regulations) {
-      const car = await DataService.getCarById(carId);
-      if (!car) {
-        throw new Error("Car not found");
-      }
-      const guide = {
-        carId,
-        brand: car.brand,
-        model: car.model,
-        year: car.year,
-        regulations,
-        isDefault: false,
-        createdAt: (/* @__PURE__ */ new Date()).toISOString(),
-        updatedAt: (/* @__PURE__ */ new Date()).toISOString()
-      };
-      localStorage.setItem(`car-maintenance-guide-${carId}`, JSON.stringify(guide));
-    }
-    /**
-     * Reset car to manufacturer default regulations
-     */
-    static async resetToManufacturerDefault(carId) {
-      const car = await DataService.getCarById(carId);
-      if (!car) {
-        throw new Error("Car not found");
-      }
-      const defaultRegulations = this.getManufacturerDefaultRegulations(car.brand, car.model, car.year);
-      await this.saveCarMaintenanceGuide(carId, defaultRegulations);
-    }
-    /**
-     * Calculate maintenance due for a specific car
-     */
-    static async calculateMaintenanceDue(carId) {
-      const car = await DataService.getCarById(carId);
-      if (!car) {
-        throw new Error("Car not found");
-      }
-      const regulations = await this.getCarMaintenanceRegulations(carId);
-      const lastServiceDate = car.lastService ? new Date(car.lastService) : new Date(car.createdAt);
-      return regulations.map((regulation) => {
-        const intervalMileage = parseInt(regulation.mileage);
-        const intervalMonths = parseInt(regulation.period);
-        const mileageSinceLastService = car.mileage % intervalMileage;
-        const mileageUntilNext = intervalMileage - mileageSinceLastService;
-        const monthsSinceService = Math.floor((Date.now() - lastServiceDate.getTime()) / (1e3 * 60 * 60 * 24 * 30));
-        const monthsUntilNext = intervalMonths - monthsSinceService % intervalMonths;
-        let priority = "low";
-        let isDue = false;
-        if (mileageUntilNext <= 2e3 || monthsUntilNext <= 1) {
-          priority = "high";
-          isDue = mileageUntilNext <= 0 || monthsUntilNext <= 0;
-        } else if (mileageUntilNext <= 5e3 || monthsUntilNext <= 3) {
-          priority = "medium";
-        }
-        return {
-          operation: regulation.operation,
-          mileage: intervalMileage,
-          period: intervalMonths,
-          notes: regulation.notes,
-          mileageUntilNext,
-          monthsUntilNext,
-          priority,
-          isDue
-        };
-      });
-    }
-    /**
-     * Get maintenance operations for service record dropdown
-     */
-    static async getServiceRecordOperations(carId) {
-      const regulations = await this.getCarMaintenanceRegulations(carId);
-      return regulations.map((reg) => reg.operation);
-    }
-    /**
-     * Get all available operation names (for management purposes)
-     */
-    static async getMaintenanceOperationNames() {
-      return [
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u043E\u0442\u043E\u0440\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u043F\u043B\u0438\u0432\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u0430\u0441\u043B\u044F\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u044B\u0445 \u043A\u043E\u043B\u043E\u0434\u043E\u043A",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u044B\u0445 \u0434\u0438\u0441\u043A\u043E\u0432",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0432\u0435\u0447\u0435\u0439 \u0437\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u044F",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0435\u043C\u043D\u044F \u0413\u0420\u041C",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0435\u043C\u043D\u044F \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0430\u044E\u0449\u0435\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438 \u0410\u041A\u041F\u041F",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438 \u041C\u041A\u041F\u041F",
-        "\u0420\u0435\u0433\u0443\u043B\u0438\u0440\u043E\u0432\u043A\u0430 \u043A\u043B\u0430\u043F\u0430\u043D\u043E\u0432",
-        "\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F",
-        "\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 \u043F\u043E\u0434\u0432\u0435\u0441\u043A\u0438",
-        "\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u044B",
-        "\u0427\u0438\u0441\u0442\u043A\u0430 \u0434\u0440\u043E\u0441\u0441\u0435\u043B\u044C\u043D\u043E\u0439 \u0437\u0430\u0441\u043B\u043E\u043D\u043A\u0438",
-        "\u041F\u0440\u043E\u043C\u044B\u0432\u043A\u0430 \u0441\u0438\u0441\u0442\u0435\u043C\u044B \u043E\u0445\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u044F",
-        "\u041F\u0440\u043E\u043C\u044B\u0432\u043A\u0430 \u0442\u043E\u043F\u043B\u0438\u0432\u043D\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u044B",
-        "\u0420\u0430\u0437\u0432\u0430\u043B-\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u0435",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0430\u043C\u043E\u0440\u0442\u0438\u0437\u0430\u0442\u043E\u0440\u043E\u0432",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0430\u0439\u043B\u0435\u043D\u0442\u0431\u043B\u043E\u043A\u043E\u0432",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0448\u0430\u0440\u043E\u0432\u044B\u0445 \u043E\u043F\u043E\u0440",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0443\u043B\u0435\u0432\u044B\u0445 \u043D\u0430\u043A\u043E\u043D\u0435\u0447\u043D\u0438\u043A\u043E\u0432",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043F\u043E\u0434\u0448\u0438\u043F\u043D\u0438\u043A\u043E\u0432 \u0441\u0442\u0443\u043F\u0438\u0446",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0430\u043B\u044C\u043D\u0438\u043A\u043E\u0432",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043F\u043E\u043C\u043F\u044B",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u0435\u0440\u043C\u043E\u0441\u0442\u0430\u0442\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0430\u0434\u0438\u0430\u0442\u043E\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043A\u043E\u043D\u0434\u0438\u0446\u0438\u043E\u043D\u0435\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0430\u043A\u043A\u0443\u043C\u0443\u043B\u044F\u0442\u043E\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0442\u0430\u0440\u0442\u0435\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043A\u0430\u0442\u0443\u0448\u0435\u043A \u0437\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u044F",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0444\u043E\u0440\u0441\u0443\u043D\u043E\u043A",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u043F\u043B\u0438\u0432\u043D\u043E\u0433\u043E \u043D\u0430\u0441\u043E\u0441\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043A\u0430\u0442\u0430\u043B\u0438\u0437\u0430\u0442\u043E\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0433\u043B\u0443\u0448\u0438\u0442\u0435\u043B\u044F",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u044B\u0445\u043B\u043E\u043F\u043D\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u044B",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0446\u0435\u043F\u043B\u0435\u043D\u0438\u044F",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043A\u043E\u0440\u043E\u0431\u043A\u0438 \u043F\u0435\u0440\u0435\u0434\u0430\u0447",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0434\u0438\u0444\u0444\u0435\u0440\u0435\u043D\u0446\u0438\u0430\u043B\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043A\u0430\u0440\u0434\u0430\u043D\u043D\u043E\u0433\u043E \u0432\u0430\u043B\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u043F\u043E\u043B\u0443\u043E\u0441\u0435\u0439",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0430\u0437\u0434\u0430\u0442\u043E\u0447\u043D\u043E\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0438",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0443\u043B\u0435\u0432\u043E\u0439 \u0440\u0435\u0439\u043A\u0438",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0443\u043B\u0435\u0432\u043E\u0433\u043E \u043D\u0430\u0441\u043E\u0441\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0443\u043B\u0435\u0432\u043E\u0433\u043E \u0443\u0441\u0438\u043B\u0438\u0442\u0435\u043B\u044F",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u0446\u0438\u043B\u0438\u043D\u0434\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u0441\u0443\u043F\u043F\u043E\u0440\u0442\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u0448\u043B\u0430\u043D\u0433\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u0431\u0430\u0447\u043A\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u0432\u0430\u043A\u0443\u0443\u043C\u043D\u043E\u0433\u043E \u0443\u0441\u0438\u043B\u0438\u0442\u0435\u043B\u044F",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u0440\u0435\u0433\u0443\u043B\u044F\u0442\u043E\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u0434\u0430\u0442\u0447\u0438\u043A\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u0431\u043B\u043E\u043A\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u043C\u043E\u0434\u0443\u043B\u044F",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u043F\u0440\u043E\u0432\u043E\u0434\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u043A\u0430\u0431\u0435\u043B\u044F",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u0440\u044B\u0447\u0430\u0433\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u043F\u0435\u0434\u0430\u043B\u0438",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u043A\u043E\u0432\u0440\u0438\u043A\u0430",
-        "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0433\u043E \u043A\u043E\u0432\u0440\u0438\u043A\u0430",
-        "\u0414\u0440\u0443\u0433\u043E\u0435"
-      ];
-    }
-  };
-
   // src/pages/CarOverview.tsx
-  var import_jsx_runtime28 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime29 = __toESM(require_jsx_runtime(), 1);
   function CarOverview() {
     const { id: id2 } = useParams();
-    const [car, setCar] = (0, import_react9.useState)(null);
-    const [isLoading, setIsLoading] = (0, import_react9.useState)(true);
-    const [error, setError] = (0, import_react9.useState)(null);
-    const [isUpdateMileageOpen, setIsUpdateMileageOpen] = (0, import_react9.useState)(false);
-    const [newMileage, setNewMileage] = (0, import_react9.useState)("");
-    const [mileageDate, setMileageDate] = (0, import_react9.useState)(dateUtils.getCurrentRussianDate());
-    const [mileageNotes, setMileageNotes] = (0, import_react9.useState)("");
-    const [refreshStatus, setRefreshStatus] = (0, import_react9.useState)(0);
-    const [pmgOperations, setPmgOperations] = (0, import_react9.useState)([]);
-    const [isPmgOpen, setIsPmgOpen] = (0, import_react9.useState)(false);
+    const [car, setCar] = (0, import_react10.useState)(null);
+    const [isLoading, setIsLoading] = (0, import_react10.useState)(true);
+    const [error, setError] = (0, import_react10.useState)(null);
+    const [isUpdateMileageOpen, setIsUpdateMileageOpen] = (0, import_react10.useState)(false);
+    const [newMileage, setNewMileage] = (0, import_react10.useState)("");
+    const [mileageDate, setMileageDate] = (0, import_react10.useState)(dateUtils.getCurrentRussianDate());
+    const [mileageNotes, setMileageNotes] = (0, import_react10.useState)("");
+    const [refreshStatus, setRefreshStatus] = (0, import_react10.useState)(0);
     const getCarStatus = (carId) => {
       const maintenanceList = JSON.parse(localStorage.getItem("in-maintenance") || "[]");
       const isInMaintenance = maintenanceList.some((entry) => entry.carId === carId.toString());
@@ -76203,10 +75883,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         setIsLoading(false);
       }
     };
-    (0, import_react9.useEffect)(() => {
+    (0, import_react10.useEffect)(() => {
       loadCarData();
     }, [id2]);
-    (0, import_react9.useEffect)(() => {
+    (0, import_react10.useEffect)(() => {
       const handleMaintenanceChange = () => {
         setRefreshStatus((prev) => prev + 1);
       };
@@ -76215,19 +75895,6 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         window.removeEventListener("maintenanceStatusChanged", handleMaintenanceChange);
       };
     }, []);
-    (0, import_react9.useEffect)(() => {
-      if (car) {
-        const loadPmgOperations = async () => {
-          try {
-            const operations = await PMGService.calculateMaintenanceDue(car.id);
-            setPmgOperations(operations);
-          } catch (error2) {
-            console.error("Error loading PMG operations:", error2);
-          }
-        };
-        loadPmgOperations();
-      }
-    }, [car]);
     const notifications = [
       {
         id: 1,
@@ -76318,26 +75985,26 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       }
     };
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "text-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F..." })
+      return /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "text-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F..." })
       ] }) });
     }
     if (error || !car) {
-      return /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "text-center max-w-md mx-auto px-4", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(TriangleAlert, { className: "h-12 w-12 text-red-500 mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("h2", { className: "text-xl font-semibold text-gray-900 mb-2", children: "\u041E\u0448\u0438\u0431\u043A\u0430" }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-gray-600 mb-4", children: error || "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D" }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Button, { children: "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u043D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E" }) })
+      return /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "text-center max-w-md mx-auto px-4", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(TriangleAlert, { className: "h-12 w-12 text-red-500 mx-auto mb-4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("h2", { className: "text-xl font-semibold text-gray-900 mb-2", children: "\u041E\u0448\u0438\u0431\u043A\u0430" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-gray-600 mb-4", children: error || "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Button, { children: "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u043D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E" }) })
       ] }) });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center justify-between", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center space-x-3", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("h1", { className: "text-lg font-bold text-gray-900", children: car.name }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { className: "text-sm text-gray-600", children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-center space-x-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("h1", { className: "text-lg font-bold text-gray-900", children: car.name }),
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("p", { className: "text-sm text-gray-600", children: [
               car.brand,
               " ",
               car.model,
@@ -76347,21 +76014,17 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center space-x-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Link, { to: `/edit-car/${car.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Button, { variant: "outline", size: "sm", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(SquarePen, { className: "h-4 w-4 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-center space-x-2", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Link, { to: `/edit-car/${car.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(Button, { variant: "outline", size: "sm", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(SquarePen, { className: "h-4 w-4 mr-2" }),
             "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Link, { to: `/periodical-maintenance-guide/${car.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Button, { variant: "outline", size: "sm", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Settings, { className: "h-4 w-4 mr-2" }),
-            "\u0420\u0443\u043A\u043E\u0432\u043E\u0434\u0441\u0442\u0432\u043E \u043F\u043E \u0422\u041E"
-          ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Button, { variant: "ghost", size: "sm", onClick: () => setIsPmgOpen(true), children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Calendar, { className: "h-4 w-4" }) })
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Settings, { className: "h-4 w-4" }) })
         ] })
       ] }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("main", { className: "px-4 py-6", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(CardContent, { className: "p-6", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("main", { className: "px-4 py-6", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CardContent, { className: "p-6", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(
             "img",
             {
               src: car.image || "/img/car-by-deault.png",
@@ -76369,31 +76032,31 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               className: "w-full sm:w-32 h-32 rounded-lg object-cover"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex-1 w-full", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("h2", { className: "text-xl font-bold", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex-1 w-full", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("h2", { className: "text-xl font-bold", children: [
                 car.brand,
                 " ",
                 car.model
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Badge, { className: getStatusColor(getCarStatus(car.id)), children: getStatusText(getCarStatus(car.id)) })
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Badge, { className: getStatusColor(getCarStatus(car.id)), children: getStatusText(getCarStatus(car.id)) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "grid grid-cols-2 gap-4 text-sm", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-gray-600", children: "VIN:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "font-medium", children: car.vin || "\u041D\u0435 \u0443\u043A\u0430\u0437\u0430\u043D" })
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "grid grid-cols-2 gap-4 text-sm", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-gray-600", children: "VIN:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "font-medium", children: car.vin || "\u041D\u0435 \u0443\u043A\u0430\u0437\u0430\u043D" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-gray-600", children: "\u0413\u043E\u0441. \u043D\u043E\u043C\u0435\u0440:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "font-medium", children: car.plateNumber || "\u041D\u0435 \u0443\u043A\u0430\u0437\u0430\u043D" })
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-gray-600", children: "\u0413\u043E\u0441. \u043D\u043E\u043C\u0435\u0440:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "font-medium", children: car.plateNumber || "\u041D\u0435 \u0443\u043A\u0430\u0437\u0430\u043D" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-gray-600", children: "\u0413\u043E\u0434 \u0432\u044B\u043F\u0443\u0441\u043A\u0430:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "font-medium", children: car.year })
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-gray-600", children: "\u0413\u043E\u0434 \u0432\u044B\u043F\u0443\u0441\u043A\u0430:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "font-medium", children: car.year })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-gray-600", children: "\u041F\u0440\u043E\u0431\u0435\u0433:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { className: "font-medium", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-gray-600", children: "\u041F\u0440\u043E\u0431\u0435\u0433:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("p", { className: "font-medium", children: [
                   car.mileage.toLocaleString(),
                   " \u043A\u043C"
                 ] })
@@ -76401,30 +76064,30 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             ] })
           ] })
         ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Card, { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Gauge, { className: "h-5 w-5 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(Card, { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Gauge, { className: "h-5 w-5 mr-2" }),
             "\u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435"
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center justify-between mb-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u0440\u043E\u0431\u0435\u0433:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { className: "text-2xl font-bold", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-center justify-between mb-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u0440\u043E\u0431\u0435\u0433:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("p", { className: "text-2xl font-bold", children: [
                 car.mileage.toLocaleString(),
                 " \u043A\u043C"
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Dialog2, { open: isUpdateMileageOpen, onOpenChange: setIsUpdateMileageOpen, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(DialogTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Button, { variant: "outline", size: "sm", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(PenLine, { className: "h-4 w-4 mr-2" }),
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(Dialog2, { open: isUpdateMileageOpen, onOpenChange: setIsUpdateMileageOpen, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(DialogTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(Button, { variant: "outline", size: "sm", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(PenLine, { className: "h-4 w-4 mr-2" }),
                 "\u041E\u0431\u043D\u043E\u0432\u0438\u0442\u044C"
               ] }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(DialogContent2, { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(DialogTitle2, { children: "\u041E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u043E\u0431\u0435\u0433" }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "space-y-4", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Label2, { htmlFor: "newMileage", children: "\u041D\u043E\u0432\u044B\u0439 \u043F\u0440\u043E\u0431\u0435\u0433 (\u043A\u043C)" }),
-                    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(DialogContent2, { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(DialogTitle2, { children: "\u041E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u0440\u043E\u0431\u0435\u0433" }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "space-y-4", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Label2, { htmlFor: "newMileage", children: "\u041D\u043E\u0432\u044B\u0439 \u043F\u0440\u043E\u0431\u0435\u0433 (\u043A\u043C)" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(
                       Input,
                       {
                         id: "newMileage",
@@ -76435,9 +76098,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                       }
                     )
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Label2, { htmlFor: "mileageDate", children: "\u0414\u0430\u0442\u0430 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F" }),
-                    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Label2, { htmlFor: "mileageDate", children: "\u0414\u0430\u0442\u0430 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(
                       DateInput,
                       {
                         id: "mileageDate",
@@ -76446,9 +76109,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                       }
                     )
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Label2, { htmlFor: "mileageNotes", children: "\u041F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u044F (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)" }),
-                    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Label2, { htmlFor: "mileageNotes", children: "\u041F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u044F (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(
                       Textarea,
                       {
                         id: "mileageNotes",
@@ -76458,148 +76121,73 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                       }
                     )
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex justify-end space-x-2", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Button, { variant: "outline", onClick: () => setIsUpdateMileageOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
-                    /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Button, { onClick: handleUpdateMileage, children: "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C" })
+                  /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex justify-end space-x-2", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Button, { variant: "outline", onClick: () => setIsUpdateMileageOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Button, { onClick: handleUpdateMileage, children: "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C" })
                   ] })
                 ] })
               ] })
             ] })
           ] }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Card, { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center justify-between", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(TriangleAlert, { className: "h-5 w-5 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(Card, { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-center justify-between", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(TriangleAlert, { className: "h-5 w-5 mr-2" }),
               "\u0423\u0432\u0435\u0434\u043E\u043C\u043B\u0435\u043D\u0438\u044F"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Button, { variant: "outline", size: "sm", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(Button, { variant: "outline", size: "sm", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
               "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C"
             ] })
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("div", { className: "space-y-3", children: notifications.map((notification) => /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-start space-x-3 p-3 border rounded-lg", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex-shrink-0 mt-1", children: [
-              notification.type === "maintenance" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Calendar, { className: "h-4 w-4 text-blue-600" }),
-              notification.type === "problem" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(TriangleAlert, { className: "h-4 w-4 text-red-600" }),
-              notification.type === "service" && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Wrench, { className: "h-4 w-4 text-green-600" })
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("div", { className: "space-y-3", children: notifications.map((notification) => /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-start space-x-3 p-3 border rounded-lg", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex-shrink-0 mt-1", children: [
+              notification.type === "maintenance" && /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Calendar, { className: "h-4 w-4 text-blue-600" }),
+              notification.type === "problem" && /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(TriangleAlert, { className: "h-4 w-4 text-red-600" }),
+              notification.type === "service" && /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Wrench, { className: "h-4 w-4 text-green-600" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex-1", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-sm", children: notification.message }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center justify-between mt-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-xs text-gray-500", children: notification.date }),
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Badge, { className: getPriorityColor(notification.priority), children: notification.priority === "high" ? "\u0412\u044B\u0441\u043E\u043A\u0438\u0439" : notification.priority === "medium" ? "\u0421\u0440\u0435\u0434\u043D\u0438\u0439" : "\u041D\u0438\u0437\u043A\u0438\u0439" })
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex-1", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-sm", children: notification.message }),
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-center justify-between mt-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-xs text-gray-500", children: notification.date }),
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Badge, { className: getPriorityColor(notification.priority), children: notification.priority === "high" ? "\u0412\u044B\u0441\u043E\u043A\u0438\u0439" : notification.priority === "medium" ? "\u0421\u0440\u0435\u0434\u043D\u0438\u0439" : "\u041D\u0438\u0437\u043A\u0438\u0439" })
               ] })
             ] })
           ] }, notification.id)) }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Card, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Calendar, { className: "h-5 w-5 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(Card, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Calendar, { className: "h-5 w-5 mr-2" }),
             "\u041F\u0435\u0440\u0438\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435"
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("div", { className: "space-y-3", children: maintenanceSchedule.map((item) => /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "p-3 border rounded-lg", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("h4", { className: "font-medium", children: item.type }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Badge, { className: getMaintenanceStatusColor(item.status), children: item.status === "due" ? "\u0421\u0440\u043E\u0447\u043D\u043E" : item.status === "upcoming" ? "\u0421\u043A\u043E\u0440\u043E" : "\u0411\u0443\u0434\u0443\u0449\u0435\u0435" })
+          /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("div", { className: "space-y-3", children: maintenanceSchedule.map((item) => /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "p-3 border rounded-lg", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("h4", { className: "font-medium", children: item.type }),
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Badge, { className: getMaintenanceStatusColor(item.status), children: item.status === "due" ? "\u0421\u0440\u043E\u0447\u043D\u043E" : item.status === "upcoming" ? "\u0421\u043A\u043E\u0440\u043E" : "\u0411\u0443\u0434\u0443\u0449\u0435\u0435" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "grid grid-cols-2 gap-2 text-sm text-gray-600", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "grid grid-cols-2 gap-2 text-sm text-gray-600", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("p", { children: [
                 "\u0418\u043D\u0442\u0435\u0440\u0432\u0430\u043B: ",
                 item.interval
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("p", { children: [
                 "\u041F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0439 \u0440\u0430\u0437: ",
                 item.lastDone
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("p", { children: [
                 "\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u0440\u0430\u0437: ",
                 item.nextDue
               ] })
             ] })
           ] }, item.id)) }) })
         ] })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center justify-between mb-6", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center space-x-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Button, { variant: "ghost", size: "sm", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(ArrowLeft, { className: "h-4 w-4 mr-2" }),
-            "\u041D\u0430\u0437\u0430\u0434"
-          ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("h1", { className: "text-2xl font-bold", children: car?.name }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { className: "text-gray-600", children: [
-              car?.brand,
-              " ",
-              car?.model,
-              " ",
-              car?.year
-            ] })
-          ] })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex space-x-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Button, { onClick: () => setIsPmgOpen(true), children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Settings, { className: "h-4 w-4 mr-2" }),
-            "\u0420\u0443\u043A\u043E\u0432\u043E\u0434\u0441\u0442\u0432\u043E \u043F\u043E \u0422\u041E"
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Link, { to: `/maintenance-planning?carId=${car?.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Button, { variant: "outline", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Calendar, { className: "h-4 w-4 mr-2" }),
-            "\u041F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0422\u041E"
-          ] }) })
-        ] })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Dialog2, { open: isPmgOpen, onOpenChange: setIsPmgOpen, children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(DialogContent2, { className: "max-w-4xl max-h-[80vh] overflow-y-auto", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(DialogTitle2, { children: [
-          "\u0420\u0443\u043A\u043E\u0432\u043E\u0434\u0441\u0442\u0432\u043E \u043F\u043E \u0422\u041E - ",
-          car?.name
-        ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "space-y-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex justify-between items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { className: "text-sm text-gray-600", children: [
-              "\u0422\u0435\u043A\u0443\u0449\u0438\u0439 \u043F\u0440\u043E\u0431\u0435\u0433: ",
-              car?.mileage.toLocaleString(),
-              " \u043A\u043C"
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Link, { to: `/periodical-maintenance-guide/${car?.id}`, children: /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)(Button, { size: "sm", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Settings, { className: "h-4 w-4 mr-2" }),
-              "\u041D\u0430\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0440\u0435\u0433\u043B\u0430\u043C\u0435\u043D\u0442"
-            ] }) })
-          ] }),
-          pmgOperations.map((operation, index3) => /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "border rounded-lg p-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("h4", { className: "font-medium", children: operation.operation }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(Badge, { className: getPriorityColor(operation.priority), children: operation.priority === "high" ? "\u0421\u0440\u043E\u0447\u043D\u043E" : operation.priority === "medium" ? "\u0421\u043A\u043E\u0440\u043E" : "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435" })
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: operation.notes }),
-            /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { className: "grid grid-cols-2 gap-4 text-sm", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "font-medium", children: "\u0418\u043D\u0442\u0435\u0440\u0432\u0430\u043B:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { children: [
-                  operation.mileage.toLocaleString(),
-                  " \u043A\u043C / ",
-                  operation.period,
-                  " \u043C\u0435\u0441"
-                ] })
-              ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "font-medium", children: "\u0414\u043E \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0433\u043E \u0422\u041E:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime28.jsxs)("p", { children: [
-                  operation.mileageUntilNext.toLocaleString(),
-                  " \u043A\u043C / ",
-                  operation.monthsUntilNext,
-                  " \u043C\u0435\u0441"
-                ] })
-              ] })
-            ] }),
-            operation.isDue && /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("div", { className: "mt-2 p-2 bg-red-50 border border-red-200 rounded", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)("p", { className: "text-sm text-red-700 font-medium", children: "\u26A0\uFE0F \u0422\u0440\u0435\u0431\u0443\u0435\u0442 \u0441\u0440\u043E\u0447\u043D\u043E\u0433\u043E \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F!" }) })
-          ] }, index3))
-        ] })
-      ] }) })
+      ] })
     ] });
   }
 
   // src/pages/AddCar.tsx
-  var import_react12 = __toESM(require_react(), 1);
+  var import_react13 = __toESM(require_react(), 1);
 
   // src/components/ui/select.tsx
   var React57 = __toESM(require_react(), 1);
@@ -76614,10 +76202,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   }
 
   // ../../node_modules/@radix-ui/react-collection/dist/index.mjs
-  var import_react10 = __toESM(require_react(), 1);
-  var import_jsx_runtime29 = __toESM(require_jsx_runtime(), 1);
   var import_react11 = __toESM(require_react(), 1);
   var import_jsx_runtime30 = __toESM(require_jsx_runtime(), 1);
+  var import_react12 = __toESM(require_react(), 1);
+  var import_jsx_runtime31 = __toESM(require_jsx_runtime(), 1);
   function createCollection(name) {
     const PROVIDER_NAME = name + "CollectionProvider";
     const [createCollectionContext, createCollectionScope3] = createContextScope(PROVIDER_NAME);
@@ -76627,42 +76215,42 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     );
     const CollectionProvider = (props) => {
       const { scope, children } = props;
-      const ref = import_react10.default.useRef(null);
-      const itemMap = import_react10.default.useRef(/* @__PURE__ */ new Map()).current;
-      return /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CollectionProviderImpl, { scope, itemMap, collectionRef: ref, children });
+      const ref = import_react11.default.useRef(null);
+      const itemMap = import_react11.default.useRef(/* @__PURE__ */ new Map()).current;
+      return /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(CollectionProviderImpl, { scope, itemMap, collectionRef: ref, children });
     };
     CollectionProvider.displayName = PROVIDER_NAME;
     const COLLECTION_SLOT_NAME = name + "CollectionSlot";
     const CollectionSlotImpl = createSlot(COLLECTION_SLOT_NAME);
-    const CollectionSlot = import_react10.default.forwardRef(
+    const CollectionSlot = import_react11.default.forwardRef(
       (props, forwardedRef) => {
         const { scope, children } = props;
         const context = useCollectionContext(COLLECTION_SLOT_NAME, scope);
         const composedRefs = useComposedRefs(forwardedRef, context.collectionRef);
-        return /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CollectionSlotImpl, { ref: composedRefs, children });
+        return /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(CollectionSlotImpl, { ref: composedRefs, children });
       }
     );
     CollectionSlot.displayName = COLLECTION_SLOT_NAME;
     const ITEM_SLOT_NAME = name + "CollectionItemSlot";
     const ITEM_DATA_ATTR = "data-radix-collection-item";
     const CollectionItemSlotImpl = createSlot(ITEM_SLOT_NAME);
-    const CollectionItemSlot = import_react10.default.forwardRef(
+    const CollectionItemSlot = import_react11.default.forwardRef(
       (props, forwardedRef) => {
         const { scope, children, ...itemData } = props;
-        const ref = import_react10.default.useRef(null);
+        const ref = import_react11.default.useRef(null);
         const composedRefs = useComposedRefs(forwardedRef, ref);
         const context = useCollectionContext(ITEM_SLOT_NAME, scope);
-        import_react10.default.useEffect(() => {
+        import_react11.default.useEffect(() => {
           context.itemMap.set(ref, { ref, ...itemData });
           return () => void context.itemMap.delete(ref);
         });
-        return /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(CollectionItemSlotImpl, { ...{ [ITEM_DATA_ATTR]: "" }, ref: composedRefs, children });
+        return /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(CollectionItemSlotImpl, { ...{ [ITEM_DATA_ATTR]: "" }, ref: composedRefs, children });
       }
     );
     CollectionItemSlot.displayName = ITEM_SLOT_NAME;
     function useCollection3(scope) {
       const context = useCollectionContext(name + "CollectionConsumer", scope);
-      const getItems = import_react10.default.useCallback(() => {
+      const getItems = import_react11.default.useCallback(() => {
         const collectionNode = context.collectionRef.current;
         if (!collectionNode) return [];
         const orderedNodes = Array.from(collectionNode.querySelectorAll(`[${ITEM_DATA_ATTR}]`));
@@ -76683,7 +76271,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
 
   // ../../node_modules/@radix-ui/react-direction/dist/index.mjs
   var React54 = __toESM(require_react(), 1);
-  var import_jsx_runtime31 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime32 = __toESM(require_jsx_runtime(), 1);
   var DirectionContext = React54.createContext(void 0);
   function useDirection(localDir) {
     const globalDir = React54.useContext(DirectionContext);
@@ -76692,7 +76280,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
 
   // ../../node_modules/@radix-ui/react-visually-hidden/dist/index.mjs
   var React55 = __toESM(require_react(), 1);
-  var import_jsx_runtime32 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime33 = __toESM(require_jsx_runtime(), 1);
   var VISUALLY_HIDDEN_STYLES = Object.freeze({
     // See: https://github.com/twbs/bootstrap/blob/main/scss/mixins/_visually-hidden.scss
     position: "absolute",
@@ -76709,7 +76297,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   var NAME3 = "VisuallyHidden";
   var VisuallyHidden = React55.forwardRef(
     (props, forwardedRef) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
         Primitive.span,
         {
           ...props,
@@ -76722,7 +76310,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   VisuallyHidden.displayName = NAME3;
 
   // ../../node_modules/@radix-ui/react-select/dist/index.mjs
-  var import_jsx_runtime33 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime34 = __toESM(require_jsx_runtime(), 1);
   var OPEN_KEYS = [" ", "Enter", "ArrowUp", "ArrowDown"];
   var SELECTION_KEYS = [" ", "Enter"];
   var SELECT_NAME = "Select";
@@ -76772,7 +76360,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     const isFormControl = trigger ? form || !!trigger.closest("form") : true;
     const [nativeOptionsSet, setNativeOptionsSet] = React56.useState(/* @__PURE__ */ new Set());
     const nativeSelectKey = Array.from(nativeOptionsSet).map((option) => option.props.value).join(";");
-    return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Root22, { ...popperScope, children: /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Root22, { ...popperScope, children: /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(
       SelectProvider,
       {
         required,
@@ -76792,7 +76380,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         triggerPointerDownPosRef,
         disabled,
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Collection.Provider, { scope: __scopeSelect, children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Collection.Provider, { scope: __scopeSelect, children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
             SelectNativeOptionsProvider,
             {
               scope: props.__scopeSelect,
@@ -76809,7 +76397,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               children
             }
           ) }),
-          isFormControl ? /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)(
+          isFormControl ? /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(
             SelectBubbleInput,
             {
               "aria-hidden": true,
@@ -76822,7 +76410,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               disabled,
               form,
               children: [
-                value === void 0 ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("option", { value: "" }) : null,
+                value === void 0 ? /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("option", { value: "" }) : null,
                 Array.from(nativeOptionsSet)
               ]
             },
@@ -76863,7 +76451,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           };
         }
       };
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Anchor, { asChild: true, ...popperScope, children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Anchor, { asChild: true, ...popperScope, children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
         Primitive.button,
         {
           type: "button",
@@ -76922,13 +76510,13 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       useLayoutEffect22(() => {
         onValueNodeHasChildrenChange(hasChildren);
       }, [onValueNodeHasChildrenChange, hasChildren]);
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
         Primitive.span,
         {
           ...valueProps,
           ref: composedRefs,
           style: { pointerEvents: "none" },
-          children: shouldShowPlaceholder(context.value) ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(import_jsx_runtime33.Fragment, { children: placeholder }) : children
+          children: shouldShowPlaceholder(context.value) ? /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(import_jsx_runtime34.Fragment, { children: placeholder }) : children
         }
       );
     }
@@ -76938,13 +76526,13 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   var SelectIcon = React56.forwardRef(
     (props, forwardedRef) => {
       const { __scopeSelect, children, ...iconProps } = props;
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Primitive.span, { "aria-hidden": true, ...iconProps, ref: forwardedRef, children: children || "\u25BC" });
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Primitive.span, { "aria-hidden": true, ...iconProps, ref: forwardedRef, children: children || "\u25BC" });
     }
   );
   SelectIcon.displayName = ICON_NAME;
   var PORTAL_NAME4 = "SelectPortal";
   var SelectPortal = (props) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Portal, { asChild: true, ...props });
+    return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Portal, { asChild: true, ...props });
   };
   SelectPortal.displayName = PORTAL_NAME4;
   var CONTENT_NAME4 = "SelectContent";
@@ -76958,11 +76546,11 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       if (!context.open) {
         const frag = fragment;
         return frag ? ReactDOM4.createPortal(
-          /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(SelectContentProvider, { scope: props.__scopeSelect, children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Collection.Slot, { scope: props.__scopeSelect, children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("div", { children: props.children }) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(SelectContentProvider, { scope: props.__scopeSelect, children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Collection.Slot, { scope: props.__scopeSelect, children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("div", { children: props.children }) }) }),
           frag
         ) : null;
       }
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(SelectContentImpl, { ...props, ref: forwardedRef });
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(SelectContentImpl, { ...props, ref: forwardedRef });
     }
   );
   SelectContent.displayName = CONTENT_NAME4;
@@ -77116,7 +76704,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         hideWhenDetached,
         avoidCollisions
       } : {};
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
         SelectContentProvider,
         {
           scope: __scopeSelect,
@@ -77132,7 +76720,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           position,
           isPositioned,
           searchRef,
-          children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Combination_default, { as: Slot4, allowPinchZoom: true, children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+          children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Combination_default, { as: Slot4, allowPinchZoom: true, children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
             FocusScope,
             {
               asChild: true,
@@ -77144,7 +76732,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 context.trigger?.focus({ preventScroll: true });
                 event.preventDefault();
               }),
-              children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+              children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
                 DismissableLayer,
                 {
                   asChild: true,
@@ -77153,7 +76741,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   onPointerDownOutside,
                   onFocusOutside: (event) => event.preventDefault(),
                   onDismiss: () => context.onOpenChange(false),
-                  children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+                  children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
                     SelectPosition,
                     {
                       role: "listbox",
@@ -77329,14 +76917,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       },
       [position, focusSelectedItem]
     );
-    return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
       SelectViewportProvider,
       {
         scope: __scopeSelect,
         contentWrapper,
         shouldExpandOnScrollRef,
         onScrollButtonChange: handleScrollButtonChange,
-        children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+        children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
           "div",
           {
             ref: setContentWrapper,
@@ -77346,7 +76934,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               position: "fixed",
               zIndex: contentZIndex
             },
-            children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+            children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
               Primitive.div,
               {
                 ...popperProps,
@@ -77376,8 +76964,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       ...popperProps
     } = props;
     const popperScope = usePopperScope2(__scopeSelect);
-    return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
-      Content2,
+    return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
+      Content,
       {
         ...popperScope,
         ...popperProps,
@@ -77410,8 +76998,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       const viewportContext = useSelectViewportContext(VIEWPORT_NAME, __scopeSelect);
       const composedRefs = useComposedRefs(forwardedRef, contentContext.onViewportChange);
       const prevScrollTopRef = React56.useRef(0);
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)(import_jsx_runtime33.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(import_jsx_runtime34.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
           "style",
           {
             dangerouslySetInnerHTML: {
@@ -77420,7 +77008,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             nonce
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Collection.Slot, { scope: __scopeSelect, children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Collection.Slot, { scope: __scopeSelect, children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
           Primitive.div,
           {
             "data-radix-select-viewport": "",
@@ -77476,7 +77064,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     (props, forwardedRef) => {
       const { __scopeSelect, ...groupProps } = props;
       const groupId = useId2();
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(SelectGroupContextProvider, { scope: __scopeSelect, id: groupId, children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Primitive.div, { role: "group", "aria-labelledby": groupId, ...groupProps, ref: forwardedRef }) });
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(SelectGroupContextProvider, { scope: __scopeSelect, id: groupId, children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Primitive.div, { role: "group", "aria-labelledby": groupId, ...groupProps, ref: forwardedRef }) });
     }
   );
   SelectGroup.displayName = GROUP_NAME;
@@ -77485,7 +77073,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     (props, forwardedRef) => {
       const { __scopeSelect, ...labelProps } = props;
       const groupContext = useSelectGroupContext(LABEL_NAME, __scopeSelect);
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Primitive.div, { id: groupContext.id, ...labelProps, ref: forwardedRef });
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Primitive.div, { id: groupContext.id, ...labelProps, ref: forwardedRef });
     }
   );
   SelectLabel.displayName = LABEL_NAME;
@@ -77522,7 +77110,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           "A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder."
         );
       }
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
         SelectItemContextProvider,
         {
           scope: __scopeSelect,
@@ -77533,14 +77121,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           onItemTextChange: React56.useCallback((node2) => {
             setTextValue((prevTextValue) => prevTextValue || (node2?.textContent ?? "").trim());
           }, []),
-          children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+          children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
             Collection.ItemSlot,
             {
               scope: __scopeSelect,
               value,
               disabled,
               textValue,
-              children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+              children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
                 Primitive.div,
                 {
                   role: "option",
@@ -77609,7 +77197,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       );
       const textContent = itemTextNode?.textContent;
       const nativeOption = React56.useMemo(
-        () => /* @__PURE__ */ (0, import_jsx_runtime33.jsx)("option", { value: itemContext.value, disabled: itemContext.disabled, children: textContent }, itemContext.value),
+        () => /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("option", { value: itemContext.value, disabled: itemContext.disabled, children: textContent }, itemContext.value),
         [itemContext.disabled, itemContext.value, textContent]
       );
       const { onNativeOptionAdd, onNativeOptionRemove } = nativeOptionsContext;
@@ -77617,8 +77205,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         onNativeOptionAdd(nativeOption);
         return () => onNativeOptionRemove(nativeOption);
       }, [onNativeOptionAdd, onNativeOptionRemove, nativeOption]);
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsxs)(import_jsx_runtime33.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Primitive.span, { id: itemContext.textId, ...itemTextProps, ref: composedRefs }),
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(import_jsx_runtime34.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Primitive.span, { id: itemContext.textId, ...itemTextProps, ref: composedRefs }),
         itemContext.isSelected && context.valueNode && !context.valueNodeHasChildren ? ReactDOM4.createPortal(itemTextProps.children, context.valueNode) : null
       ] });
     }
@@ -77629,7 +77217,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     (props, forwardedRef) => {
       const { __scopeSelect, ...itemIndicatorProps } = props;
       const itemContext = useSelectItemContext(ITEM_INDICATOR_NAME, __scopeSelect);
-      return itemContext.isSelected ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Primitive.span, { "aria-hidden": true, ...itemIndicatorProps, ref: forwardedRef }) : null;
+      return itemContext.isSelected ? /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Primitive.span, { "aria-hidden": true, ...itemIndicatorProps, ref: forwardedRef }) : null;
     }
   );
   SelectItemIndicator.displayName = ITEM_INDICATOR_NAME;
@@ -77652,7 +77240,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         return () => viewport.removeEventListener("scroll", handleScroll22);
       }
     }, [contentContext.viewport, contentContext.isPositioned]);
-    return canScrollUp ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+    return canScrollUp ? /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
       SelectScrollButtonImpl,
       {
         ...props,
@@ -77687,7 +77275,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         return () => viewport.removeEventListener("scroll", handleScroll22);
       }
     }, [contentContext.viewport, contentContext.isPositioned]);
-    return canScrollDown ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+    return canScrollDown ? /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
       SelectScrollButtonImpl,
       {
         ...props,
@@ -77720,7 +77308,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       const activeItem = getItems().find((item) => item.ref.current === document.activeElement);
       activeItem?.ref.current?.scrollIntoView({ block: "nearest" });
     }, [getItems]);
-    return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
       Primitive.div,
       {
         "aria-hidden": true,
@@ -77748,7 +77336,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   var SelectSeparator = React56.forwardRef(
     (props, forwardedRef) => {
       const { __scopeSelect, ...separatorProps } = props;
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Primitive.div, { "aria-hidden": true, ...separatorProps, ref: forwardedRef });
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Primitive.div, { "aria-hidden": true, ...separatorProps, ref: forwardedRef });
     }
   );
   SelectSeparator.displayName = SEPARATOR_NAME;
@@ -77759,7 +77347,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       const popperScope = usePopperScope2(__scopeSelect);
       const context = useSelectContext(ARROW_NAME3, __scopeSelect);
       const contentContext = useSelectContentContext(ARROW_NAME3, __scopeSelect);
-      return context.open && contentContext.position === "popper" ? /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef }) : null;
+      return context.open && contentContext.position === "popper" ? /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef }) : null;
     }
   );
   SelectArrow.displayName = ARROW_NAME3;
@@ -77784,7 +77372,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           select.dispatchEvent(event);
         }
       }, [prevValue, value]);
-      return /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
         Primitive.select,
         {
           ...props,
@@ -77844,7 +77432,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   var Value = SelectValue;
   var Icon2 = SelectIcon;
   var Portal4 = SelectPortal;
-  var Content23 = SelectContent;
+  var Content22 = SelectContent;
   var Viewport = SelectViewport;
   var Label3 = SelectLabel;
   var Item = SelectItem;
@@ -77855,10 +77443,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   var Separator = SelectSeparator;
 
   // src/components/ui/select.tsx
-  var import_jsx_runtime34 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime35 = __toESM(require_jsx_runtime(), 1);
   var Select2 = Root24;
   var SelectValue2 = Value;
-  var SelectTrigger2 = React57.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(
+  var SelectTrigger2 = React57.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(
     Trigger3,
     {
       ref,
@@ -77869,12 +77457,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       ...props,
       children: [
         children,
-        /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Icon2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(ChevronDown, { className: "h-4 w-4 opacity-50" }) })
+        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Icon2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(ChevronDown, { className: "h-4 w-4 opacity-50" }) })
       ]
     }
   ));
   SelectTrigger2.displayName = Trigger3.displayName;
-  var SelectScrollUpButton2 = React57.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
+  var SelectScrollUpButton2 = React57.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
     ScrollUpButton,
     {
       ref,
@@ -77883,11 +77471,11 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         className
       ),
       ...props,
-      children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(ChevronUp, { className: "h-4 w-4" })
+      children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(ChevronUp, { className: "h-4 w-4" })
     }
   ));
   SelectScrollUpButton2.displayName = ScrollUpButton.displayName;
-  var SelectScrollDownButton2 = React57.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
+  var SelectScrollDownButton2 = React57.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
     ScrollDownButton,
     {
       ref,
@@ -77896,12 +77484,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         className
       ),
       ...props,
-      children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(ChevronDown, { className: "h-4 w-4" })
+      children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(ChevronDown, { className: "h-4 w-4" })
     }
   ));
   SelectScrollDownButton2.displayName = ScrollDownButton.displayName;
-  var SelectContent2 = React57.forwardRef(({ className, children, position = "popper", ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Portal4, { children: /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(
-    Content23,
+  var SelectContent2 = React57.forwardRef(({ className, children, position = "popper", ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Portal4, { children: /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(
+    Content22,
     {
       ref,
       className: cn(
@@ -77912,8 +77500,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       position,
       ...props,
       children: [
-        /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(SelectScrollUpButton2, {}),
-        /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectScrollUpButton2, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
           Viewport,
           {
             className: cn(
@@ -77923,12 +77511,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             children
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(SelectScrollDownButton2, {})
+        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectScrollDownButton2, {})
       ]
     }
   ) }));
-  SelectContent2.displayName = Content23.displayName;
-  var SelectLabel2 = React57.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
+  SelectContent2.displayName = Content22.displayName;
+  var SelectLabel2 = React57.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
     Label3,
     {
       ref,
@@ -77937,7 +77525,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     }
   ));
   SelectLabel2.displayName = Label3.displayName;
-  var SelectItem2 = React57.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(
+  var SelectItem2 = React57.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(
     Item,
     {
       ref,
@@ -77947,13 +77535,13 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       ),
       ...props,
       children: [
-        /* @__PURE__ */ (0, import_jsx_runtime34.jsx)("span", { className: "absolute right-2 flex h-3.5 w-3.5 items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(ItemIndicator, { children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(Check, { className: "h-4 w-4" }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(ItemText, { children })
+        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("span", { className: "absolute right-2 flex h-3.5 w-3.5 items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(ItemIndicator, { children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Check, { className: "h-4 w-4" }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(ItemText, { children })
       ]
     }
   ));
   SelectItem2.displayName = Item.displayName;
-  var SelectSeparator2 = React57.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
+  var SelectSeparator2 = React57.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
     Separator,
     {
       ref,
@@ -77964,13 +77552,13 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   SelectSeparator2.displayName = Separator.displayName;
 
   // src/pages/AddCar.tsx
-  var import_jsx_runtime35 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime36 = __toESM(require_jsx_runtime(), 1);
   function AddCar() {
     const navigate = useNavigate();
     const { id: id2 } = useParams();
     const location2 = useLocation();
     const isEditMode = location2.pathname.startsWith("/edit-car");
-    const [formData, setFormData] = (0, import_react12.useState)({
+    const [formData, setFormData] = (0, import_react13.useState)({
       brand: "",
       model: "",
       year: "",
@@ -77981,14 +77569,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       nickname: "",
       notes: ""
     });
-    const [imageFile, setImageFile] = (0, import_react12.useState)(null);
-    const [imagePreview, setImagePreview] = (0, import_react12.useState)("");
-    const [isSubmitting, setIsSubmitting] = (0, import_react12.useState)(false);
-    const [isLoading, setIsLoading] = (0, import_react12.useState)(false);
-    const [originalCar, setOriginalCar] = (0, import_react12.useState)(null);
+    const [imageFile, setImageFile] = (0, import_react13.useState)(null);
+    const [imagePreview, setImagePreview] = (0, import_react13.useState)("");
+    const [isSubmitting, setIsSubmitting] = (0, import_react13.useState)(false);
+    const [isLoading, setIsLoading] = (0, import_react13.useState)(false);
+    const [originalCar, setOriginalCar] = (0, import_react13.useState)(null);
     const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
     const years = Array.from({ length: 30 }, (_3, i4) => currentYear - i4);
-    (0, import_react12.useEffect)(() => {
+    (0, import_react13.useEffect)(() => {
       const loadCarData = async () => {
         if (isEditMode && id2) {
           try {
@@ -78113,27 +77701,27 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       }
     };
     if (isEditMode && isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { className: "text-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F..." })
+      return /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "text-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F..." })
       ] }) });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { className: "flex items-center space-x-3", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Link, { to: isEditMode ? `/car/${id2}` : "/", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("h1", { className: "text-lg font-bold text-gray-900", children: isEditMode ? "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043D\u043E\u0432\u044B\u0439 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C" }) })
+    return /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "flex items-center space-x-3", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Link, { to: isEditMode ? `/car/${id2}` : "/", children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("h1", { className: "text-lg font-bold text-gray-900", children: isEditMode ? "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043D\u043E\u0432\u044B\u0439 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C" }) })
       ] }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("main", { className: "px-4 py-6", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("form", { onSubmit: handleSubmit, className: "space-y-6", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(Card, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Car, { className: "h-5 w-5 mr-2" }),
+      /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("main", { className: "px-4 py-6", children: /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("form", { onSubmit: handleSubmit, className: "space-y-6", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(Card, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Car, { className: "h-5 w-5 mr-2" }),
             "\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F",
-            isEditMode && /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("span", { className: "text-sm font-normal text-gray-500 ml-2", children: "(\u043F\u043E\u043B\u044F \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u0438 \u0437\u0430\u0449\u0438\u0449\u0435\u043D\u044B)" })
+            isEditMode && /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("span", { className: "text-sm font-normal text-gray-500 ml-2", children: "(\u043F\u043E\u043B\u044F \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u0438 \u0437\u0430\u0449\u0438\u0449\u0435\u043D\u044B)" })
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(CardContent, { className: "space-y-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "brand", children: "\u041C\u0430\u0440\u043A\u0430 *" }),
-              isEditMode ? /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(CardContent, { className: "space-y-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "brand", children: "\u041C\u0430\u0440\u043A\u0430 *" }),
+              isEditMode ? /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                 Input,
                 {
                   id: "brand",
@@ -78141,15 +77729,15 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   disabled: true,
                   className: "bg-gray-50 text-gray-500 cursor-not-allowed"
                 }
-              ) : /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(Select2, { value: formData.brand, onValueChange: (value) => handleInputChange("brand", value), children: [
-                /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043C\u0430\u0440\u043A\u0443" }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectContent2, { children: popularBrands.map((brand) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectItem2, { value: brand, children: brand }, brand)) })
+              ) : /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(Select2, { value: formData.brand, onValueChange: (value) => handleInputChange("brand", value), children: [
+                /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043C\u0430\u0440\u043A\u0443" }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(SelectContent2, { children: popularBrands.map((brand) => /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(SelectItem2, { value: brand, children: brand }, brand)) })
               ] }),
-              isEditMode && /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("p", { className: "text-xs text-gray-500 mt-1", children: "\u0414\u0430\u043D\u043D\u044B\u0435 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u0438 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F \u043D\u0435 \u043C\u043E\u0433\u0443\u0442 \u0431\u044B\u0442\u044C \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u044B" })
+              isEditMode && /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("p", { className: "text-xs text-gray-500 mt-1", children: "\u0414\u0430\u043D\u043D\u044B\u0435 \u0438\u0434\u0435\u043D\u0442\u0438\u0444\u0438\u043A\u0430\u0446\u0438\u0438 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F \u043D\u0435 \u043C\u043E\u0433\u0443\u0442 \u0431\u044B\u0442\u044C \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u044B" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "model", children: "\u041C\u043E\u0434\u0435\u043B\u044C *" }),
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "model", children: "\u041C\u043E\u0434\u0435\u043B\u044C *" }),
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                 Input,
                 {
                   id: "model",
@@ -78161,9 +77749,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "year", children: "\u0413\u043E\u0434 \u0432\u044B\u043F\u0443\u0441\u043A\u0430 *" }),
-              isEditMode ? /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "year", children: "\u0413\u043E\u0434 \u0432\u044B\u043F\u0443\u0441\u043A\u0430 *" }),
+              isEditMode ? /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                 Input,
                 {
                   id: "year",
@@ -78171,14 +77759,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   disabled: true,
                   className: "bg-gray-50 text-gray-500 cursor-not-allowed"
                 }
-              ) : /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(Select2, { value: formData.year, onValueChange: (value) => handleInputChange("year", value), children: [
-                /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0433\u043E\u0434" }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectContent2, { children: years.map((year) => /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(SelectItem2, { value: year.toString(), children: year }, year)) })
+              ) : /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(Select2, { value: formData.year, onValueChange: (value) => handleInputChange("year", value), children: [
+                /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0433\u043E\u0434" }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(SelectContent2, { children: years.map((year) => /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(SelectItem2, { value: year.toString(), children: year }, year)) })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "vin", children: "VIN *" }),
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "vin", children: "VIN *" }),
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                 Input,
                 {
                   id: "vin",
@@ -78193,11 +77781,11 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(Card, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(CardTitle, { className: "text-lg", children: "\u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(CardContent, { className: "space-y-4", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "mileage", children: "\u041F\u0440\u043E\u0431\u0435\u0433 \u043D\u0430 \u043C\u043E\u043C\u0435\u043D\u0442 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0442\u0435\u043D\u0438\u044F (\u043A\u043C)" }),
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(Card, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(CardTitle, { className: "text-lg", children: "\u0422\u0435\u0445\u043D\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(CardContent, { className: "space-y-4", children: /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "mileage", children: "\u041F\u0440\u043E\u0431\u0435\u0433 \u043D\u0430 \u043C\u043E\u043C\u0435\u043D\u0442 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0442\u0435\u043D\u0438\u044F (\u043A\u043C)" }),
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
               Input,
               {
                 id: "mileage",
@@ -78207,15 +77795,15 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 onChange: (e3) => handleInputChange("mileage", e3.target.value)
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("p", { className: "text-xs text-gray-500 mt-1", children: "\u041F\u0440\u043E\u0431\u0435\u0433 \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u0438\u0440\u0443\u0435\u0442\u0441\u044F \u0434\u0438\u043D\u0430\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u043C \u043C\u043E\u043D\u0438\u0442\u043E\u0440\u043E\u043C \u0438 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D \u043F\u043E\u0437\u0436\u0435" })
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("p", { className: "text-xs text-gray-500 mt-1", children: "\u041F\u0440\u043E\u0431\u0435\u0433 \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u0438\u0440\u0443\u0435\u0442\u0441\u044F \u0434\u0438\u043D\u0430\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u043C \u043C\u043E\u043D\u0438\u0442\u043E\u0440\u043E\u043C \u0438 \u043C\u043E\u0436\u0435\u0442 \u0431\u044B\u0442\u044C \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D \u043F\u043E\u0437\u0436\u0435" })
           ] }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(Card, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(CardTitle, { className: "text-lg", children: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(CardContent, { className: "space-y-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "plateNumber", children: "\u0413\u043E\u0441. \u043D\u043E\u043C\u0435\u0440" }),
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(Card, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(CardTitle, { className: "text-lg", children: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(CardContent, { className: "space-y-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "plateNumber", children: "\u0413\u043E\u0441. \u043D\u043E\u043C\u0435\u0440" }),
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                 Input,
                 {
                   id: "plateNumber",
@@ -78225,9 +77813,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "purchasePrice", children: "\u0426\u0435\u043D\u0430 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0442\u0435\u043D\u0438\u044F (\u20BD)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "purchasePrice", children: "\u0426\u0435\u043D\u0430 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0442\u0435\u043D\u0438\u044F (\u20BD)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                 Input,
                 {
                   id: "purchasePrice",
@@ -78238,9 +77826,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "nickname", children: "\u041F\u0440\u0438\u0434\u0443\u043C\u0430\u0439 \u0438\u043C\u044F!" }),
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "nickname", children: "\u041F\u0440\u0438\u0434\u0443\u043C\u0430\u0439 \u0438\u043C\u044F!" }),
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                 Input,
                 {
                   id: "nickname",
@@ -78250,10 +77838,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "image", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u0438 \u0441\u0432\u043E\u044E \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443" }),
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { className: "mt-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "image", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u0438 \u0441\u0432\u043E\u044E \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443" }),
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "mt-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                   "input",
                   {
                     type: "file",
@@ -78263,29 +77851,29 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                     className: "hidden"
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                   "label",
                   {
                     htmlFor: "image",
                     className: "flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50",
-                    children: imagePreview ? /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+                    children: imagePreview ? /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                       "img",
                       {
                         src: imagePreview,
                         alt: "Preview",
                         className: "w-full h-full object-cover rounded-lg"
                       }
-                    ) : /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { className: "flex flex-col items-center", children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Upload, { className: "h-8 w-8 text-gray-400 mb-2" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime35.jsx)("p", { className: "text-sm text-gray-600", children: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u0434\u043B\u044F \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0438 \u0444\u043E\u0442\u043E" })
+                    ) : /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "flex flex-col items-center", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Upload, { className: "h-8 w-8 text-gray-400 mb-2" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime36.jsx)("p", { className: "text-sm text-gray-600", children: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u0434\u043B\u044F \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0438 \u0444\u043E\u0442\u043E" })
                     ] })
                   }
                 )
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Label2, { htmlFor: "notes", children: "\u041F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u044F" }),
-              /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Label2, { htmlFor: "notes", children: "\u041F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u044F" }),
+              /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
                 Textarea,
                 {
                   id: "notes",
@@ -78297,16 +77885,16 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)("div", { className: "flex flex-col sm:flex-row gap-3", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Link, { to: isEditMode ? `/car/${id2}` : "/", className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Button, { variant: "outline", className: "w-full", children: "\u041E\u0442\u043C\u0435\u043D\u0430" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(Button, { type: "submit", className: "flex-1", disabled: !validateForm() || isSubmitting, children: isSubmitting ? isEditMode ? "\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435..." : "\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435..." : isEditMode ? "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C" })
+        /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)("div", { className: "flex flex-col sm:flex-row gap-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Link, { to: isEditMode ? `/car/${id2}` : "/", className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Button, { variant: "outline", className: "w-full", children: "\u041E\u0442\u043C\u0435\u043D\u0430" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Button, { type: "submit", className: "flex-1", disabled: !validateForm() || isSubmitting, children: isSubmitting ? isEditMode ? "\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435..." : "\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435..." : isEditMode ? "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C" })
         ] })
       ] }) })
     ] });
   }
 
   // src/pages/UserAlert.tsx
-  var import_react13 = __toESM(require_react(), 1);
+  var import_react14 = __toESM(require_react(), 1);
 
   // src/components/ui/radio-group.tsx
   var React60 = __toESM(require_react(), 1);
@@ -78316,7 +77904,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
 
   // ../../node_modules/@radix-ui/react-roving-focus/dist/index.mjs
   var React58 = __toESM(require_react(), 1);
-  var import_jsx_runtime36 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime37 = __toESM(require_jsx_runtime(), 1);
   var ENTRY_FOCUS = "rovingFocusGroup.onEntryFocus";
   var EVENT_OPTIONS2 = { bubbles: false, cancelable: true };
   var GROUP_NAME2 = "RovingFocusGroup";
@@ -78328,7 +77916,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   var [RovingFocusProvider, useRovingFocusContext] = createRovingFocusGroupContext(GROUP_NAME2);
   var RovingFocusGroup = React58.forwardRef(
     (props, forwardedRef) => {
-      return /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Collection2.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(Collection2.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
+      return /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(Collection2.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(Collection2.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
     }
   );
   RovingFocusGroup.displayName = GROUP_NAME2;
@@ -78366,7 +77954,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         return () => node2.removeEventListener(ENTRY_FOCUS, handleEntryFocus);
       }
     }, [handleEntryFocus]);
-    return /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(
       RovingFocusProvider,
       {
         scope: __scopeRovingFocusGroup,
@@ -78387,7 +77975,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           () => setFocusableItemsCount((prevCount) => prevCount - 1),
           []
         ),
-        children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
+        children: /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(
           Primitive.div,
           {
             tabIndex: isTabbingBackOut || focusableItemsCount === 0 ? -1 : 0,
@@ -78445,14 +78033,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           return () => onFocusableItemRemove();
         }
       }, [focusable, onFocusableItemAdd, onFocusableItemRemove]);
-      return /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(
         Collection2.ItemSlot,
         {
           scope: __scopeRovingFocusGroup,
           id: id2,
           focusable,
           active,
-          children: /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(
+          children: /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(
             Primitive.span,
             {
               tabIndex: isCurrentTabStop ? 0 : -1,
@@ -78529,8 +78117,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
 
   // ../../node_modules/@radix-ui/react-radio-group/dist/index.mjs
   var React59 = __toESM(require_react(), 1);
-  var import_jsx_runtime37 = __toESM(require_jsx_runtime(), 1);
   var import_jsx_runtime38 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime39 = __toESM(require_jsx_runtime(), 1);
   var RADIO_NAME = "Radio";
   var [createRadioContext, createRadioScope] = createContextScope(RADIO_NAME);
   var [RadioProvider, useRadioContext] = createRadioContext(RADIO_NAME);
@@ -78551,8 +78139,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       const composedRefs = useComposedRefs(forwardedRef, (node2) => setButton(node2));
       const hasConsumerStoppedPropagationRef = React59.useRef(false);
       const isFormControl = button ? form || !!button.closest("form") : true;
-      return /* @__PURE__ */ (0, import_jsx_runtime37.jsxs)(RadioProvider, { scope: __scopeRadio, checked, disabled, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)(RadioProvider, { scope: __scopeRadio, checked, disabled, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
           Primitive.button,
           {
             type: "button",
@@ -78573,7 +78161,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             })
           }
         ),
-        isFormControl && /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(
+        isFormControl && /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
           RadioBubbleInput,
           {
             control: button,
@@ -78596,7 +78184,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     (props, forwardedRef) => {
       const { __scopeRadio, forceMount, ...indicatorProps } = props;
       const context = useRadioContext(INDICATOR_NAME, __scopeRadio);
-      return /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(Presence, { present: forceMount || context.checked, children: /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(Presence, { present: forceMount || context.checked, children: /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
         Primitive.span,
         {
           "data-state": getState4(context.checked),
@@ -78636,7 +78224,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           input.dispatchEvent(event);
         }
       }, [prevChecked, checked, bubbles]);
-      return /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
         Primitive.input,
         {
           type: "radio",
@@ -78693,7 +78281,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         onChange: onValueChange,
         caller: RADIO_GROUP_NAME
       });
-      return /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
         RadioGroupProvider,
         {
           scope: __scopeRadioGroup,
@@ -78702,7 +78290,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           disabled,
           value,
           onValueChange: setValue,
-          children: /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
+          children: /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
             Root6,
             {
               asChild: true,
@@ -78710,7 +78298,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               orientation,
               dir: direction,
               loop,
-              children: /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
+              children: /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
                 Primitive.div,
                 {
                   role: "radiogroup",
@@ -78755,14 +78343,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           document.removeEventListener("keyup", handleKeyUp);
         };
       }, []);
-      return /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
         Item2,
         {
           asChild: true,
           ...rovingFocusGroupScope,
           focusable: !isDisabled,
           active: checked,
-          children: /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
+          children: /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
             Radio,
             {
               disabled: isDisabled,
@@ -78791,7 +78379,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     (props, forwardedRef) => {
       const { __scopeRadioGroup, ...indicatorProps } = props;
       const radioScope = useRadioScope(__scopeRadioGroup);
-      return /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(RadioIndicator, { ...radioScope, ...indicatorProps, ref: forwardedRef });
+      return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(RadioIndicator, { ...radioScope, ...indicatorProps, ref: forwardedRef });
     }
   );
   RadioGroupIndicator.displayName = INDICATOR_NAME2;
@@ -78800,9 +78388,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   var Indicator = RadioGroupIndicator;
 
   // src/components/ui/radio-group.tsx
-  var import_jsx_runtime39 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime40 = __toESM(require_jsx_runtime(), 1);
   var RadioGroup2 = React60.forwardRef(({ className, ...props }, ref) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(
       Root25,
       {
         className: cn("grid gap-2", className),
@@ -78813,7 +78401,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   });
   RadioGroup2.displayName = Root25.displayName;
   var RadioGroupItem2 = React60.forwardRef(({ className, ...props }, ref) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(
       Item22,
       {
         ref,
@@ -78822,7 +78410,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           className
         ),
         ...props,
-        children: /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(Indicator, { className: "flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(Circle, { className: "h-3.5 w-3.5 fill-primary" }) })
+        children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Indicator, { className: "flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Circle, { className: "h-3.5 w-3.5 fill-primary" }) })
       }
     );
   });
@@ -79016,14 +78604,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   };
 
   // src/pages/UserAlert.tsx
-  var import_jsx_runtime40 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime41 = __toESM(require_jsx_runtime(), 1);
   function UserAlert() {
     const navigate = useNavigate();
-    const [cars, setCars] = (0, import_react13.useState)([]);
-    const [isLoading, setIsLoading] = (0, import_react13.useState)(true);
-    const [isSubmitting, setIsSubmitting] = (0, import_react13.useState)(false);
-    const [error, setError] = (0, import_react13.useState)(null);
-    const [formData, setFormData] = (0, import_react13.useState)({
+    const [cars, setCars] = (0, import_react14.useState)([]);
+    const [isLoading, setIsLoading] = (0, import_react14.useState)(true);
+    const [isSubmitting, setIsSubmitting] = (0, import_react14.useState)(false);
+    const [error, setError] = (0, import_react14.useState)(null);
+    const [formData, setFormData] = (0, import_react14.useState)({
       carId: "",
       date: dateUtils.getCurrentRussianDate(),
       mileage: "",
@@ -79032,7 +78620,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       priority: "",
       description: ""
     });
-    (0, import_react13.useEffect)(() => {
+    (0, import_react14.useEffect)(() => {
       const loadCars = async () => {
         try {
           setIsLoading(true);
@@ -79066,7 +78654,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         value: "critical",
         icon: "\u{1F534}",
         emoji: "\u{1F64F}",
-        title: "\u0412\u0441\u0451 \u043F\u043B\u043E\u0445\u043E",
+        title: "\u0421\u043E\u0432\u0441\u0435\u043C \u043F\u043B\u043E\u0445\u043E/\u0441\u043E\u0432\u0441\u0435\u043C \u0441\u0442\u0440\u0430\u0448\u043D\u043E",
         description: "\u041A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0430, \u0442\u0440\u0435\u0431\u0443\u044E\u0449\u0430\u044F \u043D\u0435\u043C\u0435\u0434\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0432\u043D\u0438\u043C\u0430\u043D\u0438\u044F"
       },
       {
@@ -79130,48 +78718,48 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     };
     const selectedCar = cars.find((c5) => c5.id === formData.carId);
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "text-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..." })
+      return /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "text-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..." })
       ] }) });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "flex items-center space-x-3", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(TriangleAlert, { className: "h-5 w-5 mr-2 text-red-600" }),
+    return /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-3", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(TriangleAlert, { className: "h-5 w-5 mr-2 text-red-600" }),
             "\u0421\u043E\u043E\u0431\u0449\u0438 \u043E \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0435"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "text-sm text-gray-600", children: "\u0417\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0437\u0430\u043C\u0435\u0447\u0435\u043D\u043D\u0443\u044E \u043D\u0435\u0438\u0441\u043F\u0440\u0430\u0432\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F \u043F\u043E\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0433\u043E \u0430\u043D\u0430\u043B\u0438\u0437\u0430" })
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-sm text-gray-600", children: "\u0417\u0430\u043F\u0438\u0448\u0438\u0442\u0435 \u0437\u0430\u043C\u0435\u0447\u0435\u043D\u043D\u0443\u044E \u043D\u0435\u0438\u0441\u043F\u0440\u0430\u0432\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F \u043F\u043E\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0433\u043E \u0430\u043D\u0430\u043B\u0438\u0437\u0430" })
         ] })
       ] }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("main", { className: "px-4 py-6", children: [
-        error && /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Card, { className: "mb-6 border-red-200 bg-red-50", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "flex items-center space-x-2 text-red-800", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(TriangleAlert, { className: "h-4 w-4" }),
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "text-sm", children: error })
+      /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("main", { className: "px-4 py-6", children: [
+        error && /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Card, { className: "mb-6 border-red-200 bg-red-50", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-2 text-red-800", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(TriangleAlert, { className: "h-4 w-4" }),
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-sm", children: error })
         ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("form", { onSubmit: handleSubmit, className: "space-y-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "grid grid-cols-3 gap-4 text-sm", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "font-medium", children: selectedCar ? selectedCar.name : "-" })
+        /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("form", { onSubmit: handleSubmit, className: "space-y-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "grid grid-cols-3 gap-4 text-sm", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "font-medium", children: selectedCar ? selectedCar.name : "-" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "text-gray-600", children: "\u0414\u0430\u0442\u0430:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "font-medium", children: formData.date || "-" })
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-gray-600", children: "\u0414\u0430\u0442\u0430:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "font-medium", children: formData.date || "-" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "text-gray-600", children: "\u041F\u0440\u043E\u0431\u0435\u0433:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "font-medium", children: formData.mileage || "-" })
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-gray-600", children: "\u041F\u0440\u043E\u0431\u0435\u0433:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "font-medium", children: formData.mileage || "-" })
             ] })
           ] }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(CardContent, { className: "p-4 space-y-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Label2, { htmlFor: "car", children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C *" }),
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(Select2, { value: formData.carId, onValueChange: (value) => handleInputChange("carId", value), children: [
-                /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C..." }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(SelectContent2, { children: cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(SelectItem2, { value: car.id, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(CardContent, { className: "p-4 space-y-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Label2, { htmlFor: "car", children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C *" }),
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(Select2, { value: formData.carId, onValueChange: (value) => handleInputChange("carId", value), children: [
+                /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C..." }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectContent2, { children: cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(SelectItem2, { value: car.id, children: [
                   car.name,
                   " - ",
                   car.brand,
@@ -79180,9 +78768,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 ] }, car.id)) })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Label2, { htmlFor: "date", children: "\u0414\u0430\u0442\u0430 \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D\u0438\u044F *" }),
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Label2, { htmlFor: "date", children: "\u0414\u0430\u0442\u0430 \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D\u0438\u044F *" }),
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
                 DateInput,
                 {
                   id: "date",
@@ -79191,9 +78779,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Label2, { htmlFor: "mileage", children: "\u041F\u0440\u043E\u0431\u0435\u0433 \u043D\u0430 \u043C\u043E\u043C\u0435\u043D\u0442 \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D\u0438\u044F (\u043A\u043C)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Label2, { htmlFor: "mileage", children: "\u041F\u0440\u043E\u0431\u0435\u0433 \u043D\u0430 \u043C\u043E\u043C\u0435\u043D\u0442 \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D\u0438\u044F (\u043A\u043C)" }),
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
                 Input,
                 {
                   id: "mileage",
@@ -79205,19 +78793,19 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               )
             ] })
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(Card, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardTitle, { className: "text-lg", children: "\u0413\u0434\u0435 \u0437\u0430\u043C\u0435\u0447\u0435\u043D\u0430 \u043D\u0435\u0438\u0441\u043F\u0440\u0430\u0432\u043D\u043E\u0441\u0442\u044C" }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(CardContent, { className: "space-y-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Label2, { htmlFor: "system", children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u0438\u0441\u0442\u0435\u043C\u0443 *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(Select2, { value: formData.system, onValueChange: (value) => handleInputChange("system", value), children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u0438\u0441\u0442\u0435\u043C\u0443..." }) }),
-                  /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(SelectContent2, { children: systemOptions.map((system) => /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(SelectItem2, { value: system, children: system }, system)) })
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(Card, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardTitle, { className: "text-lg", children: "\u0413\u0434\u0435 \u0437\u0430\u043C\u0435\u0447\u0435\u043D\u0430 \u043D\u0435\u0438\u0441\u043F\u0440\u0430\u0432\u043D\u043E\u0441\u0442\u044C" }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(CardContent, { className: "space-y-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Label2, { htmlFor: "system", children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u0438\u0441\u0442\u0435\u043C\u0443 *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(Select2, { value: formData.system, onValueChange: (value) => handleInputChange("system", value), children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u0438\u0441\u0442\u0435\u043C\u0443..." }) }),
+                  /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectContent2, { children: systemOptions.map((system) => /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectItem2, { value: system, children: system }, system)) })
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Label2, { htmlFor: "location", children: "\u0423\u043A\u0430\u0436\u0438\u0442\u0435 \u043C\u0435\u0441\u0442\u043E \u043D\u0435\u0438\u0441\u043F\u0440\u0430\u0432\u043D\u043E\u0441\u0442\u0438" }),
-                /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Label2, { htmlFor: "location", children: "\u0423\u043A\u0430\u0436\u0438\u0442\u0435 \u043C\u0435\u0441\u0442\u043E \u043D\u0435\u0438\u0441\u043F\u0440\u0430\u0432\u043D\u043E\u0441\u0442\u0438" }),
+                /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
                   Input,
                   {
                     id: "location",
@@ -79229,33 +78817,33 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               ] })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(Card, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardTitle, { className: "text-lg", children: "\u041F\u0440\u0438\u043E\u0440\u0438\u0442\u0435\u0442 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(Card, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardTitle, { className: "text-lg", children: "\u041F\u0440\u0438\u043E\u0440\u0438\u0442\u0435\u0442 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
               RadioGroup2,
               {
                 value: formData.priority,
                 onValueChange: (value) => handleInputChange("priority", value),
                 className: "space-y-3",
-                children: priorityOptions.map((option) => /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("div", { className: "border rounded-lg p-4", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "flex items-center space-x-3", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(RadioGroupItem2, { value: option.value, id: option.value }),
-                  /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "flex items-center space-x-2", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-lg", children: option.icon }),
-                    /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { className: "text-lg", children: option.emoji })
+                children: priorityOptions.map((option) => /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("div", { className: "border rounded-lg p-4", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-3", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(RadioGroupItem2, { value: option.value, id: option.value }),
+                  /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-2", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("span", { className: "text-lg", children: option.icon }),
+                    /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("span", { className: "text-lg", children: option.emoji })
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("div", { className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("label", { htmlFor: option.value, className: "cursor-pointer", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "font-medium", children: option.title }),
-                    /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("p", { className: "text-sm text-gray-600", children: option.description })
+                  /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("div", { className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("label", { htmlFor: option.value, className: "cursor-pointer", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "font-medium", children: option.title }),
+                    /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-sm text-gray-600", children: option.description })
                   ] }) })
                 ] }) }, option.value))
               }
             ) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(Card, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardTitle, { className: "text-lg", children: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Label2, { htmlFor: "description", children: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u043E\u0435 \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 *" }),
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(Card, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardTitle, { className: "text-lg", children: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" }) }),
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Label2, { htmlFor: "description", children: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u043E\u0435 \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 *" }),
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
                 Textarea,
                 {
                   id: "description",
@@ -79266,28 +78854,28 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   className: "min-h-[100px]"
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("p", { className: "text-xs text-gray-500 mt-1", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("p", { className: "text-xs text-gray-500 mt-1", children: [
                 formData.description.length,
                 "/500 \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432"
               ] })
             ] }) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)("div", { className: "flex flex-col sm:flex-row gap-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Link, { to: "/", className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(Button, { variant: "outline", className: "w-full", disabled: isSubmitting, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(X, { className: "h-4 w-4 mr-2" }),
+          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex flex-col sm:flex-row gap-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Link, { to: "/", className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(Button, { variant: "outline", className: "w-full", disabled: isSubmitting, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(X, { className: "h-4 w-4 mr-2" }),
               "\u041D\u0435 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0442\u044C"
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
               Button,
               {
                 type: "submit",
                 className: "flex-1",
                 disabled: !validateForm() || isSubmitting,
-                children: isSubmitting ? /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(import_jsx_runtime40.Fragment, { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("div", { className: "animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" }),
+                children: isSubmitting ? /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(import_jsx_runtime41.Fragment, { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("div", { className: "animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" }),
                   "\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435..."
-                ] }) : /* @__PURE__ */ (0, import_jsx_runtime40.jsxs)(import_jsx_runtime40.Fragment, { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(Save, { className: "h-4 w-4 mr-2" }),
+                ] }) : /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(import_jsx_runtime41.Fragment, { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Save, { className: "h-4 w-4 mr-2" }),
                   "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"
                 ] })
               }
@@ -79299,28 +78887,25 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   }
 
   // src/pages/AlertList.tsx
-  var import_react14 = __toESM(require_react(), 1);
-  var import_jsx_runtime41 = __toESM(require_jsx_runtime(), 1);
+  var import_react15 = __toESM(require_react(), 1);
+  var import_jsx_runtime42 = __toESM(require_jsx_runtime(), 1);
   function AlertList() {
-    const [alerts, setAlerts] = (0, import_react14.useState)([]);
-    const [showArchived, setShowArchived] = (0, import_react14.useState)(false);
-    const [editingAlert, setEditingAlert] = (0, import_react14.useState)(null);
-    const [editForm, setEditForm] = (0, import_react14.useState)({
+    const [alerts, setAlerts] = (0, import_react15.useState)([]);
+    const [showArchived, setShowArchived] = (0, import_react15.useState)(false);
+    const [editingAlert, setEditingAlert] = (0, import_react15.useState)(null);
+    const [editForm, setEditForm] = (0, import_react15.useState)({
       description: "",
       location: "",
       mileage: ""
     });
-    (0, import_react14.useEffect)(() => {
-      const loadAlerts = async () => {
-        try {
-          const alertsData = await AlertService.getAlerts();
-          setAlerts(alertsData);
-        } catch (error) {
-          console.error("Error loading alerts:", error);
-        }
-      };
-      loadAlerts();
+    (0, import_react15.useEffect)(() => {
+      const savedAlerts = JSON.parse(localStorage.getItem("fleet-alerts") || "[]");
+      setAlerts(savedAlerts);
     }, []);
+    const saveAlerts = (updatedAlerts) => {
+      setAlerts(updatedAlerts);
+      localStorage.setItem("fleet-alerts", JSON.stringify(updatedAlerts));
+    };
     const getPriorityColor = (priority) => {
       switch (priority) {
         case "critical":
@@ -79357,212 +78942,236 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           return "\u26AA";
       }
     };
-    const handleArchive = async (alertId) => {
-      try {
-        await AlertService.archiveAlert(alertId);
-        const updatedAlerts = await AlertService.getAlerts();
-        setAlerts(updatedAlerts);
-      } catch (error) {
-        console.error("Error archiving alert:", error);
-      }
+    const handleArchive = (alertId) => {
+      const updatedAlerts = alerts.map(
+        (alert2) => alert2.id === alertId ? { ...alert2, status: "archived" } : alert2
+      );
+      saveAlerts(updatedAlerts);
     };
-    const handleRestore = async (alertId) => {
-      try {
-        await AlertService.restoreAlert(alertId);
-        const updatedAlerts = await AlertService.getAlerts();
-        setAlerts(updatedAlerts);
-      } catch (error) {
-        console.error("Error restoring alert:", error);
-      }
+    const handleRestore = (alertId) => {
+      const updatedAlerts = alerts.map(
+        (alert2) => alert2.id === alertId ? { ...alert2, status: "active" } : alert2
+      );
+      saveAlerts(updatedAlerts);
     };
     const handleEditClick = (alert2) => {
       setEditingAlert(alert2);
       setEditForm({
         description: alert2.description,
         location: alert2.location,
-        mileage: alert2.mileage.toString()
+        mileage: alert2.mileage
       });
     };
-    const handleSaveEdit = async () => {
+    const handleSaveEdit = () => {
       if (!editingAlert) return;
-      try {
-        await AlertService.updateAlert(editingAlert.id, {
+      const updatedAlerts = alerts.map(
+        (alert2) => alert2.id === editingAlert.id ? {
+          ...alert2,
           description: editForm.description,
           location: editForm.location,
-          mileage: parseInt(editForm.mileage) || 0
-        });
-        const updatedAlerts = await AlertService.getAlerts();
-        setAlerts(updatedAlerts);
-        setEditingAlert(null);
-      } catch (error) {
-        console.error("Error updating alert:", error);
-      }
+          mileage: editForm.mileage
+        } : alert2
+      );
+      saveAlerts(updatedAlerts);
+      setEditingAlert(null);
     };
     const activeAlerts = alerts.filter((alert2) => alert2.status === "active");
     const archivedAlerts = alerts.filter((alert2) => alert2.status === "archived");
     const displayAlerts = showArchived ? archivedAlerts : activeAlerts;
-    return /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center justify-between", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-3", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(TriangleAlert, { className: "h-5 w-5 mr-2 text-red-600" }),
-              "\u0421\u043F\u0438\u0441\u043E\u043A \u043F\u0440\u043E\u0431\u043B\u0435\u043C"
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-sm text-gray-600", children: showArchived ? "\u0410\u0440\u0445\u0438\u0432\u043D\u044B\u0435 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" : "\u0410\u043A\u0442\u0438\u0432\u043D\u044B\u0435 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B" })
-          ] })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(
+    return /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-3", children: [
+          showArchived ? /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
             Button,
             {
-              variant: showArchived ? "outline" : "default",
+              variant: "ghost",
               size: "sm",
               onClick: () => setShowArchived(false),
-              children: [
-                "\u0410\u043A\u0442\u0438\u0432\u043D\u044B\u0435 (",
-                activeAlerts.length,
-                ")"
-              ]
+              children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(ArrowLeft, { className: "h-4 w-4" })
             }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(
+          ) : /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: showArchived ? /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(import_jsx_runtime42.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Archive, { className: "h-5 w-5 mr-2 text-gray-600" }),
+            "\u0410\u0440\u0445\u0438\u0432 \u043F\u0440\u043E\u0431\u043B\u0435\u043C"
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(import_jsx_runtime42.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(TriangleAlert, { className: "h-5 w-5 mr-2 text-red-600" }),
+            "\u0423 \u043D\u0430\u0441 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B!"
+          ] }) }) })
+        ] }),
+        !showArchived && /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-2", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Link, { to: "/user-alert", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Button, { size: "sm", className: "bg-red-600 hover:bg-red-700", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(TriangleAlert, { className: "h-4 w-4 mr-2" }),
+            "\u0421\u043E\u043E\u0431\u0449\u0438\u0442\u044C \u043E \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0435"
+          ] }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(
             Button,
             {
-              variant: showArchived ? "default" : "outline",
+              variant: "outline",
               size: "sm",
               onClick: () => setShowArchived(true),
               children: [
-                "\u0410\u0440\u0445\u0438\u0432 (",
-                archivedAlerts.length,
-                ")"
+                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Archive, { className: "h-4 w-4 mr-2" }),
+                "\u0410\u0440\u0445\u0438\u0432"
               ]
             }
           )
         ] })
       ] }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("main", { className: "px-4 py-6", children: displayAlerts.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(CardContent, { className: "p-8 text-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(TriangleAlert, { className: "h-12 w-12 text-gray-400 mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("h3", { className: "text-lg font-medium text-gray-900 mb-2", children: showArchived ? "\u0410\u0440\u0445\u0438\u0432 \u043F\u0443\u0441\u0442" : "\u041F\u0440\u043E\u0431\u043B\u0435\u043C \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E" }),
-        /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-gray-600", children: showArchived ? "\u0412 \u0430\u0440\u0445\u0438\u0432\u0435 \u043F\u043E\u043A\u0430 \u043D\u0435\u0442 \u043F\u0440\u043E\u0431\u043B\u0435\u043C" : "\u0421\u043E\u0437\u0434\u0430\u0439\u0442\u0435 \u043F\u0435\u0440\u0432\u0443\u044E \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0443, \u0447\u0442\u043E\u0431\u044B \u043D\u0430\u0447\u0430\u0442\u044C \u043E\u0442\u0441\u043B\u0435\u0436\u0438\u0432\u0430\u043D\u0438\u0435" })
-      ] }) }) : /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("div", { className: "space-y-4", children: displayAlerts.map((alert2) => /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Card, { className: "hover:shadow-md transition-shadow", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-start justify-between", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex-1", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-2 mb-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("span", { className: "text-lg", children: getPriorityIcon(alert2.priority) }),
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Badge, { className: getPriorityColor(alert2.priority), children: getPriorityText(alert2.priority) }),
-            alert2.type === "recommendation" && /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Badge, { variant: "secondary", children: "\u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0430\u0446\u0438\u044F" })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("h3", { className: "font-medium text-gray-900 mb-2", children: alert2.carName }),
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("p", { className: "text-gray-700 mb-3", children: alert2.description }),
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-4 text-sm text-gray-600", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-1", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Calendar, { className: "h-4 w-4" }),
-              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("span", { children: new Date(alert2.reportedAt).toLocaleDateString("ru-RU") })
+      /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("main", { className: "px-4 py-6", children: [
+        !showArchived && /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { className: "mb-6 text-center", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-sm text-gray-600 mb-4", children: "\u0421\u043F\u0438\u0441\u043E\u043A \u0432\u0441\u0435\u0445 \u043E\u0431\u043D\u0430\u0440\u0443\u0436\u0435\u043D\u043D\u044B\u0445 \u043F\u0440\u043E\u0431\u043B\u0435\u043C \u043F\u043E \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044F\u043C" }) }),
+        displayAlerts.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(CardContent, { className: "p-8 text-center", children: showArchived ? /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(import_jsx_runtime42.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Archive, { className: "h-12 w-12 text-gray-400 mx-auto mb-4" }),
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("h3", { className: "text-lg font-medium text-gray-900 mb-2", children: "\u0410\u0440\u0445\u0438\u0432 \u043F\u0443\u0441\u0442" }),
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-gray-600", children: "\u041D\u0435\u0442 \u0430\u0440\u0445\u0438\u0432\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0445 \u043F\u0440\u043E\u0431\u043B\u0435\u043C" })
+        ] }) : /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(import_jsx_runtime42.Fragment, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { className: "text-4xl mb-4", children: "\u2705" }),
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("h3", { className: "text-lg font-medium text-gray-900 mb-2", children: "\u041F\u0440\u043E\u0431\u043B\u0435\u043C \u043D\u0435\u0442!" }),
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-gray-600 mb-4", children: "\u0412\u0441\u0435 \u0432\u0430\u0448\u0438 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438 \u0432 \u043E\u0442\u043B\u0438\u0447\u043D\u043E\u043C \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438" }),
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Link, { to: "/user-alert", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Button, { className: "bg-red-600 hover:bg-red-700", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(TriangleAlert, { className: "h-4 w-4 mr-2" }),
+            "\u0421\u043E\u043E\u0431\u0449\u0438\u0442\u044C \u043E \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0435"
+          ] }) })
+        ] }) }) }) : /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { className: "space-y-4", children: displayAlerts.map((alert2) => /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(CardContent, { className: "p-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-start justify-between mb-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("span", { className: "text-lg", children: getPriorityIcon(alert2.priority) }),
+              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Badge, { className: getPriorityColor(alert2.priority), children: getPriorityText(alert2.priority) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex items-center space-x-1", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Car, { className: "h-4 w-4" }),
-              /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("span", { children: [
-                alert2.mileage.toLocaleString(),
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(
+                Dialog2,
+                {
+                  open: editingAlert?.id === alert2.id,
+                  onOpenChange: (open2) => !open2 && setEditingAlert(null),
+                  children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(DialogTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                      Button,
+                      {
+                        variant: "ghost",
+                        size: "sm",
+                        onClick: () => handleEditClick(alert2),
+                        children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(PenLine, { className: "h-4 w-4" })
+                      }
+                    ) }),
+                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(DialogContent2, { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(DialogTitle2, { children: "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0443" }) }),
+                      /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "space-y-4", children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("label", { className: "text-sm font-medium", children: "\u041C\u0435\u0441\u0442\u043E \u043D\u0435\u0438\u0441\u043F\u0440\u0430\u0432\u043D\u043E\u0441\u0442\u0438" }),
+                          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                            Input,
+                            {
+                              value: editForm.location,
+                              onChange: (e3) => setEditForm((prev) => ({ ...prev, location: e3.target.value })),
+                              placeholder: "\u0423\u043A\u0430\u0436\u0438\u0442\u0435 \u043C\u0435\u0441\u0442\u043E..."
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("label", { className: "text-sm font-medium", children: "\u041F\u0440\u043E\u0431\u0435\u0433 (\u043A\u043C)" }),
+                          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                            Input,
+                            {
+                              type: "number",
+                              value: editForm.mileage,
+                              onChange: (e3) => setEditForm((prev) => ({ ...prev, mileage: e3.target.value })),
+                              placeholder: "85000"
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("label", { className: "text-sm font-medium", children: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435" }),
+                          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                            Textarea,
+                            {
+                              value: editForm.description,
+                              onChange: (e3) => setEditForm((prev) => ({ ...prev, description: e3.target.value })),
+                              placeholder: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B...",
+                              rows: 3
+                            }
+                          )
+                        ] }),
+                        /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex justify-end space-x-2", children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Button, { variant: "outline", onClick: () => setEditingAlert(null), children: [
+                            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(X, { className: "h-4 w-4 mr-2" }),
+                            "\u041E\u0442\u043C\u0435\u043D\u0430"
+                          ] }),
+                          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Button, { onClick: handleSaveEdit, children: [
+                            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Save, { className: "h-4 w-4 mr-2" }),
+                            "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"
+                          ] })
+                        ] })
+                      ] })
+                    ] })
+                  ]
+                }
+              ),
+              showArchived ? /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                Button,
+                {
+                  variant: "ghost",
+                  size: "sm",
+                  onClick: () => handleRestore(alert2.id),
+                  children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(ArchiveRestore, { className: "h-4 w-4" })
+                }
+              ) : /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                Button,
+                {
+                  variant: "ghost",
+                  size: "sm",
+                  onClick: () => handleArchive(alert2.id),
+                  children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Archive, { className: "h-4 w-4" })
+                }
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-4 text-sm", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Car, { className: "h-4 w-4 text-gray-500" }),
+                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("span", { className: "font-medium", children: alert2.carName })
+              ] }),
+              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Calendar, { className: "h-4 w-4 text-gray-500" }),
+                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("span", { children: alert2.date })
+              ] }),
+              alert2.mileage && /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "text-gray-600", children: [
+                parseInt(alert2.mileage).toLocaleString(),
                 " \u043A\u043C"
               ] })
             ] }),
-            alert2.location && /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("span", { className: "text-gray-500", children: alert2.location })
-          ] })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("div", { className: "flex items-center space-x-2 ml-4", children: !showArchived ? /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(import_jsx_runtime41.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
-            Button,
-            {
-              variant: "outline",
-              size: "sm",
-              onClick: () => handleEditClick(alert2),
-              children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(PenLine, { className: "h-4 w-4" })
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
-            Button,
-            {
-              variant: "outline",
-              size: "sm",
-              onClick: () => handleArchive(alert2.id),
-              children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Archive, { className: "h-4 w-4" })
-            }
-          )
-        ] }) : /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
-          Button,
-          {
-            variant: "outline",
-            size: "sm",
-            onClick: () => handleRestore(alert2.id),
-            children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(ArchiveRestore, { className: "h-4 w-4" })
-          }
-        ) })
-      ] }) }) }, alert2.id)) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Dialog2, { open: !!editingAlert, onOpenChange: () => setEditingAlert(null), children: /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(DialogContent2, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(DialogTitle2, { children: "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0443" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "space-y-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("label", { className: "text-sm font-medium", children: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435" }),
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
-              Textarea,
-              {
-                value: editForm.description,
-                onChange: (e3) => setEditForm((prev) => ({ ...prev, description: e3.target.value })),
-                className: "mt-1"
-              }
-            )
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("label", { className: "text-sm font-medium", children: "\u041C\u0435\u0441\u0442\u043E" }),
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
-              Input,
-              {
-                value: editForm.location,
-                onChange: (e3) => setEditForm((prev) => ({ ...prev, location: e3.target.value })),
-                className: "mt-1"
-              }
-            )
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)("label", { className: "text-sm font-medium", children: "\u041F\u0440\u043E\u0431\u0435\u0433 (\u043A\u043C)" }),
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(
-              Input,
-              {
-                type: "number",
-                value: editForm.mileage,
-                onChange: (e3) => setEditForm((prev) => ({ ...prev, mileage: e3.target.value })),
-                className: "mt-1"
-              }
-            )
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)("div", { className: "flex justify-end space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Button, { variant: "outline", onClick: () => setEditingAlert(null), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
-            /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(Button, { onClick: handleSaveEdit, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(Save, { className: "h-4 w-4 mr-2" }),
-              "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "text-sm", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "font-medium text-gray-900", children: alert2.system }),
+              alert2.location && /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-gray-600", children: alert2.location })
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-sm text-gray-700 bg-gray-50 p-2 rounded", children: alert2.description }),
+            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("p", { className: "text-xs text-gray-500", children: [
+              "\u0421\u043E\u0437\u0434\u0430\u043D\u043E: ",
+              new Date(alert2.createdAt).toLocaleDateString("ru-RU"),
+              " \u0432 ",
+              new Date(alert2.createdAt).toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" })
             ] })
           ] })
-        ] })
-      ] }) })
+        ] }) }, alert2.id)) })
+      ] })
     ] });
   }
 
   // src/pages/AddServiceRecord.tsx
-  var import_react15 = __toESM(require_react(), 1);
-  var import_jsx_runtime42 = __toESM(require_jsx_runtime(), 1);
+  var import_react16 = __toESM(require_react(), 1);
+  var import_jsx_runtime43 = __toESM(require_jsx_runtime(), 1);
   function AddServiceRecord() {
     const navigate = useNavigate();
-    const [formData, setFormData] = (0, import_react15.useState)({
+    const [formData, setFormData] = (0, import_react16.useState)({
       carId: "",
       date: dateUtils.getCurrentRussianDate(),
       mileage: "",
       serviceProvider: "",
       notes: ""
     });
-    const [operations, setOperations] = (0, import_react15.useState)([]);
-    const [isAddOperationOpen, setIsAddOperationOpen] = (0, import_react15.useState)(false);
-    const [currentOperation, setCurrentOperation] = (0, import_react15.useState)({
+    const [operations, setOperations] = (0, import_react16.useState)([]);
+    const [isAddOperationOpen, setIsAddOperationOpen] = (0, import_react16.useState)(false);
+    const [currentOperation, setCurrentOperation] = (0, import_react16.useState)({
       type: "periodical",
       name: "",
       description: "",
@@ -79570,62 +79179,36 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       laborCost: 0,
       recommendations: ""
     });
-    const [userAlerts, setUserAlerts] = (0, import_react15.useState)([]);
-    const [isConfirmReturnOpen, setIsConfirmReturnOpen] = (0, import_react15.useState)(false);
-    const [isReturningToReady, setIsReturningToReady] = (0, import_react15.useState)(false);
-    const [cars, setCars] = (0, import_react15.useState)([]);
-    const [isLoading, setIsLoading] = (0, import_react15.useState)(true);
-    const [serviceShops, setServiceShops] = (0, import_react15.useState)([]);
-    const [maintenanceOperations, setMaintenanceOperations] = (0, import_react15.useState)([]);
-    const [isLoadingOperations, setIsLoadingOperations] = (0, import_react15.useState)(true);
-    (0, import_react15.useEffect)(() => {
-      const loadMaintenanceOperations = async () => {
-        if (!formData.carId) {
-          setMaintenanceOperations([]);
-          setIsLoadingOperations(false);
-          return;
-        }
-        try {
-          setIsLoadingOperations(true);
-          const operations2 = await PMGService.getServiceRecordOperations(formData.carId);
-          setMaintenanceOperations(operations2);
-        } catch (error) {
-          console.error("Error loading maintenance operations:", error);
-        } finally {
-          setIsLoadingOperations(false);
-        }
-      };
-      loadMaintenanceOperations();
-    }, [formData.carId]);
-    const periodicOperations = maintenanceOperations;
-    (0, import_react15.useEffect)(() => {
-      const loadCars = async () => {
-        try {
-          setIsLoading(true);
-          const carsData = await DataService.getCars();
-          setCars(carsData);
-        } catch (error) {
-          console.error("Error loading cars:", error);
-          alert("\u041E\u0448\u0438\u0431\u043A\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0438 \u0441\u043F\u0438\u0441\u043A\u0430 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435\u0439");
-        } finally {
-          setIsLoading(false);
-        }
-      };
-      loadCars();
-    }, []);
-    (0, import_react15.useEffect)(() => {
+    const [userAlerts, setUserAlerts] = (0, import_react16.useState)([]);
+    const [isConfirmReturnOpen, setIsConfirmReturnOpen] = (0, import_react16.useState)(false);
+    const [isReturningToReady, setIsReturningToReady] = (0, import_react16.useState)(false);
+    const [cars, setCars] = (0, import_react16.useState)([]);
+    const [isLoading, setIsLoading] = (0, import_react16.useState)(true);
+    const periodicOperations = [
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u043E\u0442\u043E\u0440\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430",
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u0430\u0441\u043B\u044F\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u043F\u043B\u0438\u0432\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0432\u0435\u0447\u0435\u0439 \u0437\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u044F",
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0435\u043C\u043D\u044F \u0413\u0420\u041C",
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u044B\u0445 \u043A\u043E\u043B\u043E\u0434\u043E\u043A",
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0430\u044E\u0449\u0435\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
+      "\u0420\u0430\u0437\u0432\u0430\u043B-\u0441\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u0435",
+      "\u0417\u0430\u043C\u0435\u043D\u0430 \u0430\u043C\u043E\u0440\u0442\u0438\u0437\u0430\u0442\u043E\u0440\u043E\u0432",
+      "\u0414\u0440\u0443\u0433\u043E\u0435"
+    ];
+    (0, import_react16.useEffect)(() => {
       const savedAlerts = JSON.parse(localStorage.getItem("fleet-alerts") || "[]");
       const activeAlerts = savedAlerts.filter((alert2) => alert2.status === "active");
       setUserAlerts(activeAlerts);
-      const savedShops = JSON.parse(localStorage.getItem("service-shops") || "[]");
-      setServiceShops(savedShops);
       if (formData.carId) {
         const selectedCar2 = cars.find((c5) => c5.id === formData.carId);
         if (selectedCar2 && !formData.mileage) {
-          setFormData((prev) => ({ ...prev, mileage: selectedCar2.mileage.toString() }));
+          setFormData((prev) => ({ ...prev, mileage: selectedCar2.currentMileage.toString() }));
         }
       }
-    }, [formData.carId, cars]);
+    }, [formData.carId]);
     const handleInputChange = (field, value) => {
       setFormData((prev) => ({ ...prev, [field]: value }));
     };
@@ -79766,55 +79349,54 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     };
     const selectedCar = cars.find((c5) => c5.id === formData.carId);
     const carAlerts = userAlerts.filter((alert2) => alert2.carId === formData.carId);
-    const selectedShop = formData.serviceProvider ? serviceShops.find((shop) => shop.name === formData.serviceProvider) : null;
-    return /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "min-h-screen bg-gray-50 pb-20", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-3", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Wrench, { className: "h-5 w-5 mr-2 text-blue-600" }),
+    return /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "min-h-screen bg-gray-50 pb-20", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-3", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Wrench, { className: "h-5 w-5 mr-2 text-blue-600" }),
             "\u041D\u043E\u0432\u0430\u044F \u0437\u0430\u043F\u0438\u0441\u044C \u043E \u0441\u0435\u0440\u0432\u0438\u0441\u0435"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-sm text-gray-600", children: "\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043D\u044B\u0445 \u0440\u0430\u0431\u043E\u0442" })
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm text-gray-600", children: "\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043D\u044B\u0445 \u0440\u0430\u0431\u043E\u0442" })
         ] })
       ] }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("main", { className: "px-4 py-6", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("form", { onSubmit: handleSubmit, className: "space-y-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "grid grid-cols-2 gap-4 text-sm", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "font-medium", children: selectedCar ? selectedCar.name : "\u041D\u0435 \u0432\u044B\u0431\u0440\u0430\u043D" })
+      /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("main", { className: "px-4 py-6", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("form", { onSubmit: handleSubmit, className: "space-y-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "grid grid-cols-2 gap-4 text-sm", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "font-medium", children: selectedCar ? selectedCar.name : "\u041D\u0435 \u0432\u044B\u0431\u0440\u0430\u043D" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-gray-600", children: "\u0414\u0430\u0442\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0430:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "font-medium", children: formData.date || "-" })
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-gray-600", children: "\u0414\u0430\u0442\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0430:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "font-medium", children: formData.date || "-" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-gray-600", children: "\u041F\u0440\u043E\u0431\u0435\u0433:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("p", { className: "font-medium", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-gray-600", children: "\u041F\u0440\u043E\u0431\u0435\u0433:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("p", { className: "font-medium", children: [
                 formData.mileage || "-",
                 " \u043A\u043C"
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-gray-600", children: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("p", { className: "font-medium text-green-600", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-gray-600", children: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("p", { className: "font-medium text-green-600", children: [
                 calculateTotalCost().toLocaleString(),
                 " \u20BD"
               ] })
             ] })
           ] }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Card, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Car, { className: "h-5 w-5 mr-2" }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Card, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Car, { className: "h-5 w-5 mr-2" }),
               "\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F"
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(CardContent, { className: "space-y-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { htmlFor: "car", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Select2, { value: formData.carId, onValueChange: (value) => handleInputChange("carId", value), children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C..." }) }),
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectContent2, { children: cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(SelectItem2, { value: car.id, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(CardContent, { className: "space-y-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { htmlFor: "car", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Select2, { value: formData.carId, onValueChange: (value) => handleInputChange("carId", value), children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C..." }) }),
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectContent2, { children: cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(SelectItem2, { value: car.id, children: [
                     car.name,
                     " - ",
                     car.brand,
@@ -79823,9 +79405,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   ] }, car.id)) })
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { htmlFor: "date", children: "\u0414\u0430\u0442\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { htmlFor: "date", children: "\u0414\u0430\u0442\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                   DateInput,
                   {
                     id: "date",
@@ -79834,9 +79416,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { htmlFor: "mileage", children: "\u041F\u0440\u043E\u0431\u0435\u0433 \u043D\u0430 \u043C\u043E\u043C\u0435\u043D\u0442 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F (\u043A\u043C) *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { htmlFor: "mileage", children: "\u041F\u0440\u043E\u0431\u0435\u0433 \u043D\u0430 \u043C\u043E\u043C\u0435\u043D\u0442 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F (\u043A\u043C) *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                   Input,
                   {
                     id: "mileage",
@@ -79847,116 +79429,70 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { htmlFor: "serviceProvider", children: "\u0418\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C \u0440\u0430\u0431\u043E\u0442" }),
-                serviceShops.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "border rounded-md p-3 bg-gray-50 text-center", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: "\u041D\u0435\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0445 \u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-xs text-gray-500", children: '\u0414\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u044B \u0432 \u0440\u0430\u0437\u0434\u0435\u043B\u0435 "\u041F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0422\u041E"' })
-                ] }) : /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(import_jsx_runtime42.Fragment, { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(
-                    Select2,
-                    {
-                      value: formData.serviceProvider,
-                      onValueChange: (shopName) => {
-                        handleInputChange("serviceProvider", shopName);
-                      },
-                      children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u0435\u0440\u0432\u0438\u0441 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430..." }) }),
-                        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectContent2, { children: serviceShops.map((shop) => /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectItem2, { value: shop.name, children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center justify-between w-full", children: [
-                          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("span", { children: shop.name }),
-                          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { className: "flex items-center ml-2", children: [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
-                            Star,
-                            {
-                              className: `h-3 w-3 ${i4 < shop.rating ? "text-yellow-400 fill-current" : "text-gray-300"}`
-                            },
-                            i4
-                          )) })
-                        ] }) }, shop.id)) })
-                      ]
-                    }
-                  ),
-                  selectedShop && /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { className: "mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { className: "flex items-start justify-between", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex-1", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-3 mb-2", children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("h4", { className: "font-medium text-blue-900", children: selectedShop.name }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center", children: [
-                        [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
-                          Star,
-                          {
-                            className: `h-4 w-4 ${i4 < selectedShop.rating ? "text-yellow-400 fill-current" : "text-gray-300"}`
-                          },
-                          i4
-                        )),
-                        /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("span", { className: "ml-1 text-sm text-gray-600", children: [
-                          "(",
-                          selectedShop.rating,
-                          "/5)"
-                        ] })
-                      ] })
-                    ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("p", { className: "text-sm text-blue-800 mb-1", children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("strong", { children: "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B:" }),
-                      " ",
-                      selectedShop.contacts
-                    ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("p", { className: "text-xs text-blue-600", children: [
-                      "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D: ",
-                      new Date(selectedShop.createdAt).toLocaleDateString("ru-RU")
-                    ] })
-                  ] }) }) })
-                ] })
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { htmlFor: "serviceProvider", children: "\u0418\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C \u0440\u0430\u0431\u043E\u0442" }),
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
+                  Input,
+                  {
+                    id: "serviceProvider",
+                    placeholder: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0430\u0432\u0442\u043E\u0441\u0435\u0440\u0432\u0438\u0441\u0430 \u0438\u043B\u0438 \u043C\u0430\u0441\u0442\u0435\u0440\u0430",
+                    value: formData.serviceProvider,
+                    onChange: (e3) => handleInputChange("serviceProvider", e3.target.value)
+                  }
+                )
               ] })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Card, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center justify-between", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Settings, { className: "h-5 w-5 mr-2" }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Card, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center justify-between", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Settings, { className: "h-5 w-5 mr-2" }),
                 "\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043D\u044B\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 (",
                 operations.length,
                 ")"
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Dialog2, { open: isAddOperationOpen, onOpenChange: setIsAddOperationOpen, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(DialogTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Button, { variant: "outline", size: "sm", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Dialog2, { open: isAddOperationOpen, onOpenChange: setIsAddOperationOpen, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(DialogTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Button, { variant: "outline", size: "sm", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
                   "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C"
                 ] }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(DialogContent2, { className: "max-w-2xl max-h-[90vh] overflow-y-auto", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(DialogTitle2, { children: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E" }) }),
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "space-y-4", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { children: "\u0422\u0438\u043F \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(DialogContent2, { className: "max-w-2xl max-h-[90vh] overflow-y-auto", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(DialogTitle2, { children: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E" }) }),
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "space-y-4", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { children: "\u0422\u0438\u043F \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(
                         Select2,
                         {
                           value: currentOperation.type,
                           onValueChange: (value) => setCurrentOperation((prev) => ({ ...prev, type: value })),
                           children: [
-                            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectValue2, {}) }),
-                            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(SelectContent2, { children: [
-                              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectItem2, { value: "periodical", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435 \u0422\u041E" }),
-                              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectItem2, { value: "repair", children: "\u0420\u0435\u043C\u043E\u043D\u0442" })
+                            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectValue2, {}) }),
+                            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(SelectContent2, { children: [
+                              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectItem2, { value: "periodical", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435 \u0422\u041E" }),
+                              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectItem2, { value: "repair", children: "\u0420\u0435\u043C\u043E\u043D\u0442" })
                             ] })
                           ]
                         }
                       )
                     ] }),
-                    currentOperation.type === "periodical" && /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(
+                    currentOperation.type === "periodical" && /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(
                         Select2,
                         {
                           value: currentOperation.name,
                           onValueChange: (value) => setCurrentOperation((prev) => ({ ...prev, name: value })),
                           children: [
-                            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430..." }) }),
-                            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectContent2, { children: periodicOperations.map((op) => /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectItem2, { value: op, children: op }, op)) })
+                            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430..." }) }),
+                            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectContent2, { children: periodicOperations.map((op) => /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectItem2, { value: op, children: op }, op)) })
                           ]
                         }
                       )
                     ] }),
-                    currentOperation.type === "repair" && /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { children: "\u0421\u0432\u044F\u0437\u0430\u043D\u043D\u0430\u044F \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0430" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(
+                    currentOperation.type === "repair" && /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { children: "\u0421\u0432\u044F\u0437\u0430\u043D\u043D\u0430\u044F \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0430" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(
                         Select2,
                         {
                           value: currentOperation.linkedAlertId,
@@ -79970,8 +79506,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                             }));
                           },
                           children: [
-                            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0443 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430..." }) }),
-                            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(SelectContent2, { children: carAlerts.map((alert2) => /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(SelectItem2, { value: alert2.id, children: [
+                            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0443 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430..." }) }),
+                            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectContent2, { children: carAlerts.map((alert2) => /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(SelectItem2, { value: alert2.id, children: [
                               alert2.system,
                               " - ",
                               alert2.description.substring(0, 50),
@@ -79981,9 +79517,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                         }
                       )
                     ] }),
-                    (currentOperation.type === "repair" || currentOperation.name === "\u0414\u0440\u0443\u0433\u043E\u0435") && /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { children: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                    (currentOperation.type === "repair" || currentOperation.name === "\u0414\u0440\u0443\u0433\u043E\u0435") && /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { children: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                         Input,
                         {
                           value: currentOperation.name,
@@ -79992,9 +79528,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                         }
                       )
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { children: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0440\u0430\u0431\u043E\u0442" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { children: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0440\u0430\u0431\u043E\u0442" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                         Textarea,
                         {
                           value: currentOperation.description,
@@ -80003,16 +79539,16 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                         }
                       )
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { children: "\u0417\u0430\u043F\u0447\u0430\u0441\u0442\u0438 \u0438 \u0440\u0430\u0441\u0445\u043E\u0434\u043D\u0438\u043A\u0438" }),
-                        /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Button, { type: "button", variant: "outline", size: "sm", onClick: addPartToOperation, children: [
-                          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Plus, { className: "h-4 w-4 mr-1" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { children: "\u0417\u0430\u043F\u0447\u0430\u0441\u0442\u0438 \u0438 \u0440\u0430\u0441\u0445\u043E\u0434\u043D\u0438\u043A\u0438" }),
+                        /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Button, { type: "button", variant: "outline", size: "sm", onClick: addPartToOperation, children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Plus, { className: "h-4 w-4 mr-1" }),
                           "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C"
                         ] })
                       ] }),
-                      currentOperation.parts?.map((part, index3) => /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "grid grid-cols-4 gap-2 mb-2", children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                      currentOperation.parts?.map((part, index3) => /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "grid grid-cols-4 gap-2 mb-2", children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                           Input,
                           {
                             placeholder: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435",
@@ -80020,7 +79556,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                             onChange: (e3) => updatePart(index3, "name", e3.target.value)
                           }
                         ),
-                        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                           Input,
                           {
                             type: "number",
@@ -80029,7 +79565,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                             onChange: (e3) => updatePart(index3, "quantity", parseInt(e3.target.value) || 0)
                           }
                         ),
-                        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                           Input,
                           {
                             type: "number",
@@ -80038,12 +79574,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                             onChange: (e3) => updatePart(index3, "cost", parseFloat(e3.target.value) || 0)
                           }
                         ),
-                        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Button, { type: "button", variant: "ghost", size: "sm", onClick: () => removePart(index3), children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(X, { className: "h-4 w-4" }) })
+                        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Button, { type: "button", variant: "ghost", size: "sm", onClick: () => removePart(index3), children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(X, { className: "h-4 w-4" }) })
                       ] }, index3))
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { children: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0440\u0430\u0431\u043E\u0442 (\u20BD)" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { children: "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0440\u0430\u0431\u043E\u0442 (\u20BD)" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                         Input,
                         {
                           type: "number",
@@ -80053,9 +79589,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                         }
                       )
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Label2, { children: "\u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0430\u0446\u0438\u0438 \u0434\u043B\u044F \u0434\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0435\u0433\u043E \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Label2, { children: "\u0420\u0435\u043A\u043E\u043C\u0435\u043D\u0434\u0430\u0446\u0438\u0438 \u0434\u043B\u044F \u0434\u0430\u043B\u044C\u043D\u0435\u0439\u0448\u0435\u0433\u043E \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                         Textarea,
                         {
                           value: currentOperation.recommendations,
@@ -80064,47 +79600,47 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                         }
                       )
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "bg-gray-50 p-3 rounded", children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-sm font-medium", children: "\u041E\u0431\u0449\u0430\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438:" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("p", { className: "text-lg font-bold text-green-600", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "bg-gray-50 p-3 rounded", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm font-medium", children: "\u041E\u0431\u0449\u0430\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438:" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("p", { className: "text-lg font-bold text-green-600", children: [
                         calculateOperationTotal().toLocaleString(),
                         " \u20BD"
                       ] })
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex justify-end space-x-2", children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Button, { type: "button", variant: "outline", onClick: () => setIsAddOperationOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
-                      /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Button, { type: "button", onClick: addOperation, children: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E" })
+                    /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex justify-end space-x-2", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Button, { type: "button", variant: "outline", onClick: () => setIsAddOperationOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Button, { type: "button", onClick: addOperation, children: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E" })
                     ] })
                   ] })
                 ] })
               ] })
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(CardContent, { children: operations.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Settings, { className: "h-12 w-12 mx-auto mb-4 text-gray-400" }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { children: "\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 \u043D\u0435 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B" }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-sm", children: "\u0414\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B" })
-            ] }) : /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "space-y-3", children: [
-              operations.map((operation) => /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "border rounded-lg p-3 bg-white", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-2", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Badge, { variant: operation.type === "periodical" ? "default" : "destructive", children: operation.type === "periodical" ? "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435 \u0422\u041E" : "\u0420\u0435\u043C\u043E\u043D\u0442" }),
-                    /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("h4", { className: "font-medium", children: operation.name })
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardContent, { children: operations.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Settings, { className: "h-12 w-12 mx-auto mb-4 text-gray-400" }),
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { children: "\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 \u043D\u0435 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B" }),
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm", children: "\u0414\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B" })
+            ] }) : /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "space-y-3", children: [
+              operations.map((operation) => /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "border rounded-lg p-3 bg-white", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-2", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Badge, { variant: operation.type === "periodical" ? "default" : "destructive", children: operation.type === "periodical" ? "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435 \u0422\u041E" : "\u0420\u0435\u043C\u043E\u043D\u0442" }),
+                    /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("h4", { className: "font-medium", children: operation.name })
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
                     Button,
                     {
                       type: "button",
                       variant: "ghost",
                       size: "sm",
                       onClick: () => removeOperation(operation.id),
-                      children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(X, { className: "h-4 w-4" })
+                      children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(X, { className: "h-4 w-4" })
                     }
                   )
                 ] }),
-                operation.description && /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: operation.description }),
-                operation.parts.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "mb-2", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "text-xs font-medium text-gray-500 mb-1", children: "\u0417\u0430\u043F\u0447\u0430\u0441\u0442\u0438:" }),
-                  operation.parts.map((part, idx) => /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("p", { className: "text-xs text-gray-600", children: [
+                operation.description && /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: operation.description }),
+                operation.parts.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "mb-2", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-xs font-medium text-gray-500 mb-1", children: "\u0417\u0430\u043F\u0447\u0430\u0441\u0442\u0438:" }),
+                  operation.parts.map((part, idx) => /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("p", { className: "text-xs text-gray-600", children: [
                     part.name,
                     " x",
                     part.quantity,
@@ -80113,34 +79649,34 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                     " \u20BD"
                   ] }, idx))
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex justify-between items-center text-sm", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("span", { className: "text-gray-600", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex justify-between items-center text-sm", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("span", { className: "text-gray-600", children: [
                     "\u0420\u0430\u0431\u043E\u0442\u044B: ",
                     operation.laborCost.toLocaleString(),
                     " \u20BD"
                   ] }),
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("span", { className: "font-medium text-green-600", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("span", { className: "font-medium text-green-600", children: [
                     "\u0418\u0442\u043E\u0433\u043E: ",
                     (operation.parts.reduce((sum, part) => sum + part.quantity * part.cost, 0) + operation.laborCost).toLocaleString(),
                     " \u20BD"
                   ] })
                 ] })
               ] }, operation.id)),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("div", { className: "bg-green-50 p-3 rounded-lg", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex justify-between items-center", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("span", { className: "font-medium", children: "\u041E\u0431\u0449\u0430\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0432\u0441\u0435\u0445 \u0440\u0430\u0431\u043E\u0442:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("span", { className: "text-xl font-bold text-green-600", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("div", { className: "bg-green-50 p-3 rounded-lg", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex justify-between items-center", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("span", { className: "font-medium", children: "\u041E\u0431\u0449\u0430\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0432\u0441\u0435\u0445 \u0440\u0430\u0431\u043E\u0442:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("span", { className: "text-xl font-bold text-green-600", children: [
                   calculateTotalCost().toLocaleString(),
                   " \u20BD"
                 ] })
               ] }) })
             ] }) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Card, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(FileText, { className: "h-5 w-5 mr-2" }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Card, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(FileText, { className: "h-5 w-5 mr-2" }),
               "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u0437\u0430\u043C\u0435\u0442\u043A\u0438"
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
               Textarea,
               {
                 value: formData.notes,
@@ -80150,12 +79686,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               }
             ) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex flex-col sm:flex-row gap-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Link, { to: "/", className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Button, { variant: "outline", className: "w-full", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(X, { className: "h-4 w-4 mr-2" }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex flex-col sm:flex-row gap-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Link, { to: "/", className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Button, { variant: "outline", className: "w-full", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(X, { className: "h-4 w-4 mr-2" }),
               "\u041E\u0442\u043C\u0435\u043D\u0430"
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(
               Button,
               {
                 type: "button",
@@ -80164,33 +79700,33 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 className: "flex-1 text-green-600 border-green-600 hover:bg-green-50",
                 disabled: !formData.carId || isReturningToReady,
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(CircleCheckBig, { className: "h-4 w-4 mr-2" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CircleCheckBig, { className: "h-4 w-4 mr-2" }),
                   isReturningToReady ? "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435..." : "\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E"
                 ]
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(Button, { type: "submit", className: "flex-1", disabled: !validateForm(), children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Save, { className: "h-4 w-4 mr-2" }),
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Button, { type: "submit", className: "flex-1", disabled: !validateForm(), children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Save, { className: "h-4 w-4 mr-2" }),
               "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0437\u0430\u043F\u0438\u0441\u044C"
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Dialog2, { open: isConfirmReturnOpen, onOpenChange: setIsConfirmReturnOpen, children: /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)(DialogContent2, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(DialogTitle2, { children: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435 \u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430 \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "space-y-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex items-center space-x-3", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(TriangleAlert, { className: "h-8 w-8 text-amber-500" }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsx)("p", { className: "font-medium", children: "\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E?" }),
-                /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("p", { className: "text-sm text-gray-600", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Dialog2, { open: isConfirmReturnOpen, onOpenChange: setIsConfirmReturnOpen, children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(DialogContent2, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(DialogTitle2, { children: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435 \u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430 \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-3", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(TriangleAlert, { className: "h-8 w-8 text-amber-500" }),
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "font-medium", children: "\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E?" }),
+                /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("p", { className: "text-sm text-gray-600", children: [
                   selectedCar?.name,
                   " \u0431\u0443\u0434\u0435\u0442 \u043F\u043E\u043C\u0435\u0447\u0435\u043D \u043A\u0430\u043A \u0433\u043E\u0442\u043E\u0432\u044B\u0439 \u043A \u0440\u0430\u0431\u043E\u0442\u0435"
                 ] })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime42.jsxs)("div", { className: "flex justify-end space-x-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Button, { variant: "outline", onClick: () => setIsConfirmReturnOpen(false), disabled: isReturningToReady, children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
-              /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Button, { onClick: confirmReturnToReady, disabled: isReturningToReady, className: "bg-green-600 hover:bg-green-700", children: isReturningToReady ? "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435..." : "\u0414\u0430, \u0432\u0435\u0440\u043D\u0443\u0442\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E" })
+            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex justify-end space-x-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Button, { variant: "outline", onClick: () => setIsConfirmReturnOpen(false), disabled: isReturningToReady, children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
+              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Button, { onClick: confirmReturnToReady, disabled: isReturningToReady, className: "bg-green-600 hover:bg-green-700", children: isReturningToReady ? "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435..." : "\u0414\u0430, \u0432\u0435\u0440\u043D\u0443\u0442\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E" })
             ] })
           ] })
         ] }) })
@@ -80199,16 +79735,16 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   }
 
   // src/pages/ServiceHistory.tsx
-  var import_react16 = __toESM(require_react(), 1);
-  var import_jsx_runtime43 = __toESM(require_jsx_runtime(), 1);
+  var import_react17 = __toESM(require_react(), 1);
+  var import_jsx_runtime44 = __toESM(require_jsx_runtime(), 1);
   function ServiceHistory() {
-    const [serviceRecords, setServiceRecords] = (0, import_react16.useState)([]);
-    const [filteredRecords, setFilteredRecords] = (0, import_react16.useState)([]);
-    const [cars, setCars] = (0, import_react16.useState)([]);
-    const [searchQuery, setSearchQuery] = (0, import_react16.useState)("");
-    const [filterCar, setFilterCar] = (0, import_react16.useState)("");
-    const [filterType, setFilterType] = (0, import_react16.useState)("");
-    const [isLoading, setIsLoading] = (0, import_react16.useState)(true);
+    const [serviceRecords, setServiceRecords] = (0, import_react17.useState)([]);
+    const [filteredRecords, setFilteredRecords] = (0, import_react17.useState)([]);
+    const [cars, setCars] = (0, import_react17.useState)([]);
+    const [searchQuery, setSearchQuery] = (0, import_react17.useState)("");
+    const [filterCar, setFilterCar] = (0, import_react17.useState)("");
+    const [filterType, setFilterType] = (0, import_react17.useState)("");
+    const [isLoading, setIsLoading] = (0, import_react17.useState)(true);
     const loadData = async () => {
       try {
         setIsLoading(true);
@@ -80225,10 +79761,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         setIsLoading(false);
       }
     };
-    (0, import_react16.useEffect)(() => {
+    (0, import_react17.useEffect)(() => {
       loadData();
     }, []);
-    (0, import_react16.useEffect)(() => {
+    (0, import_react17.useEffect)(() => {
       let filtered = serviceRecords;
       if (searchQuery) {
         filtered = filtered.filter(
@@ -80253,66 +79789,66 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       (record) => record.operations.some((op) => op.type === "repair")
     ).length;
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "text-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u0438..." })
+      return /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "text-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0438\u0441\u0442\u043E\u0440\u0438\u0438..." })
       ] }) });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center justify-between", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-3", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(FileText, { className: "h-5 w-5 mr-2 text-blue-600" }),
+    return /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "min-h-screen bg-gray-50", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-center space-x-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(FileText, { className: "h-5 w-5 mr-2 text-blue-600" }),
               "\u0418\u0441\u0442\u043E\u0440\u0438\u044F \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm text-gray-600", children: "\u0412\u0441\u0435 \u0437\u0430\u043F\u0438\u0441\u0438 \u043E \u0441\u0435\u0440\u0432\u0438\u0441\u0435 \u0438 \u0440\u0435\u043C\u043E\u043D\u0442\u0435" })
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-sm text-gray-600", children: "\u0412\u0441\u0435 \u0437\u0430\u043F\u0438\u0441\u0438 \u043E \u0441\u0435\u0440\u0432\u0438\u0441\u0435 \u0438 \u0440\u0435\u043C\u043E\u043D\u0442\u0435" })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Link, { to: "/add-service-record", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Button, { size: "sm", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Link, { to: "/add-service-record", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(Button, { size: "sm", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
           "\u041D\u043E\u0432\u0430\u044F \u0437\u0430\u043F\u0438\u0441\u044C"
         ] }) })
       ] }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("main", { className: "px-4 py-6", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(FileText, { className: "h-8 w-8 text-blue-600" }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-2xl font-bold", children: filteredRecords.length }),
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm text-gray-600", children: "\u0417\u0430\u043F\u0438\u0441\u0435\u0439" })
+      /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("main", { className: "px-4 py-6", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(FileText, { className: "h-8 w-8 text-blue-600" }),
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-2xl font-bold", children: filteredRecords.length }),
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-sm text-gray-600", children: "\u0417\u0430\u043F\u0438\u0441\u0435\u0439" })
             ] })
           ] }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Calendar, { className: "h-8 w-8 text-green-600" }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-2xl font-bold", children: periodicCount }),
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u044B\u0445 \u0422\u041E" })
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Calendar, { className: "h-8 w-8 text-green-600" }),
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-2xl font-bold", children: periodicCount }),
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u044B\u0445 \u0422\u041E" })
             ] })
           ] }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Wrench, { className: "h-8 w-8 text-red-600" }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-2xl font-bold", children: repairCount }),
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm text-gray-600", children: "\u0420\u0435\u043C\u043E\u043D\u0442\u043E\u0432" })
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Wrench, { className: "h-8 w-8 text-red-600" }),
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-2xl font-bold", children: repairCount }),
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-sm text-gray-600", children: "\u0420\u0435\u043C\u043E\u043D\u0442\u043E\u0432" })
             ] })
           ] }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("span", { className: "text-2xl", children: "\u{1F4B0}" }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("p", { className: "text-2xl font-bold", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("span", { className: "text-2xl", children: "\u{1F4B0}" }),
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("p", { className: "text-2xl font-bold", children: [
                 Math.round(totalSpent / 1e3),
                 "\u043A"
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u043E\u0442\u0440\u0430\u0447\u0435\u043D\u043E \u20BD" })
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u043E\u0442\u0440\u0430\u0447\u0435\u043D\u043E \u20BD" })
             ] })
           ] }) }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex flex-col sm:flex-row gap-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("div", { className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "relative", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex flex-col sm:flex-row gap-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("div", { className: "flex-1", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "relative", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" }),
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
               Input,
               {
                 placeholder: "\u041F\u043E\u0438\u0441\u043A \u043F\u043E \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044E, \u0441\u0435\u0440\u0432\u0438\u0441\u0443, \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044F\u043C...",
@@ -80322,66 +79858,66 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               }
             )
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex gap-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Select2, { value: filterCar, onValueChange: setFilterCar, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectTrigger2, { className: "w-40", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectValue2, { placeholder: "\u0412\u0441\u0435 \u0430\u0432\u0442\u043E" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(SelectContent2, { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectItem2, { value: "", children: "\u0412\u0441\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438" }),
-                cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectItem2, { value: car.id, children: car.name }, car.id))
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex gap-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(Select2, { value: filterCar, onValueChange: setFilterCar, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectTrigger2, { className: "w-40", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectValue2, { placeholder: "\u0412\u0441\u0435 \u0430\u0432\u0442\u043E" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(SelectContent2, { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectItem2, { value: "", children: "\u0412\u0441\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438" }),
+                cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectItem2, { value: car.id, children: car.name }, car.id))
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Select2, { value: filterType, onValueChange: setFilterType, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectTrigger2, { className: "w-32", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectValue2, { placeholder: "\u0412\u0441\u0435 \u0442\u0438\u043F\u044B" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(SelectContent2, { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectItem2, { value: "", children: "\u0412\u0441\u0435 \u0442\u0438\u043F\u044B" }),
-                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectItem2, { value: "periodical", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435 \u0422\u041E" }),
-                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectItem2, { value: "repair", children: "\u0420\u0435\u043C\u043E\u043D\u0442" })
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(Select2, { value: filterType, onValueChange: setFilterType, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectTrigger2, { className: "w-32", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectValue2, { placeholder: "\u0412\u0441\u0435 \u0442\u0438\u043F\u044B" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(SelectContent2, { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectItem2, { value: "", children: "\u0412\u0441\u0435 \u0442\u0438\u043F\u044B" }),
+                /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectItem2, { value: "periodical", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435 \u0422\u041E" }),
+                /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectItem2, { value: "repair", children: "\u0420\u0435\u043C\u043E\u043D\u0442" })
               ] })
             ] })
           ] })
         ] }) }) }),
-        filteredRecords.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(CardContent, { className: "p-8 text-center", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(FileText, { className: "h-12 w-12 text-gray-400 mx-auto mb-4" }),
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("h3", { className: "text-lg font-medium text-gray-900 mb-2", children: serviceRecords.length === 0 ? "\u0418\u0441\u0442\u043E\u0440\u0438\u044F \u043F\u0443\u0441\u0442\u0430" : "\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E" }),
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-gray-600 mb-4", children: serviceRecords.length === 0 ? "\u0423 \u0432\u0430\u0441 \u043F\u043E\u043A\u0430 \u043D\u0435\u0442 \u0437\u0430\u043F\u0438\u0441\u0435\u0439 \u043E\u0431 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0438" : "\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0438\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u043F\u043E\u0438\u0441\u043A\u0430" }),
-          serviceRecords.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Link, { to: "/add-service-record", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Button, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
+        filteredRecords.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(CardContent, { className: "p-8 text-center", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(FileText, { className: "h-12 w-12 text-gray-400 mx-auto mb-4" }),
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("h3", { className: "text-lg font-medium text-gray-900 mb-2", children: serviceRecords.length === 0 ? "\u0418\u0441\u0442\u043E\u0440\u0438\u044F \u043F\u0443\u0441\u0442\u0430" : "\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E" }),
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-gray-600 mb-4", children: serviceRecords.length === 0 ? "\u0423 \u0432\u0430\u0441 \u043F\u043E\u043A\u0430 \u043D\u0435\u0442 \u0437\u0430\u043F\u0438\u0441\u0435\u0439 \u043E\u0431 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0438" : "\u041F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0438\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u043F\u043E\u0438\u0441\u043A\u0430" }),
+          serviceRecords.length === 0 && /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Link, { to: "/add-service-record", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(Button, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
             "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043F\u0435\u0440\u0432\u0443\u044E \u0437\u0430\u043F\u0438\u0441\u044C"
           ] }) })
-        ] }) }) : /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("div", { className: "space-y-4", children: filteredRecords.sort((a5, b3) => new Date(b3.date).getTime() - new Date(a5.date).getTime()).map((record) => /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(CardContent, { className: "p-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-start justify-between mb-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-2 mb-1", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Car, { className: "h-4 w-4 text-gray-500" }),
-                /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("span", { className: "font-medium", children: record.carName }),
-                /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(Badge, { variant: "outline", children: [
+        ] }) }) : /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("div", { className: "space-y-4", children: filteredRecords.sort((a5, b3) => new Date(b3.date).getTime() - new Date(a5.date).getTime()).map((record) => /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Card, { children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(CardContent, { className: "p-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-start justify-between mb-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-center space-x-2 mb-1", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Car, { className: "h-4 w-4 text-gray-500" }),
+                /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("span", { className: "font-medium", children: record.carName }),
+                /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(Badge, { variant: "outline", children: [
                   record.mileage,
                   " \u043A\u043C"
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-4 text-sm text-gray-600", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex items-center space-x-1", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Calendar, { className: "h-4 w-4" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("span", { children: record.date })
+              /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-center space-x-4 text-sm text-gray-600", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex items-center space-x-1", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Calendar, { className: "h-4 w-4" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("span", { children: record.date })
                 ] }),
-                record.serviceProvider && /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("span", { children: [
+                record.serviceProvider && /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("span", { children: [
                   "\u{1F527} ",
                   record.serviceProvider
                 ] })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("div", { className: "text-right", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("p", { className: "text-lg font-bold text-green-600", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("div", { className: "text-right", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("p", { className: "text-lg font-bold text-green-600", children: [
               record.totalCost.toLocaleString(),
               " \u20BD"
             ] }) })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "space-y-2 mb-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("p", { className: "text-sm font-medium text-gray-700", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "space-y-2 mb-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("p", { className: "text-sm font-medium text-gray-700", children: [
               "\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043D\u044B\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 (",
               record.operations.length,
               "):"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("div", { className: "flex flex-wrap gap-2", children: record.operations.map((operation) => /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("div", { className: "flex flex-wrap gap-2", children: record.operations.map((operation) => /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
               Badge,
               {
                 variant: operation.type === "periodical" ? "default" : "destructive",
@@ -80391,13 +79927,13 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               operation.id
             )) })
           ] }),
-          record.notes && /* @__PURE__ */ (0, import_jsx_runtime43.jsx)("p", { className: "text-sm text-gray-600 bg-gray-50 p-2 rounded", children: record.notes }),
-          /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("div", { className: "flex justify-between items-center mt-3 pt-3 border-t text-xs text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)("span", { children: [
+          record.notes && /* @__PURE__ */ (0, import_jsx_runtime44.jsx)("p", { className: "text-sm text-gray-600 bg-gray-50 p-2 rounded", children: record.notes }),
+          /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("div", { className: "flex justify-between items-center mt-3 pt-3 border-t text-xs text-gray-500", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)("span", { children: [
               "\u0421\u043E\u0437\u0434\u0430\u043D\u043E: ",
               new Date(record.createdAt).toLocaleDateString("ru-RU")
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(Settings, { className: "h-4 w-4" }) })
+            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(Settings, { className: "h-4 w-4" }) })
           ] })
         ] }) }, record.id)) })
       ] })
@@ -80405,14 +79941,14 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   }
 
   // src/pages/MaintenancePlanning.tsx
-  var import_react17 = __toESM(require_react(), 1);
+  var import_react18 = __toESM(require_react(), 1);
 
   // src/components/ui/checkbox.tsx
   var React62 = __toESM(require_react(), 1);
 
   // ../../node_modules/@radix-ui/react-checkbox/dist/index.mjs
   var React61 = __toESM(require_react(), 1);
-  var import_jsx_runtime44 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime45 = __toESM(require_jsx_runtime(), 1);
   var CHECKBOX_NAME = "Checkbox";
   var [createCheckboxContext, createCheckboxScope] = createContextScope(CHECKBOX_NAME);
   var [CheckboxProviderImpl, useCheckboxContext] = createCheckboxContext(CHECKBOX_NAME);
@@ -80460,7 +79996,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       bubbleInput,
       setBubbleInput
     };
-    return /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
       CheckboxProviderImpl,
       {
         scope: __scopeCheckbox,
@@ -80494,7 +80030,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           return () => form.removeEventListener("reset", reset);
         }
       }, [control, setChecked]);
-      return /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
         Primitive.button,
         {
           type: "button",
@@ -80536,7 +80072,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         form,
         ...checkboxProps
       } = props;
-      return /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
         CheckboxProvider,
         {
           __scopeCheckbox,
@@ -80548,8 +80084,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           name,
           form,
           value,
-          internal_do_not_use_render: ({ isFormControl }) => /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(import_jsx_runtime44.Fragment, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
+          internal_do_not_use_render: ({ isFormControl }) => /* @__PURE__ */ (0, import_jsx_runtime45.jsxs)(import_jsx_runtime45.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
               CheckboxTrigger,
               {
                 ...checkboxProps,
@@ -80557,7 +80093,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 __scopeCheckbox
               }
             ),
-            isFormControl && /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
+            isFormControl && /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
               CheckboxBubbleInput,
               {
                 __scopeCheckbox
@@ -80574,11 +80110,11 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     (props, forwardedRef) => {
       const { __scopeCheckbox, forceMount, ...indicatorProps } = props;
       const context = useCheckboxContext(INDICATOR_NAME3, __scopeCheckbox);
-      return /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
         Presence,
         {
           present: forceMount || isIndeterminate(context.checked) || context.checked === true,
-          children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
+          children: /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
             Primitive.span,
             {
               "data-state": getState5(context.checked),
@@ -80630,7 +80166,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         }
       }, [bubbleInput, prevChecked, checked, hasConsumerStoppedPropagationRef]);
       const defaultCheckedRef = React61.useRef(isIndeterminate(checked) ? false : checked);
-      return /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
+      return /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
         Primitive.input,
         {
           type: "checkbox",
@@ -80672,8 +80208,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   }
 
   // src/components/ui/checkbox.tsx
-  var import_jsx_runtime45 = __toESM(require_jsx_runtime(), 1);
-  var Checkbox2 = React62.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
+  var import_jsx_runtime46 = __toESM(require_jsx_runtime(), 1);
+  var Checkbox2 = React62.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
     Checkbox,
     {
       ref,
@@ -80682,11 +80218,11 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         className
       ),
       ...props,
-      children: /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
+      children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
         CheckboxIndicator,
         {
           className: cn("flex items-center justify-center text-current"),
-          children: /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(Check, { className: "h-4 w-4" })
+          children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Check, { className: "h-4 w-4" })
         }
       )
     }
@@ -80695,41 +80231,113 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
 
   // src/pages/MaintenancePlanning.tsx
   var import_html2pdf = __toESM(require_html2pdf(), 1);
-  var import_jsx_runtime46 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime47 = __toESM(require_jsx_runtime(), 1);
+  var maintenanceRegulations = [
+    {
+      "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043C\u043E\u0442\u043E\u0440\u043D\u043E\u0433\u043E \u043C\u0430\u0441\u043B\u0430 \u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430",
+      "mileage": "10000",
+      "period": "6",
+      "notes": "\u041E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E \u043C\u0430\u0441\u043B\u043E 0W-20/5W-30. \u041F\u0440\u0438 \u0442\u044F\u0436\u0451\u043B\u044B\u0445 \u0443\u0441\u043B\u043E\u0432\u0438\u044F\u0445 - \u0441\u043E\u043A\u0440\u0430\u0442\u0438\u0442\u044C \u0434\u043E 8000 \u043A\u043C"
+    },
+    {
+      "operation": "\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 \u0446\u0435\u043F\u0438 \u0413\u0420\u041C \u0438 \u043D\u0430\u0442\u044F\u0436\u0438\u0442\u0435\u043B\u044F",
+      "mileage": "60000",
+      "period": "48",
+      "notes": "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043D\u0430\u0442\u044F\u0436\u0435\u043D\u0438\u044F \u0446\u0435\u043F\u0438, \u0438\u0437\u043D\u043E\u0441 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u0449\u0438\u0445 \u0438 \u043D\u0430\u0442\u044F\u0436\u0438\u0442\u0435\u043B\u044F. \u041E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E \u043F\u0440\u0438 \u043F\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u0438 \u0448\u0443\u043C\u043E\u0432"
+    },
+    {
+      "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430 \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F",
+      "mileage": "30000",
+      "period": "24",
+      "notes": "\u041A\u0440\u0438\u0442\u0438\u0447\u043D\u043E \u0434\u043B\u044F K24A1 \u0438\u0437-\u0437\u0430 \u043F\u0440\u044F\u043C\u043E\u0433\u043E \u0437\u0430\u0431\u043E\u0440\u0430 \u0432\u043E\u0437\u0434\u0443\u0445\u0430"
+    },
+    {
+      "operation": "\u041F\u0440\u043E\u043C\u044B\u0432\u043A\u0430 \u0441\u0438\u0441\u0442\u0435\u043C\u044B VTEC",
+      "mileage": "50000",
+      "period": "36",
+      "notes": "\u0427\u0438\u0441\u0442\u043A\u0430 \u0441\u043E\u043B\u0435\u043D\u043E\u0438\u0434\u0430 VTEC \u0438 \u0441\u0435\u0442\u043A\u0438 \u0444\u0438\u043B\u044C\u0442\u0440\u0430 (\u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u0430\u044F \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0430 K24)"
+    },
+    {
+      "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0441\u0432\u0435\u0447\u0435\u0439 \u0437\u0430\u0436\u0438\u0433\u0430\u043D\u0438\u044F",
+      "mileage": "100000",
+      "period": "60",
+      "notes": "NGK IZFR6K11. \u041E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0437\u0430\u043C\u0435\u043D\u0430 \u043F\u043E \u0440\u0435\u0433\u043B\u0430\u043C\u0435\u043D\u0442\u0443"
+    },
+    {
+      "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u043E\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
+      "mileage": "30000",
+      "period": "24",
+      "notes": "DOT 3/4. \u0413\u0438\u0433\u0440\u043E\u0441\u043A\u043E\u043F\u0438\u0447\u043D\u043E\u0441\u0442\u044C \u0432\u043B\u0438\u044F\u0435\u0442 \u043D\u0430 ABS"
+    },
+    {
+      "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438 \u0410\u041A\u041F\u041F",
+      "mileage": "60000",
+      "period": "48",
+      "notes": "\u0422\u043E\u043B\u044C\u043A\u043E Honda ATF DW-1."
+    },
+    {
+      "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u043E\u0445\u043B\u0430\u0436\u0434\u0430\u044E\u0449\u0435\u0439 \u0436\u0438\u0434\u043A\u043E\u0441\u0442\u0438",
+      "mileage": "100000",
+      "period": "60",
+      "notes": "Honda Type 2 (\u0441\u0438\u043D\u044F\u044F). \u041D\u0435 \u0441\u043C\u0435\u0448\u0438\u0432\u0430\u0442\u044C \u0441 \u0434\u0440\u0443\u0433\u0438\u043C\u0438 \u0442\u0438\u043F\u0430\u043C\u0438!"
+    },
+    {
+      "operation": "\u0420\u0435\u0433\u0443\u043B\u0438\u0440\u043E\u0432\u043A\u0430 \u043A\u043B\u0430\u043F\u0430\u043D\u043E\u0432",
+      "mileage": "40000",
+      "period": "36",
+      "notes": "\u0422\u0440\u0435\u0431\u0443\u0435\u0442 \u0441\u043F\u0435\u0446\u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
+    },
+    {
+      "operation": "\u0417\u0430\u043C\u0435\u043D\u0430 \u0440\u0435\u043C\u043D\u044F \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
+      "mileage": "80000",
+      "period": "60",
+      "notes": "\u041A\u043E\u043D\u0442\u0440\u043E\u043B\u044C \u043D\u0430\u0442\u044F\u0436\u0438\u0442\u0435\u043B\u044F \u0438 \u043E\u0431\u0432\u043E\u0434\u043D\u044B\u0445 \u0440\u043E\u043B\u0438\u043A\u043E\u0432"
+    },
+    {
+      "operation": "\u0427\u0438\u0441\u0442\u043A\u0430 \u0434\u0440\u043E\u0441\u0441\u0435\u043B\u044C\u043D\u043E\u0439 \u0437\u0430\u0441\u043B\u043E\u043D\u043A\u0438",
+      "mileage": "50000",
+      "period": "36",
+      "notes": "\u0425\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u043D\u0430\u044F \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u0430 K24 - \u043D\u0435\u0441\u0442\u0430\u0431\u0438\u043B\u044C\u043D\u044B\u0435 \u0445\u043E\u043B\u043E\u0441\u0442\u044B\u0435 \u043E\u0431\u043E\u0440\u043E\u0442\u044B"
+    },
+    {
+      "operation": "\u0414\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430 \u043F\u043E\u0434\u0432\u0435\u0441\u043A\u0438",
+      "mileage": "20000",
+      "period": "12",
+      "notes": "\u041E\u0441\u043E\u0431\u043E\u0435 \u0432\u043D\u0438\u043C\u0430\u043D\u0438\u0435 \u0437\u0430\u0434\u043D\u0438\u043C \u0440\u044B\u0447\u0430\u0433\u0430\u043C (\u043E\u0442\u0437\u044B\u0432\u043D\u0430\u044F \u043A\u0430\u043C\u043F\u0430\u043D\u0438\u044F HMC-2004-32)"
+    }
+  ];
   function MaintenancePlanning() {
     const { planId } = useParams();
-    const [selectedCarId, setSelectedCarId] = (0, import_react17.useState)("");
-    const [plannedDate, setPlannedDate] = (0, import_react17.useState)(dateUtils.getCurrentRussianDate());
-    const [plannedCompletionDate, setPlannedCompletionDate] = (0, import_react17.useState)(dateUtils.getCurrentRussianDate());
-    const [plannedMileage, setPlannedMileage] = (0, import_react17.useState)("");
-    const [serviceProvider, setServiceProvider] = (0, import_react17.useState)("");
-    const [planNotes, setPlanNotes] = (0, import_react17.useState)("");
-    const [cars, setCars] = (0, import_react17.useState)([]);
-    const [userAlerts, setUserAlerts] = (0, import_react17.useState)([]);
-    const [periodicItems, setPeriodicItems] = (0, import_react17.useState)([]);
-    const [repairItems, setRepairItems] = (0, import_react17.useState)([]);
-    const [savedPlans, setSavedPlans] = (0, import_react17.useState)([]);
-    const [isConfirmMaintenanceOpen, setIsConfirmMaintenanceOpen] = (0, import_react17.useState)(false);
-    const [isSendingToMaintenance, setIsSendingToMaintenance] = (0, import_react17.useState)(false);
-    const [editingPlanId, setEditingPlanId] = (0, import_react17.useState)(null);
-    const [autoSaveInterval, setAutoSaveInterval] = (0, import_react17.useState)(null);
-    const [isLoading, setIsLoading] = (0, import_react17.useState)(true);
-    const [isLoadingPlan, setIsLoadingPlan] = (0, import_react17.useState)(false);
-    const [isSaving, setIsSaving] = (0, import_react17.useState)(false);
-    const [lastAutoSave, setLastAutoSave] = (0, import_react17.useState)(0);
-    const [formChanged, setFormChanged] = (0, import_react17.useState)(false);
-    const [serviceShops, setServiceShops] = (0, import_react17.useState)([]);
-    const [isServiceShopsOpen, setIsServiceShopsOpen] = (0, import_react17.useState)(false);
-    const [isAddEditShopOpen, setIsAddEditShopOpen] = (0, import_react17.useState)(false);
-    const [editingShopId, setEditingShopId] = (0, import_react17.useState)(null);
-    const [shopName, setShopName] = (0, import_react17.useState)("");
-    const [shopContacts, setShopContacts] = (0, import_react17.useState)("");
-    const [shopRating, setShopRating] = (0, import_react17.useState)(5);
-    const [isDeleteShopOpen, setIsDeleteShopOpen] = (0, import_react17.useState)(false);
-    const [isCloseConfirmOpen, setIsCloseConfirmOpen] = (0, import_react17.useState)(false);
-    const [shopToDelete, setShopToDelete] = (0, import_react17.useState)(null);
-    const [maintenanceOperations, setMaintenanceOperations] = (0, import_react17.useState)([]);
-    const [isLoadingOperations, setIsLoadingOperations] = (0, import_react17.useState)(true);
+    const [selectedCarId, setSelectedCarId] = (0, import_react18.useState)("");
+    const [plannedDate, setPlannedDate] = (0, import_react18.useState)(dateUtils.getCurrentRussianDate());
+    const [plannedCompletionDate, setPlannedCompletionDate] = (0, import_react18.useState)(dateUtils.getCurrentRussianDate());
+    const [plannedMileage, setPlannedMileage] = (0, import_react18.useState)("");
+    const [serviceProvider, setServiceProvider] = (0, import_react18.useState)("");
+    const [planNotes, setPlanNotes] = (0, import_react18.useState)("");
+    const [cars, setCars] = (0, import_react18.useState)([]);
+    const [userAlerts, setUserAlerts] = (0, import_react18.useState)([]);
+    const [periodicItems, setPeriodicItems] = (0, import_react18.useState)([]);
+    const [repairItems, setRepairItems] = (0, import_react18.useState)([]);
+    const [savedPlans, setSavedPlans] = (0, import_react18.useState)([]);
+    const [isConfirmMaintenanceOpen, setIsConfirmMaintenanceOpen] = (0, import_react18.useState)(false);
+    const [isSendingToMaintenance, setIsSendingToMaintenance] = (0, import_react18.useState)(false);
+    const [editingPlanId, setEditingPlanId] = (0, import_react18.useState)(null);
+    const [autoSaveInterval, setAutoSaveInterval] = (0, import_react18.useState)(null);
+    const [isLoading, setIsLoading] = (0, import_react18.useState)(true);
+    const [isLoadingPlan, setIsLoadingPlan] = (0, import_react18.useState)(false);
+    const [isSaving, setIsSaving] = (0, import_react18.useState)(false);
+    const [lastAutoSave, setLastAutoSave] = (0, import_react18.useState)(0);
+    const [formChanged, setFormChanged] = (0, import_react18.useState)(false);
+    const [serviceShops, setServiceShops] = (0, import_react18.useState)([]);
+    const [isServiceShopsOpen, setIsServiceShopsOpen] = (0, import_react18.useState)(false);
+    const [isAddEditShopOpen, setIsAddEditShopOpen] = (0, import_react18.useState)(false);
+    const [editingShopId, setEditingShopId] = (0, import_react18.useState)(null);
+    const [shopName, setShopName] = (0, import_react18.useState)("");
+    const [shopContacts, setShopContacts] = (0, import_react18.useState)("");
+    const [shopRating, setShopRating] = (0, import_react18.useState)(5);
+    const [isDeleteShopOpen, setIsDeleteShopOpen] = (0, import_react18.useState)(false);
+    const [isCloseConfirmOpen, setIsCloseConfirmOpen] = (0, import_react18.useState)(false);
+    const [shopToDelete, setShopToDelete] = (0, import_react18.useState)(null);
     const loadData = async () => {
       try {
         setIsLoading(true);
@@ -80750,7 +80358,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         setIsLoading(false);
       }
     };
-    (0, import_react17.useEffect)(() => {
+    (0, import_react18.useEffect)(() => {
       loadData();
       const interval = setInterval(autoSaveDraft, 3e4);
       setAutoSaveInterval(interval);
@@ -80760,7 +80368,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         }
       };
     }, []);
-    (0, import_react17.useEffect)(() => {
+    (0, import_react18.useEffect)(() => {
       if (planId && savedPlans.length > 0 && cars.length > 0) {
         const planToLoad = savedPlans.find((p3) => p3.id === planId);
         if (planToLoad) {
@@ -80771,7 +80379,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         }
       }
     }, [planId, savedPlans, cars]);
-    (0, import_react17.useEffect)(() => {
+    (0, import_react18.useEffect)(() => {
       if (autoSaveInterval) {
         clearInterval(autoSaveInterval);
         setAutoSaveInterval(null);
@@ -80789,22 +80397,37 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         }
       };
     }, [selectedCarId, plannedDate, plannedCompletionDate, plannedMileage, serviceProvider, planNotes, periodicItems, repairItems, planId]);
-    (0, import_react17.useEffect)(() => {
-      if (selectedCarId && !isLoadingPlan && !isLoadingOperations) {
+    (0, import_react18.useEffect)(() => {
+      if (selectedCarId && !isLoadingPlan) {
         const selectedCar2 = cars.find((c5) => c5.id === selectedCarId);
         if (selectedCar2) {
-          const neededMaintenance = maintenanceOperations.map((item) => ({
-            operation: item.operation,
-            notes: item.notes,
-            mileageInterval: item.mileage,
-            timeInterval: item.period,
-            mileageUntilNext: item.mileageUntilNext,
-            monthsUntilNext: item.monthsUntilNext,
-            priority: item.priority,
-            selected: item.isDue || item.priority === "high",
-            estimatedCost: 0,
-            planNotes: ""
-          }));
+          const neededMaintenance = maintenanceRegulations.map((regulation) => {
+            const intervalMileage = parseInt(regulation.mileage);
+            const intervalMonths = parseInt(regulation.period);
+            const mileageSinceLastService = selectedCar2.mileage % intervalMileage;
+            const mileageUntilNext = intervalMileage - mileageSinceLastService;
+            const lastServiceDate = selectedCar2.lastService ? new Date(selectedCar2.lastService) : new Date(selectedCar2.createdAt);
+            const monthsSinceService = Math.floor((Date.now() - lastServiceDate.getTime()) / (1e3 * 60 * 60 * 24 * 30));
+            const monthsUntilNext = intervalMonths - monthsSinceService % intervalMonths;
+            let priority = "low";
+            if (mileageUntilNext <= 2e3 || monthsUntilNext <= 1) {
+              priority = "high";
+            } else if (mileageUntilNext <= 5e3 || monthsUntilNext <= 3) {
+              priority = "medium";
+            }
+            return {
+              operation: regulation.operation,
+              notes: regulation.notes,
+              mileageInterval: intervalMileage,
+              timeInterval: intervalMonths,
+              mileageUntilNext,
+              monthsUntilNext,
+              priority,
+              selected: priority === "high",
+              estimatedCost: 0,
+              planNotes: ""
+            };
+          });
           setPeriodicItems(neededMaintenance);
           const carAlerts = userAlerts.filter((alert2) => alert2.carId === selectedCarId);
           const repairOperations = carAlerts.map((alert2) => ({
@@ -80820,26 +80443,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           setPlannedMileage(selectedCar2.mileage.toString());
         }
       }
-    }, [selectedCarId, userAlerts, cars, isLoadingPlan, isLoadingOperations, maintenanceOperations]);
-    (0, import_react17.useEffect)(() => {
-      const loadMaintenanceOperations = async () => {
-        if (!selectedCarId) {
-          setMaintenanceOperations([]);
-          setIsLoadingOperations(false);
-          return;
-        }
-        try {
-          setIsLoadingOperations(true);
-          const operations = await PMGService.calculateMaintenanceDue(selectedCarId);
-          setMaintenanceOperations(operations);
-        } catch (error) {
-          console.error("Error loading maintenance operations:", error);
-        } finally {
-          setIsLoadingOperations(false);
-        }
-      };
-      loadMaintenanceOperations();
-    }, [selectedCarId]);
+    }, [selectedCarId, userAlerts, cars, isLoadingPlan]);
     const updatePeriodicItem = (index3, field, value) => {
       if (planId) return;
       setPeriodicItems((prev) => prev.map(
@@ -80866,6 +80470,38 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       if (selectedCar2) {
         console.log("Found selected car:", selectedCar2);
         console.log("Plan periodic operations:", plan.periodicOperations);
+        const neededMaintenance = maintenanceRegulations.map((regulation) => {
+          const planOperation = plan.periodicOperations.find((op) => op.operation === regulation.operation);
+          console.log(`Regulation: ${regulation.operation}, Found in plan:`, !!planOperation, planOperation);
+          const intervalMileage = parseInt(regulation.mileage);
+          const intervalMonths = parseInt(regulation.period);
+          const mileageSinceLastService = selectedCar2.mileage % intervalMileage;
+          const mileageUntilNext = intervalMileage - mileageSinceLastService;
+          const lastServiceDate = selectedCar2.lastService ? new Date(selectedCar2.lastService) : new Date(selectedCar2.createdAt);
+          const monthsSinceService = Math.floor((Date.now() - lastServiceDate.getTime()) / (1e3 * 60 * 60 * 24 * 30));
+          const monthsUntilNext = intervalMonths - monthsSinceService % intervalMonths;
+          let priority = "low";
+          if (mileageUntilNext <= 2e3 || monthsUntilNext <= 1) {
+            priority = "high";
+          } else if (mileageUntilNext <= 5e3 || monthsUntilNext <= 3) {
+            priority = "medium";
+          }
+          return {
+            operation: regulation.operation,
+            notes: regulation.notes,
+            mileageInterval: intervalMileage,
+            timeInterval: intervalMonths,
+            mileageUntilNext,
+            monthsUntilNext,
+            priority: planOperation?.priority || priority,
+            selected: !!planOperation,
+            // This is the key fix - use the saved operation's selected state
+            estimatedCost: planOperation?.estimatedCost || 0,
+            planNotes: planOperation?.notes || ""
+          };
+        });
+        console.log("Loaded periodic items:", neededMaintenance.filter((item) => item.selected));
+        setPeriodicItems(neededMaintenance);
       } else {
         console.warn(`Car with ID ${plan.carId} not found in current cars list`);
         alert(`\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C "${plan.carName}" \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D \u0432 \u0442\u0435\u043A\u0443\u0449\u0435\u043C \u0441\u043F\u0438\u0441\u043A\u0435. \u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E, \u043E\u043D \u0431\u044B\u043B \u0443\u0434\u0430\u043B\u0435\u043D.`);
@@ -81320,80 +80956,74 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
     const selectedPeriodicCount = periodicItems.filter((item) => item.selected).length;
     const selectedRepairCount = repairItems.filter((item) => item.selected).length;
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "text-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445..." })
+      return /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "text-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445..." })
       ] }) });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "min-h-screen bg-gray-50 pb-20", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center justify-between", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center space-x-3", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Calendar, { className: "h-5 w-5 mr-2 text-blue-600" }),
+    return /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "min-h-screen bg-gray-50 pb-20", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Calendar, { className: "h-5 w-5 mr-2 text-blue-600" }),
               planId ? "\u041F\u0440\u043E\u0441\u043C\u043E\u0442\u0440 \u043F\u043B\u0430\u043D\u0430 \u0422\u041E" : "\u041F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0422\u041E"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm text-gray-600", children: planId ? "\u041F\u0440\u043E\u0441\u043C\u043E\u0442\u0440 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044E\u0449\u0435\u0433\u043E \u043F\u043B\u0430\u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F (\u0442\u043E\u043B\u044C\u043A\u043E \u0434\u043B\u044F \u0447\u0442\u0435\u043D\u0438\u044F)" : "\u0421\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043F\u043B\u0430\u043D\u0430 \u043F\u0435\u0440\u0438\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u0438 \u0440\u0435\u043C\u043E\u043D\u0442\u043D\u043E\u0433\u043E \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" })
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600", children: planId ? "\u041F\u0440\u043E\u0441\u043C\u043E\u0442\u0440 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044E\u0449\u0435\u0433\u043E \u043F\u043B\u0430\u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F (\u0442\u043E\u043B\u044C\u043A\u043E \u0434\u043B\u044F \u0447\u0442\u0435\u043D\u0438\u044F)" : "\u0421\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043F\u043B\u0430\u043D\u0430 \u043F\u0435\u0440\u0438\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u0438 \u0440\u0435\u043C\u043E\u043D\u0442\u043D\u043E\u0433\u043E \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center space-x-2", children: [
-          selectedCarId && /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Link, { to: `/periodical-maintenance-guide/${selectedCarId}`, children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(Button, { variant: "outline", size: "sm", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Settings, { className: "h-4 w-4 mr-2" }),
-            "\u041D\u0430\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0422\u041E"
-          ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(
-            Button,
-            {
-              variant: "outline",
-              size: "sm",
-              onClick: () => setIsServiceShopsOpen(true),
-              className: "flex items-center space-x-2",
-              children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Store, { className: "h-4 w-4" }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("span", { className: "hidden sm:inline", children: "\u0421\u0435\u0440\u0432\u0438\u0441\u044B" })
-              ]
-            }
-          )
-        ] })
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(
+          Button,
+          {
+            variant: "outline",
+            size: "sm",
+            onClick: () => setIsServiceShopsOpen(true),
+            className: "flex items-center space-x-2",
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Store, { className: "h-4 w-4" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("span", { className: "hidden sm:inline", children: "\u0421\u0435\u0440\u0432\u0438\u0441\u044B" })
+            ]
+          }
+        )
       ] }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("main", { className: "px-4 py-6", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "grid grid-cols-2 lg:grid-cols-3 gap-4 text-sm", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "font-medium", children: selectedCar ? selectedCar.name : "\u041D\u0435 \u0432\u044B\u0431\u0440\u0430\u043D" })
+      /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("main", { className: "px-4 py-6", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "grid grid-cols-2 lg:grid-cols-3 gap-4 text-sm", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "font-medium", children: selectedCar ? selectedCar.name : "\u041D\u0435 \u0432\u044B\u0431\u0440\u0430\u043D" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-gray-600", children: "\u0414\u0430\u0442\u0430 \u043D\u0430\u0447\u0430\u043B\u0430:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "font-medium", children: plannedDate || "-" })
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-gray-600", children: "\u0414\u0430\u0442\u0430 \u043D\u0430\u0447\u0430\u043B\u0430:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "font-medium", children: plannedDate || "-" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-gray-600", children: "\u0414\u0430\u0442\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "font-medium", children: plannedCompletionDate || "-" })
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-gray-600", children: "\u0414\u0430\u0442\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "font-medium", children: plannedCompletionDate || "-" })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-gray-600", children: "\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0439:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "font-medium", children: selectedPeriodicCount + selectedRepairCount })
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-gray-600", children: "\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0439:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "font-medium", children: selectedPeriodicCount + selectedRepairCount })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-gray-600", children: "\u041E\u0446\u0435\u043D\u043A\u0430 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u0438:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "font-medium text-green-600", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-gray-600", children: "\u041E\u0446\u0435\u043D\u043A\u0430 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u0438:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "font-medium text-green-600", children: [
               calculateTotalCost().toLocaleString(),
               " \u20BD"
             ] })
           ] })
         ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(Card, { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Car, { className: "h-5 w-5 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(Card, { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Car, { className: "h-5 w-5 mr-2" }),
             "\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F"
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(CardContent, { className: "space-y-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Label2, { htmlFor: "car", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0434\u043B\u044F \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F *" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(Select2, { value: selectedCarId, onValueChange: setSelectedCarId, disabled: !!planId, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C..." }) }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(SelectContent2, { children: cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(SelectItem2, { value: car.id, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(CardContent, { className: "space-y-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Label2, { htmlFor: "car", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0434\u043B\u044F \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F *" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(Select2, { value: selectedCarId, onValueChange: setSelectedCarId, disabled: !!planId, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C..." }) }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectContent2, { children: cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(SelectItem2, { value: car.id, children: [
                   car.name,
                   " - ",
                   car.brand,
@@ -81405,10 +81035,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 ] }, car.id)) })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Label2, { htmlFor: "plannedDate", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u0430\u044F \u0434\u0430\u0442\u0430 \u043D\u0430\u0447\u0430\u043B\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "grid grid-cols-1 lg:grid-cols-3 gap-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Label2, { htmlFor: "plannedDate", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u0430\u044F \u0434\u0430\u0442\u0430 \u043D\u0430\u0447\u0430\u043B\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                   DateInput,
                   {
                     id: "plannedDate",
@@ -81418,9 +81048,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Label2, { htmlFor: "plannedCompletionDate", children: "\u041F\u043B\u0430\u043D\u0438\u0440\u0443\u0435\u043C\u0430\u044F \u0434\u0430\u0442\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F *" }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Label2, { htmlFor: "plannedCompletionDate", children: "\u041F\u043B\u0430\u043D\u0438\u0440\u0443\u0435\u043C\u0430\u044F \u0434\u0430\u0442\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F *" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                   DateInput,
                   {
                     id: "plannedCompletionDate",
@@ -81430,9 +81060,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   }
                 )
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Label2, { htmlFor: "plannedMileage", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u044B\u0439 \u043F\u0440\u043E\u0431\u0435\u0433 (\u043A\u043C)" }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Label2, { htmlFor: "plannedMileage", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u044B\u0439 \u043F\u0440\u043E\u0431\u0435\u0433 (\u043A\u043C)" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                   Input,
                   {
                     id: "plannedMileage",
@@ -81445,11 +81075,11 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 )
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Label2, { htmlFor: "serviceProvider", children: "\u041F\u043B\u0430\u043D\u0438\u0440\u0443\u0435\u043C\u044B\u0439 \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C" }),
-              serviceShops.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "border rounded-md p-3 bg-gray-50 text-center", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: "\u041D\u0435\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0445 \u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432" }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Label2, { htmlFor: "serviceProvider", children: "\u041F\u043B\u0430\u043D\u0438\u0440\u0443\u0435\u043C\u044B\u0439 \u0438\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C" }),
+              serviceShops.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "border rounded-md p-3 bg-gray-50 text-center", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: "\u041D\u0435\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0445 \u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(
                   Button,
                   {
                     type: "button",
@@ -81459,13 +81089,13 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                     className: "text-xs",
                     disabled: !!planId,
                     children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Plus, { className: "h-3 w-3 mr-1" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Plus, { className: "h-3 w-3 mr-1" }),
                       "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0441\u0435\u0440\u0432\u0438\u0441"
                     ]
                   }
                 )
-              ] }) : /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(import_jsx_runtime46.Fragment, { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(
+              ] }) : /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(import_jsx_runtime47.Fragment, { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(
                   Select2,
                   {
                     value: serviceProvider,
@@ -81474,10 +81104,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                     },
                     disabled: !!planId,
                     children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u0435\u0440\u0432\u0438\u0441 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430..." }) }),
-                      /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(SelectContent2, { children: serviceShops.map((shop) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(SelectItem2, { value: shop.name, children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center justify-between w-full", children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("span", { children: shop.name }),
-                        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "flex items-center ml-2", children: [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+                      /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u0435\u0440\u0432\u0438\u0441 \u0438\u0437 \u0441\u043F\u0438\u0441\u043A\u0430..." }) }),
+                      /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectContent2, { children: serviceShops.map((shop) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectItem2, { value: shop.name, children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center justify-between w-full", children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("span", { children: shop.name }),
+                        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "flex items-center ml-2", children: [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                           Star,
                           {
                             className: `h-3 w-3 ${i4 < shop.rating ? "text-yellow-400 fill-current" : "text-gray-300"}`
@@ -81490,36 +81120,36 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 ),
                 (() => {
                   const selectedShop = serviceProvider ? serviceShops.find((shop) => shop.name === serviceProvider) : null;
-                  return selectedShop ? /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-start justify-between", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex-1", children: [
-                      /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center space-x-3 mb-2", children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("h4", { className: "font-medium text-blue-900", children: selectedShop.name }),
-                        /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center", children: [
-                          [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+                  return selectedShop ? /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-start justify-between", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex-1", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-3 mb-2", children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("h4", { className: "font-medium text-blue-900", children: selectedShop.name }),
+                        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center", children: [
+                          [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                             Star,
                             {
                               className: `h-4 w-4 ${i4 < selectedShop.rating ? "text-yellow-400 fill-current" : "text-gray-300"}`
                             },
                             i4
                           )),
-                          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("span", { className: "ml-1 text-sm text-gray-600", children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("span", { className: "ml-1 text-sm text-gray-600", children: [
                             "(",
                             selectedShop.rating,
                             "/5)"
                           ] })
                         ] })
                       ] }),
-                      /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-sm text-blue-800 mb-1", children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("strong", { children: "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B:" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm text-blue-800 mb-1", children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("strong", { children: "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B:" }),
                         " ",
                         selectedShop.contacts
                       ] }),
-                      /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-xs text-blue-600", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-xs text-blue-600", children: [
                         "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D: ",
                         new Date(selectedShop.createdAt).toLocaleDateString("ru-RU")
                       ] })
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+                    /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                       Button,
                       {
                         type: "button",
@@ -81528,7 +81158,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                         className: "h-6 w-6 p-0 text-blue-600 hover:text-blue-800",
                         onClick: () => setServiceProvider(""),
                         title: "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u044C \u0432\u044B\u0431\u043E\u0440",
-                        children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(X, { className: "h-3 w-3" })
+                        children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(X, { className: "h-3 w-3" })
                       }
                     )
                   ] }) }) : null;
@@ -81537,22 +81167,22 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(Card, { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Clock, { className: "h-5 w-5 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(Card, { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Clock, { className: "h-5 w-5 mr-2" }),
             "\u041F\u0435\u0440\u0438\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435 (",
             selectedPeriodicCount,
             " \u0432\u044B\u0431\u0440\u0430\u043D\u043E)"
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CardContent, { children: !selectedCarId ? /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Calendar, { className: "h-12 w-12 mx-auto mb-4 text-gray-400" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0434\u043B\u044F \u0440\u0430\u0441\u0447\u0435\u0442\u0430 \u043F\u043B\u0430\u043D\u043E\u0432\u043E\u0433\u043E \u0422\u041E" })
-          ] }) : periodicItems.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CircleCheckBig, { className: "h-12 w-12 mx-auto mb-4 text-green-400" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { children: "\u0412\u0441\u0435 \u043F\u043B\u0430\u043D\u043E\u0432\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u044B" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u043D\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u0441\u0440\u043E\u0447\u043D\u043E\u0433\u043E \u0422\u041E" })
-          ] }) : /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "space-y-3", children: periodicItems.map((item, index3) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "border rounded-lg p-3", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-start space-x-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardContent, { children: !selectedCarId ? /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Calendar, { className: "h-12 w-12 mx-auto mb-4 text-gray-400" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0434\u043B\u044F \u0440\u0430\u0441\u0447\u0435\u0442\u0430 \u043F\u043B\u0430\u043D\u043E\u0432\u043E\u0433\u043E \u0422\u041E" })
+          ] }) : periodicItems.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CircleCheckBig, { className: "h-12 w-12 mx-auto mb-4 text-green-400" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { children: "\u0412\u0441\u0435 \u043F\u043B\u0430\u043D\u043E\u0432\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u044B" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u043D\u0435 \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u0441\u0440\u043E\u0447\u043D\u043E\u0433\u043E \u0422\u041E" })
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "space-y-3", children: periodicItems.map((item, index3) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "border rounded-lg p-3", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-start space-x-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
               Checkbox2,
               {
                 checked: item.selected,
@@ -81561,21 +81191,21 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 disabled: !!planId
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex-1", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("h4", { className: "font-medium", children: item.operation }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Badge, { className: getPriorityColor(item.priority), children: item.priority === "high" ? "\u0421\u0440\u043E\u0447\u043D\u043E" : item.priority === "medium" ? "\u0421\u043A\u043E\u0440\u043E" : "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435" })
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex-1", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center justify-between mb-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("h4", { className: "font-medium", children: item.operation }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Badge, { className: getPriorityColor(item.priority), children: item.priority === "high" ? "\u0421\u0440\u043E\u0447\u043D\u043E" : item.priority === "medium" ? "\u0421\u043A\u043E\u0440\u043E" : "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: item.notes }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "grid grid-cols-2 gap-2 text-xs text-gray-500", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: item.notes }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "grid grid-cols-2 gap-2 text-xs text-gray-500", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { children: [
                   "\u0418\u043D\u0442\u0435\u0440\u0432\u0430\u043B: ",
                   item.mileageInterval?.toLocaleString(),
                   " \u043A\u043C / ",
                   item.timeInterval,
                   " \u043C\u0435\u0441"
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { children: [
                   "\u0414\u043E \u0422\u041E: ",
                   item.mileageUntilNext?.toLocaleString(),
                   " \u043A\u043C / ",
@@ -81583,8 +81213,8 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   " \u043C\u0435\u0441"
                 ] })
               ] }),
-              item.selected && /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "mt-2 grid grid-cols-2 gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+              item.selected && /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "mt-2 grid grid-cols-2 gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                   Input,
                   {
                     type: "number",
@@ -81594,7 +81224,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                     disabled: !!planId
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                   Input,
                   {
                     placeholder: "\u041F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u044F \u043A \u043F\u043B\u0430\u043D\u0443",
@@ -81607,22 +81237,22 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             ] })
           ] }) }, index3)) }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(Card, { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(TriangleAlert, { className: "h-5 w-5 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(Card, { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(TriangleAlert, { className: "h-5 w-5 mr-2" }),
             "\u0420\u0435\u043C\u043E\u043D\u0442\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B (",
             selectedRepairCount,
             " \u0432\u044B\u0431\u0440\u0430\u043D\u043E)"
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CardContent, { children: !selectedCarId ? /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(TriangleAlert, { className: "h-12 w-12 mx-auto mb-4 text-gray-400" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0434\u043B\u044F \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0431\u043B\u0435\u043C" })
-          ] }) : repairItems.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CircleCheckBig, { className: "h-12 w-12 mx-auto mb-4 text-green-400" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { children: "\u041D\u0435\u0442 \u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0445 \u043F\u0440\u043E\u0431\u043B\u0435\u043C" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm", children: "\u0420\u0435\u043C\u043E\u043D\u0442\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B \u043D\u0435 \u0442\u0440\u0435\u0431\u0443\u044E\u0442\u0441\u044F" })
-          ] }) : /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "space-y-3", children: repairItems.map((item, index3) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "border rounded-lg p-3", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-start space-x-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardContent, { children: !selectedCarId ? /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(TriangleAlert, { className: "h-12 w-12 mx-auto mb-4 text-gray-400" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { children: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0434\u043B\u044F \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F \u043F\u0440\u043E\u0431\u043B\u0435\u043C" })
+          ] }) : repairItems.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CircleCheckBig, { className: "h-12 w-12 mx-auto mb-4 text-green-400" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { children: "\u041D\u0435\u0442 \u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0445 \u043F\u0440\u043E\u0431\u043B\u0435\u043C" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm", children: "\u0420\u0435\u043C\u043E\u043D\u0442\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B \u043D\u0435 \u0442\u0440\u0435\u0431\u0443\u044E\u0442\u0441\u044F" })
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "space-y-3", children: repairItems.map((item, index3) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "border rounded-lg p-3", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-start space-x-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
               Checkbox2,
               {
                 checked: item.selected,
@@ -81631,15 +81261,15 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 disabled: !!planId
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex-1", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "flex items-center justify-between mb-2", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Badge, { className: getPriorityColor(item.priority), children: item.priority === "critical" ? "\u041A\u0440\u0438\u0442\u0438\u0447\u043D\u043E" : item.priority === "unclear" ? "\u041D\u0435\u043F\u043E\u043D\u044F\u0442\u043D\u043E" : "\u041C\u043E\u0436\u043D\u043E \u043F\u043E\u0434\u043E\u0436\u0434\u0430\u0442\u044C" }) }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm mb-2", children: item.description }),
-              item.notes && /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-xs text-gray-600 mb-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex-1", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "flex items-center justify-between mb-2", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Badge, { className: getPriorityColor(item.priority), children: item.priority === "critical" ? "\u041A\u0440\u0438\u0442\u0438\u0447\u043D\u043E" : item.priority === "unclear" ? "\u041D\u0435\u043F\u043E\u043D\u044F\u0442\u043D\u043E" : "\u041C\u043E\u0436\u043D\u043E \u043F\u043E\u0434\u043E\u0436\u0434\u0430\u0442\u044C" }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm mb-2", children: item.description }),
+              item.notes && /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-xs text-gray-600 mb-2", children: [
                 "\u041C\u0435\u0441\u0442\u043E: ",
                 item.notes
               ] }),
-              item.selected && /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "mt-2 grid grid-cols-2 gap-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+              item.selected && /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "mt-2 grid grid-cols-2 gap-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                   Input,
                   {
                     type: "number",
@@ -81649,7 +81279,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                     disabled: !!planId
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                   Input,
                   {
                     placeholder: "\u041F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u044F \u043A \u0440\u0435\u043C\u043E\u043D\u0442\u0443",
@@ -81662,12 +81292,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             ] })
           ] }) }, index3)) }) })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(Card, { className: "mb-6", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(FileText, { className: "h-5 w-5 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(Card, { className: "mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(FileText, { className: "h-5 w-5 mr-2" }),
             "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u0437\u0430\u043C\u0435\u0442\u043A\u0438"
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
             Textarea,
             {
               value: planNotes,
@@ -81678,44 +81308,44 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             }
           ) })
         ] }),
-        (selectedPeriodicCount > 0 || selectedRepairCount > 0) && /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "bg-blue-50 p-4 rounded-lg", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex justify-between items-center mb-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("span", { className: "font-medium", children: "\u041F\u0435\u0440\u0438\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0422\u041E:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("span", { className: "text-blue-600", children: [
+        (selectedPeriodicCount > 0 || selectedRepairCount > 0) && /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "bg-blue-50 p-4 rounded-lg", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-between items-center mb-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("span", { className: "font-medium", children: "\u041F\u0435\u0440\u0438\u043E\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u0422\u041E:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("span", { className: "text-blue-600", children: [
               periodicItems.filter((item) => item.selected).reduce((sum, item) => sum + (item.estimatedCost || 0), 0).toLocaleString(),
               " \u20BD"
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex justify-between items-center mb-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("span", { className: "font-medium", children: "\u0420\u0435\u043C\u043E\u043D\u0442\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("span", { className: "text-red-600", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-between items-center mb-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("span", { className: "font-medium", children: "\u0420\u0435\u043C\u043E\u043D\u0442\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("span", { className: "text-red-600", children: [
               repairItems.filter((item) => item.selected).reduce((sum, item) => sum + (item.estimatedCost || 0), 0).toLocaleString(),
               " \u20BD"
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("hr", { className: "my-2" }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex justify-between items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("span", { className: "text-lg font-bold", children: "\u041E\u0431\u0449\u0430\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("span", { className: "text-xl font-bold text-green-600", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("hr", { className: "my-2" }),
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-between items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("span", { className: "text-lg font-bold", children: "\u041E\u0431\u0449\u0430\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("span", { className: "text-xl font-bold text-green-600", children: [
               calculateTotalCost().toLocaleString(),
               " \u20BD"
             ] })
           ] })
         ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex flex-col sm:flex-row gap-3", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex flex-col sm:flex-row gap-3", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(
             Button,
             {
               onClick: handleClose,
               variant: "outline",
               className: "flex-1",
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(X, { className: "h-4 w-4 mr-2" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(X, { className: "h-4 w-4 mr-2" }),
                 "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
               ]
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(
             Button,
             {
               onClick: savePlan,
@@ -81723,12 +81353,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               className: "flex-1",
               disabled: !selectedCarId || !plannedDate || !plannedCompletionDate || selectedPeriodicCount === 0 && selectedRepairCount === 0 || isSaving || !!planId,
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Save, { className: "h-4 w-4 mr-2" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Save, { className: "h-4 w-4 mr-2" }),
                 isSaving ? "\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435..." : planId ? "\u0422\u043E\u043B\u044C\u043A\u043E \u0434\u043B\u044F \u0447\u0442\u0435\u043D\u0438\u044F" : "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u043F\u043B\u0430\u043D"
               ]
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(
             Button,
             {
               onClick: exportToPDF,
@@ -81737,134 +81367,134 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               disabled: !selectedCarId || selectedPeriodicCount === 0 && selectedRepairCount === 0 || !!planId,
               title: "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u043F\u043B\u0430\u043D\u0430 \u0432 PDF",
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Download, { className: "h-4 w-4 mr-2" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Download, { className: "h-4 w-4 mr-2" }),
                 "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 \u0432 PDF"
               ]
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(
             Button,
             {
               onClick: sendToMaintenance,
               className: "flex-1 bg-orange-600 hover:bg-orange-700",
               disabled: !selectedCarId || !plannedDate || selectedPeriodicCount === 0 && selectedRepairCount === 0 || isSendingToMaintenance || !!planId,
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Wrench, { className: "h-4 w-4 mr-2" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Wrench, { className: "h-4 w-4 mr-2" }),
                 isSendingToMaintenance ? "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430..." : "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435"
               ]
             }
           )
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Dialog2, { open: isConfirmMaintenanceOpen, onOpenChange: setIsConfirmMaintenanceOpen, children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(DialogContent2, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(DialogTitle2, { children: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435 \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u0438 \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "space-y-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center space-x-3", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(TriangleAlert, { className: "h-8 w-8 text-amber-500" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "font-medium", children: "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435?" }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-sm text-gray-600", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Dialog2, { open: isConfirmMaintenanceOpen, onOpenChange: setIsConfirmMaintenanceOpen, children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(DialogContent2, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogTitle2, { children: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435 \u043E\u0442\u043F\u0440\u0430\u0432\u043A\u0438 \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-3", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(TriangleAlert, { className: "h-8 w-8 text-amber-500" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "font-medium", children: "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435?" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm text-gray-600", children: [
                   selectedCar?.name,
                   " \u0431\u0443\u0434\u0435\u0442 \u043F\u043E\u043C\u0435\u0447\u0435\u043D \u043A\u0430\u043A \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0438\u0439\u0441\u044F \u043D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435"
                 ] })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "bg-gray-50 p-3 rounded", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm font-medium mb-1", children: "\u041F\u043B\u0430\u043D \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F:" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-xs text-gray-600", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "bg-gray-50 p-3 rounded", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm font-medium mb-1", children: "\u041F\u043B\u0430\u043D \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F:" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-xs text-gray-600", children: [
                 "\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0439: ",
                 selectedPeriodicCount + selectedRepairCount
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-xs text-gray-600", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-xs text-gray-600", children: [
                 "\u0414\u0430\u0442\u0430 \u043D\u0430\u0447\u0430\u043B\u0430: ",
                 plannedDate
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-xs text-gray-600", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-xs text-gray-600", children: [
                 "\u0414\u0430\u0442\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F: ",
                 plannedCompletionDate
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-xs text-gray-600", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-xs text-gray-600", children: [
                 "\u0421\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C: ",
                 calculateTotalCost().toLocaleString(),
                 " \u20BD"
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex justify-end space-x-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Button, { variant: "outline", onClick: () => setIsConfirmMaintenanceOpen(false), disabled: isSendingToMaintenance, children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Button, { onClick: confirmSendToMaintenance, disabled: isSendingToMaintenance, className: "bg-orange-600 hover:bg-orange-700", children: isSendingToMaintenance ? "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430..." : "\u0414\u0430, \u043E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435" })
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-end space-x-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { variant: "outline", onClick: () => setIsConfirmMaintenanceOpen(false), disabled: isSendingToMaintenance, children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { onClick: confirmSendToMaintenance, disabled: isSendingToMaintenance, className: "bg-orange-600 hover:bg-orange-700", children: isSendingToMaintenance ? "\u041E\u0442\u043F\u0440\u0430\u0432\u043A\u0430..." : "\u0414\u0430, \u043E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0435" })
             ] })
           ] })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Dialog2, { open: isServiceShopsOpen, onOpenChange: setIsServiceShopsOpen, children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(DialogContent2, { className: "max-w-5xl max-h-[90vh] overflow-y-auto", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center justify-between", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(DialogTitle2, { className: "flex items-center", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Store, { className: "h-5 w-5 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Dialog2, { open: isServiceShopsOpen, onOpenChange: setIsServiceShopsOpen, children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(DialogContent2, { className: "max-w-5xl max-h-[90vh] overflow-y-auto", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center justify-between", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(DialogTitle2, { className: "flex items-center", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Store, { className: "h-5 w-5 mr-2" }),
               "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043C\u0438 (",
               serviceShops.length,
               ")"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(Button, { onClick: openAddShopDialog, size: "sm", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(Button, { onClick: openAddShopDialog, size: "sm", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
               "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0441\u0435\u0440\u0432\u0438\u0441"
             ] })
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "space-y-4", children: serviceShops.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Store, { className: "h-12 w-12 mx-auto mb-4 text-gray-400" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { children: "\u041D\u0435\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0445 \u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432" }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm", children: "\u0414\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u0430\u0432\u0442\u043E\u0441\u0435\u0440\u0432\u0438\u0441\u044B \u0434\u043B\u044F \u0431\u044B\u0441\u0442\u0440\u043E\u0433\u043E \u0432\u044B\u0431\u043E\u0440\u0430 \u043F\u0440\u0438 \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0438 \u0422\u041E" })
-          ] }) : /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "grid gap-4", children: serviceShops.map((shop) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "border rounded-lg p-4", children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-start justify-between", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex-1", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center space-x-3 mb-2", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("h4", { className: "font-medium text-lg", children: shop.name }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center", children: [
-                  [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "space-y-4", children: serviceShops.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Store, { className: "h-12 w-12 mx-auto mb-4 text-gray-400" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { children: "\u041D\u0435\u0442 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0445 \u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm", children: "\u0414\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u0430\u0432\u0442\u043E\u0441\u0435\u0440\u0432\u0438\u0441\u044B \u0434\u043B\u044F \u0431\u044B\u0441\u0442\u0440\u043E\u0433\u043E \u0432\u044B\u0431\u043E\u0440\u0430 \u043F\u0440\u0438 \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0438 \u0422\u041E" })
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "grid gap-4", children: serviceShops.map((shop) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "border rounded-lg p-4", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-start justify-between", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex-1", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-3 mb-2", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("h4", { className: "font-medium text-lg", children: shop.name }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center", children: [
+                  [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                     Star,
                     {
                       className: `h-4 w-4 ${i4 < shop.rating ? "text-yellow-400 fill-current" : "text-gray-300"}`
                     },
                     i4
                   )),
-                  /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("span", { className: "ml-1 text-sm text-gray-600", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("span", { className: "ml-1 text-sm text-gray-600", children: [
                     "(",
                     shop.rating,
                     "/5)"
                   ] })
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: shop.contacts }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-xs text-gray-500", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: shop.contacts }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-xs text-gray-500", children: [
                 "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D: ",
                 new Date(shop.createdAt).toLocaleDateString("ru-RU")
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center space-x-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                 Button,
                 {
                   size: "sm",
                   variant: "outline",
                   onClick: () => openEditShopDialog(shop),
-                  children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(SquarePen, { className: "h-4 w-4" })
+                  children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SquarePen, { className: "h-4 w-4" })
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                 Button,
                 {
                   size: "sm",
                   variant: "outline",
                   onClick: () => openDeleteShopDialog(shop),
                   className: "text-red-600 hover:text-red-700",
-                  children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Trash2, { className: "h-4 w-4" })
+                  children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Trash2, { className: "h-4 w-4" })
                 }
               )
             ] })
           ] }) }, shop.id)) }) })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Dialog2, { open: isAddEditShopOpen, onOpenChange: setIsAddEditShopOpen, children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(DialogContent2, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(DialogTitle2, { children: editingShopId ? "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u0430" : "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043D\u043E\u0432\u043E\u0433\u043E \u0441\u0435\u0440\u0432\u0438\u0441\u0430" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "space-y-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Label2, { htmlFor: "shopName", children: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u0430 *" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Dialog2, { open: isAddEditShopOpen, onOpenChange: setIsAddEditShopOpen, children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(DialogContent2, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogTitle2, { children: editingShopId ? "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u0430" : "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043D\u043E\u0432\u043E\u0433\u043E \u0441\u0435\u0440\u0432\u0438\u0441\u0430" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Label2, { htmlFor: "shopName", children: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u0430 *" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                 Input,
                 {
                   id: "shopName",
@@ -81875,9 +81505,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Label2, { htmlFor: "shopContacts", children: "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F *" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Label2, { htmlFor: "shopContacts", children: "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F *" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                 Textarea,
                 {
                   id: "shopContacts",
@@ -81889,16 +81519,16 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Label2, { htmlFor: "shopRating", children: "\u0420\u0435\u0439\u0442\u0438\u043D\u0433" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center space-x-2", children: [
-                [1, 2, 3, 4, 5].map((rating) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Label2, { htmlFor: "shopRating", children: "\u0420\u0435\u0439\u0442\u0438\u043D\u0433" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-2", children: [
+                [1, 2, 3, 4, 5].map((rating) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                   "button",
                   {
                     type: "button",
                     onClick: () => setShopRating(rating),
                     className: "focus:outline-none",
-                    children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+                    children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                       Star,
                       {
                         className: `h-6 w-6 cursor-pointer transition-colors ${rating <= shopRating ? "text-yellow-400 fill-current" : "text-gray-300 hover:text-yellow-200"}`
@@ -81907,37 +81537,37 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   },
                   rating
                 )),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("span", { className: "ml-2 text-sm text-gray-600", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("span", { className: "ml-2 text-sm text-gray-600", children: [
                   "(",
                   shopRating,
                   "/5)"
                 ] })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex justify-end space-x-2 pt-4", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Button, { variant: "outline", onClick: () => setIsAddEditShopOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Button, { onClick: saveServiceShop, children: editingShopId ? "\u041E\u0431\u043D\u043E\u0432\u0438\u0442\u044C" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C" })
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-end space-x-2 pt-4", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { variant: "outline", onClick: () => setIsAddEditShopOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { onClick: saveServiceShop, children: editingShopId ? "\u041E\u0431\u043D\u043E\u0432\u0438\u0442\u044C" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C" })
             ] })
           ] })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Dialog2, { open: isDeleteShopOpen, onOpenChange: setIsDeleteShopOpen, children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(DialogContent2, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(DialogTitle2, { children: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u044F" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "space-y-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center space-x-3", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(TriangleAlert, { className: "h-8 w-8 text-red-500" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "font-medium", children: "\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u0441\u0435\u0440\u0432\u0438\u0441?" }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("p", { className: "text-sm text-gray-600", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Dialog2, { open: isDeleteShopOpen, onOpenChange: setIsDeleteShopOpen, children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(DialogContent2, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogTitle2, { children: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u044F" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-3", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(TriangleAlert, { className: "h-8 w-8 text-red-500" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "font-medium", children: "\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u0441\u0435\u0440\u0432\u0438\u0441?" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm text-gray-600", children: [
                   '\u0421\u0435\u0440\u0432\u0438\u0441 "',
                   shopToDelete?.name,
                   '" \u0431\u0443\u0434\u0435\u0442 \u0443\u0434\u0430\u043B\u0435\u043D \u043D\u0430\u0432\u0441\u0435\u0433\u0434\u0430'
                 ] })
               ] })
             ] }),
-            shopToDelete && /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "bg-gray-50 p-3 rounded", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm font-medium mb-1", children: shopToDelete.name }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-xs text-gray-600", children: shopToDelete.contacts }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("div", { className: "flex items-center mt-1", children: [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
+            shopToDelete && /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "bg-gray-50 p-3 rounded", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm font-medium mb-1", children: shopToDelete.name }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-xs text-gray-600", children: shopToDelete.contacts }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "flex items-center mt-1", children: [...Array(5)].map((_3, i4) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(
                 Star,
                 {
                   className: `h-3 w-3 ${i4 < shopToDelete.rating ? "text-yellow-400 fill-current" : "text-gray-300"}`
@@ -81945,27 +81575,27 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 i4
               )) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex justify-end space-x-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Button, { variant: "outline", onClick: () => setIsDeleteShopOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Button, { onClick: confirmDeleteShop, className: "bg-red-600 hover:bg-red-700", children: "\u0414\u0430, \u0443\u0434\u0430\u043B\u0438\u0442\u044C" })
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-end space-x-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { variant: "outline", onClick: () => setIsDeleteShopOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { onClick: confirmDeleteShop, className: "bg-red-600 hover:bg-red-700", children: "\u0414\u0430, \u0443\u0434\u0430\u043B\u0438\u0442\u044C" })
             ] })
           ] })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Dialog2, { open: isCloseConfirmOpen, onOpenChange: isSaving ? void 0 : setIsCloseConfirmOpen, children: /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(DialogContent2, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(DialogTitle2, { children: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u043F\u043B\u0430\u043D \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "space-y-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex items-center space-x-3", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(TriangleAlert, { className: "h-8 w-8 text-amber-500" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "font-medium", children: "\u0423 \u0432\u0430\u0441 \u0435\u0441\u0442\u044C \u043D\u0435\u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F" }),
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)("p", { className: "text-sm text-gray-600", children: "\u0427\u0442\u043E \u0432\u044B \u0445\u043E\u0442\u0438\u0442\u0435 \u0441\u0434\u0435\u043B\u0430\u0442\u044C?" })
+        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Dialog2, { open: isCloseConfirmOpen, onOpenChange: isSaving ? void 0 : setIsCloseConfirmOpen, children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(DialogContent2, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogTitle2, { children: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u043F\u043B\u0430\u043D \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-3", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(TriangleAlert, { className: "h-8 w-8 text-amber-500" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "font-medium", children: "\u0423 \u0432\u0430\u0441 \u0435\u0441\u0442\u044C \u043D\u0435\u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u043D\u044B\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F" }),
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600", children: "\u0427\u0442\u043E \u0432\u044B \u0445\u043E\u0442\u0438\u0442\u0435 \u0441\u0434\u0435\u043B\u0430\u0442\u044C?" })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)("div", { className: "flex justify-end space-x-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Button, { variant: "outline", onClick: () => setIsCloseConfirmOpen(false), disabled: isSaving, children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Button, { variant: "outline", onClick: handleCloseWithoutSaving, disabled: isSaving, children: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u0431\u0435\u0437 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F" }),
-              /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(Button, { onClick: handleSaveAndClose, disabled: isSaving, className: "bg-blue-600 hover:bg-blue-700", children: [
-                /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(Save, { className: "h-4 w-4 mr-2" }),
+            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-end space-x-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { variant: "outline", onClick: () => setIsCloseConfirmOpen(false), disabled: isSaving, children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { variant: "outline", onClick: handleCloseWithoutSaving, disabled: isSaving, children: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u0431\u0435\u0437 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F" }),
+              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(Button, { onClick: handleSaveAndClose, disabled: isSaving, className: "bg-blue-600 hover:bg-blue-700", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Save, { className: "h-4 w-4 mr-2" }),
                 isSaving ? "\u0421\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435..." : "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0438 \u0437\u0430\u043A\u0440\u044B\u0442\u044C"
               ] })
             ] })
@@ -81976,15 +81606,15 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
   }
 
   // src/pages/InMaintenance.tsx
-  var import_react18 = __toESM(require_react(), 1);
-  var import_jsx_runtime47 = __toESM(require_jsx_runtime(), 1);
+  var import_react19 = __toESM(require_react(), 1);
+  var import_jsx_runtime48 = __toESM(require_jsx_runtime(), 1);
   function InMaintenance() {
-    const [maintenanceList, setMaintenanceList] = (0, import_react18.useState)([]);
-    const [cars, setCars] = (0, import_react18.useState)([]);
-    const [selectedPlan, setSelectedPlan] = (0, import_react18.useState)(null);
-    const [isConfirmReturnOpen, setIsConfirmReturnOpen] = (0, import_react18.useState)(false);
-    const [entryToReturn, setEntryToReturn] = (0, import_react18.useState)(null);
-    const [isLoading, setIsLoading] = (0, import_react18.useState)(true);
+    const [maintenanceList, setMaintenanceList] = (0, import_react19.useState)([]);
+    const [cars, setCars] = (0, import_react19.useState)([]);
+    const [selectedPlan, setSelectedPlan] = (0, import_react19.useState)(null);
+    const [isConfirmReturnOpen, setIsConfirmReturnOpen] = (0, import_react19.useState)(false);
+    const [entryToReturn, setEntryToReturn] = (0, import_react19.useState)(null);
+    const [isLoading, setIsLoading] = (0, import_react19.useState)(true);
     const loadData = async () => {
       try {
         setIsLoading(true);
@@ -82000,7 +81630,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         setIsLoading(false);
       }
     };
-    (0, import_react18.useEffect)(() => {
+    (0, import_react19.useEffect)(() => {
       loadData();
     }, []);
     const handleReturnToService = (entry) => {
@@ -82039,103 +81669,103 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       return new Date(dateString).toLocaleDateString("ru-RU");
     };
     if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "text-center", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
-        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445..." })
+      return /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "min-h-screen bg-gray-50 flex items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "text-center", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" }),
+        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430 \u0434\u0430\u043D\u043D\u044B\u0445..." })
       ] }) });
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "min-h-screen bg-gray-50 pb-20", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-3", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Wrench, { className: "h-5 w-5 mr-2 text-orange-600" }),
+    return /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "min-h-screen bg-gray-50 pb-20", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("header", { className: "bg-white shadow-sm border-b sticky top-0 z-10", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "px-4 py-3", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex items-center space-x-3", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("h1", { className: "text-lg font-bold text-gray-900 flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Wrench, { className: "h-5 w-5 mr-2 text-orange-600" }),
             "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438 \u043D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438, \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0438\u0435\u0441\u044F \u0432 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0438" })
+          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438, \u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0438\u0435\u0441\u044F \u0432 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0438" })
         ] })
       ] }) }) }),
-      /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("main", { className: "px-4 py-6", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center justify-between", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Wrench, { className: "h-8 w-8 text-orange-600" }),
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-2xl font-bold", children: maintenanceList.length }),
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600", children: "\u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435\u0439 \u043D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435" })
+      /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("main", { className: "px-4 py-6", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Card, { className: "mb-6", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(CardContent, { className: "p-4", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex items-center justify-between", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex items-center space-x-2", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Wrench, { className: "h-8 w-8 text-orange-600" }),
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-2xl font-bold", children: maintenanceList.length }),
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600", children: "\u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435\u0439 \u043D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435" })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "text-right", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600", children: "\u0413\u043E\u0442\u043E\u0432\u044B \u043A \u0440\u0430\u0431\u043E\u0442\u0435" }),
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-xl font-bold text-green-600", children: cars.length - maintenanceList.length })
+          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "text-right", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600", children: "\u0413\u043E\u0442\u043E\u0432\u044B \u043A \u0440\u0430\u0431\u043E\u0442\u0435" }),
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-xl font-bold text-green-600", children: cars.length - maintenanceList.length })
           ] })
         ] }) }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(Card, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Settings, { className: "h-5 w-5 mr-2" }),
+        /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(Card, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(CardTitle, { className: "text-lg flex items-center", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Settings, { className: "h-5 w-5 mr-2" }),
             "\u0421\u043F\u0438\u0441\u043E\u043A \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435\u0439 \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0438"
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CardContent, { children: maintenanceList.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "text-center py-12 text-gray-500", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(CircleCheckBig, { className: "h-16 w-16 mx-auto mb-4 text-green-400" }),
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("h3", { className: "text-lg font-medium mb-2", children: "\u0412\u0441\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438 \u0433\u043E\u0442\u043E\u0432\u044B \u043A \u0440\u0430\u0431\u043E\u0442\u0435" }),
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm", children: "\u0412 \u0434\u0430\u043D\u043D\u044B\u0439 \u043C\u043E\u043C\u0435\u043D\u0442 \u043D\u0435\u0442 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435\u0439 \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0438" })
-          ] }) : /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "space-y-4", children: maintenanceList.map((entry) => /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "border rounded-lg p-4 bg-white", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "grid grid-cols-1 lg:grid-cols-4 gap-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "lg:col-span-1", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("h4", { className: "font-medium text-lg mb-1", children: entry.carName }),
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm text-gray-600", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(CardContent, { children: maintenanceList.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "text-center py-12 text-gray-500", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(CircleCheckBig, { className: "h-16 w-16 mx-auto mb-4 text-green-400" }),
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("h3", { className: "text-lg font-medium mb-2", children: "\u0412\u0441\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438 \u0433\u043E\u0442\u043E\u0432\u044B \u043A \u0440\u0430\u0431\u043E\u0442\u0435" }),
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm", children: "\u0412 \u0434\u0430\u043D\u043D\u044B\u0439 \u043C\u043E\u043C\u0435\u043D\u0442 \u043D\u0435\u0442 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435\u0439 \u043D\u0430 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u0438" })
+          ] }) : /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "space-y-4", children: maintenanceList.map((entry) => /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "border rounded-lg p-4 bg-white", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "grid grid-cols-1 lg:grid-cols-4 gap-4", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "lg:col-span-1", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("h4", { className: "font-medium text-lg mb-1", children: entry.carName }),
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { className: "text-sm text-gray-600", children: [
                 entry.carBrand,
                 " ",
                 entry.carModel
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "mt-2", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Badge, { variant: "secondary", className: "bg-orange-100 text-orange-800", children: "\u041D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435" }) })
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "mt-2", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Badge, { variant: "secondary", className: "bg-orange-100 text-orange-800", children: "\u041D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435" }) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "lg:col-span-1", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "mb-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u041F\u043B\u0430\u043D \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F:" }),
-              entry.maintenancePlan ? /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm text-gray-600", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "lg:col-span-1", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "mb-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u041F\u043B\u0430\u043D \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F:" }),
+              entry.maintenancePlan ? /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { className: "text-sm text-gray-600", children: [
                   "\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0439: ",
                   entry.maintenancePlan.periodicOperations.length + entry.maintenancePlan.repairOperations.length
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm text-green-600 font-medium", children: [
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { className: "text-sm text-green-600 font-medium", children: [
                   entry.maintenancePlan.totalEstimatedCost.toLocaleString(),
                   " \u20BD"
                 ] }),
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(Dialog2, { children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { variant: "outline", size: "sm", className: "mt-1", children: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u043E\u0441\u0442\u0438" }) }),
-                  /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(DialogContent2, { className: "max-w-2xl max-h-[80vh] overflow-y-auto", children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(DialogTitle2, { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(Dialog2, { children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(DialogTrigger2, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Button, { variant: "outline", size: "sm", className: "mt-1", children: "\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u043E\u0441\u0442\u0438" }) }),
+                  /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(DialogContent2, { className: "max-w-2xl max-h-[80vh] overflow-y-auto", children: [
+                    /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(DialogTitle2, { children: [
                       "\u041F\u043B\u0430\u043D \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F - ",
                       entry.carName
                     ] }) }),
-                    /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "space-y-4", children: [
-                      entry.maintenancePlan.periodicOperations.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("h4", { className: "font-medium mb-2", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435 \u0422\u041E:" }),
-                        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "space-y-2", children: entry.maintenancePlan.periodicOperations.map((op, idx) => /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-between items-center p-2 bg-gray-50 rounded", children: [
-                          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-                            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm font-medium", children: op.operation }),
-                            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Badge, { className: getPriorityColor(op.priority), children: op.priority === "high" ? "\u0421\u0440\u043E\u0447\u043D\u043E" : op.priority === "medium" ? "\u0421\u043A\u043E\u0440\u043E" : "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435" })
+                    /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "space-y-4", children: [
+                      entry.maintenancePlan.periodicOperations.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("h4", { className: "font-medium mb-2", children: "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435 \u0422\u041E:" }),
+                        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "space-y-2", children: entry.maintenancePlan.periodicOperations.map((op, idx) => /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex justify-between items-center p-2 bg-gray-50 rounded", children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+                            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm font-medium", children: op.operation }),
+                            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Badge, { className: getPriorityColor(op.priority), children: op.priority === "high" ? "\u0421\u0440\u043E\u0447\u043D\u043E" : op.priority === "medium" ? "\u0421\u043A\u043E\u0440\u043E" : "\u041F\u043B\u0430\u043D\u043E\u0432\u043E\u0435" })
                           ] }),
-                          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm font-medium", children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { className: "text-sm font-medium", children: [
                             op.estimatedCost.toLocaleString(),
                             " \u20BD"
                           ] })
                         ] }, idx)) })
                       ] }),
-                      entry.maintenancePlan.repairOperations.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("h4", { className: "font-medium mb-2", children: "\u0420\u0435\u043C\u043E\u043D\u0442\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B:" }),
-                        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "space-y-2", children: entry.maintenancePlan.repairOperations.map((op, idx) => /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-between items-center p-2 bg-gray-50 rounded", children: [
-                          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-                            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm font-medium", children: op.description }),
-                            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Badge, { className: getPriorityColor(op.priority), children: op.priority === "critical" ? "\u041A\u0440\u0438\u0442\u0438\u0447\u043D\u043E" : op.priority === "unclear" ? "\u041D\u0435\u043F\u043E\u043D\u044F\u0442\u043D\u043E" : "\u041C\u043E\u0436\u043D\u043E \u043F\u043E\u0434\u043E\u0436\u0434\u0430\u0442\u044C" })
+                      entry.maintenancePlan.repairOperations.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("h4", { className: "font-medium mb-2", children: "\u0420\u0435\u043C\u043E\u043D\u0442\u043D\u044B\u0435 \u0440\u0430\u0431\u043E\u0442\u044B:" }),
+                        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "space-y-2", children: entry.maintenancePlan.repairOperations.map((op, idx) => /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex justify-between items-center p-2 bg-gray-50 rounded", children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+                            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm font-medium", children: op.description }),
+                            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Badge, { className: getPriorityColor(op.priority), children: op.priority === "critical" ? "\u041A\u0440\u0438\u0442\u0438\u0447\u043D\u043E" : op.priority === "unclear" ? "\u041D\u0435\u043F\u043E\u043D\u044F\u0442\u043D\u043E" : "\u041C\u043E\u0436\u043D\u043E \u043F\u043E\u0434\u043E\u0436\u0434\u0430\u0442\u044C" })
                           ] }),
-                          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm font-medium", children: [
+                          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { className: "text-sm font-medium", children: [
                             op.estimatedCost.toLocaleString(),
                             " \u20BD"
                           ] })
                         ] }, idx)) })
                       ] }),
-                      /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "border-t pt-2", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-between items-center", children: [
-                        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("span", { className: "font-medium", children: "\u041E\u0431\u0449\u0430\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:" }),
-                        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("span", { className: "text-lg font-bold text-green-600", children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "border-t pt-2", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex justify-between items-center", children: [
+                        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("span", { className: "font-medium", children: "\u041E\u0431\u0449\u0430\u044F \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C:" }),
+                        /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("span", { className: "text-lg font-bold text-green-600", children: [
                           entry.maintenancePlan.totalEstimatedCost.toLocaleString(),
                           " \u20BD"
                         ] })
@@ -82143,40 +81773,40 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                     ] })
                   ] })
                 ] })
-              ] }) : /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-500", children: "\u041F\u043B\u0430\u043D \u043D\u0435 \u0443\u043A\u0430\u0437\u0430\u043D" })
+              ] }) : /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-500", children: "\u041F\u043B\u0430\u043D \u043D\u0435 \u0443\u043A\u0430\u0437\u0430\u043D" })
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "lg:col-span-1", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "space-y-2", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u0414\u0430\u0442\u0430 \u043D\u0430\u0447\u0430\u043B\u0430:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm text-gray-600 flex items-center", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Calendar, { className: "h-4 w-4 mr-1" }),
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "lg:col-span-1", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "space-y-2", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u0414\u0430\u0442\u0430 \u043D\u0430\u0447\u0430\u043B\u0430:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { className: "text-sm text-gray-600 flex items-center", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Calendar, { className: "h-4 w-4 mr-1" }),
                   formatDate(entry.plannedDate)
                 ] })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u0414\u0430\u0442\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm text-gray-600 flex items-center", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Calendar, { className: "h-4 w-4 mr-1" }),
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u0414\u0430\u0442\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { className: "text-sm text-gray-600 flex items-center", children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Calendar, { className: "h-4 w-4 mr-1" }),
                   formatDate(entry.plannedCompletionDate)
                 ] })
               ] }),
-              entry.serviceProvider && /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u0418\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600", children: entry.serviceProvider })
+              entry.serviceProvider && /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u0418\u0441\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600", children: entry.serviceProvider })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u041D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435 \u0441:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "text-sm text-gray-600", children: formatDate(entry.addedAt) })
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm font-medium text-gray-700", children: "\u041D\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0435 \u0441:" }),
+                /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600", children: formatDate(entry.addedAt) })
               ] })
             ] }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("div", { className: "lg:col-span-1 flex flex-col justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "lg:col-span-1 flex flex-col justify-center", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(
               Button,
               {
                 onClick: () => handleReturnToService(entry),
                 variant: "outline",
                 className: "w-full text-green-600 border-green-600 hover:bg-green-50",
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(RotateCcw, { className: "h-4 w-4 mr-2" }),
+                  /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(RotateCcw, { className: "h-4 w-4 mr-2" }),
                   "\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E"
                 ]
               }
@@ -82184,309 +81814,22 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
           ] }) }, entry.id)) }) })
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Dialog2, { open: isConfirmReturnOpen, onOpenChange: setIsConfirmReturnOpen, children: /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(DialogContent2, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(DialogTitle2, { children: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435 \u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430 \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "space-y-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex items-center space-x-3", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(TriangleAlert, { className: "h-8 w-8 text-amber-500" }),
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsx)("p", { className: "font-medium", children: "\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E?" }),
-              /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("p", { className: "text-sm text-gray-600", children: [
+      /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Dialog2, { open: isConfirmReturnOpen, onOpenChange: setIsConfirmReturnOpen, children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(DialogContent2, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(DialogTitle2, { children: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435 \u0432\u043E\u0437\u0432\u0440\u0430\u0442\u0430 \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "space-y-4", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex items-center space-x-3", children: [
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(TriangleAlert, { className: "h-8 w-8 text-amber-500" }),
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "font-medium", children: "\u0412\u0435\u0440\u043D\u0443\u0442\u044C \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E?" }),
+              /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { className: "text-sm text-gray-600", children: [
                 entryToReturn?.carName,
                 " \u0431\u0443\u0434\u0435\u0442 \u043F\u043E\u043C\u0435\u0447\u0435\u043D \u043A\u0430\u043A \u0433\u043E\u0442\u043E\u0432\u044B\u0439 \u043A \u0440\u0430\u0431\u043E\u0442\u0435"
               ] })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)("div", { className: "flex justify-end space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { variant: "outline", onClick: () => setIsConfirmReturnOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
-            /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(Button, { onClick: confirmReturnToService, className: "bg-green-600 hover:bg-green-700", children: "\u0414\u0430, \u0432\u0435\u0440\u043D\u0443\u0442\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E" })
-          ] })
-        ] })
-      ] }) })
-    ] });
-  }
-
-  // src/pages/PeriodicalMaintenanceGuide.tsx
-  var import_react19 = __toESM(require_react(), 1);
-  var import_jsx_runtime48 = __toESM(require_jsx_runtime(), 1);
-  function PeriodicalMaintenanceGuide() {
-    const { carId } = useParams();
-    const [car, setCar] = (0, import_react19.useState)(null);
-    const [regulations, setRegulations] = (0, import_react19.useState)([]);
-    const [isLoading, setIsLoading] = (0, import_react19.useState)(true);
-    const [isEditDialogOpen, setIsEditDialogOpen] = (0, import_react19.useState)(false);
-    const [editingRegulation, setEditingRegulation] = (0, import_react19.useState)({});
-    const [editingIndex, setEditingIndex] = (0, import_react19.useState)(-1);
-    const [isCustomized, setIsCustomized] = (0, import_react19.useState)(false);
-    (0, import_react19.useEffect)(() => {
-      const loadCarAndRegulations = async () => {
-        if (!carId) return;
-        try {
-          setIsLoading(true);
-          const carData = await DataService.getCarById(carId);
-          if (!carData) {
-            alert("\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D");
-            return;
-          }
-          setCar(carData);
-          const carRegulations = await PMGService.getCarMaintenanceRegulations(carId);
-          setRegulations(carRegulations);
-          const stored = localStorage.getItem(`car-maintenance-guide-${carId}`);
-          setIsCustomized(!!stored);
-        } catch (error) {
-          console.error("Error loading car and regulations:", error);
-          alert("\u041E\u0448\u0438\u0431\u043A\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0438 \u0434\u0430\u043D\u043D\u044B\u0445");
-        } finally {
-          setIsLoading(false);
-        }
-      };
-      loadCarAndRegulations();
-    }, [carId]);
-    const handleEditRegulation = (regulation, index3) => {
-      setEditingRegulation(regulation);
-      setEditingIndex(index3);
-      setIsEditDialogOpen(true);
-    };
-    const handleAddRegulation = () => {
-      setEditingRegulation({
-        operation: "",
-        mileage: "",
-        period: "",
-        notes: ""
-      });
-      setEditingIndex(-1);
-      setIsEditDialogOpen(true);
-    };
-    const handleSaveRegulation = async () => {
-      if (!carId || !editingRegulation.operation || !editingRegulation.mileage || !editingRegulation.period) {
-        alert("\u0417\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0435 \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u043F\u043E\u043B\u044F");
-        return;
-      }
-      const newRegulation = {
-        operation: editingRegulation.operation,
-        mileage: editingRegulation.mileage,
-        period: editingRegulation.period,
-        notes: editingRegulation.notes || ""
-      };
-      let updatedRegulations;
-      if (editingIndex >= 0) {
-        updatedRegulations = [...regulations];
-        updatedRegulations[editingIndex] = newRegulation;
-      } else {
-        updatedRegulations = [...regulations, newRegulation];
-      }
-      try {
-        await PMGService.saveCarMaintenanceGuide(carId, updatedRegulations);
-        setRegulations(updatedRegulations);
-        setIsCustomized(true);
-        setIsEditDialogOpen(false);
-        setEditingRegulation({});
-        setEditingIndex(-1);
-      } catch (error) {
-        console.error("Error saving regulation:", error);
-        alert("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438");
-      }
-    };
-    const handleDeleteRegulation = async (index3) => {
-      if (!carId) return;
-      if (confirm("\u0423\u0434\u0430\u043B\u0438\u0442\u044C \u044D\u0442\u0443 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E?")) {
-        const updatedRegulations = regulations.filter((_3, i4) => i4 !== index3);
-        try {
-          await PMGService.saveCarMaintenanceGuide(carId, updatedRegulations);
-          setRegulations(updatedRegulations);
-        } catch (error) {
-          console.error("Error deleting regulation:", error);
-          alert("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u0438");
-        }
-      }
-    };
-    const handleResetToManufacturerDefault = async () => {
-      if (!carId) return;
-      if (confirm("\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C \u043A \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u043C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044F\u043C \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044F? \u0412\u0441\u0435 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0431\u0443\u0434\u0443\u0442 \u043F\u043E\u0442\u0435\u0440\u044F\u043D\u044B.")) {
-        try {
-          await PMGService.resetToManufacturerDefault(carId);
-          const defaultRegulations = await PMGService.getCarMaintenanceRegulations(carId);
-          setRegulations(defaultRegulations);
-          setIsCustomized(false);
-        } catch (error) {
-          console.error("Error resetting to default:", error);
-          alert("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u0440\u043E\u0441\u0435 \u043A \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u043C \u043D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0430\u043C");
-        }
-      }
-    };
-    if (isLoading) {
-      return /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "container mx-auto p-6", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "text-center py-8", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto" }),
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "mt-2 text-gray-600", children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..." })
-      ] }) });
-    }
-    if (!car) {
-      return /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "container mx-auto p-6", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "text-center py-8", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-gray-600", children: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D" }) }) });
-    }
-    return /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "container mx-auto p-6 space-y-6", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex items-center justify-between", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex items-center space-x-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(Button, { variant: "ghost", size: "sm", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(ArrowLeft, { className: "h-4 w-4 mr-2" }),
-            "\u041D\u0430\u0437\u0430\u0434"
-          ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("h1", { className: "text-2xl font-bold", children: "\u0420\u0443\u043A\u043E\u0432\u043E\u0434\u0441\u0442\u0432\u043E \u043F\u043E \u0422\u041E" }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { className: "text-gray-600", children: [
-              car.name,
-              " (",
-              car.brand,
-              " ",
-              car.model,
-              " ",
-              car.year,
-              ")"
-            ] })
-          ] })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex space-x-2", children: [
-          isCustomized && /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(Button, { onClick: handleResetToManufacturerDefault, variant: "outline", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(RotateCcw, { className: "h-4 w-4 mr-2" }),
-            "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C \u043A \u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u043C"
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(Button, { onClick: handleAddRegulation, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Plus, { className: "h-4 w-4 mr-2" }),
-            "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E"
-          ] })
-        ] })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(Card, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(CardTitle, { className: "flex items-center space-x-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Car, { className: "h-5 w-5" }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("span", { children: "\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F \u043E\u0431 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0435" })
-        ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(CardContent, { children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "grid grid-cols-2 gap-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600", children: "\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0438\u0442\u0435\u043B\u044C" }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "font-medium", children: car.brand })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600", children: "\u041C\u043E\u0434\u0435\u043B\u044C" }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "font-medium", children: car.model })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600", children: "\u0413\u043E\u0434 \u0432\u044B\u043F\u0443\u0441\u043A\u0430" }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "font-medium", children: car.year })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600", children: "\u0421\u0442\u0430\u0442\u0443\u0441 \u0440\u0435\u0433\u043B\u0430\u043C\u0435\u043D\u0442\u0430" }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Badge, { variant: isCustomized ? "default" : "secondary", children: isCustomized ? "\u041D\u0430\u0441\u0442\u0440\u043E\u0435\u043D" : "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u0439" })
-          ] })
-        ] }) })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(Card, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(CardHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(CardTitle, { className: "flex items-center space-x-2", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Settings, { className: "h-5 w-5" }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("span", { children: "\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" })
-        ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(CardContent, { children: regulations.length === 0 ? /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "text-center py-8 text-gray-500", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Settings, { className: "h-12 w-12 mx-auto mb-4 text-gray-400" }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { children: "\u041E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u044B" }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm", children: "\u0414\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F" })
-        ] }) : /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "space-y-3", children: regulations.map((regulation, index3) => /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("div", { className: "border rounded-lg p-4 bg-white", children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex items-start justify-between", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex-1", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("h4", { className: "font-medium mb-2", children: regulation.operation }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)("p", { className: "text-sm text-gray-600 mb-2", children: regulation.notes }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "grid grid-cols-2 gap-4 text-xs text-gray-500", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { children: [
-                "\u041F\u0440\u043E\u0431\u0435\u0433: ",
-                regulation.mileage,
-                " \u043A\u043C"
-              ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("p", { children: [
-                "\u041F\u0435\u0440\u0438\u043E\u0434: ",
-                regulation.period,
-                " \u043C\u0435\u0441"
-              ] })
-            ] })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(
-              Button,
-              {
-                variant: "ghost",
-                size: "sm",
-                onClick: () => handleEditRegulation(regulation, index3),
-                children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(SquarePen, { className: "h-4 w-4" })
-              }
-            ),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(
-              Button,
-              {
-                variant: "ghost",
-                size: "sm",
-                onClick: () => handleDeleteRegulation(index3),
-                children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Trash2, { className: "h-4 w-4" })
-              }
-            )
-          ] })
-        ] }) }, index3)) }) })
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Dialog2, { open: isEditDialogOpen, onOpenChange: setIsEditDialogOpen, children: /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(DialogContent2, { className: "max-w-md", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(DialogTitle2, { children: editingIndex >= 0 ? "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044E" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "space-y-4", children: [
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Label2, { children: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438" }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(
-              Input,
-              {
-                value: editingRegulation.operation || "",
-                onChange: (e3) => setEditingRegulation((prev) => ({ ...prev, operation: e3.target.value })),
-                placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438..."
-              }
-            )
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "grid grid-cols-2 gap-4", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Label2, { children: "\u041F\u0440\u043E\u0431\u0435\u0433 (\u043A\u043C)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(
-                Input,
-                {
-                  type: "number",
-                  value: editingRegulation.mileage || "",
-                  onChange: (e3) => setEditingRegulation((prev) => ({ ...prev, mileage: e3.target.value })),
-                  placeholder: "10000"
-                }
-              )
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Label2, { children: "\u041F\u0435\u0440\u0438\u043E\u0434 (\u043C\u0435\u0441)" }),
-              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(
-                Input,
-                {
-                  type: "number",
-                  value: editingRegulation.period || "",
-                  onChange: (e3) => setEditingRegulation((prev) => ({ ...prev, period: e3.target.value })),
-                  placeholder: "6"
-                }
-              )
-            ] })
-          ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Label2, { children: "\u041F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u044F" }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(
-              Textarea,
-              {
-                value: editingRegulation.notes || "",
-                onChange: (e3) => setEditingRegulation((prev) => ({ ...prev, notes: e3.target.value })),
-                placeholder: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u043F\u0440\u0438\u043C\u0435\u0447\u0430\u043D\u0438\u044F..."
-              }
-            )
-          ] }),
           /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)("div", { className: "flex justify-end space-x-2", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(Button, { variant: "outline", onClick: () => setIsEditDialogOpen(false), children: [
-              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(X, { className: "h-4 w-4 mr-2" }),
-              "\u041E\u0442\u043C\u0435\u043D\u0430"
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime48.jsxs)(Button, { onClick: handleSaveRegulation, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Save, { className: "h-4 w-4 mr-2" }),
-              "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"
-            ] })
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Button, { variant: "outline", onClick: () => setIsConfirmReturnOpen(false), children: "\u041E\u0442\u043C\u0435\u043D\u0430" }),
+            /* @__PURE__ */ (0, import_jsx_runtime48.jsx)(Button, { onClick: confirmReturnToService, className: "bg-green-600 hover:bg-green-700", children: "\u0414\u0430, \u0432\u0435\u0440\u043D\u0443\u0442\u044C \u0432 \u044D\u043A\u0441\u043F\u043B\u0443\u0430\u0442\u0430\u0446\u0438\u044E" })
           ] })
         ] })
       ] }) })
@@ -82508,9 +81851,9 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(Route, { path: "/service-history", element: /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(ServiceHistory, {}) }),
         /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(Route, { path: "/maintenance-planning", element: /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(MaintenancePlanning, {}) }),
         /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(Route, { path: "/maintenance-planning/:planId", element: /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(MaintenancePlanning, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(Route, { path: "/in-maintenance", element: /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(InMaintenance, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(Route, { path: "/periodical-maintenance-guide/:carId?", element: /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(PeriodicalMaintenanceGuide, {}) })
+        /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(Route, { path: "/in-maintenance", element: /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(InMaintenance, {}) })
       ] }) }),
+      /* @__PURE__ */ (0, import_jsx_runtime49.jsx)("div", { className: "fixed top-4 right-4 z-50", children: /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(DevModeToggle, {}) }),
       /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(DevTools, {})
     ] });
   }

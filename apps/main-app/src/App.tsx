@@ -4,6 +4,7 @@
 import { HashRouter, Route, Routes } from 'react-router'
 import { AuthHandler } from './components/AuthHandler'
 import { DevTools } from './components/DevTools'
+import { DevModeToggle } from './components/DevModeToggle'
 import HomePage from './pages/Home'
 import CarOverview from './pages/CarOverview'
 import AddCar from './pages/AddCar'
@@ -32,6 +33,11 @@ export default function App() {
           <Route path="/in-maintenance" element={<InMaintenance />} />
         </Routes>
       </HashRouter>
+      
+      {/* Development mode toggle - floating button in top-right corner */}
+      <div className="fixed top-4 right-4 z-50">
+        <DevModeToggle />
+      </div>
       
       {/* Development tools - only visible in development */}
       <DevTools />
