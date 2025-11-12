@@ -69712,7 +69712,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               ),
               /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex-1", children: [
                 /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("div", { className: "flex items-center justify-between mb-1", children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime23.jsx)("h3", { className: "font-semibold", children: car.name }),
+                  /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("h3", { className: "font-semibold", children: [
+                    car.name,
+                    car.nickname && ` "${car.nickname}"`
+                  ] }),
                   /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(Badge, { className: statusInfo.statusColor, children: statusInfo.statusText })
                 ] }),
                 /* @__PURE__ */ (0, import_jsx_runtime23.jsxs)("p", { className: "text-sm text-gray-600", children: [
@@ -76022,7 +76025,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
         /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "flex items-center space-x-3", children: [
           /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Link, { to: "/", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Button, { variant: "ghost", size: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(ArrowLeft, { className: "h-4 w-4" }) }) }),
           /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("h1", { className: "text-lg font-bold text-gray-900", children: car.name }),
+            /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("h1", { className: "text-lg font-bold text-gray-900", children: [
+              car.name,
+              car.nickname && ` "${car.nickname}"`
+            ] }),
             /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("p", { className: "text-sm text-gray-600", children: [
               car.brand,
               " ",
@@ -76063,7 +76069,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
             /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { className: "grid grid-cols-2 gap-4 text-sm", children: [
               /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-gray-600", children: "VIN:" }),
-                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "font-medium", children: car.vin || "\u041D\u0435 \u0443\u043A\u0430\u0437\u0430\u043D" })
+                /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "font-medium", children: car.vin })
               ] }),
               /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_runtime29.jsx)("p", { className: "text-gray-600", children: "\u0413\u043E\u0441. \u043D\u043E\u043C\u0435\u0440:" }),
@@ -77611,12 +77617,12 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               brand: carData.brand,
               model: carData.model,
               year: carData.year.toString(),
-              vin: carData.vin || "",
+              vin: carData.vin,
               plateNumber: carData.plateNumber || "",
               mileage: carData.mileage.toString(),
               purchasePrice: "",
               // Don't show purchase price in edit mode
-              nickname: carData.name !== `${carData.brand} ${carData.model}` ? carData.name : "",
+              nickname: carData.nickname || "",
               notes: ""
               // Notes field is not stored in current Car interface
             });
@@ -77691,9 +77697,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
       }
       setIsSubmitting(true);
       try {
-        const carName = formData.nickname.trim() || `${formData.brand} ${formData.model}`;
+        const carName = `${formData.brand} ${formData.model}`;
         const carData = {
           name: carName,
+          nickname: formData.nickname.trim() || void 0,
           brand: formData.brand,
           model: formData.model,
           year: parseInt(formData.year),
@@ -78780,6 +78787,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C..." }) }),
                 /* @__PURE__ */ (0, import_jsx_runtime41.jsx)(SelectContent2, { children: cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime41.jsxs)(SelectItem2, { value: car.id, children: [
                   car.name,
+                  car.nickname && ` "${car.nickname}"`,
                   " - ",
                   car.brand,
                   " ",
@@ -79417,6 +79425,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                   /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C..." }) }),
                   /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(SelectContent2, { children: cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime43.jsxs)(SelectItem2, { value: car.id, children: [
                     car.name,
+                    car.nickname && ` "${car.nickname}"`,
                     " - ",
                     car.brand,
                     " ",
@@ -79882,7 +79891,10 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
               /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectTrigger2, { className: "w-40", children: /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectValue2, { placeholder: "\u0412\u0441\u0435 \u0430\u0432\u0442\u043E" }) }),
               /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(SelectContent2, { children: [
                 /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectItem2, { value: "", children: "\u0412\u0441\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u0438" }),
-                cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(SelectItem2, { value: car.id, children: car.name }, car.id))
+                cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(SelectItem2, { value: car.id, children: [
+                  car.name,
+                  car.nickname && ` "${car.nickname}"`
+                ] }, car.id))
               ] })
             ] }),
             /* @__PURE__ */ (0, import_jsx_runtime44.jsxs)(Select2, { value: filterType, onValueChange: setFilterType, children: [
@@ -81044,6 +81056,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${titl
                 /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectTrigger2, { children: /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectValue2, { placeholder: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0430\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C..." }) }),
                 /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(SelectContent2, { children: cars.map((car) => /* @__PURE__ */ (0, import_jsx_runtime47.jsxs)(SelectItem2, { value: car.id, children: [
                   car.name,
+                  car.nickname && ` "${car.nickname}"`,
                   " - ",
                   car.brand,
                   " ",

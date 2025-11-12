@@ -21,7 +21,7 @@ info:
     ## Base URL
     - Development: `http://localhost:8080/api`
     - Production: `https://api.yourserver.com/api`
-  version: 1.0.0
+  version: 1.1.0
   contact:
     name: FleetMaster Pro Team
     email: api-support@fleetmaster.com
@@ -98,11 +98,11 @@ paths:
       tags:
         - Cars
       summary: Create a new car
-      description: Create a new car with optional image upload
+      description: Create a new car with optional base64-encoded image
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               required:
@@ -135,7 +135,7 @@ paths:
                   type: integer
                   description: Manufacturing year
                   minimum: 1900
-                  maximum: 2024
+                  maximum: 2025
                 vin:
                   type: string
                   description: Vehicle Identification Number
@@ -149,18 +149,9 @@ paths:
                   type: integer
                   description: Current mileage
                   minimum: 0
-                lastService:
-                  type: string
-                  format: date
-                  description: Last service date
-                nextService:
-                  type: string
-                  format: date
-                  description: Next service date
                 image:
                   type: string
-                  format: binary
-                  description: Car image (JPG, PNG, max 5MB)
+                  description: Base64-encoded image data URL (e.g., "data:image/jpeg;base64,...")
       responses:
         '201':
           description: Car created successfully
@@ -225,7 +216,7 @@ paths:
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
@@ -257,15 +248,9 @@ paths:
                 mileage:
                   type: integer
                   minimum: 0
-                lastService:
-                  type: string
-                  format: date
-                nextService:
-                  type: string
-                  format: date
                 image:
                   type: string
-                  format: binary
+                  description: Base64-encoded image data URL
       responses:
         '200':
           description: Car updated successfully
@@ -1015,17 +1000,7 @@ components:
           minimum: 0
         image:
           type: string
-          description: Image URL/path
-          nullable: true
-        lastService:
-          type: string
-          format: date
-          description: Last service date
-          nullable: true
-        nextService:
-          type: string
-          format: date
-          description: Next service date
+          description: Base64-encoded image data URL (e.g., "data:image/jpeg;base64,...")
           nullable: true
         createdAt:
           type: string
@@ -1140,35 +1115,53 @@ components:
       required:
         - id
         - type
+        - name
         - description
-        - cost
+        - parts
+        - laborCost
       properties:
         id:
           type: string
           description: Unique identifier
         type:
           type: string
-          enum: [maintenance, repair]
-          description: Operation type
+          enum: [periodical, repair]
+          description: Operation type (periodical or repair)
+        name:
+          type: string
+          description: Operation name
+          minLength: 1
         description:
           type: string
           description: Operation description
           minLength: 5
-        cost:
-          type: number
-          format: float
-          description: Operation cost
         parts:
           type: array
           items:
-            type: string
-          description: Parts used
-          nullable: true
+            type: object
+            required:
+              - name
+              - quantity
+              - cost
+            properties:
+              name:
+                type: string
+                description: Part name
+              quantity:
+                type: number
+                description: Quantity used
+                minimum: 0
+              cost:
+                type: number
+                format: float
+                description: Cost per part
+                minimum: 0
+          description: Parts used with details
         laborCost:
           type: number
           format: float
-          description: Labor cost
-          nullable: true
+          description: Labor cost (required)
+          minimum: 0
         linkedAlertId:
           type: string
           description: Linked alert ID
@@ -1252,12 +1245,12 @@ components:
         periodicOperations:
           type: array
           items:
-            $ref: '#/components/schemas/MaintenanceOperation'
-          description: Scheduled operations
+            $ref: '#/components/schemas/PeriodicOperation'
+          description: Scheduled periodic operations
         repairOperations:
           type: array
           items:
-            $ref: '#/components/schemas/MaintenanceOperation'
+            $ref: '#/components/schemas/RepairOperation'
           description: Repair operations
         totalEstimatedCost:
           type: number
@@ -1280,39 +1273,60 @@ components:
           format: date-time
           description: Last update timestamp
 
-    MaintenanceOperation:
+    PeriodicOperation:
       type: object
       required:
-        - id
         - operation
-        - mileage
-        - period
+        - selected
+        - priority
+        - estimatedCost
         - notes
       properties:
-        id:
-          type: string
-          description: Unique identifier
         operation:
           type: string
           description: Operation name
-        mileage:
-          type: integer
-          description: Recommended mileage
-        period:
-          type: integer
-          description: Period in months
-        notes:
+        selected:
+          type: boolean
+          description: Selection status
+        priority:
           type: string
-          description: Operation notes
+          enum: [high, medium, low]
+          description: Priority level
         estimatedCost:
           type: number
           format: float
           description: Estimated cost
-          nullable: true
-        completed:
-          type: boolean
-          description: Completion status
-          nullable: true
+          minimum: 0
+        notes:
+          type: string
+          description: Operation notes
+
+    RepairOperation:
+      type: object
+      required:
+        - alertId
+        - description
+        - priority
+        - estimatedCost
+        - notes
+      properties:
+        alertId:
+          type: string
+          description: Associated alert ID
+        description:
+          type: string
+          description: Repair description
+        priority:
+          type: string
+          description: Priority level
+        estimatedCost:
+          type: number
+          format: float
+          description: Estimated cost
+          minimum: 0
+        notes:
+          type: string
+          description: Operation notes
 
     # ===== REQUEST SCHEMAS =====
     CarCreateRequest:
@@ -1431,6 +1445,10 @@ components:
         serviceProvider:
           type: string
           maxLength: 200
+        totalCost:
+          type: number
+          format: float
+          description: Total cost (calculated from operations)
         operations:
           type: array
           items:
@@ -1442,30 +1460,63 @@ components:
     ServiceOperationCreateRequest:
       type: object
       required:
+        - id
         - type
+        - name
         - description
-        - cost
+        - parts
+        - laborCost
       properties:
+        id:
+          type: string
+          description: Unique identifier
         type:
           type: string
-          enum: [maintenance, repair]
+          enum: [periodical, repair]
+          description: Operation type (periodical or repair)
+        name:
+          type: string
+          description: Operation name
+          minLength: 1
         description:
           type: string
+          description: Operation description
           minLength: 5
-        cost:
-          type: number
-          format: float
         parts:
           type: array
           items:
-            type: string
+            type: object
+            required:
+              - name
+              - quantity
+              - cost
+            properties:
+              name:
+                type: string
+                description: Part name
+              quantity:
+                type: number
+                description: Quantity used
+                minimum: 0
+              cost:
+                type: number
+                format: float
+                description: Cost per part
+                minimum: 0
+          description: Parts used with details
         laborCost:
           type: number
           format: float
+          description: Labor cost (required)
+          minimum: 0
         linkedAlertId:
           type: string
+          description: Linked alert ID
+          nullable: true
         recommendations:
           type: string
+          description: Post-service recommendations
+          nullable: true
 
     ServiceRecordUpdateRequest:
       type: object
@@ -1532,11 +1583,11 @@ components:
         periodicOperations:
           type: array
           items:
-            $ref: '#/components/schemas/MaintenanceOperationCreateRequest'
+            $ref: '#/components/schemas/PeriodicOperation'
         repairOperations:
           type: array
           items:
-            $ref: '#/components/schemas/MaintenanceOperationCreateRequest'
+            $ref: '#/components/schemas/RepairOperation'
         totalEstimatedCost:
           type: number
           format: float
@@ -1544,26 +1595,6 @@ components:
           type: string
         notes:
           type: string
-
-    MaintenanceOperationCreateRequest:
-      type: object
-      required:
-        - operation
-        - mileage
-        - period
-        - notes
-      properties:
-        operation:
-          type: string
-        mileage:
-          type: integer
-        period:
-          type: integer
-        notes:
-          type: string
-        estimatedCost:
-          type: number
-          format: float
 
     MaintenancePlanUpdateRequest:
       type: object
