@@ -232,7 +232,7 @@ export default function ServiceHistory() {
                     <SelectItem value="">Все автомобили</SelectItem>
                     {cars.map((car) => (
                       <SelectItem key={car.id} value={car.id}>
-                        {car.name}
+                        {car.name}{car.nickname && ` "${car.nickname}"`}
                       </SelectItem>
                     ))}
                   </SelectContent>

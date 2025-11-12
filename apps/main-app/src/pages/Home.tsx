@@ -378,7 +378,9 @@ export default function Home() {
                           />
                           <div className="flex-1">
                             <div className="flex items-center justify-between mb-1">
-                              <h3 className="font-semibold">{car.name}</h3>
+                              <h3 className="font-semibold">
+                                {car.name}{car.nickname && ` "${car.nickname}"`}
+                              </h3>
                               <Badge className={statusInfo.statusColor}>
                                 {statusInfo.statusText}
                               </Badge>

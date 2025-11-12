@@ -6,7 +6,8 @@ import { IdGenerator } from './IdGenerator';
 // Data Models
 export interface Car {
   id: string;
-  name: string;
+  name: string;           // Auto-generated from brand + model
+  nickname?: string;      // Optional user-provided nickname (e.g., "Sweety")
   brand: string;
   model: string;
   year: number;

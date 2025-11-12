@@ -262,7 +262,9 @@ export default function CarOverview() {
                 </Button>
               </Link>
               <div>
-                <h1 className="text-lg font-bold text-gray-900">{car.name}</h1>
+                <h1 className="text-lg font-bold text-gray-900">
+                  {car.name}{car.nickname && ` "${car.nickname}"`}
+                </h1>
                 <p className="text-sm text-gray-600">{car.brand} {car.model} ({car.year})</p>
               </div>
             </div>

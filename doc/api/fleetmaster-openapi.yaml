@@ -106,7 +106,6 @@ paths:
             schema:
               type: object
               required:
-                - name
                 - brand
                 - model
                 - year
@@ -115,9 +114,13 @@ paths:
               properties:
                 name:
                   type: string
-                  description: Display name
+                  description: Display name (optional, auto-generated from brand + model if not provided)
                   minLength: 1
                   maxLength: 100
+                nickname:
+                  type: string
+                  description: Optional user-provided nickname (e.g., "Sweety")
+                  maxLength: 50
                 brand:
                   type: string
                   description: Manufacturer
@@ -228,7 +231,12 @@ paths:
               properties:
                 name:
                   type: string
+                  description: Display name (auto-generated from brand + model if not provided)
                   maxLength: 100
+                nickname:
+                  type: string
+                  description: Optional user-provided nickname (e.g., "Sweety")
+                  maxLength: 50
                 brand:
                   type: string
                   maxLength: 50
@@ -970,8 +978,13 @@ components:
           description: Unique identifier
         name:
           type: string
-          description: Display name
+          description: Display name (auto-generated from brand + model)
           maxLength: 100
+        nickname:
+          type: string
+          description: Optional user-provided nickname (e.g., "Sweety")
+          maxLength: 50
+          nullable: true
         brand:
           type: string
           description: Manufacturer
@@ -1305,7 +1318,6 @@ components:
     CarCreateRequest:
       type: object
       required:
-        - name
         - brand
         - model
         - year
@@ -1313,7 +1325,12 @@ components:
       properties:
         name:
           type: string
+          description: Display name (optional, auto-generated from brand + model if not provided)
           maxLength: 100
+        nickname:
+          type: string
+          description: Optional user-provided nickname (e.g., "Sweety")
+          maxLength: 50
         brand:
           type: string
           maxLength: 50

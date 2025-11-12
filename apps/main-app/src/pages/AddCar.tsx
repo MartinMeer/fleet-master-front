@@ -66,7 +66,7 @@ export default function AddCar() {
             plateNumber: carData.plateNumber || '',
             mileage: carData.mileage.toString(),
             purchasePrice: '', // Don't show purchase price in edit mode
-            nickname: carData.name !== `${carData.brand} ${carData.model}` ? carData.name : '',
+            nickname: carData.nickname || '',
             notes: '' // Notes field is not stored in current Car interface
           })
 
@@ -137,12 +137,13 @@ export default function AddCar() {
     setIsSubmitting(true)
     
     try {
-      // Generate car name if nickname is provided, otherwise use brand + model
-      const carName = formData.nickname.trim() || `${formData.brand} ${formData.model}`
+      // Car name is ALWAYS generated from brand + model
+      const carName = `${formData.brand} ${formData.model}`
       
       // Prepare car data
       const carData = {
         name: carName,
+        nickname: formData.nickname.trim() || undefined,
         brand: formData.brand,
         model: formData.model,
         year: parseInt(formData.year),

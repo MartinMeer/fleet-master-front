@@ -1038,7 +1038,7 @@ export default function MaintenancePlanning() {
                 <SelectContent>
                   {cars.map((car) => (
                     <SelectItem key={car.id} value={car.id}>
-                      {car.name} - {car.brand} {car.model} ({car.mileage.toLocaleString()} км)
+                      {car.name}{car.nickname && ` "${car.nickname}"`} - {car.brand} {car.model} ({car.mileage.toLocaleString()} км)
                     </SelectItem>
                   ))}
                 </SelectContent>

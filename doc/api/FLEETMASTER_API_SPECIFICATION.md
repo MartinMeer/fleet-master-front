@@ -71,7 +71,8 @@ This document provides comprehensive API specifications for the FleetMaster Pro 
 ```typescript
 interface Car {
   id: string;              // Unique identifier
-  name: string;            // Display name
+  name: string;            // Display name (auto-generated from brand + model)
+  nickname?: string;       // Optional user-provided nickname (e.g., "Sweety")
   brand: string;           // Manufacturer
   model: string;           // Model name
   year: number;            // Manufacturing year
@@ -84,6 +85,19 @@ interface Car {
   createdAt: string;       // Creation timestamp (ISO 8601)
 }
 ```
+
+### Car Name and Nickname Pattern
+
+**Important:** The car `name` field is **always auto-generated** from `brand + model` (e.g., "Toyota Camry"). The optional `nickname` field allows users to give their car a personal name (e.g., "Sweety") which is stored separately and can be displayed alongside the car name in the UI.
+
+**Backend Implementation:**
+- If `name` is not provided in the request, automatically generate it as: `name = brand + " " + model`
+- Store `nickname` as a separate field
+- Return both fields in API responses
+
+**Frontend Display:**
+- Primary display: `{name}` (e.g., "Toyota Camry")
+- With nickname: `{name} "{nickname}"` (e.g., "Toyota Camry 'Sweety'")
 
 ## Endpoints
 
@@ -181,7 +195,8 @@ Create a new car with optional image upload.
 **Content-Type:** `multipart/form-data`
 
 **Form Fields:**
-- `name` (string, required) - Display name
+- `name` (string, optional) - Display name (auto-generated from brand + model if not provided)
+- `nickname` (string, optional) - User-provided nickname (e.g., "Sweety")
 - `brand` (string, required) - Manufacturer
 - `model` (string, required) - Model name
 - `year` (integer, required) - Manufacturing year (1900-current year)
@@ -253,7 +268,8 @@ Update an existing car with optional image upload.
 **Content-Type:** `multipart/form-data`
 
 **Form Fields:** (same as POST, all optional except those being updated)
-- `name` (string, optional) - Display name
+- `name` (string, optional) - Display name (auto-generated from brand + model if not provided)
+- `nickname` (string, optional) - User-provided nickname (e.g., "Sweety")
 - `brand` (string, optional) - Manufacturer
 - `model` (string, optional) - Model name
 - `year` (integer, optional) - Manufacturing year
@@ -1424,7 +1440,8 @@ All API errors follow a consistent format:
 ### Validation Rules by Field Type
 
 **Car Fields:**
-- `name`: Required, 1-100 characters
+- `name`: Optional, 1-100 characters (auto-generated from brand + model if not provided)
+- `nickname`: Optional, 1-50 characters (user-provided nickname)
 - `brand`: Required, 1-50 characters, alphabetic + spaces
 - `model`: Required, 1-50 characters
 - `year`: Required, 1900 ≤ year ≤ current year
@@ -1511,6 +1528,7 @@ function validateCarImage(file) {
 - [ ] Add search and filtering capabilities
 - [ ] Implement file upload handling for car images
 - [ ] Add proper error handling and logging
+- [ ] Implement car name auto-generation: if `name` is not provided in request, generate it from `brand + model`
 
 ### Security Implementation
 - [ ] Implement input sanitization

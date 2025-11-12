@@ -189,7 +189,9 @@ export default function PeriodicalMaintenanceGuide() {
           </Link>
           <div>
             <h1 className="text-2xl font-bold">Руководство по ТО</h1>
-            <p className="text-gray-600">{car.name} ({car.brand} {car.model} {car.year})</p>
+            <p className="text-gray-600">
+              {car.name}{car.nickname && ` "${car.nickname}"`} ({car.brand} {car.model} {car.year})
+            </p>
           </div>
         </div>
         <div className="flex space-x-2">

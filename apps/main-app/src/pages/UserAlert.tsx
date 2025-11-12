@@ -222,13 +222,13 @@ export default function UserAlert() {
                   <SelectTrigger>
                     <SelectValue placeholder="Выберите автомобиль..." />
                   </SelectTrigger>
-                  <SelectContent>
-                    {cars.map((car) => (
-                      <SelectItem key={car.id} value={car.id}>
-                        {car.name} - {car.brand} {car.model}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
+                <SelectContent>
+                  {cars.map((car) => (
+                    <SelectItem key={car.id} value={car.id}>
+                      {car.name}{car.nickname && ` "${car.nickname}"`} - {car.brand} {car.model}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
                 </Select>
               </div>
 
