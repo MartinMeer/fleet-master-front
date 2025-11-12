@@ -10,7 +10,7 @@ export interface Car {
   brand: string;
   model: string;
   year: number;
-  vin?: string;
+  vin: string;
   plateNumber?: string;
   mileage: number;
   image?: string;

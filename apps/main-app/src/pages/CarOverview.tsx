@@ -302,7 +302,7 @@ export default function CarOverview() {
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
                     <p className="text-gray-600">VIN:</p>
-                    <p className="font-medium">{car.vin || 'Не указан'}</p>
+                    <p className="font-medium">{car.vin}</p>
                   </div>
                   <div>
                     <p className="text-gray-600">Гос. номер:</p>

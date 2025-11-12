@@ -110,6 +110,7 @@ paths:
                 - brand
                 - model
                 - year
+                - vin
                 - mileage
               properties:
                 name:

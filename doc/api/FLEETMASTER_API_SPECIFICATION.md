@@ -75,7 +75,7 @@ interface Car {
   brand: string;           // Manufacturer
   model: string;           // Model name
   year: number;            // Manufacturing year
-  vin?: string;            // Vehicle Identification Number
+  vin: string;             // Vehicle Identification Number (required)
   plateNumber?: string;    // License plate
   mileage: number;         // Current mileage
   image?: string;          // Image URL/path
@@ -185,7 +185,7 @@ Create a new car with optional image upload.
 - `brand` (string, required) - Manufacturer
 - `model` (string, required) - Model name
 - `year` (integer, required) - Manufacturing year (1900-current year)
-- `vin` (string, optional) - Vehicle Identification Number
+- `vin` (string, required) - Vehicle Identification Number (17 characters)
 - `plateNumber` (string, optional) - License plate
 - `mileage` (integer, required) - Current mileage (≥ 0)
 - `lastService` (string, optional) - Last service date (ISO 8601)
@@ -257,7 +257,7 @@ Update an existing car with optional image upload.
 - `brand` (string, optional) - Manufacturer
 - `model` (string, optional) - Model name
 - `year` (integer, optional) - Manufacturing year
-- `vin` (string, optional) - Vehicle Identification Number
+- `vin` (string, required) - Vehicle Identification Number (17 characters)
 - `plateNumber` (string, optional) - License plate
 - `mileage` (integer, optional) - Current mileage
 - `lastService` (string, optional) - Last service date (ISO 8601)
@@ -1428,7 +1428,7 @@ All API errors follow a consistent format:
 - `brand`: Required, 1-50 characters, alphabetic + spaces
 - `model`: Required, 1-50 characters
 - `year`: Required, 1900 ≤ year ≤ current year
-- `vin`: Optional, 17 characters, alphanumeric
+- `vin`: Required, 17 characters, alphanumeric
 - `plateNumber`: Optional, 1-20 characters
 - `mileage`: Required, ≥ 0, integer
 

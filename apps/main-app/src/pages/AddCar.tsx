@@ -62,7 +62,7 @@ export default function AddCar() {
             brand: carData.brand,
             model: carData.model,
             year: carData.year.toString(),
-            vin: carData.vin || '',
+            vin: carData.vin,
             plateNumber: carData.plateNumber || '',
             mileage: carData.mileage.toString(),
             purchasePrice: '', // Don't show purchase price in edit mode
