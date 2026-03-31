@@ -8,6 +8,9 @@ export class NavigationService {
    * Navigate to main app with authentication token
    */
   static navigateToMainApp(token?: string, redirectPath: string = '/') {
+    // #region agent log
+    fetch('http://127.0.0.1:7584/ingest/0149d283-503e-4f7c-81cd-6e34434810dd',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ae9ba4'},body:JSON.stringify({sessionId:'ae9ba4',location:'marketing-site/NavigationService.ts:navigateToMainApp',message:'navigateToMainApp URL',data:{mainAppUrl:this.config.MAIN_APP_URL,env:typeof process!=='undefined'?process.env.NODE_ENV:'unknown'},timestamp:Date.now(),hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
     const url = new URL(this.config.MAIN_APP_URL);
     
     // Get token from localStorage if not provided
@@ -44,6 +47,9 @@ export class NavigationService {
       urlObj.searchParams.set('return_url', returnUrl);
       url = urlObj.toString();
     }
+    // #region agent log
+    fetch('http://127.0.0.1:7584/ingest/0149d283-503e-4f7c-81cd-6e34434810dd',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'ae9ba4'},body:JSON.stringify({sessionId:'ae9ba4',location:'marketing-site/NavigationService.ts:navigateToLogin',message:'navigateToLogin URL constructed',data:{marketingUrl:this.config.MARKETING_URL,constructedUrl:url,returnUrl},timestamp:Date.now(),hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
     window.location.href = url;
   }
 
