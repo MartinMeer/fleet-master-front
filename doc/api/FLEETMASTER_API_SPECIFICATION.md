@@ -79,9 +79,7 @@ interface Car {
   vin: string;             // Vehicle Identification Number (required)
   plateNumber?: string;    // License plate
   mileage: number;         // Current mileage
-  image?: string;          // Image URL/path
-  lastService?: string;    // Last service date (ISO 8601)
-  nextService?: string;    // Next service date (ISO 8601)
+  image?: string;          // Base64-encoded image data URL (e.g., "data:image/jpeg;base64,...")
   createdAt: string;       // Creation timestamp (ISO 8601)
 }
 ```
@@ -127,16 +125,15 @@ GET /api/cars?page=1&limit=10&search=Toyota&sortBy=mileage&sortOrder=desc
   "data": [
     {
       "id": "car_123",
-      "name": "Транспорт #1",
+      "name": "Toyota Camry",
+      "nickname": "Sweety",
       "brand": "Toyota",
       "model": "Camry",
       "year": 2020,
       "vin": "1234567890ABCDEFG",
       "plateNumber": "А123БВ177",
       "mileage": 85000,
-      "image": "/uploads/cars/car_123.jpg",
-      "lastService": "2024-07-15T00:00:00Z",
-      "nextService": "2024-09-15T00:00:00Z",
+      "image": "data:image/jpeg;base64,/9j/4AAQSkZJRg...",
       "createdAt": "2024-01-15T10:30:00Z"
     }
   ],
@@ -163,16 +160,15 @@ Retrieve a specific car by ID.
   "success": true,
   "data": {
     "id": "car_123",
-    "name": "Транспорт #1",
+    "name": "Toyota Camry",
+    "nickname": "Sweety",
     "brand": "Toyota",
     "model": "Camry",
     "year": 2020,
     "vin": "1234567890ABCDEFG",
     "plateNumber": "А123БВ177",
     "mileage": 85000,
-    "image": "/uploads/cars/car_123.jpg",
-    "lastService": "2024-07-15T00:00:00Z",
-    "nextService": "2024-09-15T00:00:00Z",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRg...",
     "createdAt": "2024-01-15T10:30:00Z"
   }
 }
@@ -192,9 +188,24 @@ Retrieve a specific car by ID.
 ### POST /cars
 Create a new car with optional image upload.
 
-**Content-Type:** `multipart/form-data`
+**Content-Type:** `application/json`
 
-**Form Fields:**
+**Request Body:**
+```json
+{
+  "name": "Toyota Camry",
+  "nickname": "Sweety",
+  "brand": "Toyota",
+  "model": "Camry",
+  "year": 2020,
+  "vin": "1234567890ABCDEFG",
+  "plateNumber": "А123БВ177",
+  "mileage": 85000,
+  "image": "data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+}
+```
+
+**Request Fields:**
 - `name` (string, optional) - Display name (auto-generated from brand + model if not provided)
 - `nickname` (string, optional) - User-provided nickname (e.g., "Sweety")
 - `brand` (string, required) - Manufacturer
@@ -203,22 +214,21 @@ Create a new car with optional image upload.
 - `vin` (string, required) - Vehicle Identification Number (17 characters)
 - `plateNumber` (string, optional) - License plate
 - `mileage` (integer, required) - Current mileage (≥ 0)
-- `lastService` (string, optional) - Last service date (ISO 8601)
-- `nextService` (string, optional) - Next service date (ISO 8601)
-- `image` (file, optional) - Car image (JPG, PNG, max 5MB)
+- `image` (string, optional) - Base64-encoded image data URL (e.g., "data:image/jpeg;base64,...")
 
 **Example cURL Request:**
 ```bash
 curl -X POST http://localhost:8080/api/cars \
-  -F "name=Мой автомобиль" \
-  -F "brand=Toyota" \
-  -F "model=Camry" \
-  -F "year=2020" \
-  -F "vin=1234567890ABCDEFG" \
-  -F "plateNumber=А123БВ177" \
-  -F "mileage=85000" \
-  -F "lastService=2024-07-15T00:00:00Z" \
-  -F "image=@/path/to/car-image.jpg"
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Toyota Camry",
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2020,
+    "vin": "1234567890ABCDEFG",
+    "plateNumber": "А123БВ177",
+    "mileage": 85000
+  }'
 ```
 
 **Response (201 Created):**
@@ -227,16 +237,15 @@ curl -X POST http://localhost:8080/api/cars \
   "success": true,
   "data": {
     "id": "car_124",
-    "name": "Мой автомобиль",
+    "name": "Toyota Camry",
+    "nickname": "Sweety",
     "brand": "Toyota",
     "model": "Camry",
     "year": 2020,
     "vin": "1234567890ABCDEFG",
     "plateNumber": "А123БВ177",
     "mileage": 85000,
-    "image": "/uploads/cars/car_124.jpg",
-    "lastService": "2024-07-15T00:00:00Z",
-    "nextService": null,
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRg...",
     "createdAt": "2024-11-04T12:45:30Z"
   },
   "message": "Car created successfully"
@@ -265,20 +274,33 @@ Update an existing car with optional image upload.
 **Path Parameters:**
 - `id` (string, required) - Car identifier
 
-**Content-Type:** `multipart/form-data`
+**Content-Type:** `application/json`
 
-**Form Fields:** (same as POST, all optional except those being updated)
+**Request Body:** (all fields optional except those being updated)
+```json
+{
+  "name": "Toyota Camry",
+  "nickname": "My Sweety",
+  "brand": "Toyota",
+  "model": "Camry",
+  "year": 2020,
+  "vin": "1234567890ABCDEFG",
+  "plateNumber": "А123БВ177",
+  "mileage": 90000,
+  "image": "data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+}
+```
+
+**Request Fields:**
 - `name` (string, optional) - Display name (auto-generated from brand + model if not provided)
 - `nickname` (string, optional) - User-provided nickname (e.g., "Sweety")
 - `brand` (string, optional) - Manufacturer
 - `model` (string, optional) - Model name
 - `year` (integer, optional) - Manufacturing year
-- `vin` (string, required) - Vehicle Identification Number (17 characters)
+- `vin` (string, optional) - Vehicle Identification Number (17 characters)
 - `plateNumber` (string, optional) - License plate
 - `mileage` (integer, optional) - Current mileage
-- `lastService` (string, optional) - Last service date (ISO 8601)
-- `nextService` (string, optional) - Next service date (ISO 8601)
-- `image` (file, optional) - New car image (replaces existing)
+- `image` (string, optional) - Base64-encoded image data URL (replaces existing)
 
 **Response (200 OK):**
 ```json
@@ -286,16 +308,15 @@ Update an existing car with optional image upload.
   "success": true,
   "data": {
     "id": "car_123",
-    "name": "Updated Car Name",
+    "name": "Toyota Camry",
+    "nickname": "My Sweety",
     "brand": "Toyota",
     "model": "Camry",
     "year": 2020,
     "vin": "1234567890ABCDEFG",
     "plateNumber": "А123БВ177",
     "mileage": 90000,
-    "image": "/uploads/cars/car_123_updated.jpg",
-    "lastService": "2024-10-15T00:00:00Z",
-    "nextService": "2024-12-15T00:00:00Z",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRg...",
     "createdAt": "2024-01-15T10:30:00Z"
   },
   "message": "Car updated successfully"
@@ -628,7 +649,7 @@ interface ServiceRecord {
   date: string;                  // Service date (ISO 8601)
   mileage: number;               // Mileage at service
   serviceProvider: string;        // Service provider name
-  totalCost: number;             // Total service cost
+  totalCost: number;             // Total service cost (calculated from operations)
   operations: ServiceOperation[]; // List of operations performed
   notes?: string;                // Additional notes
   createdAt: string;             // Creation timestamp (ISO 8601)
@@ -636,11 +657,15 @@ interface ServiceRecord {
 
 interface ServiceOperation {
   id: string;                    // Unique identifier
-  type: 'maintenance' | 'repair'; // Operation type
+  type: 'periodical' | 'repair'; // Operation type (periodical or repair)
+  name: string;                  // Operation name
   description: string;           // Operation description
-  cost: number;                  // Operation cost
-  parts?: string[];              // Parts used (optional)
-  laborCost?: number;            // Labor cost (optional)
+  parts: Array<{                 // Parts used with details
+    name: string;                // Part name
+    quantity: number;            // Quantity used
+    cost: number;                // Cost per part
+  }>;
+  laborCost: number;             // Labor cost (required)
   linkedAlertId?: string;        // Linked alert ID (optional)
   recommendations?: string;       // Post-service recommendations (optional)
 }
@@ -686,20 +711,40 @@ GET /api/service-records?carId=car_123&type=maintenance&startDate=2024-01-01&sor
       "operations": [
         {
           "id": "op_001",
-          "type": "maintenance",
-          "description": "Замена масла и фильтров",
-          "cost": 4500,
-          "parts": ["Масло 5W-30", "Масляный фильтр", "Воздушный фильтр"],
-          "laborCost": 1500
+          "type": "periodical",
+          "name": "Замена масла и фильтров",
+          "description": "Плановое техническое обслуживание",
+          "parts": [
+            {
+              "name": "Масло 5W-30",
+              "quantity": 1,
+              "cost": 3000
+            },
+            {
+              "name": "Масляный фильтр",
+              "quantity": 1,
+              "cost": 500
+            }
+          ],
+          "laborCost": 1500,
+          "linkedAlertId": null,
+          "recommendations": "Следующая замена через 10000 км"
         },
         {
           "id": "op_002",
           "type": "repair",
-          "description": "Замена тормозных колодок",
-          "cost": 8000,
-          "parts": ["Тормозные колодки передние"],
+          "name": "Замена тормозных колодок",
+          "description": "Срочный ремонт тормозной системы",
+          "parts": [
+            {
+              "name": "Тормозные колодки передние",
+              "quantity": 2,
+              "cost": 4000
+            }
+          ],
           "laborCost": 3000,
-          "linkedAlertId": "alert_456"
+          "linkedAlertId": "alert_456",
+          "recommendations": "Проверить тормозные диски"
         }
       ],
       "notes": "Рекомендована замена свечей через 10000 км",
@@ -738,11 +783,24 @@ Retrieve a specific service record by ID.
     "operations": [
       {
         "id": "op_001",
-        "type": "maintenance",
-        "description": "Замена масла и фильтров",
-        "cost": 4500,
-        "parts": ["Масло 5W-30", "Масляный фильтр", "Воздушный фильтр"],
-        "laborCost": 1500
+        "type": "periodical",
+        "name": "Замена масла и фильтров",
+        "description": "Плановое техническое обслуживание",
+        "parts": [
+          {
+            "name": "Масло 5W-30",
+            "quantity": 1,
+            "cost": 3000
+          },
+          {
+            "name": "Масляный фильтр",
+            "quantity": 1,
+            "cost": 500
+          }
+        ],
+        "laborCost": 1500,
+        "linkedAlertId": null,
+        "recommendations": "Следующая замена через 10000 км"
       }
     ],
     "notes": "Рекомендована замена свечей через 10000 км",
@@ -764,13 +822,28 @@ Create a new service record.
   "date": "2024-11-04T00:00:00Z",
   "mileage": 90000,
   "serviceProvider": "Автосервис Центр",
+  "totalCost": 11000,
   "operations": [
     {
-      "type": "maintenance",
+      "id": "op_001",
+      "type": "periodical",
+      "name": "Замена масла и фильтров",
       "description": "Плановое ТО",
-      "cost": 8000,
-      "parts": ["Масло", "Фильтры"],
-      "laborCost": 3000
+      "parts": [
+        {
+          "name": "Масло 5W-30",
+          "quantity": 1,
+          "cost": 3000
+        },
+        {
+          "name": "Масляный фильтр",
+          "quantity": 1,
+          "cost": 500
+        }
+      ],
+      "laborCost": 3000,
+      "linkedAlertId": null,
+      "recommendations": "Следующая замена через 10000 км"
     }
   ],
   "notes": "Все в порядке"
@@ -781,12 +854,16 @@ Create a new service record.
 - `carId` - Required, must exist
 - `carName` - Required, non-empty string
 - `date` - Required, valid ISO 8601 date
-- `mileage` - Required, positive integer
+- `mileage` - Required, positive integer (Note: Frontend currently sends as string, should be number)
 - `serviceProvider` - Required, non-empty string
+- `totalCost` - Required, positive number (calculated from operations)
 - `operations` - Required, array with at least 1 operation
-- `operations[].type` - Required, must be: maintenance, repair
+- `operations[].id` - Required, unique identifier string
+- `operations[].type` - Required, must be: periodical, repair
+- `operations[].name` - Required, non-empty string
 - `operations[].description` - Required, min 5 characters
-- `operations[].cost` - Required, positive number
+- `operations[].parts` - Required, array of part objects with name, quantity, and cost
+- `operations[].laborCost` - Required, positive number
 
 **Response (201 Created):**
 ```json
@@ -802,12 +879,25 @@ Create a new service record.
     "totalCost": 11000,
     "operations": [
       {
-        "id": "op_003",
-        "type": "maintenance",
+        "id": "op_001",
+        "type": "periodical",
+        "name": "Замена масла и фильтров",
         "description": "Плановое ТО",
-        "cost": 8000,
-        "parts": ["Масло", "Фильтры"],
-        "laborCost": 3000
+        "parts": [
+          {
+            "name": "Масло 5W-30",
+            "quantity": 1,
+            "cost": 3000
+          },
+          {
+            "name": "Масляный фильтр",
+            "quantity": 1,
+            "cost": 500
+          }
+        ],
+        "laborCost": 3000,
+        "linkedAlertId": null,
+        "recommendations": "Следующая замена через 10000 км"
       }
     ],
     "notes": "Все в порядке",
@@ -958,8 +1048,8 @@ interface MaintenancePlan {
   plannedDate: string;            // Planned start date (ISO 8601)
   plannedCompletionDate: string;  // Planned completion date (ISO 8601)
   plannedMileage?: string;        // Planned mileage (optional)
-  periodicOperations: MaintenanceOperation[]; // Scheduled operations
-  repairOperations: MaintenanceOperation[];   // Repair operations
+  periodicOperations: PeriodicOperation[]; // Scheduled periodic operations
+  repairOperations: RepairOperation[];     // Repair operations
   totalEstimatedCost: number;     // Total estimated cost
   serviceProvider?: string;       // Service provider (optional)
   notes?: string;                 // Additional notes (optional)
@@ -967,14 +1057,20 @@ interface MaintenancePlan {
   updatedAt: string;              // Last update timestamp (ISO 8601)
 }
 
-interface MaintenanceOperation {
-  id: string;                     // Unique identifier
+interface PeriodicOperation {
   operation: string;              // Operation name
-  mileage: number;                // Recommended mileage
-  period: number;                 // Period in months
+  selected: boolean;              // Selection status
+  priority: 'high' | 'medium' | 'low'; // Priority level
+  estimatedCost: number;          // Estimated cost
   notes: string;                  // Operation notes
-  estimatedCost?: number;         // Estimated cost (optional)
-  completed?: boolean;            // Completion status (optional)
+}
+
+interface RepairOperation {
+  alertId: string;                // Associated alert ID
+  description: string;            // Repair description
+  priority: string;               // Priority level
+  estimatedCost: number;          // Estimated cost
+  notes: string;                  // Operation notes
 }
 ```
 
@@ -1074,22 +1170,20 @@ Retrieve all maintenance plans with filtering and pagination.
       "plannedMileage": "95000",
       "periodicOperations": [
         {
-          "id": "op_periodic_1",
           "operation": "Замена масла",
-          "mileage": 95000,
-          "period": 6,
-          "notes": "Синтетическое масло 5W-30",
-          "estimatedCost": 4500
+          "selected": true,
+          "priority": "high",
+          "estimatedCost": 4500,
+          "notes": "Синтетическое масло 5W-30"
         }
       ],
       "repairOperations": [
         {
-          "id": "op_repair_1", 
-          "operation": "Ремонт тормозов",
-          "mileage": 95000,
-          "period": 0,
-          "notes": "Замена колодок и дисков",
-          "estimatedCost": 12000
+          "alertId": "alert_456", 
+          "description": "Ремонт тормозов",
+          "priority": "critical",
+          "estimatedCost": 12000,
+          "notes": "Замена колодок и дисков"
         }
       ],
       "totalEstimatedCost": 16500,
@@ -1119,14 +1213,22 @@ Create a new maintenance plan.
   "periodicOperations": [
     {
       "operation": "Замена масла и фильтров",
-      "mileage": 100000,
-      "period": 6,
-      "notes": "Полусинтетическое масло",
-      "estimatedCost": 5000
+      "selected": true,
+      "priority": "high",
+      "estimatedCost": 5000,
+      "notes": "Полусинтетическое масло"
     }
   ],
-  "repairOperations": [],
-  "totalEstimatedCost": 5000,
+  "repairOperations": [
+    {
+      "alertId": "alert_456",
+      "description": "Замена тормозных колодок",
+      "priority": "critical",
+      "estimatedCost": 8000,
+      "notes": "Срочный ремонт"
+    }
+  ],
+  "totalEstimatedCost": 13000,
   "serviceProvider": "Быстрый Сервис",
   "notes": "Плановое ТО"
 }
@@ -1259,16 +1361,17 @@ Content-Type: application/json
 ## File Upload Specifications
 
 ### Car Image Upload
-- **Supported formats:** JPG, JPEG, PNG, WebP
-- **Maximum file size:** 5MB
+- **Supported formats:** JPG, JPEG, PNG, WebP (as base64-encoded data URLs)
+- **Maximum size:** 5MB (base64-encoded)
 - **Recommended dimensions:** 800x600px or higher
-- **Content-Type:** `multipart/form-data`
+- **Content-Type:** `application/json`
 
 **Upload Process:**
-1. Client sends multipart form with image file
-2. Server validates file type and size
-3. Server stores image in `/uploads/cars/` directory
-4. Server returns image URL in response
+1. Client converts image to base64-encoded data URL on frontend
+2. Client sends JSON request with base64 string in `image` field
+3. Server validates base64 format and size
+4. Server stores image data (or reference)
+5. Server returns complete car object with image data URL
 
 **Example Response:**
 ```json
@@ -1276,7 +1379,7 @@ Content-Type: application/json
   "success": true,
   "data": {
     "id": "car_123",
-    "image": "/uploads/cars/car_123_1699123456.jpg"
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRg..."
   }
 }
 ```
@@ -1583,12 +1686,15 @@ RATE_LIMIT_MAX=1000     # requests per window
 ### Create a Car with Image
 ```bash
 curl -X POST http://localhost:8080/api/cars \
-  -F "name=Test Car" \
-  -F "brand=Toyota" \
-  -F "model=Camry" \
-  -F "year=2020" \
-  -F "mileage=50000" \
-  -F "image=@car-photo.jpg"
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Toyota Camry",
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2020,
+    "mileage": 50000,
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+  }'
 ```
 
 ### Get Cars with Filtering
@@ -1606,11 +1712,21 @@ curl -X POST http://localhost:8080/api/service-records \
     "date": "2024-11-04T00:00:00Z",
     "mileage": 55000,
     "serviceProvider": "Test Service",
+    "totalCost": 5000,
     "operations": [
       {
-        "type": "maintenance",
-        "description": "Oil change",
-        "cost": 5000
+        "id": "op_001",
+        "type": "periodical",
+        "name": "Oil change",
+        "description": "Regular oil change service",
+        "parts": [
+          {
+            "name": "Motor Oil 5W-30",
+            "quantity": 1,
+            "cost": 3000
+          }
+        ],
+        "laborCost": 2000
       }
     ]
   }'
@@ -1634,21 +1750,25 @@ const getCars = async (page = 1, limit = 20) => {
 
 // Create car with image
 const createCar = async (carData, imageFile) => {
-  const formData = new FormData();
-  
-  // Add car data
-  Object.keys(carData).forEach(key => {
-    formData.append(key, carData[key]);
-  });
-  
-  // Add image file
+  // Convert image to base64 if provided
+  let imageBase64 = null;
   if (imageFile) {
-    formData.append('image', imageFile);
+    imageBase64 = await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => resolve(e.target.result);
+      reader.readAsDataURL(imageFile);
+    });
   }
   
   const response = await fetch('/api/cars', {
     method: 'POST',
-    body: formData
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      ...carData,
+      image: imageBase64
+    })
   });
   
   const result = await response.json();
@@ -1707,15 +1827,14 @@ const createCar = async (carData, imageFile) => {
 CREATE TABLE cars (
   id VARCHAR(255) PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
+  nickname VARCHAR(50),
   brand VARCHAR(50) NOT NULL,
   model VARCHAR(50) NOT NULL,
   year INTEGER NOT NULL CHECK (year >= 1900 AND year <= EXTRACT(YEAR FROM CURRENT_DATE)),
   vin VARCHAR(17) UNIQUE,
   plate_number VARCHAR(20),
   mileage INTEGER NOT NULL CHECK (mileage >= 0),
-  image_url VARCHAR(500),
-  last_service DATE,
-  next_service DATE,
+  image TEXT,  -- Stores base64-encoded image data URL (can be large)
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -1751,11 +1870,11 @@ CREATE TABLE service_records (
 CREATE TABLE service_operations (
   id VARCHAR(255) PRIMARY KEY,
   service_record_id VARCHAR(255) NOT NULL REFERENCES service_records(id) ON DELETE CASCADE,
-  operation_type VARCHAR(20) NOT NULL CHECK (operation_type IN ('maintenance', 'repair')),
+  operation_type VARCHAR(20) NOT NULL CHECK (operation_type IN ('periodical', 'repair')),
+  operation_name VARCHAR(200) NOT NULL,
   description TEXT NOT NULL,
-  cost DECIMAL(10,2) NOT NULL,
-  labor_cost DECIMAL(10,2),
-  parts JSONB,
+  labor_cost DECIMAL(10,2) NOT NULL,
+  parts JSONB NOT NULL,  -- Array of {name: string, quantity: number, cost: number}
   linked_alert_id VARCHAR(255) REFERENCES alerts(id),
   recommendations TEXT
 );
@@ -1785,6 +1904,28 @@ CREATE TABLE maintenance_plans (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Periodic operations table (for maintenance plans)
+CREATE TABLE periodic_operations (
+  id VARCHAR(255) PRIMARY KEY,
+  maintenance_plan_id VARCHAR(255) NOT NULL REFERENCES maintenance_plans(id) ON DELETE CASCADE,
+  operation VARCHAR(200) NOT NULL,
+  selected BOOLEAN DEFAULT TRUE,
+  priority VARCHAR(10) NOT NULL CHECK (priority IN ('high', 'medium', 'low')),
+  estimated_cost DECIMAL(10,2) NOT NULL,
+  notes TEXT
+);
+
+-- Repair operations table (for maintenance plans)
+CREATE TABLE repair_operations (
+  id VARCHAR(255) PRIMARY KEY,
+  maintenance_plan_id VARCHAR(255) NOT NULL REFERENCES maintenance_plans(id) ON DELETE CASCADE,
+  alert_id VARCHAR(255) REFERENCES alerts(id),
+  description TEXT NOT NULL,
+  priority VARCHAR(20) NOT NULL,
+  estimated_cost DECIMAL(10,2) NOT NULL,
+  notes TEXT
+);
 ```
 
 ### Indexes for Performance
@@ -1811,13 +1952,39 @@ CREATE INDEX idx_maintenance_entries_car_id ON maintenance_entries(car_id);
 CREATE INDEX idx_maintenance_plans_car_id ON maintenance_plans(car_id);
 CREATE INDEX idx_maintenance_plans_status ON maintenance_plans(status);
 CREATE INDEX idx_maintenance_plans_planned_date ON maintenance_plans(planned_date);
+CREATE INDEX idx_periodic_operations_plan_id ON periodic_operations(maintenance_plan_id);
+CREATE INDEX idx_repair_operations_plan_id ON repair_operations(maintenance_plan_id);
+CREATE INDEX idx_repair_operations_alert_id ON repair_operations(alert_id);
 ```
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** November 4, 2024  
+# 🐛 Known Frontend Issues
+
+## AddServiceRecord mileage type bug
+
+**File:** `apps/main-app/src/pages/AddServiceRecord.tsx`
+
+**Issue:** Line 273 sends `mileage` as string instead of number
+
+**Description:** The AddServiceRecord component stores mileage in form state as a string (line 66) and sends it directly to the API without converting to a number (line 273). This is inconsistent with the DataService interface which expects `mileage: number` (DataService.ts line 41).
+
+**Expected behavior:** `mileage` should be converted to number before sending to DataService:
+```typescript
+mileage: parseInt(formData.mileage) || 0
+```
+
+**Reference:** AddCar.tsx line 152 shows the correct implementation of converting mileage to number.
+
+**Impact:** Backend should accept mileage as number type. The frontend will need to be fixed to match the API specification.
+
+**Workaround:** Backend can temporarily accept both string and number for mileage field during migration, but should validate and convert to number internally.
+
+---
+
+**Document Version:** 1.1  
+**Last Updated:** November 12, 2025  
 **Frontend Repository:** FleetMaster Pro Frontend  
 **Target Backend:** Java Spring Boot (recommended)  
 
-This specification provides complete API documentation for implementing the FleetMaster Pro backend system. All endpoints include request/response examples, validation rules, error handling, and advanced features for a production-ready implementation.
+This specification provides complete API documentation for implementing the FleetMaster Pro backend system. All endpoints include request/response examples, validation rules, error handling, and advanced features for a production-ready implementation. The specification reflects the actual frontend implementation as of November 2025.
