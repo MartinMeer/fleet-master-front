@@ -1,5 +1,8 @@
 # Dependencies
 node_modules/
+
+apps/marketing-site/node_modules/
+apps/main-app/node_modules/
 package-lock.json
 
 # Build outputs
