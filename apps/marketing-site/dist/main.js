@@ -27049,33 +27049,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AuthContext.Provider, { value: auth, children });
   }
 
-  // src/config/app.config.js
-  var APP_CONFIG = {
-    ENVIRONMENTS: {
-      development: {
-        MARKETING_URL: "http://localhost:3000",
-        MAIN_APP_URL: "http://localhost:3001",
-        API_URL: "http://localhost:8080/api"
-      },
-      staging: {
-        MARKETING_URL: "",
-        MAIN_APP_URL: "",
-        API_URL: ""
-      },
-      production: {
-        MARKETING_URL: "https://martinmeer.github.io/fleet-master-front",
-        MAIN_APP_URL: "https://martinmeer.github.io/fleet-master-front/app",
-        // DEMO MODE: Keep this placeholder to run in localStorage/demo mode without backend
-        // To use real API: Replace with your actual backend URL (e.g., 'https://api.yourserver.com/api')
-        API_URL: "https://your-api-domain.com/api"
-      }
-    },
-    getCurrentConfig() {
-      const env = "development";
-      return this.ENVIRONMENTS[env];
-    }
-  };
-
   // src/pages/Home.tsx
   var import_react5 = __toESM(require_react(), 1);
 
@@ -30265,6 +30238,33 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   );
   Button.displayName = "Button";
 
+  // src/config/app.config.js
+  var APP_CONFIG = {
+    ENVIRONMENTS: {
+      development: {
+        MARKETING_URL: "http://localhost:3000",
+        MAIN_APP_URL: "http://localhost:3001",
+        API_URL: "http://localhost:8080/api"
+      },
+      staging: {
+        MARKETING_URL: "",
+        MAIN_APP_URL: "",
+        API_URL: ""
+      },
+      production: {
+        MARKETING_URL: "https://martinmeer.github.io/fleet-master-front",
+        MAIN_APP_URL: "https://martinmeer.github.io/fleet-master-front/app",
+        // DEMO MODE: Keep this placeholder to run in localStorage/demo mode without backend
+        // To use real API: Replace with your actual backend URL (e.g., 'https://api.yourserver.com/api')
+        API_URL: "https://your-api-domain.com/api"
+      }
+    },
+    getCurrentConfig() {
+      const env = "development";
+      return this.ENVIRONMENTS[env];
+    }
+  };
+
   // src/services/NavigationService.ts
   var NavigationService = class {
     static {
@@ -30274,8 +30274,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
      * Navigate to main app with authentication token
      */
     static navigateToMainApp(token, redirectPath = "/") {
-      fetch("http://127.0.0.1:7584/ingest/0149d283-503e-4f7c-81cd-6e34434810dd", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "ae9ba4" }, body: JSON.stringify({ sessionId: "ae9ba4", location: "marketing-site/NavigationService.ts:navigateToMainApp", message: "navigateToMainApp URL", data: { mainAppUrl: this.config.MAIN_APP_URL, env: typeof process !== "undefined" ? "development" : "unknown" }, timestamp: Date.now(), hypothesisId: "A" }) }).catch(() => {
-      });
       const url = new URL(this.config.MAIN_APP_URL);
       const authToken = token || localStorage.getItem("auth_token");
       if (authToken) {
@@ -30303,8 +30301,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
         urlObj.searchParams.set("return_url", returnUrl);
         url = urlObj.toString();
       }
-      fetch("http://127.0.0.1:7584/ingest/0149d283-503e-4f7c-81cd-6e34434810dd", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "ae9ba4" }, body: JSON.stringify({ sessionId: "ae9ba4", location: "marketing-site/NavigationService.ts:navigateToLogin", message: "navigateToLogin URL constructed", data: { marketingUrl: this.config.MARKETING_URL, constructedUrl: url, returnUrl }, timestamp: Date.now(), hypothesisId: "A" }) }).catch(() => {
-      });
       window.location.href = url;
     }
     static navigateToRegister(plan) {
@@ -37826,9 +37822,6 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
 
   // src/App.tsx
   var import_jsx_runtime29 = __toESM(require_jsx_runtime(), 1);
-  var _cfg = APP_CONFIG.getCurrentConfig();
-  fetch("http://127.0.0.1:7584/ingest/0149d283-503e-4f7c-81cd-6e34434810dd", { method: "POST", headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "ae9ba4" }, body: JSON.stringify({ sessionId: "ae9ba4", location: "marketing-site/App.tsx:init", message: "Marketing app config at startup", data: { marketingUrl: _cfg.MARKETING_URL, mainAppUrl: _cfg.MAIN_APP_URL, apiUrl: _cfg.API_URL, nodeEnv: typeof process !== "undefined" ? "development" : "unknown" }, timestamp: Date.now(), hypothesisId: "A" }) }).catch(() => {
-  });
   function App() {
     return /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(AuthProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(HashRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime29.jsxs)(Routes, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Route, { path: "/", element: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(Home, {}) }),
