@@ -36,6 +36,9 @@ const esbuildOpts = {
   loader: {
     '.html': 'copy',
     '.png': 'file',
+    '.jpg': 'file',
+    '.jpeg': 'file',
+    '.jfif': 'file',
   },
   plugins: [
     stylePlugin({

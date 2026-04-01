@@ -30,6 +30,15 @@ import {
   Languages
 } from 'lucide-react';
 
+import heroImg from '../../img/fleet/main4.jfif';
+import starterCardImg from '../../img/fleet/main.jfif';
+import proCardImg from '../../img/fleet/dashb.jfif';
+import enterpriseCardImg from '../../img/fleet/Enterprise-Fleet.png';
+import starterSectionImg from '../../img/fleet/Repair-Maintenance-Share-1200x628-1.jpg';
+import proSectionImg from '../../img/fleet/upload.png';
+import enterpriseSectionImg from '../../img/fleet/maint05.jpg';
+
+
 export default function Home() {
   /**
    * Language state management for Russian/English toggle
@@ -291,7 +300,7 @@ export default function Home() {
           {/* Hero Image */}
           <div className="mb-12">
             <img 
-              src="https://pub-cdn.sider.ai/u/U0GVH7028Y5/web-coder/688f32372b2b5e92a4f370db/resource/57cd4290-9da9-4085-8dbd-42a0f50a0fa0.jpg" 
+              src={heroImg} 
               alt="Professional fleet management"
               className="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl object-cover h-80"
             />
@@ -325,7 +334,7 @@ export default function Home() {
               <CardHeader className="text-center">
                 <div className="mb-4">
                   <img 
-                    src="https://pub-cdn.sider.ai/u/U0GVH7028Y5/web-coder/688f32372b2b5e92a4f370db/resource/0c9d5a13-fcba-4d15-99bd-0e5ed345eb15.jpg" 
+                    src={starterCardImg} 
                     alt="Personal car maintenance"
                     className="w-full h-32 object-cover rounded-lg mb-4"
                   />
@@ -340,7 +349,7 @@ export default function Home() {
               <CardHeader className="text-center">
                 <div className="mb-4">
                   <img 
-                    src="https://pub-cdn.sider.ai/u/U0GVH7028Y5/web-coder/688f32372b2b5e92a4f370db/resource/8f538948-55df-40ae-8747-768a554c495f.jpg" 
+                    src={proCardImg} 
                     alt="Business fleet management"
                     className="w-full h-32 object-cover rounded-lg mb-4"
                   />
@@ -358,7 +367,7 @@ export default function Home() {
               <CardHeader className="text-center">
                 <div className="mb-4">
                   <img 
-                    src="https://pub-cdn.sider.ai/u/U0GVH7028Y5/web-coder/688f32372b2b5e92a4f370db/resource/e97eaae0-29a6-46eb-8941-f62df5e2b616.jpg" 
+                    src={enterpriseCardImg} 
                     alt="Enterprise fleet operations"
                     className="w-full h-32 object-cover rounded-lg mb-4"
                   />
@@ -390,7 +399,7 @@ export default function Home() {
             {/* Feature demonstration image */}
             <div className="mt-8 mb-8">
               <img 
-                src="https://pub-cdn.sider.ai/u/U0GVH7028Y5/web-coder/688f32372b2b5e92a4f370db/resource/8e472add-c4bc-4968-b1bc-eab0851a67e0.jpg" 
+                src={starterSectionImg} 
                 alt="Car maintenance tracking dashboard"
                 className="w-full max-w-3xl mx-auto rounded-xl shadow-lg object-cover h-64"
               />
@@ -444,7 +453,7 @@ export default function Home() {
             {/* Business dashboard mockup */}
             <div className="mt-8 mb-8">
               <img 
-                src="https://pub-cdn.sider.ai/u/U0GVH7028Y5/web-coder/688f32372b2b5e92a4f370db/resource/8a6de63e-3464-4140-9cf6-abe4a67b3fc7.jpg" 
+                src={proSectionImg} 
                 alt="Business fleet dashboard analytics"
                 className="w-full max-w-4xl mx-auto rounded-xl shadow-lg object-cover h-64"
               />
@@ -505,7 +514,7 @@ export default function Home() {
             {/* Enterprise visualization */}
             <div className="mt-8 mb-8">
               <img 
-                src="https://pub-cdn.sider.ai/u/U0GVH7028Y5/web-coder/688f32372b2b5e92a4f370db/resource/fd0853cb-9c16-4c89-a625-8986e7fff01c.jpg" 
+                src={enterpriseSectionImg} 
                 alt="Enterprise fleet analytics and reporting"
                 className="w-full max-w-4xl mx-auto rounded-xl shadow-lg object-cover h-64"
               />
@@ -551,8 +560,8 @@ export default function Home() {
           {/* Background image for social proof */}
           <div className="relative mb-12">
             <img 
-              src="https://pub-cdn.sider.ai/u/U0GVH7028Y5/web-coder/688f32372b2b5e92a4f370db/resource/ec6b070a-49eb-4e9c-9ffb-f1785aa81f4d.jpg" 
-              alt="Satisfied customers with their vehicles"
+                src={heroImg} 
+                alt="Satisfied customers with their vehicles"
               className="w-full h-48 object-cover rounded-xl opacity-30"
             />
             <div className="absolute inset-0 flex items-center justify-center">
