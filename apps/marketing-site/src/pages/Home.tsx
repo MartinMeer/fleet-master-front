@@ -8,6 +8,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router';
 import { Button } from '../components/ui/button';
 import { AppNavigation } from '../components/AppNavigation';
+import { useAuth } from '../hooks/useAuth';
+import { NavigationService } from '../services/NavigationService';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { 
@@ -44,6 +46,12 @@ export default function Home() {
    * Language state management for Russian/English toggle
    */
   const [language, setLanguage] = useState<'ru' | 'en'>('ru');
+  const { loginDemo, isLoading: authLoading } = useAuth();
+
+  const handleWatchDemo = async () => {
+    await loginDemo();
+    NavigationService.navigateToMainApp();
+  };
 
   /**
    * Translation object containing all text content
@@ -52,9 +60,9 @@ export default function Home() {
     ru: {
       // Header
       languageToggle: 'EN',
-      heroTitle: 'От личных авто до корпоративных автопарков',
-      heroSubtitle: 'Система учёта обслуживания автомобилей, которая растёт вместе с вашим бизнесом',
-      heroTag: '🚗 Комплексное решение для управления автопарком',
+      heroTitle: 'FleetMaster Pro',
+      heroSubtitle: 'От личных авто до корпоративных автопарков: система учёта обслуживания автомобилей, которая растёт вместе с вашим бизнесом',
+      heroTag: 'Комплексное решение для управления автопарком',
       
       // Value proposition cards
       starterTitle: 'СТАРТЕР БЕСПЛАТНО',
@@ -162,9 +170,9 @@ export default function Home() {
     en: {
       // Header
       languageToggle: 'RU',
-      heroTitle: 'From Personal Cars to Professional Fleets',
-      heroSubtitle: 'The car maintenance tracker that grows with your business',
-      heroTag: '🚗 The Complete Vehicle Management Solution',
+      heroTitle: 'FleetMaster Pro',
+      heroSubtitle: 'From Personal Cars to Professional Fleets: the car maintenance tracker that grows with your business',
+      heroTag: 'The Complete Vehicle Management Solution',
       
       // Value proposition cards
       starterTitle: 'FREE STARTER',
@@ -601,7 +609,13 @@ export default function Home() {
               {t.startFree}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-gray-300">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-gray-300"
+              disabled={authLoading}
+              onClick={handleWatchDemo}
+            >
               {t.watchDemo}
             </Button>
           </div>

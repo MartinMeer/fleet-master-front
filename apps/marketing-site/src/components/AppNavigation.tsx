@@ -5,7 +5,7 @@ import { NavigationService } from '../services/NavigationService';
 import { useAuth } from '../hooks/useAuth';
 
 export function AppNavigation() {
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, loginDemo, isLoading } = useAuth();
 
   const handleLaunchApp = () => {
     if (isAuthenticated) {
@@ -15,6 +15,11 @@ export function AppNavigation() {
         window.location.pathname + window.location.search
       );
     }
+  };
+
+  const handleDemoAccount = async () => {
+    await loginDemo();
+    NavigationService.navigateToMainApp();
   };
 
   return (
@@ -36,6 +41,14 @@ export function AppNavigation() {
         </>
       ) : (
         <>
+          <Button
+            variant="outline"
+            onClick={handleDemoAccount}
+            disabled={isLoading}
+            title="Войти без регистрации, данные только в этом браузере"
+          >
+            Демо-аккаунт
+          </Button>
           <Button 
             variant="ghost" 
             onClick={() => NavigationService.navigateToLogin()}

@@ -5,6 +5,7 @@ import { AuthState, User } from '../services/AuthService';
 
 interface AuthContextType extends AuthState {
   login: (email: string, password: string) => Promise<AuthState>;
+  loginDemo: () => Promise<AuthState>;
   register: (userData: {
     name: string;
     email: string;

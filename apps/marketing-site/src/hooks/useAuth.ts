@@ -75,6 +75,18 @@ export function useAuth() {
     }
   }, []);
 
+  const loginDemo = useCallback(async () => {
+    setAuthState(prev => ({ ...prev, isLoading: true }));
+    try {
+      const newAuthState = await AuthService.loginDemo();
+      setAuthState(newAuthState);
+      return newAuthState;
+    } catch (error) {
+      setAuthState(prev => ({ ...prev, isLoading: false }));
+      throw error;
+    }
+  }, []);
+
   const logout = useCallback(async () => {
     setAuthState(prev => ({ ...prev, isLoading: true }));
     await AuthService.logout();
@@ -96,6 +108,7 @@ export function useAuth() {
   return {
     ...authState,
     login,
+    loginDemo,
     register,
     logout,
     updateUser

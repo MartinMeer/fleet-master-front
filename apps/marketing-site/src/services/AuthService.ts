@@ -21,7 +21,13 @@ export class AuthService {
   private static readonly TOKEN_KEY = 'auth_token';
   private static readonly USER_KEY = 'user_data';
   private static readonly REFRESH_TOKEN_KEY = 'refresh_token';
+  /** Local-only session for marketing site preview (no backend). */
+  private static readonly DEMO_TOKEN = '__fleetmaster_demo__';
   private static config = APP_CONFIG.getCurrentConfig();
+
+  static isDemoToken(token: string | null): boolean {
+    return token === this.DEMO_TOKEN;
+  }
 
   /**
    * Login with email and password
@@ -104,7 +110,7 @@ export class AuthService {
   static async logout(): Promise<void> {
     try {
       const token = this.getToken();
-      if (token) {
+      if (token && !this.isDemoToken(token)) {
         await fetch(`${this.config.API_URL}/auth/logout`, {
           method: 'POST',
           headers: {
@@ -139,6 +145,9 @@ export class AuthService {
    * Validate token with backend API
    */
   static async validateToken(token: string): Promise<User | null> {
+    if (this.isDemoToken(token)) {
+      return this.getUser();
+    }
     try {
       const response = await fetch(`${this.config.API_URL}/auth/validate`, {
         method: 'POST',
@@ -158,6 +167,26 @@ export class AuthService {
       console.error('Token validation failed:', error);
       return null;
     }
+  }
+
+  /**
+   * Sign in as a fixed demo user (localStorage only). Use when API is unavailable or for tours.
+   */
+  static async loginDemo(): Promise<AuthState> {
+    const user: User = {
+      id: 'demo-user',
+      name: 'Demo User',
+      email: 'demo@fleetmaster.local',
+      plan: 'pro',
+      createdAt: new Date().toISOString(),
+    };
+    this.setAuthData(this.DEMO_TOKEN, user);
+    return {
+      user,
+      token: this.DEMO_TOKEN,
+      isAuthenticated: true,
+      isLoading: false,
+    };
   }
 
   // Private helper methods

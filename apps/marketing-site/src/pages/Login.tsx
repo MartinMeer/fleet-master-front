@@ -17,7 +17,8 @@ import {
   Eye, 
   EyeOff, 
   Languages,
-  LogIn
+  LogIn,
+  Sparkles
 } from 'lucide-react';
 
 export default function LoginPage() {
@@ -30,7 +31,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   
-  const { login, isLoading } = useAuth();
+  const { login, loginDemo, isLoading } = useAuth();
 
   /**
    * Translation object for bilingual support
@@ -53,6 +54,8 @@ export default function LoginPage() {
       
       // Buttons
       loginButton: 'Войти в систему',
+      demoButton: 'Войти в демо-аккаунт',
+      demoHint: 'Без пароля, только в этом браузере',
       
       // Social login
       socialLoginTitle: 'Или войдите через',
@@ -80,6 +83,8 @@ export default function LoginPage() {
       
       // Buttons
       loginButton: 'Sign In',
+      demoButton: 'Try demo account',
+      demoHint: 'No password — stored only in this browser',
       
       // Social login
       socialLoginTitle: 'Or sign in with',
@@ -107,6 +112,16 @@ export default function LoginPage() {
       NavigationService.navigateToMainApp();
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Login failed');
+    }
+  };
+
+  const handleDemoLogin = async () => {
+    setError('');
+    try {
+      await loginDemo();
+      NavigationService.navigateToMainApp();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Demo login failed');
     }
   };
 
@@ -223,9 +238,25 @@ export default function LoginPage() {
                   disabled={isLoading}
                 >
                   <LogIn className="w-4 h-4 mr-2" />
-                  {isLoading ? 'Signing in...' : t.loginButton}
+                  {isLoading ? (language === 'ru' ? 'Вход…' : 'Signing in…') : t.loginButton}
                 </Button>
               </form>
+
+              <div className="pt-4 mt-4 border-t border-gray-100 space-y-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full border-dashed border-blue-200 text-blue-800 hover:bg-blue-50"
+                  disabled={isLoading}
+                  onClick={handleDemoLogin}
+                >
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  {t.demoButton}
+                </Button>
+                <p className="text-xs text-center text-muted-foreground">
+                  {t.demoHint}
+                </p>
+              </div>
             </CardContent>
           </Card>
 
