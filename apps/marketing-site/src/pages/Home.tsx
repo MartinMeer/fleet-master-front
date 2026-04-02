@@ -93,13 +93,13 @@ export default function Home() {
       digitalRecordsDesc: 'Безбумажное управление обслуживанием',
 
       // Pro section
-      proBadge: 'ПРО БИЗНЕС ПЛАН',
+      proBadge: 'PRO БИЗНЕС ПЛАН',
       proHeadline: 'Масштабируйте операции - Создан для роста бизнеса',
       proSubheadline: 'Профессиональное управление автопарком без сложности корпоративных решений',
       
       // Pro features
       driverManagement: 'Управление водителями и разрешениями',
-      driverManagementDesc: 'Контролируйте, кто имеет доступ к чему',
+      driverManagementDesc: 'Контролируйте доступ',
       complianceTracking: 'Отслеживание соответствия требованиям',
       complianceTrackingDesc: 'Всегда готовы к проверкам',
       fleetDashboard: 'Панель управления автопарком',
@@ -321,8 +321,8 @@ export default function Home() {
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               {language === 'ru' ? (
                 <>
-                  От личных авто до 
-                  <span className="text-blue-600"> корпоративных автопарков</span>
+                  FleetMaster 
+                  <span className="text-blue-600"> PRO </span>
                 </>
               ) : (
                 <>
